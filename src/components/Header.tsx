@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { FaChevronDown, FaLink, FaRegEnvelope } from "react-icons/fa6";
+import { FaArrowRight, FaChevronDown, FaLink, FaRegEnvelope } from "react-icons/fa6";
 
 type NavItem = {
   label: string;
@@ -58,7 +58,7 @@ export default function Header() {
   }, [pathname]);
 
   return (
-    <header className="z-50 w-full">
+    <header className="z-[1100] w-full">
       {/* Top bar (matches legacy header-top) */}
       <div className="bg-topbar text-white font-bold">
         <div className="mx-auto max-w-7xl px-1.5 py-2 flex items-center justify-between text-lg">
@@ -76,27 +76,27 @@ export default function Header() {
       </div>
 
       {/* Sticky main header */}
-      <div className={`sticky top-0 w-full border-b border-transparent ${isSticky ? "bg-header/95 backdrop-blur" : "bg-header"}`}>
+      <div className={`sticky top-0 w-full border-b border-transparent z-[1100] ${isSticky ? "bg-header/95 backdrop-blur" : "bg-header"}`}>
         <div className="mx-auto max-w-7xl">
           <div className="relative flex h-20 items-center justify-between">
             <div className="flex items-center gap-3">
               <Link href="/" className="flex items-center gap-2">
-                <img src="/assets/img/logo/white-logo.png" alt="Omnia" className="h-8 w-auto" />
+                <img src="/img/logo/white-logo.png" alt="Omnia" className="h-16 w-auto" />
               </Link>
             </div>
 
-            <nav className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-10">
+            <nav className="hidden lg:flex items-center gap-10">
               {nav.map((item) => (
                 <div key={item.label} className="relative">
                   {item.children ? (
                     <div className="group">
-                      <button className="inline-flex items-center gap-2 text-[17px] font-semibold tracking-wide text-white/90 hover:text-white">
+                      <button className="inline-flex items-center gap-2 text-[17px] font-semibold tracking-wide text-white/90 hover:text-white text-nowrap">
                         {item.label}
                         <FaChevronDown className="ml-1 h-3 w-3" />
                       </button>
-                      <div className="absolute left-0 mt-3 hidden min-w-[260px] rounded-xl border border-slate-200 bg-white p-2 shadow-lg group-hover:block">
+                      <div className="absolute left-0 top-full mt-3 hidden min-w-[320px] rounded-lg border border-slate-200 border-t-[4px] border-t-brand bg-white p-4 shadow-xl z-[1200] group-hover:block">
                         {item.children.map((c) => (
-                          <Link key={c.href} href={c.href} className="block rounded-md px-3 py-2 text-sm text-slate-700 hover:bg-slate-50">
+                          <Link key={c.href} href={c.href} className="block rounded-md px-5 py-3 text-lg font-semibold text-slate-800 hover:bg-slate-50">
                             {c.label}
                           </Link>
                         ))}
@@ -115,15 +115,10 @@ export default function Header() {
               ))}
             </nav>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center">
               <Link href="/contact" className="hidden sm:inline-flex items-center group">
-                <span className="rounded-full bg-brand px-6 py-2.5 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(229,26,26,0.35)] transition-all duration-200 group-hover:shadow-[0_12px_28px_rgba(229,26,26,0.5)]">Contact Us</span>
-                <span className="ml-2 inline-flex h-10 w-10 items-center justify-center rounded-full bg-brand text-white shadow-[0_8px_24px_rgba(229,26,26,0.35)] transition-transform duration-200 group-hover:translate-x-0.5">
-                  <svg className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M5 12h14" />
-                    <path d="M12 5l7 7-7 7" />
-                  </svg>
-                </span>
+                <span className="rounded-full bg-brand px-6 py-2.5 font-semibold text-white transition-all duration-500 group-hover:bg-[var(--header)]">Contact Us</span>
+                <span className="rounded-full bg-brand p-3 font-semibold text-white transition-all duration-500 group-hover:bg-[var(--header)]"><FaArrowRight className="size-4 scale-125 -rotate-45 group-hover:rotate-0 transition-all duration-500" /></span>
               </Link>
 
               <button

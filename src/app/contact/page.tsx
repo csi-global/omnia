@@ -7,7 +7,7 @@ import { z } from "zod";
 
 const schema = z.object({
   name: z.string().min(2, "Name is required"),
-  email: z.string().email("Valid email required"),
+  email: z.email("Valid email required"),
   service: z.string().optional(),
   date: z.string().optional(),
   time: z.string().optional(),
@@ -15,10 +15,6 @@ const schema = z.object({
 });
 
 type FormValues = z.infer<typeof schema>;
-
-export const metadata = {
-  title: "Contact | Omnia",
-};
 
 export default function ContactPage() {
   const {
