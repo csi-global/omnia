@@ -1,15 +1,28 @@
+import type { Metadata } from "next";
+import { Poppins } from "next/font/google";
+import BackToTopButton from "@/components/BackToTopButton";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import type { Metadata } from "next";
-import { Manrope, Poppins } from "next/font/google";
+import Preloader from "@/components/Preloader";
 import "./globals.css";
+import "./css/bootstrap.min.css";
+import "./css/animate.css";
+import "./css/magnific-popup.css";
+import "./css/meanmenu.css";
+import "./css/swiper-bundle.min.css";
+import "./css/nice-select.css";
+import "./css/icomon.css";
+import "./css/all.min.css";
+import "./css/main.css";
 
-const manrope = Manrope({ variable: "--font-manrope", subsets: ["latin"], display: "swap" });
-const poppins = Poppins({ variable: "--font-poppins", subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], display: "swap" });
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 export const metadata: Metadata = {
   title: "Omnia",
-  description: "Omnia - Cloud, Security, and Digital Transformation Services",
+  description: "Omnia - Cloud consulting, digital transformation, and managed services",
 };
 
 export default function RootLayout({
@@ -19,9 +32,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${manrope.variable} ${poppins.variable} text-slate-800 antialiased`}>
+      <body
+        className={`${poppins.className} subpixel-antialiased`}
+      >
+        <Preloader />
+        <BackToTopButton />
         <Header />
-        <main className="min-h-[70vh]">{children}</main>
+        {children}
         <Footer />
       </body>
     </html>
