@@ -1,7 +1,29 @@
-"use client";
-
 import HeroSummaryTabs from "@/components/HeroSummaryTabs";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import type { Metadata } from 'next';
+import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Digital Process Automation | Omnia",
+  description: "Design, build, and automate at enterprise scale with Pega, ServiceNow, and Microsoft Power Platform + Dynamics 365. Governance, security, and integrations included.",
+  robots: "index,follow",
+  alternates: {
+    canonical: "https://omniaservices.co.uk/digital-process-automation"
+  },
+  openGraph: {
+    title: "Digital Process Automation | Omnia",
+    description: "Design, build, and automate at enterprise scale with Pega, ServiceNow, and Microsoft Power Platform + Dynamics 365. Governance, security, and integrations included.",
+    type: "website",
+    url: "https://omniaservices.co.uk/digital-process-automation",
+    images: ["https://omniaservices.co.uk/assets/img/service/3.webp"]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Digital Process Automation | Omnia",
+    description: "Design, build, and automate at enterprise scale with Pega, ServiceNow, and Microsoft Power Platform + Dynamics 365. Governance, security, and integrations included.",
+    images: ["https://omniaservices.co.uk/assets/img/service/3.webp"]
+  }
+};
 
 export default function DigitalProcessAutomationPage() {
 
@@ -15,7 +37,7 @@ export default function DigitalProcessAutomationPage() {
           <div className="page-heading">
             <h1>Digital Process Automation</h1>
             <ul className="breadcrumb-items">
-              <li><a href="/">Home</a></li>
+              <li><Link href="/">Home</Link></li>
               <li><i className="fas fa-chevron-right"></i></li>
               <li>Digital Process Automation</li>
             </ul>

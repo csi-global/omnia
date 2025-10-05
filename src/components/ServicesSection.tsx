@@ -63,7 +63,7 @@ export default function ServicesSection() {
           </p>
         </div>
         <div className="row">
-          {services.map((service, index) => (
+          {services.map((service) => (
             <div key={service.title} className={`col-xl-4 col-lg-6 col-md-6`}>
               <div className="service-box-items">
                 <div className="icon">
