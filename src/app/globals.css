@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -47,6 +47,8 @@
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
+  /* Brand theme color (used for active tabs etc.) */
+  --theme: #e11d2e;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -119,4 +121,118 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Page-scoped styles to match original template */
+.lcnc-banner {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.02)), var(--bg);
+  border-left: 6px solid var(--theme);
+  padding: 28px 32px;
+  border-radius: 14px;
+}
+.lcnc-banner h5 {
+  margin-bottom: 10px;
+}
+.lcnc-banner .ecosystems {
+  color: var(--text);
+  margin-bottom: 18px;
+}
+.lcnc-brand-logos {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 14px;
+  align-items: center;
+}
+@media (max-width: 991px) {
+  .lcnc-brand-logos {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+.lcnc-brand-logos img {
+  max-height: 34px;
+  width: auto;
+  opacity: 0.8;
+  filter: grayscale(100%);
+  transition: opacity 0.2s ease, filter 0.2s ease;
+}
+.lcnc-brand-logos img:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+/* Tab hero mini banner */
+.tab-hero {
+  background: #f6f6f6;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr minmax(200px, 320px);
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.tab-hero .copy {
+  min-width: 0;
+}
+.tab-hero img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+@media (max-width: 991px) {
+  .tab-hero {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+  .tab-hero img {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* Image cards grid */
+.lcnc-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin: 10px 0 24px 0;
+}
+@media (max-width: 991px) {
+  .lcnc-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 575px) {
+  .lcnc-cards {
+    grid-template-columns: 1fr;
+  }
+}
+.lcnc-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+}
+.lcnc-card .media {
+  height: 220px;
+  background: #f6f6f6;
+}
+.lcnc-card .media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.lcnc-card .body {
+  padding: 18px 18px 20px 18px;
+}
+.lcnc-card .body h4 {
+  margin-bottom: 8px;
+}
+.lcnc-card .body p {
+  color: var(--text);
 }
