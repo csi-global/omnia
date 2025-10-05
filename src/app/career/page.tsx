@@ -50,7 +50,7 @@ export default function CareerPage() {
               <div className="section-title text-center">
                 <h2>Join Our Team</h2>
                 <p>
-                  Be part of a dynamic team that's shaping the future of digital transformation. At Omnia Services, we offer exciting career opportunities for passionate professionals who want to make a real impact in the technology industry.
+                  Be part of a dynamic team that&apos;s shaping the future of digital transformation. At Omnia Services, we offer exciting career opportunities for passionate professionals who want to make a real impact in the technology industry.
                 </p>
               </div>
             </div>
@@ -360,7 +360,7 @@ export default function CareerPage() {
           <div className="lcnc-banner">
             <h5>Ready to Join Our Team?</h5>
             <p className="ecosystems">
-              Don't see a position that matches your skills? We're always looking for talented individuals. Send us your CV and let us know how you can contribute to our team's success.
+              Don&apos;t see a position that matches your skills? We&apos;re always looking for talented individuals. Send us your CV and let us know how you can contribute to our team&apos;s success.
             </p>
             <div className="main-button mt-3">
               <Link href="/contact">
