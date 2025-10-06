@@ -177,8 +177,8 @@ export default function Header() {
                         opacity: isProfessionalOpen ? 1 : 0,
                       }}
                     >
-                      {["Digital Process Automation", "Cloud Migration", "Data Analytics", "Digital Transformation", "Domain Consulting"].map((item) => (
-                        <li className="pl-4 text-nowrap text-sm"><Link href={`/${item.toLowerCase().replace(/ /g, "-")}`} className="block py-1">{item}</Link></li>
+                      {["Digital Process Automation", "Cloud Migration", "Data Analytics", "Digital Transformation", "Domain Consulting"].map((item, index) => (
+                        <li className="pl-4 text-nowrap text-sm" key={index}><Link href={`/${item.toLowerCase().replace(/ /g, "-")}`} className="block py-1">{item}</Link></li>
                       ))}
                     </ul>
                   </li>
@@ -192,8 +192,8 @@ export default function Header() {
                         opacity: isManagedOpen ? 1 : 0,
                       }}
                     >
-                      {["Managed Cloud Desk", "Managed Microsoft 365", "Managed Microsoft Azure", "Surface –As-A-Service"].map((item) => (
-                        <li className="pl-4 text-nowrap text-sm"><Link href={`/${item.toLowerCase().replace(/ /g, "-")}`} className="block py-1">{item}</Link></li>
+                      {["Managed Cloud Desk", "Managed Microsoft 365", "Managed Microsoft Azure", "Surface –As-A-Service"].map((item, index) => (
+                        <li className="pl-4 text-nowrap text-sm" key={index}><Link href={`/${item.toLowerCase().replace(/ /g, "-")}`} className="block py-1">{item}</Link></li>
                       ))}
                     </ul>
                   </li>

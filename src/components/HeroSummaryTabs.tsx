@@ -1,6 +1,7 @@
 "use client";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Image from "next/image";
 
 type SummaryTab = {
   value: string;
@@ -29,7 +30,7 @@ export default function HeroSummaryTabs({ tabs, className }: HeroSummaryTabsProp
                 </div>
                 <div className="col-lg-6">
                   {t.imageSrc ? (
-                    <img src={t.imageSrc} alt={t.imageAlt ?? "Illustration"} className="img-fluid" />
+                    <Image src={t.imageSrc} alt={t.imageAlt ?? "Illustration"} className="img-fluid" width={500} height={500} />
                   ) : (
                     <div className="w-100" style={{ height: 280, borderRadius: 20, background: "#eef1f5", border: "1px solid var(--border)" }} />
                   )}

@@ -115,17 +115,17 @@ export default function DigitalProcessAutomationPage() {
                   <HeroSummaryTabs
                     className="pt-2"
                     tabs={[
-                      { value: "products-functions", label: "Products & Functions", summary: "Pega Platform, Customer Service, Sales Automation, Marketing, Studios." },
-                      { value: "dev-methodology", label: "Development Methodology", summary: "Pega Express delivery with iterative sprints and reusable templates." },
-                      { value: "hosting-integrations", label: "Hosting & Integrations", summary: "Pega Cloud or self-managed; REST/SOAP, events, and enterprise connectors." },
+                      { value: "products-functions", label: "Products & Functions", summary: "Pega Platform, Customer Service, Sales Automation, Marketing, Studios.", imageSrc: "/product.svg" },
+                      { value: "dev-methodology", label: "Development Methodology", summary: "Pega Express delivery with iterative sprints and reusable templates.", imageSrc: "/development.svg" },
+                      { value: "hosting-integrations", label: "Hosting & Integrations", summary: "Pega Cloud or self-managed; REST/SOAP, events, and enterprise connectors.", imageSrc: "/hosting.svg" },
                     ]}
                   />
                   <HeroSummaryTabs
                     className="pt-2"
                     tabs={[
-                      { value: "governance", label: "Governance, Security, & Compliance", summary: "Guardrails, centralized rules, change control; SSO/OAuth & RBAC; audit trails, monitoring, automated testing." },
-                      { value: "business-outcomes", label: "Business Outcomes", summary: "Faster time-to-value, reduced manual work via RPA + workflow, improved CX with next-best-action." },
-                      { value: "use-cases-industries", label: "Use Cases & Industries", summary: "Customer service, sales ops, onboarding; claims, underwriting, KYC/AML; field service, order-to-cash, collections." },
+                      { value: "governance", label: "Governance, Security, & Compliance", summary: "Guardrails, centralized rules, change control; SSO/OAuth & RBAC; audit trails, monitoring, automated testing.", imageSrc: "/compliance.svg" },
+                      { value: "business-outcomes", label: "Business Outcomes", summary: "Faster time-to-value, reduced manual work via RPA + workflow, improved CX with next-best-action.", imageSrc: "/outcomes.svg" },
+                      { value: "use-cases-industries", label: "Use Cases & Industries", summary: "Customer service, sales ops, onboarding; claims, underwriting, KYC/AML; field service, order-to-cash, collections.", imageSrc: "/usecases.svg" },
                     ]}
                   />
                 </TabsContent>
