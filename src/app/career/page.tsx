@@ -84,7 +84,7 @@ export default function CareerPage() {
 
       {/* Join Our Global Team */}
       <section className="section-padding fix bg-[url('/assets/img/career/career-2.webp')] bg-cover bg-center bg-no-repeat">
-        <div className="container bg-white/10 p-2 rounded-2xl backdrop-blur-md">
+        <div className="container bg-gradient-to-br from-[var(--theme)]/10 via-black/50 to-[var(--theme)]/5 p-2 rounded-2xl backdrop-blur-md pt-4">
           <div className="row">
             <div className="mx-auto">
               <div className="section-title text-center text-[var(--white)]">
@@ -123,7 +123,7 @@ export default function CareerPage() {
 
             <div className="flex items-start gap-6 p-6 rounded-2xl bg-[var(--theme)]/5">
               <div className="size-20 px-4 rounded-xl bg-[var(--header)]/20 flex items-center justify-center">
-                <i className="fas fa-users text-3xl"></i>
+                <i className="fas fa-users text-3xl text-[var(--theme)]"></i>
               </div>
               <div>
                 <h3 className="text-2xl font-semibold mb-2">Supportive Culture</h3>
@@ -169,7 +169,7 @@ export default function CareerPage() {
           {/* Benefits grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
             <div className="flex items-start gap-6 p-6 rounded-2xl bg-[var(--bg)] border border-[var(--border)]">
-              <div className="size-16 md:size-20 rounded-xl bg-[var(--theme)]/10 text-[var(--header)] flex items-center justify-center">
+              <div className="size-16 md:size-20 rounded-xl bg-[var(--theme)]/10 text-[var(--header)] flex items-center justify-center px-4">
                 <i className="fas fa-money-bill-wave text-2xl md:text-3xl"></i>
               </div>
               <div>
@@ -179,8 +179,8 @@ export default function CareerPage() {
             </div>
 
             <div className="flex items-start gap-6 p-6 rounded-2xl bg-[var(--bg)] border border-[var(--border)]">
-              <div className="size-16 md:size-20 rounded-xl bg-[var(--theme)]/10 text-[var(--header)] flex items-center justify-center">
-                <i className="fas fa-shield-heart text-2xl md:text-3xl"></i>
+              <div className="size-16 md:size-20 rounded-xl bg-[var(--theme)]/10 text-[var(--header)] flex items-center justify-center px-4">
+                <i className="fas fa-briefcase-medical text-2xl md:text-3xl"></i>
               </div>
               <div>
                 <h3 className="text-xl md:text-2xl font-semibold mb-2">Comprehensive Benefits</h3>
@@ -189,7 +189,7 @@ export default function CareerPage() {
             </div>
 
             <div className="flex items-start gap-6 p-6 rounded-2xl bg-[var(--bg)] border border-[var(--border)]">
-              <div className="size-16 md:size-20 rounded-xl bg-[var(--theme)]/10 text-[var(--header)] flex items-center justify-center">
+              <div className="size-16 md:size-20 rounded-xl bg-[var(--theme)]/10 text-[var(--header)] flex items-center justify-center px-4">
                 <i className="fas fa-graduation-cap text-2xl md:text-3xl"></i>
               </div>
               <div>
@@ -199,7 +199,7 @@ export default function CareerPage() {
             </div>
 
             <div className="flex items-start gap-6 p-6 rounded-2xl bg-[var(--bg)] border border-[var(--border)]">
-              <div className="size-16 md:size-20 rounded-xl bg-[var(--theme)]/10 text-[var(--header)] flex items-center justify-center">
+              <div className="size-16 md:size-20 rounded-xl bg-[var(--theme)]/10 text-[var(--header)] flex items-center justify-center px-4">
                 <i className="fas fa-laptop-house text-2xl md:text-3xl"></i>
               </div>
               <div>
@@ -209,7 +209,7 @@ export default function CareerPage() {
             </div>
 
             <div className="flex items-start gap-6 p-6 rounded-2xl bg-[var(--bg)] border border-[var(--border)]">
-              <div className="size-16 md:size-20 rounded-xl bg-[var(--theme)]/10 text-[var(--header)] flex items-center justify-center">
+              <div className="size-16 md:size-20 rounded-xl bg-[var(--theme)]/10 text-[var(--header)] flex items-center justify-center px-4">
                 <i className="fas fa-route text-2xl md:text-3xl"></i>
               </div>
               <div>
@@ -219,7 +219,7 @@ export default function CareerPage() {
             </div>
 
             <div className="flex items-start gap-6 p-6 rounded-2xl bg-[var(--bg)] border border-[var(--border)]">
-              <div className="size-16 md:size-20 rounded-xl bg-[var(--theme)]/10 text-[var(--header)] flex items-center justify-center">
+              <div className="size-16 md:size-20 rounded-xl bg-[var(--theme)]/10 text-[var(--header)] flex items-center justify-center px-4">
                 <i className="fas fa-trophy text-2xl md:text-3xl"></i>
               </div>
               <div>
@@ -270,41 +270,6 @@ export default function CareerPage() {
                   <h4 className="text-xl font-semibold mb-2">Ongoing Training</h4>
                   <p>Internal programs, partner seminars and resources designed to accelerate learning.</p>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Hear From Our Team */}
-      <section className="section-padding fix">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-8 mx-auto">
-              <div className="section-title text-center">
-                <h2>Hear From Our Team</h2>
-                <p>What our colleagues say about working at Omnia.</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="row g-4 pt-2">
-            <div className="col-md-4">
-              <div className="testimonial-item">
-                <p className="quote">“I have the freedom to experiment, keep learning, and make things better for our clients and team.”</p>
-                <h6 className="author">— Team Member A</h6>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="testimonial-item">
-                <p className="quote">“Every project is an opportunity to learn and innovate. The team is supportive and the work is exciting.”</p>
-                <h6 className="author">— Team Member B</h6>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="testimonial-item">
-                <p className="quote">“The collaborative culture and strong mentorship have helped me grow professionally and personally.”</p>
-                <h6 className="author">— Team Member C</h6>
               </div>
             </div>
           </div>
