@@ -100,7 +100,7 @@ export default function DigitalProcessAutomationPage() {
 
                 {/* Pega */}
                 <TabsContent value="pega">
-                  <h3>Pega – Intelligent Automation and DPA</h3>
+                  <h3>Pega Intelligent Automation and DPA</h3>
                   <p className="mb-4">Build enterprise-grade applications with case management, low-code design, and AI-powered decisioning.</p>
                   <div className="tab-hero">
                     <div className="copy">
@@ -149,7 +149,7 @@ export default function DigitalProcessAutomationPage() {
 
                 {/* ServiceNow */}
                 <TabsContent value="servicenow">
-                  <h3>ServiceNow – Now Platform App Engine</h3>
+                  <h3>ServiceNow Now Platform App Engine</h3>
                   <p className="mb-4">Rapidly digitize workflows with App Engine, Flow Designer, and IntegrationHub—on a secure, compliant SaaS platform.</p>
                   <div className="tab-hero">
                     <div className="copy"><h4>From tickets to outcomes.</h4><p>Build modern experiences on the Now Platform with secure, governed low-code.</p></div>
@@ -185,7 +185,7 @@ export default function DigitalProcessAutomationPage() {
 
                 {/* Microsoft */}
                 <TabsContent value="microsoft">
-                  <h3>Microsoft – Power Platform & Dynamics 365</h3>
+                  <h3>Microsoft Power Platform & Dynamics 365</h3>
                   <p className="mb-4">Empower fusion teams with low-code tools on Azure. Build apps, automate processes, analyze data, and digitize customer/employee experiences.</p>
                   <div className="tab-hero">
                     <div className="copy"><h4>Ship faster with Power + Azure.</h4><p>Canvas and model-driven apps on Dataverse with 1,000+ connectors and Copilot.</p></div>
