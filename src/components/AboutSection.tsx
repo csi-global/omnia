@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function AboutSection() {
   return (
-    <section className="about-section section-padding pb-0 fix">
+    <section id="about" className="about-section section-padding pb-0 fix">
       <div className="container">
         <div className="about-wrapper-11">
           <div className="row">
@@ -43,7 +43,7 @@ export default function AboutSection() {
                 </div>
                 <div className="about-author">
                   <div className="main-button">
-                    <a href="/about"> <span className="theme-btn"> Read More </span><span className="arrow-btn"><i className="icon-arrow-right"></i></span></a>
+                    <a href="/#core-values"> <span className="theme-btn"> Read More </span><span className="arrow-btn"><i className="icon-arrow-right"></i></span></a>
                   </div>
                 </div>
               </div>

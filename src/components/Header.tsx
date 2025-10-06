@@ -83,9 +83,7 @@ export default function Header() {
                         <li className="active">
                           <Link href="/">Home</Link>
                         </li>
-                        <li>
-                          <Link href="/about">About-Us</Link>
-                        </li>
+
                         <li>
                           <a href="#">Professional Services <i className="fa-solid fa-chevron-down"></i></a>
                           <ul className="submenu">
@@ -164,9 +162,7 @@ export default function Header() {
                   <li className="active">
                     <Link href="/" className="block py-1.5">Home</Link>
                   </li>
-                  <li>
-                    <Link href="/about" className="block py-1.5">About-Us</Link>
-                  </li>
+
                   <li>
                     <a href="#" onClick={(e) => { e.preventDefault(); setIsProfessionalOpen((v) => !v); }} aria-expanded={isProfessionalOpen} className="flex justify-between items-center py-1.5">Professional Services <i className={`fa-solid ${isProfessionalOpen ? "fa-minus" : "fa-plus"}`}></i></a>
                     <ul
