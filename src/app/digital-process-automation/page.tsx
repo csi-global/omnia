@@ -113,15 +113,16 @@ export default function DigitalProcessAutomationPage() {
                   </div>
 
                   <HeroSummaryTabs
-                    className="pt-2"
+                    className="pt-2 mt-4"
                     tabs={[
                       { value: "products-functions", label: "Products & Functions", summary: "Pega Platform, Customer Service, Sales Automation, Marketing, Studios.", imageSrc: "/product.svg" },
                       { value: "dev-methodology", label: "Development Methodology", summary: "Pega Express delivery with iterative sprints and reusable templates.", imageSrc: "/development.svg" },
                       { value: "hosting-integrations", label: "Hosting & Integrations", summary: "Pega Cloud or self-managed; REST/SOAP, events, and enterprise connectors.", imageSrc: "/hosting.svg" },
                     ]}
+                    reverse={true}
                   />
                   <HeroSummaryTabs
-                    className="pt-2"
+                    className="pt-2 mt-4"
                     tabs={[
                       { value: "governance", label: "Governance, Security, & Compliance", summary: "Guardrails, centralized rules, change control; SSO/OAuth & RBAC; audit trails, monitoring, automated testing.", imageSrc: "/compliance.svg" },
                       { value: "business-outcomes", label: "Business Outcomes", summary: "Faster time-to-value, reduced manual work via RPA + workflow, improved CX with next-best-action.", imageSrc: "/outcomes.svg" },
@@ -151,17 +152,17 @@ export default function DigitalProcessAutomationPage() {
                   <HeroSummaryTabs
                     className="pt-2"
                     tabs={[
-                      { value: "products-functions", label: "Products & Functions", summary: "App Engine, ITSM/ITOM/ITAM, HRSD, CSM, GRC; IntegrationHub and Automation Engine (RPA)." },
-                      { value: "dev-methodology", label: "Development Methodology", summary: "Scoped apps, CICD, Dev/Test/Prod promotion; citizen developer guardrails and governance." },
-                      { value: "hosting-integrations", label: "Hosting & Integrations", summary: "Native SaaS regions; IntegrationHub spokes, REST/SOAP, MID Server for on‑prem integrations." },
+                      { value: "products-functions", label: "Products & Functions", summary: "App Engine, ITSM/ITOM/ITAM, HRSD, CSM, GRC; IntegrationHub and Automation Engine (RPA)." , imageSrc: "/product.svg" },
+                      { value: "dev-methodology", label: "Development Methodology", summary: "Scoped apps, CICD, Dev/Test/Prod promotion; citizen developer guardrails and governance." , imageSrc: "/development.svg" },
+                      { value: "hosting-integrations", label: "Hosting & Integrations", summary: "Native SaaS regions; IntegrationHub spokes, REST/SOAP, MID Server for on‑prem integrations." , imageSrc: "/hosting.svg" },
                     ]}
                   />
                   <HeroSummaryTabs
                     className="pt-2"
                     tabs={[
-                      { value: "governance", label: "Governance, Security, & Compliance", summary: "Instance governance, update sets, pipelines; SSO, encryption, data policies; platform security certifications." },
-                      { value: "business-outcomes", label: "Business Outcomes", summary: "Rapid workflow digitization and scale; lower development cost via App Engine + guardrails; better service experiences." },
-                      { value: "use-cases-industries", label: "Use Cases & Industries", summary: "ITSM/ITOM, HR services, employee workflows; customer service, field service, operations; GRC, risk, and audit." },
+                      { value: "governance", label: "Governance, Security, & Compliance", summary: "Instance governance, update sets, pipelines; SSO, encryption, data policies; platform security certifications." , imageSrc: "/compliance.svg" },
+                      { value: "business-outcomes", label: "Business Outcomes", summary: "Rapid workflow digitization and scale; lower development cost via App Engine + guardrails; better service experiences." , imageSrc: "/outcomes.svg" },
+                      { value: "use-cases-industries", label: "Use Cases & Industries", summary: "ITSM/ITOM, HR services, employee workflows; customer service, field service, operations; GRC, risk, and audit." , imageSrc: "/usecases.svg" },
                     ]}
                   />
                 </TabsContent>
@@ -185,19 +186,19 @@ export default function DigitalProcessAutomationPage() {
                   </div>
 
                   <HeroSummaryTabs
-                    className="pt-2"
+                    className="pt-2 mt-4"
                     tabs={[
-                      { value: "products-functions", label: "Products & Functions", summary: "Power Platform (Apps, Automate, BI, Pages, Copilot); Dynamics 365 on Dataverse; Azure services, API Management, Logic Apps." },
-                      { value: "dev-methodology", label: "Development Methodology", summary: "ALM with solutions, pipelines, environments; Center of Excellence for governance, DLP, monitoring." },
-                      { value: "hosting-integrations", label: "Hosting & Integrations", summary: "Microsoft cloud (Azure, M365, GCC); 1,000+ connectors, custom connectors, REST/OData, webhooks." },
+                      { value: "products-functions", label: "Products & Functions", summary: "Power Platform (Apps, Automate, BI, Pages, Copilot); Dynamics 365 on Dataverse; Azure services, API Management, Logic Apps." , imageSrc: "/product.svg" },
+                      { value: "dev-methodology", label: "Development Methodology", summary: "ALM with solutions, pipelines, environments; Center of Excellence for governance, DLP, monitoring." , imageSrc: "/development.svg" },
+                      { value: "hosting-integrations", label: "Hosting & Integrations", summary: "Microsoft cloud (Azure, M365, GCC); 1,000+ connectors, custom connectors, REST/OData, webhooks." , imageSrc: "/hosting.svg" },
                     ]}
                   />
                   <HeroSummaryTabs
-                    className="pt-2"
+                    className="pt-2 mt-4"
                     tabs={[
-                      { value: "governance", label: "Governance, Security, & Compliance", summary: "DLP policies, environment strategy, managed identities; Entra ID SSO and RBAC; monitoring, audit, solution-aware pipelines." },
-                      { value: "business-outcomes", label: "Business Outcomes", summary: "Fusion development (IT + business), faster app delivery with Dataverse + connectors, unified data and AI-driven insights." },
-                      { value: "use-cases-industries", label: "Use Cases & Industries", summary: "Frontline apps, approvals, inspections; sales, service, marketing; finance, supply chain, projects." },
+                      { value: "governance", label: "Governance, Security, & Compliance", summary: "DLP policies, environment strategy, managed identities; Entra ID SSO and RBAC; monitoring, audit, solution-aware pipelines." , imageSrc: "/compliance.svg" },
+                      { value: "business-outcomes", label: "Business Outcomes", summary: "Fusion development (IT + business), faster app delivery with Dataverse + connectors, unified data and AI-driven insights." , imageSrc: "/outcomes.svg" },
+                      { value: "use-cases-industries", label: "Use Cases & Industries", summary: "Frontline apps, approvals, inspections; sales, service, marketing; finance, supply chain, projects." , imageSrc: "/usecases.svg" },
                     ]}
                   />
                 </TabsContent>

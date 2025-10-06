@@ -236,3 +236,40 @@
 .lcnc-card .body p {
   color: var(--text);
 }
+
+/* Tabs animations */
+.tabs-content-anim {
+  overflow: hidden;
+  position: relative;
+}
+.tabs-content-anim > .tabs-content-inner {
+  will-change: transform, opacity;
+}
+.tabs-content-anim[data-state='active'] > .tabs-content-inner {
+  animation: tabSlideIn 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.tabs-content-anim[data-state='inactive'] > .tabs-content-inner {
+  animation: tabSlideOut 0.28s ease both;
+}
+
+@keyframes tabSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes tabSlideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+}
