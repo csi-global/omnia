@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function AboutSection() {
   return (
@@ -43,7 +44,7 @@ export default function AboutSection() {
                 </div>
                 <div className="about-author">
                   <div className="main-button">
-                    <a href="/#core-values"> <span className="theme-btn"> Read More </span><span className="arrow-btn"><i className="icon-arrow-right"></i></span></a>
+                    <Link href="/#core-values"> <span className="theme-btn"> Read More </span><span className="arrow-btn"><i className="icon-arrow-right"></i></span></Link>
                   </div>
                 </div>
               </div>
