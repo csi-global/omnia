@@ -2,6 +2,7 @@
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Image from "next/image";
+import { useRef } from "react";
 
 type SummaryTab = {
   value: string;
@@ -18,6 +19,7 @@ type HeroSummaryTabsProps = {
 };
 
 export default function HeroSummaryTabs({ tabs, className, reverse }: HeroSummaryTabsProps) {
+  const listRef = useRef<HTMLDivElement>(null);
   const first = tabs[0]?.value ?? "tab-1";
   return (
     <section className={className}>
@@ -49,17 +51,22 @@ export default function HeroSummaryTabs({ tabs, className, reverse }: HeroSummar
           ))}
 
           <div className="flex justify-center mt-4">
-            <TabsList className="w-fit justify-center gap-2 rounded-4 bg-[#f4f4f4] p-1 border-0">
-              {tabs.map((t) => (
-                <TabsTrigger
-                  key={t.value}
-                  value={t.value}
-                  className="tabs-trigger-anim relative overflow-hidden rounded-4 px-5 py-3 text-[14px] font-semibold text-foreground/90 border-0 mb-0 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:text-foreground data-[state=active]:-translate-y-0.5 data-[state=active]:!bg-red-500 data-[state=active]:text-white after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-full after:origin-left after:scale-x-0 after:bg-[var(--theme)] after:transition-transform after:duration-300 data-[state=active]:after:scale-x-100"
-                >
-                  {t.label}
-                </TabsTrigger>
-              ))}
-            </TabsList>
+            <div className="relative w-full md:w-auto">
+              <TabsList
+                ref={listRef}
+                className="w-full md:w-fit justify-start md:justify-center gap-2 rounded-4 bg-[#f4f4f4] p-1 border-0 flex overflow-x-auto md:overflow-visible flex-nowrap scroll-smooth px-8 md:px-1"
+              >
+                {tabs.map((t) => (
+                  <TabsTrigger
+                    key={t.value}
+                    value={t.value}
+                    className="tabs-trigger-anim relative overflow-hidden rounded-4 px-3 py-2 text-[12px] sm:px-4 sm:py-2.5 sm:text-[13px] md:px-5 md:py-3 md:text-[14px] whitespace-nowrap shrink-0 font-semibold text-foreground/90 border-0 mb-0 transition-all duration-300 ease-out hover:text-foreground data-[state=active]:!bg-red-500 data-[state=active]:text-white after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-full after:origin-left after:scale-x-0 after:bg-[var(--theme)] after:transition-transform after:duration-300 data-[state=active]:after:scale-x-100"
+                  >
+                    {t.label}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+            </div>
           </div>
         </Tabs>
       </div>

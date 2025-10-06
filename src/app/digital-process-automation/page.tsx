@@ -75,11 +75,28 @@ export default function DigitalProcessAutomationPage() {
 
               {/* Tabs */}
               <Tabs defaultValue="pega">
-                <TabsList>
-                  <TabsTrigger value="pega">Pega</TabsTrigger>
-                  <TabsTrigger value="servicenow">ServiceNow</TabsTrigger>
-                  <TabsTrigger value="microsoft">Microsoft (Power Platform & Dynamics 365)</TabsTrigger>
-                </TabsList>
+                <div className="flex justify-center">
+                  <TabsList className="w-full md:w-fit justify-start md:justify-center gap-2 rounded-4 bg-[#f4f4f4] p-1 border-0 flex overflow-x-auto md:overflow-visible flex-nowrap scroll-smooth">
+                    <TabsTrigger
+                      value="pega"
+                      className="tabs-trigger-anim relative overflow-hidden rounded-4 px-3 py-2 text-[12px] sm:px-4 sm:py-2.5 sm:text-[13px] md:px-5 md:py-3 md:text-[14px] whitespace-nowrap shrink-0 font-semibold text-foreground/90 border-0 mb-0 transition-all duration-300 ease-out hover:text-foreground data-[state=active]:!bg-red-500 data-[state=active]:text-white after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-full after:origin-left after:scale-x-0 after:bg-[var(--theme)] after:transition-transform after:duration-300 data-[state=active]:after:scale-x-100"
+                    >
+                      Pega
+                    </TabsTrigger>
+                    <TabsTrigger
+                      value="servicenow"
+                      className="tabs-trigger-anim relative overflow-hidden rounded-4 px-3 py-2 text-[12px] sm:px-4 sm:py-2.5 sm:text-[13px] md:px-5 md:py-3 md:text-[14px] whitespace-nowrap shrink-0 font-semibold text-foreground/90 border-0 mb-0 transition-all duration-300 ease-out hover:text-foreground data-[state=active]:!bg-red-500 data-[state=active]:text-white after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-full after:origin-left after:scale-x-0 after:bg-[var(--theme)] after:transition-transform after:duration-300 data-[state=active]:after:scale-x-100"
+                    >
+                      ServiceNow
+                    </TabsTrigger>
+                    <TabsTrigger
+                      value="microsoft"
+                      className="tabs-trigger-anim relative overflow-hidden rounded-4 px-3 py-2 text-[12px] sm:px-4 sm:py-2.5 sm:text-[13px] md:px-5 md:py-3 md:text-[14px] whitespace-nowrap shrink-0 font-semibold text-foreground/90 border-0 mb-0 transition-all duration-300 ease-out hover:text-foreground data-[state=active]:!bg-red-500 data-[state=active]:text-white after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-full after:origin-left after:scale-x-0 after:bg-[var(--theme)] after:transition-transform after:duration-300 data-[state=active]:after:scale-x-100"
+                    >
+                      Microsoft
+                    </TabsTrigger>
+                  </TabsList>
+                </div>
 
                 {/* Pega */}
                 <TabsContent value="pega">
@@ -151,17 +168,17 @@ export default function DigitalProcessAutomationPage() {
                   <HeroSummaryTabs
                     className="pt-2"
                     tabs={[
-                      { value: "products-functions", label: "Products & Functions", summary: "App Engine, ITSM/ITOM/ITAM, HRSD, CSM, GRC; IntegrationHub and Automation Engine (RPA)." , imageSrc: "/product.svg" },
-                      { value: "dev-methodology", label: "Development Methodology", summary: "Scoped apps, CICD, Dev/Test/Prod promotion; citizen developer guardrails and governance." , imageSrc: "/development.svg" },
-                      { value: "hosting-integrations", label: "Hosting & Integrations", summary: "Native SaaS regions; IntegrationHub spokes, REST/SOAP, MID Server for on‑prem integrations." , imageSrc: "/hosting.svg" },
+                      { value: "products-functions", label: "Products & Functions", summary: "App Engine, ITSM/ITOM/ITAM, HRSD, CSM, GRC; IntegrationHub and Automation Engine (RPA).", imageSrc: "/product.svg" },
+                      { value: "dev-methodology", label: "Development Methodology", summary: "Scoped apps, CICD, Dev/Test/Prod promotion; citizen developer guardrails and governance.", imageSrc: "/development.svg" },
+                      { value: "hosting-integrations", label: "Hosting & Integrations", summary: "Native SaaS regions; IntegrationHub spokes, REST/SOAP, MID Server for on‑prem integrations.", imageSrc: "/hosting.svg" },
                     ]}
                   />
                   <HeroSummaryTabs
                     className="pt-2"
                     tabs={[
-                      { value: "governance", label: "Governance, Security, & Compliance", summary: "Instance governance, update sets, pipelines; SSO, encryption, data policies; platform security certifications." , imageSrc: "/compliance.svg" },
-                      { value: "business-outcomes", label: "Business Outcomes", summary: "Rapid workflow digitization and scale; lower development cost via App Engine + guardrails; better service experiences." , imageSrc: "/outcomes.svg" },
-                      { value: "use-cases-industries", label: "Use Cases & Industries", summary: "ITSM/ITOM, HR services, employee workflows; customer service, field service, operations; GRC, risk, and audit." , imageSrc: "/usecases.svg" },
+                      { value: "governance", label: "Governance, Security, & Compliance", summary: "Instance governance, update sets, pipelines; SSO, encryption, data policies; platform security certifications.", imageSrc: "/compliance.svg" },
+                      { value: "business-outcomes", label: "Business Outcomes", summary: "Rapid workflow digitization and scale; lower development cost via App Engine + guardrails; better service experiences.", imageSrc: "/outcomes.svg" },
+                      { value: "use-cases-industries", label: "Use Cases & Industries", summary: "ITSM/ITOM, HR services, employee workflows; customer service, field service, operations; GRC, risk, and audit.", imageSrc: "/usecases.svg" },
                     ]}
                   />
                 </TabsContent>
@@ -187,17 +204,17 @@ export default function DigitalProcessAutomationPage() {
                   <HeroSummaryTabs
                     className="pt-2 mt-4"
                     tabs={[
-                      { value: "products-functions", label: "Products & Functions", summary: "Power Platform (Apps, Automate, BI, Pages, Copilot); Dynamics 365 on Dataverse; Azure services, API Management, Logic Apps." , imageSrc: "/product.svg" },
-                      { value: "dev-methodology", label: "Development Methodology", summary: "ALM with solutions, pipelines, environments; Center of Excellence for governance, DLP, monitoring." , imageSrc: "/development.svg" },
-                      { value: "hosting-integrations", label: "Hosting & Integrations", summary: "Microsoft cloud (Azure, M365, GCC); 1,000+ connectors, custom connectors, REST/OData, webhooks." , imageSrc: "/hosting.svg" },
+                      { value: "products-functions", label: "Products & Functions", summary: "Power Platform (Apps, Automate, BI, Pages, Copilot); Dynamics 365 on Dataverse; Azure services, API Management, Logic Apps.", imageSrc: "/product.svg" },
+                      { value: "dev-methodology", label: "Development Methodology", summary: "ALM with solutions, pipelines, environments; Center of Excellence for governance, DLP, monitoring.", imageSrc: "/development.svg" },
+                      { value: "hosting-integrations", label: "Hosting & Integrations", summary: "Microsoft cloud (Azure, M365, GCC); 1,000+ connectors, custom connectors, REST/OData, webhooks.", imageSrc: "/hosting.svg" },
                     ]}
                   />
                   <HeroSummaryTabs
                     className="pt-2 mt-4"
                     tabs={[
-                      { value: "governance", label: "Governance, Security, & Compliance", summary: "DLP policies, environment strategy, managed identities; Entra ID SSO and RBAC; monitoring, audit, solution-aware pipelines." , imageSrc: "/compliance.svg" },
-                      { value: "business-outcomes", label: "Business Outcomes", summary: "Fusion development (IT + business), faster app delivery with Dataverse + connectors, unified data and AI-driven insights." , imageSrc: "/outcomes.svg" },
-                      { value: "use-cases-industries", label: "Use Cases & Industries", summary: "Frontline apps, approvals, inspections; sales, service, marketing; finance, supply chain, projects." , imageSrc: "/usecases.svg" },
+                      { value: "governance", label: "Governance, Security, & Compliance", summary: "DLP policies, environment strategy, managed identities; Entra ID SSO and RBAC; monitoring, audit, solution-aware pipelines.", imageSrc: "/compliance.svg" },
+                      { value: "business-outcomes", label: "Business Outcomes", summary: "Fusion development (IT + business), faster app delivery with Dataverse + connectors, unified data and AI-driven insights.", imageSrc: "/outcomes.svg" },
+                      { value: "use-cases-industries", label: "Use Cases & Industries", summary: "Frontline apps, approvals, inspections; sales, service, marketing; finance, supply chain, projects.", imageSrc: "/usecases.svg" },
                     ]}
                   />
                 </TabsContent>
@@ -208,7 +225,7 @@ export default function DigitalProcessAutomationPage() {
                   <div className="lcnc-banner">
                     <h5>Related Platforms & Ecosystems</h5>
                     <p className="ecosystems">
-                      We also support Appian and Camunda, hosting them on ecosystems like AWS, Azure, and integrate using kafka, pub/sub, and more to deliver end-to-end outcomes.
+                      We also support Appian and Camunda, hosting them on ecosystems like AWS, Azure, and integrate using kafka, pub/sub and more to deliver end-to-end outcomes.
                     </p>
                   </div>
                 </div>
