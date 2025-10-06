@@ -15,7 +15,7 @@ export default function AboutSection() {
                 </div>
                 <p className="mt-3 mt-md-0">
                   A cloud consulting company
-                  Which focuses on IT automation and bringing about digital transformation for businesses. With over a decade's expertise, we believe in leveraging technology and innovation to build trust and foster long-lasting relationships with our customers.
+                  Which focuses on IT automation and bringing about digital transformation for businesses. With over a decade&apos;s expertise, we believe in leveraging technology and innovation to build trust and foster long-lasting relationships with our customers.
                 </p>
                 <div className="about-icon-items">
                   <div className="icon-items">

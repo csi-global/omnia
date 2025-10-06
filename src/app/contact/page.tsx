@@ -1,3 +1,4 @@
+import ServiceSelect from "@/components/ServiceSelect";
 import type { Metadata } from 'next';
 import Link from "next/link";
 
@@ -155,21 +156,7 @@ export default function ContactPage() {
                       <div className="col-lg-12">
                         <div className="form-clt">
                           <div className="form">
-                            <select name="service" className="single-select w-100" required>
-                              <option value="">Select Service</option>
-                              <option value="cloud-assessment">Cloud Assessment</option>
-                              <option value="cyber-security">Cyber Security</option>
-                              <option value="digital-process-automation">Digital Process Automation</option>
-                              <option value="sharepoint-development">SharePoint Development</option>
-                              <option value="digital-transformation">Digital Transformation</option>
-                              <option value="it-consulting">IT Consulting</option>
-                              <option value="cloud-migration">Cloud Migration</option>
-                              <option value="managed-cloud-desk">Managed Cloud Desk</option>
-                              <option value="managed-microsoft-365">Managed Microsoft 365</option>
-                              <option value="managed-microsoft-azure">Managed Microsoft Azure</option>
-                              <option value="surface-as-a-service">Surface as a Service</option>
-                              <option value="other">Other</option>
-                            </select>
+                            <ServiceSelect />
                           </div>
                         </div>
                       </div>

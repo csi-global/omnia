@@ -1,18 +1,22 @@
+import Image from "next/image";
 import Link from "next/link";
+import footerColor from "../../public/assets/img/footer-color.webp";
+import footerColor2 from "../../public/assets/img/footer-color-2.webp";
+import blackLogo from "../../public/assets/img/logo/black-logo.webp";
 
 export default function Footer() {
   return (
     <footer className="footer-section section-bg">
       <div className="color-shape">
-        <img src="/assets/img/footer-color.webp" alt="img" />
+        <Image src={footerColor} alt="img" className="select-none" />
       </div>
       <div className="color-shape-2">
-        <img src="/assets/img/footer-color-2.webp" alt="img" />
+        <Image src={footerColor2} alt="img" className="select-none" />
       </div>
       <div className="container">
         <div className="footer-logo-area">
           <Link href="/" className="footer-logo">
-            <img src="/assets/img/logo/black-logo.webp" alt="img" />
+            <Image src={blackLogo} alt="img" className="select-none" />
           </Link>
           <div className="social-icon d-flex align-items-center">
             <a href="#"><i className="fab fa-facebook-f"></i></a>

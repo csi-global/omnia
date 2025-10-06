@@ -49,11 +49,10 @@ export default function DigitalProcessAutomationPage() {
         <div className="container">
           <div className="sertvice-details-wrapper">
             <div className="service-details-content">
-              <h2>Design, build, and automate at enterprise scale</h2>
               <p>
                 Accelerate delivery with Low Code / No Code platforms while maintaining enterprise-grade
                 governance and security. We help you modernize processes, digitize workflows, and connect
-                systems across Pega, ServiceNow, and Microsoft Power Platform + Dynamics 365.
+                systems across using Pega, ServiceNow, and Microsoft Power Platform + Dynamics 365.
               </p>
 
               <div className="row g-4 pt-4 pb-5 align-items-center">
@@ -209,7 +208,7 @@ export default function DigitalProcessAutomationPage() {
                   <div className="lcnc-banner">
                     <h5>Related Platforms & Ecosystems</h5>
                     <p className="ecosystems">
-                      We also support Appian and Camunda, and integrate with ecosystems like AWS, Azure, Salesforce, SAP, and more to deliver end-to-end outcomes.
+                      We also support Appian and Camunda, hosting them on ecosystems like AWS, Azure, and integrate using kafka, pub/sub, and more to deliver end-to-end outcomes.
                     </p>
                   </div>
                 </div>
