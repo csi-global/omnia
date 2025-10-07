@@ -131,7 +131,7 @@ export default function ServiceSelect({
       ref={containerRef}
       className={cn('w-100 relative', className)}
     >
-      <input type="hidden" name={name} value={selectedValue} />
+      <input type="hidden" name={name} value={selectedValue} required={required} />
       <button
         ref={buttonRef}
         id={labelId}

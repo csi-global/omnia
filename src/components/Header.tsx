@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
@@ -70,10 +71,10 @@ export default function Header() {
               <div className="header-main">
                 <div className="logo">
                   <Link href="/" className="header-logo">
-                    <img src="/assets/img/logo/white-logo.webp" alt="logo-img" />
+                    <Image src="/assets/img/logo/white-logo.webp" alt="logo-img" width={0} height={0} sizes="100vw" style={{ width: "auto", height: "40px" }} />
                   </Link>
                   <Link href="/" className="header-logo-2">
-                    <img src="/assets/img/logo/black-logo.webp" alt="logo-img" />
+                    <Image src="/assets/img/logo/black-logo.webp" alt="logo-img" width={0} height={0} sizes="100vw" style={{ width: "auto", height: "40px" }} />
                   </Link>
                 </div>
                 <div className="mean__menu-wrapper d-none d-xl-block">
@@ -133,7 +134,7 @@ export default function Header() {
               <div className="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
                 <div className="offcanvas__logo">
                   <Link href="/">
-                    <img src="/assets/img/logo/black-logo.webp" alt="logo-img" />
+                    <Image src="/assets/img/logo/black-logo.webp" alt="logo-img" width={0} height={0} sizes="100vw" style={{ width: "auto", height: "32px" }} />
                   </Link>
                 </div>
                 <div className="offcanvas__close">

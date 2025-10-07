@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -57,7 +58,7 @@ export default function ManagedServicesCarousel() {
               <div className="testimonial-card-items">
                 <div className="client-info">
                   <div className="client-img">
-                    <img src={item.image} alt={item.title} />
+                    <Image src={item.image} alt={item.title} width={0} height={0} sizes="100vw" style={{ width: "100%", height: "auto" }} />
                   </div>
                   <div className="client-content">
                     <h3>{item.title}</h3>

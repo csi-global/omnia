@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -55,7 +56,7 @@ export default function ItConsultingPage() {
               <div className="row g-4 pt-4 pb-5 align-items-center">
                 <div className="col-md-6">
                   <div className="thumb">
-                    <img src="/assets/img/service/1.webp" alt="IT Consulting Services" />
+                    <Image src="/assets/img/service/1.webp" alt="IT Consulting Services" width={0} height={0} sizes="100vw" style={{ width: "100%", height: "auto" }} />
                   </div>
                 </div>
                 <div className="col-md-6">

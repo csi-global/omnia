@@ -1,6 +1,7 @@
 import HeroSummaryTabs from "@/components/HeroSummaryTabs";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import type { Metadata } from 'next';
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -58,7 +59,7 @@ export default function DigitalProcessAutomationPage() {
               <div className="row g-4 pt-4 pb-5 align-items-center">
                 <div className="col-md-6">
                   <div className="thumb">
-                    <img src="/assets/img/service/3.webp" alt="Digital process automation illustration" />
+                    <Image src="/assets/img/service/3.webp" alt="Digital process automation illustration" width={0} height={0} sizes="100vw" style={{ width: "100%", height: "auto" }} />
                   </div>
                 </div>
                 <div className="col-md-6">
@@ -107,21 +108,21 @@ export default function DigitalProcessAutomationPage() {
                       <h4>Design once. Orchestrate everywhere.</h4>
                       <p>Scale Digital Process Automation with guardrails, case management, and AI decisioning.</p>
                     </div>
-                    <img src="/assets/img/service/1.webp" alt="Pega platform" />
+                    <Image src="/assets/img/service/1.webp" alt="Pega platform" width={0} height={0} sizes="100vw" style={{ width: "100%", height: "auto" }} />
                   </div>
                   <div className="row g-4">
                     <div className="col-12">
                       <div className="lcnc-cards">
                         <div className="lcnc-card">
-                          <div className="media"><img src="/assets/img/service/4.webp" alt="Pega case management" /></div>
+                          <div className="media"><Image src="/assets/img/service/4.webp" alt="Pega case management" width={0} height={0} sizes="100vw" style={{ width: "100%", height: "auto" }} /></div>
                           <div className="body"><h4>Case Management</h4><p>End-to-end lifecycle with SLAs, escalations, and reusable case types.</p></div>
                         </div>
                         <div className="lcnc-card">
-                          <div className="media"><img src="/assets/img/service/5.webp" alt="Pega AI decisioning" /></div>
+                          <div className="media"><Image src="/assets/img/service/5.webp" alt="Pega AI decisioning" width={0} height={0} sizes="100vw" style={{ width: "100%", height: "auto" }} /></div>
                           <div className="body"><h4>AI Decisioning</h4><p>Next-best-action, business rules, and predictive analytics at scale.</p></div>
                         </div>
                         <div className="lcnc-card">
-                          <div className="media"><img src="/assets/img/service/3.webp" alt="Pega RPA and orchestration" /></div>
+                          <div className="media"><Image src="/assets/img/service/3.webp" alt="Pega RPA and orchestration" width={0} height={0} sizes="100vw" style={{ width: "100%", height: "auto" }} /></div>
                           <div className="body"><h4>RPA & Orchestration</h4><p>Blend human work with bots and integrations for faster throughput.</p></div>
                         </div>
                       </div>
@@ -153,14 +154,14 @@ export default function DigitalProcessAutomationPage() {
                   <p className="mb-4">Rapidly digitize workflows with App Engine, Flow Designer, and IntegrationHub—on a secure, compliant SaaS platform.</p>
                   <div className="tab-hero">
                     <div className="copy"><h4>From tickets to outcomes.</h4><p>Build modern experiences on the Now Platform with secure, governed low-code.</p></div>
-                    <img src="/assets/img/service/2.webp" alt="ServiceNow App Engine" />
+                    <Image src="/assets/img/service/2.webp" alt="ServiceNow App Engine" width={0} height={0} sizes="100vw" style={{ width: "100%", height: "auto" }} />
                   </div>
                   <div className="row g-4">
                     <div className="col-12">
                       <div className="lcnc-cards">
-                        <div className="lcnc-card"><div className="media"><img src="/assets/img/service/22.webp" alt="ServiceNow workflows" /></div><div className="body"><h4>Workflow Apps</h4><p>Digitize tasks, records, and SLAs with Flow Designer and UI Builder.</p></div></div>
-                        <div className="lcnc-card"><div className="media"><img src="/assets/img/service/2.webp" alt="IntegrationHub spokes" /></div><div className="body"><h4>IntegrationHub</h4><p>Connect to enterprise systems using spokes, REST/SOAP, and MID Server.</p></div></div>
-                        <div className="lcnc-card"><div className="media"><img src="/assets/img/service/01.webp" alt="Automation Engine RPA" /></div><div className="body"><h4>Automation Engine</h4><p>RPA and orchestration to remove repetitive work across teams.</p></div></div>
+                        <div className="lcnc-card"><div className="media"><Image src="/assets/img/service/22.webp" alt="ServiceNow workflows" width={0} height={0} sizes="100vw" style={{ width: "100%", height: "auto" }} /></div><div className="body"><h4>Workflow Apps</h4><p>Digitize tasks, records, and SLAs with Flow Designer and UI Builder.</p></div></div>
+                        <div className="lcnc-card"><div className="media"><Image src="/assets/img/service/2.webp" alt="IntegrationHub spokes" width={0} height={0} sizes="100vw" style={{ width: "100%", height: "auto" }} /></div><div className="body"><h4>IntegrationHub</h4><p>Connect to enterprise systems using spokes, REST/SOAP, and MID Server.</p></div></div>
+                        <div className="lcnc-card"><div className="media"><Image src="/assets/img/service/01.webp" alt="Automation Engine RPA" width={0} height={0} sizes="100vw" style={{ width: "100%", height: "auto" }} /></div><div className="body"><h4>Automation Engine</h4><p>RPA and orchestration to remove repetitive work across teams.</p></div></div>
                       </div>
                     </div>
                   </div>
@@ -189,14 +190,14 @@ export default function DigitalProcessAutomationPage() {
                   <p className="mb-4">Empower fusion teams with low-code tools on Azure. Build apps, automate processes, analyze data, and digitize customer/employee experiences.</p>
                   <div className="tab-hero">
                     <div className="copy"><h4>Ship faster with Power + Azure.</h4><p>Canvas and model-driven apps on Dataverse with 1,000+ connectors and Copilot.</p></div>
-                    <img src="/assets/img/service/6.webp" alt="Microsoft Power Platform" />
+                    <Image src="/assets/img/service/6.webp" alt="Microsoft Power Platform" width={0} height={0} sizes="100vw" style={{ width: "100%", height: "auto" }} />
                   </div>
                   <div className="row g-4">
                     <div className="col-12">
                       <div className="lcnc-cards">
-                        <div className="lcnc-card"><div className="media"><img src="/assets/img/service/6.webp" alt="Power Apps" /></div><div className="body"><h4>Power Apps</h4><p>Canvas and model-driven apps on Dataverse for enterprise UX.</p></div></div>
-                        <div className="lcnc-card"><div className="media"><img src="/assets/img/service/4.webp" alt="Power Automate" /></div><div className="body"><h4>Power Automate</h4><p>Automate processes with flows, approvals, RPA, and connectors.</p></div></div>
-                        <div className="lcnc-card"><div className="media"><img src="/assets/img/service/01.webp" alt="Dynamics 365" /></div><div className="body"><h4>Dynamics 365</h4><p>Sales, service, field, finance, and supply chain on Dataverse.</p></div></div>
+                        <div className="lcnc-card"><div className="media"><Image src="/assets/img/service/6.webp" alt="Power Apps" width={0} height={0} sizes="100vw" style={{ width: "100%", height: "auto" }} /></div><div className="body"><h4>Power Apps</h4><p>Canvas and model-driven apps on Dataverse for enterprise UX.</p></div></div>
+                        <div className="lcnc-card"><div className="media"><Image src="/assets/img/service/4.webp" alt="Power Automate" width={0} height={0} sizes="100vw" style={{ width: "100%", height: "auto" }} /></div><div className="body"><h4>Power Automate</h4><p>Automate processes with flows, approvals, RPA, and connectors.</p></div></div>
+                        <div className="lcnc-card"><div className="media"><Image src="/assets/img/service/01.webp" alt="Dynamics 365" width={0} height={0} sizes="100vw" style={{ width: "100%", height: "auto" }} /></div><div className="body"><h4>Dynamics 365</h4><p>Sales, service, field, finance, and supply chain on Dataverse.</p></div></div>
                       </div>
                     </div>
                   </div>

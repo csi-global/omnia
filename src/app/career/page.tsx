@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -67,10 +68,13 @@ export default function CareerPage() {
               {/* Main image */}
               <div className="relative rounded-3xl bg-white/90 p-2 shadow-lg sm:shadow-2xl">
                 <div className="overflow-hidden rounded-2xl">
-                  <img
+                  <Image
                     src="/assets/img/career/career-1.webp"
                     alt="Team placeholder"
                     className="block w-full h-auto aspect-[16/9] object-contain"
+                    width={0}
+                    height={0}
+                    sizes="100vw"
                   />
                 </div>
               </div>
