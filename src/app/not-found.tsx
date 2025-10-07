@@ -43,7 +43,7 @@ export default function NotFound() {
 
             <h2 className="mt-4 text-2xl md:text-3xl font-semibold">Lost in the cloud</h2>
             <p className="mt-3 text-base md:text-lg text-[color:var(--muted-foreground)]">
-              The page you’re looking for drifted into the stratosphere. Let&apos;s guide you back to something amazing.
+              The page you&apos;re looking for drifted into the stratosphere. Let&apos;s guide you back to something amazing.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
