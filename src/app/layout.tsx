@@ -7,13 +7,22 @@ import "@/css/bootstrap.min.css";
 import "@/css/icomon.css";
 import "@/css/main.css";
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Poppins, Manrope } from "next/font/google";
 import "swiper/css";
 import "./globals.css";
 
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+  display: "swap",
+  fallback: ["system-ui", "arial"],
+});
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
+  display: "swap",
+  fallback: ["system-ui", "arial"],
 });
 
 export const metadata: Metadata = {
@@ -34,7 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.className} subpixel-antialiased`}
+        className={`${poppins.className} ${manrope.className} subpixel-antialiased`}
       >
         <Preloader />
         <BackToTopButton />

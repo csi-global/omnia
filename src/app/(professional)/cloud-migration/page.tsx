@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Cloud Migration | Omnia Services",
@@ -27,6 +28,7 @@ export const metadata: Metadata = {
 export default function CloudMigrationPage() {
   return (
     <div>
+      {/* Breadcrumb */}
       <div
         className="breadcrumb-wrapper bg-cover"
         style={{ backgroundImage: "url('/assets/img/breadcrumb.webp')" }}
@@ -42,244 +44,264 @@ export default function CloudMigrationPage() {
           </div>
         </div>
       </div>
+      {/* Hero */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(800px_400px_at_10%_0%,rgba(225,29,46,0.07),transparent_60%),radial-gradient(800px_400px_at_90%_10%,rgba(15,23,42,0.06),transparent_60%)]"></div>
+        <div className="container py-20 md:py-28">
+          <div className="row align-items-center g-4">
+            <div className="col-lg-7">
+              <p className="inline-flex items-center rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs font-semibold tracking-wide text-zinc-700">Professional Services</p>
+              <h1 className="mt-3 text-4xl md:text-5xl font-extrabold leading-tight text-zinc-900">Cloud Migration</h1>
+              <p className="mt-3 text-zinc-600 text-lg">Zero‑downtime strategies, secure landing zones, and modernization playbooks—delivered with observability and FinOps from day one.</p>
 
-      {/* Service Details Section */}
-      <section className="Service-details-section section-padding fix">
-        <div className="container">
-          <div className="sertvice-details-wrapper">
-            <div className="service-details-content">
-              <h2>Cloud Migration</h2>
-              <p>
-                Cloud Migration involves moving any workload from an on-premises environment, hosting facility, or other public cloud. This also includes migration of workloads such as applications, websites, databases, storage, physical or virtual servers, or entire data centers to the cloud.
-              </p>
-
-              <div className="row g-4 pt-4 pb-5 align-items-center">
-                <div className="col-md-6">
-                  <div className="thumb">
-                    <Image src="/assets/img/service/6.webp" alt="Cloud Migration Services" width={0} height={0} sizes="100vw" style={{ width: "100%", height: "auto" }} />
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="list-wrapper">
-                    <h3>WHY CLOUD MIGRATION?</h3>
-                    <p>
-                      With a Cloud implementation, you can set up a virtual office to give you the flexibility of connecting to your business anywhere, any time. With the growing number of web-enabled devices used in today&apos;s business environment, access to your data is even easier.
-                    </p>
-                  </div>
-                </div>
+              <div className="mt-5 d-flex gap-3">
+                <Link href="/contact" className="main-button"><span className="theme-btn">Talk to an Expert</span><span className="arrow-btn"><i className="icon-arrow-right"></i></span></Link>
+                <a href="#offerings" className="main-button secondary"><span className="theme-btn">Explore Offerings</span><span className="arrow-btn"><i className="icon-arrow-right"></i></span></a>
               </div>
 
-              {/* Cloud Assessment & Adoption Offerings */}
-              <div className="row g-4 mb-5">
-                <h3>Cloud Assessment & Adoption Offerings</h3>
-                <div className="col-xl-4 col-lg-6 col-md-6">
-                  <div className="service-details-box-items">
-                    <div className="content">
-                      <h3>Assessment & Feasibility Study</h3>
-                      <p>
-                        Omnia offers a Cloud Assessment and Feasibility Service wherein you can decide if moving to Cloud or optimizing your current infrastructure is the correct option for your organization.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-xl-4 col-lg-6 col-md-6">
-                  <div className="service-details-box-items">
-                    <div className="content">
-                      <h3>Cloud Platform Evaluation</h3>
-                      <p>
-                        The evaluation of the Cloud platform is a service required in order to understand performance metrics and provide a comprehensive guideline in order to make a concrete decision about Cloud service adoption.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-xl-4 col-lg-6 col-md-6">
-                  <div className="service-details-box-items">
-                    <div className="content">
-                      <h3>Readiness Assessment</h3>
-                      <p>
-                        A proper Cloud Readiness Assessment can help you by creating and delivering concrete cloud migration plans as well as identify processes.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="row g-4 mb-5">
-                <div className="col-xl-4 col-lg-6 col-md-6">
-                  <div className="service-details-box-items">
-                    <div className="content">
-                      <h3>Cloud Transformation Roadmap</h3>
-                      <p>
-                        At Omnia our comprehensive suite of enterprise cloud solutions - from cloud adoption to cloud migration, to managed cloud services - helps organizations accelerate their digital transformation journey.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-xl-4 col-lg-6 col-md-6">
-                  <div className="service-details-box-items">
-                    <div className="content">
-                      <h3>Cloud Strategy & Planning</h3>
-                      <p>
-                        Our cloud strategy and planning services help you develop a comprehensive roadmap for cloud adoption, including cost optimization, security considerations, and scalability planning.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-xl-4 col-lg-6 col-md-6">
-                  <div className="service-details-box-items">
-                    <div className="content">
-                      <h3>Migration Execution</h3>
-                      <p>
-                        Professional execution of cloud migration projects with minimal downtime, ensuring business continuity and optimal performance in the new cloud environment.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Migration Process Section */}
-              <section className="section-padding bg-light fix">
-                <div className="container">
-                  <div className="row">
-                    <div className="col-lg-8 mx-auto">
-                      <div className="section-title text-center">
-                        <h2>Our Cloud Migration Process</h2>
-                        <p>
-                          A structured approach to ensure successful cloud migration with minimal risk and maximum efficiency.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="row g-4 pt-4">
-                    <div className="col-lg-3 col-md-6">
-                      <div className="migration-process-item text-center">
-                        <div className="icon">
-                          <i className="fas fa-search"></i>
-                        </div>
-                        <h4>Discovery & Assessment</h4>
-                        <p>
-                          Comprehensive analysis of your current infrastructure, applications, and dependencies to create a detailed migration plan.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="col-lg-3 col-md-6">
-                      <div className="migration-process-item text-center">
-                        <div className="icon">
-                          <i className="fas fa-drafting-compass"></i>
-                        </div>
-                        <h4>Planning & Design</h4>
-                        <p>
-                          Detailed migration strategy, timeline, and architecture design tailored to your specific business requirements and goals.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="col-lg-3 col-md-6">
-                      <div className="migration-process-item text-center">
-                        <div className="icon">
-                          <i className="fas fa-cogs"></i>
-                        </div>
-                        <h4>Migration Execution</h4>
-                        <p>
-                          Seamless execution of the migration plan with minimal downtime, ensuring business continuity throughout the process.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="col-lg-3 col-md-6">
-                      <div className="migration-process-item text-center">
-                        <div className="icon">
-                          <i className="fas fa-check-circle"></i>
-                        </div>
-                        <h4>Optimization & Support</h4>
-                        <p>
-                          Post-migration optimization, monitoring, and ongoing support to ensure optimal performance and cost efficiency.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-              {/* Cloud Platforms Section */}
-              <section className="section-padding fix">
-                <div className="container">
-                  <div className="row">
-                    <div className="col-lg-8 mx-auto">
-                      <div className="section-title text-center">
-                        <h2>Cloud Platforms We Support</h2>
-                        <p>
-                          Expert migration services across all major cloud platforms with specialized knowledge and best practices.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="row g-4 pt-4">
-                    <div className="col-lg-4 col-md-6">
-                      <div className="cloud-platform-item text-center">
-                        <div className="icon">
-                          <i className="fab fa-aws"></i>
-                        </div>
-                        <h4>Amazon Web Services (AWS)</h4>
-                        <p>
-                          Complete AWS migration services including EC2, RDS, S3, Lambda, and container services with cost optimization strategies.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="col-lg-4 col-md-6">
-                      <div className="cloud-platform-item text-center">
-                        <div className="icon">
-                          <i className="fab fa-microsoft"></i>
-                        </div>
-                        <h4>Microsoft Azure</h4>
-                        <p>
-                          Azure migration expertise covering virtual machines, databases, AI/ML services, and hybrid cloud solutions for enterprise workloads.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="col-lg-4 col-md-6">
-                      <div className="cloud-platform-item text-center">
-                        <div className="icon">
-                          <i className="fab fa-google"></i>
-                        </div>
-                        <h4>Google Cloud Platform</h4>
-                        <p>
-                          GCP migration services including Compute Engine, Cloud SQL, BigQuery, and advanced analytics and machine learning capabilities.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-              {/* CTA Section */}
-              <div className="row g-4 pt-4">
-                <div className="col-12">
-                  <div className="lcnc-banner">
-                    <h5>Ready to Migrate to the Cloud?</h5>
-                    <p className="ecosystems">
-                      Get started with a comprehensive cloud assessment and migration strategy. Our experts will help you choose the right cloud platform and execute a seamless migration with minimal risk and downtime.
-                    </p>
-                    <div className="main-button mt-3">
-                      <Link href="/contact">
-                        <span className="theme-btn">Start Your Cloud Journey</span>
-                        <span className="arrow-btn">
-                          <i className="icon-arrow-right"></i>
-                        </span>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
+              <ul className="mt-5 d-flex flex-wrap gap-2 text-sm text-zinc-700">
+                <li className="px-3 py-1 rounded-full bg-white border">Zero‑downtime</li>
+                <li className="px-3 py-1 rounded-full bg-white border">Security‑first</li>
+                <li className="px-3 py-1 rounded-full bg-white border">FinOps</li>
+              </ul>
+            </div>
+            <div className="col-lg-5">
+              <div className="rounded-3xl overflow-hidden h-[320px] md:h-[380px] relative">
+                <Image
+                  src="/assets/img/cloud-migration/cloud-migration.webp"
+                  alt="Cloud migration overview"
+                  fill
+                  sizes="(max-width: 992px) 100vw, 40vw"
+                  style={{ objectFit: "cover" }}
+                  priority
+                />
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Offerings Bento Grid */}
+      <section id="offerings" className="section-padding fix">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-10 mx-auto">
+              <div className="section-title text-center">
+                <h2 className="!text-5xl font-bold !mb-3">Cloud Assessment & Migration Offerings</h2>
+                <p>Start with clarity, migrate with control, and optimize with confidence—end to end.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
+            <div className="bento-card rounded-2xl border border-zinc-200 bg-gradient-to-br from-[var(--theme)]/60 to-[var(--theme)]/90 p-6 md:col-span-2">
+              <h3 className="text-xl font-semibold text-zinc-900">Assessment & Feasibility</h3>
+              <p className="mt-2 text-zinc-50">Determine fit, risks, and ROI. Build a migration business case mapped to your KPIs.</p>
+              <div className="mt-4 rounded-xl overflow-hidden h-[180px] md:h-[300px] relative">
+                <Image
+                  src="/assets/img/cloud-migration/kpi.webp"
+                  alt="KPIs and feasibility visual"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 66vw"
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+            </div>
+            <div className="bento-card rounded-2xl border border-zinc-200 bg-white p-6">
+              <h3 className="text-xl font-semibold text-zinc-900">Platform Evaluation</h3>
+              <p className="mt-2 text-zinc-600">Benchmark AWS, Azure, and GCP against performance, cost, and compliance.</p>
+              <div className="mt-4 rounded-xl overflow-hidden h-[140px] md:h-[160px] relative">
+                <Image
+                  src="/assets/img/cloud-migration/benchmark.webp"
+                  alt="Cloud platform benchmarking"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+            </div>
+            <div className="bento-card rounded-2xl border border-zinc-200 bg-white p-6">
+              <h3 className="text-xl font-semibold text-zinc-900">Migration Execution</h3>
+              <p className="mt-2 text-zinc-600">Orchestrated waves with zero-downtime cutovers and automated validation.</p>
+              <div className="mt-4 rounded-xl overflow-hidden h-[160px] md:h-[200px] relative">
+                <Image
+                  src="/assets/img/cloud-migration/cloud-execution.webp"
+                  alt="Cloud platform execution"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+            </div>
+            <div className="bento-card rounded-2xl border border-zinc-200 bg-gradient-to-br from-[var(--theme)]/60 to-[var(--theme)]/90 p-6 md:col-span-2">
+              <h3 className="text-xl font-semibold text-zinc-900">Strategy & Roadmap</h3>
+              <p className="mt-2 text-zinc-50">Milestones, guardrails, and architecture patterns tailored to your estate.</p>
+              <div className="mt-4 rounded-xl overflow-hidden h-[200px] md:h-[250px] relative">
+                <Image
+                  src="/assets/img/cloud-migration/strategy.webp"
+                  alt="Cloud migration strategy"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 66vw"
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Process */}
+      <section className="section-padding bg-light fix">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-8 mx-auto">
+              <div className="section-title text-center">
+                <h2 className="!text-5xl font-bold !mb-3">Our Cloud Migration Process</h2>
+                <p>A proven path from discovery to steady-state excellence.</p>
+              </div>
+            </div>
+          </div>
+          <div className="row g-4 pt-4">
+            {[
+              { icon: "fas fa-search", title: "Discovery & Assessment", text: "Analyze inventory, dependencies, and constraints." },
+              { icon: "fas fa-drafting-compass", title: "Planning & Design", text: "Target architecture, guardrails, and timeline." },
+              { icon: "fas fa-cogs", title: "Migration Execution", text: "Automated waves with zero-downtime cutovers." },
+              { icon: "fas fa-check-circle", title: "Optimization & Support", text: "Observability, cost controls, and SRE support." },
+            ].map((step, idx) => (
+              <div key={idx} className="col-lg-3 col-md-6">
+                <div className="rise-card bento-card text-center rounded-2xl border border-zinc-200 bg-white p-6 h-100">
+                  <div className="icon text-[var(--theme)] text-2xl"><i className={step.icon}></i></div>
+                  <h4 className="mt-2">{step.title}</h4>
+                  <p className="text-zinc-600 text-sm">{step.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Platforms */}
+      <section className="section-padding fix">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-8 mx-auto">
+              <div className="section-title text-center">
+                <h2 className="!text-5xl font-bold !mb-3">Cloud Platforms We Support</h2>
+                <p>Expertise across AWS, Azure, and GCP—choose the right platform for your goals.</p>
+              </div>
+            </div>
+          </div>
+          <div className="row g-4 pt-4">
+            {[
+              { icon: "fab fa-aws", title: "Amazon Web Services", text: "EC2, RDS, S3, Lambda, EKS with FinOps." },
+              { icon: "fab fa-microsoft", title: "Microsoft Azure", text: "VMs, SQL, AKS, hybrid patterns for enterprise." },
+              { icon: "fab fa-google", title: "Google Cloud Platform", text: "GCE, Cloud SQL, GKE, BigQuery analytics." },
+            ].map((p, i) => (
+              <div key={i} className="col-lg-4 col-md-6">
+                <div className="bento-card text-center rounded-2xl border border-zinc-200 bg-white p-6 h-100">
+                  <div className="icon text-3xl text-[var(--theme)]"><i className={p.icon}></i></div>
+                  <h4 className="mt-2">{p.title}</h4>
+                  <p className="text-zinc-600 text-sm">{p.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="section-padding bg-light fix mb-4">
+        <div className="container">
+          <div className="row align-items-start g-5">
+            <div className="col-lg-5">
+              <span className="inline-flex items-center rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs font-semibold tracking-wide text-zinc-700">FAQ</span>
+              <h2 className="mt-3 !text-5xl font-bold !mb-3">Frequently Asked Questions</h2>
+              <p className="text-zinc-600">We compiled a list of answers to address the most pressing questions regarding our services.</p>
+            </div>
+            <div className="col-lg-7">
+              <div className="faq-accordion">
+                <details open>
+                  <summary>
+                    How do you minimize downtime?
+                    <span>
+                      <i className="fa-solid fa-plus icon-plus"></i>
+                      <i className="fa-solid fa-minus icon-minus"></i>
+                    </span>
+                  </summary>
+                  <div className="answer">We design cutovers with blue/green or canary strategies and rehearsal runs.</div>
+                </details>
+                <details>
+                  <summary>
+                    What about security and compliance?
+                    <span>
+                      <i className="fa-solid fa-plus icon-plus"></i>
+                      <i className="fa-solid fa-minus icon-minus"></i>
+                    </span>
+                  </summary>
+                  <div className="answer">Controls map to your frameworks (e.g., ISO 27001) with continuous validation.</div>
+                </details>
+                <details>
+                  <summary>
+                    How do you control costs?
+                    <span>
+                      <i className="fa-solid fa-plus icon-plus"></i>
+                      <i className="fa-solid fa-minus icon-minus"></i>
+                    </span>
+                  </summary>
+                  <div className="answer">Right-sizing, reserved capacity, and showback policies are part of our FinOps.</div>
+                </details>
+                <details>
+                  <summary>
+                    Can you help post-migration?
+                    <span>
+                      <i className="fa-solid fa-plus icon-plus"></i>
+                      <i className="fa-solid fa-minus icon-minus"></i>
+                    </span>
+                  </summary>
+                  <div className="answer">Yes—SRE support, observability, and continuous optimization.</div>
+                </details>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="section-padding pt-0">
+        <div className="container">
+          <div className="lcnc-banner">
+            <h5>Ready to Migrate to the Cloud?</h5>
+            <p className="ecosystems">Get started with an assessment and roadmap tailored to your goals.</p>
+            <div className="main-button mt-3">
+              <Link href="/contact"><span className="theme-btn">Start Your Journey</span><span className="arrow-btn"><i className="icon-arrow-right"></i></span></Link>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* JSON-LD structured data */}
+      <Script id="ld-service" type="application/ld+json" dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Cloud Migration",
+          "provider": { "@type": "Organization", "name": "Omnia Services" },
+          "areaServed": "Global",
+          "serviceType": "Cloud Migration",
+          "description": "Zero‑downtime cloud migration with security and FinOps.",
+        })
+      }} />
+      <Script id="ld-faq" type="application/ld+json" dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "How do you minimize downtime?", "acceptedAnswer": { "@type": "Answer", "text": "Blue/green or canary cutovers with rehearsal runs." } },
+            { "@type": "Question", "name": "What about security and compliance?", "acceptedAnswer": { "@type": "Answer", "text": "Controls map to frameworks like ISO 27001 with continuous validation." } },
+            { "@type": "Question", "name": "How do you control costs?", "acceptedAnswer": { "@type": "Answer", "text": "Right‑sizing, reserved capacity, and showback as part of FinOps." } },
+            { "@type": "Question", "name": "Can you help post‑migration?", "acceptedAnswer": { "@type": "Answer", "text": "SRE support, observability, and continuous optimization." } }
+          ]
+        })
+      }} />
     </div>
   );
 }

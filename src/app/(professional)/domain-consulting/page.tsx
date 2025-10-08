@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Domain Consulting | Omnia Services",
@@ -27,367 +28,66 @@ export const metadata: Metadata = {
 export default function DomainConsultingPage() {
   return (
     <div>
-      <div
-        className="breadcrumb-wrapper bg-cover"
-        style={{ backgroundImage: "url('/assets/img/breadcrumb.webp')" }}
-      >
-        <div className="container">
-          <div className="page-heading">
-            <h1>Domain Consulting</h1>
-            <ul className="breadcrumb-items">
-              <li><Link href="/">Home</Link></li>
-              <li><i className="fas fa-chevron-right"></i></li>
-              <li>Domain Consulting</li>
-            </ul>
-          </div>
-        </div>
+      {/* Breadcrumb */}
+      <div className="breadcrumb-wrapper bg-cover" style={{ backgroundImage: "url('/assets/img/breadcrumb.webp')" }}>
+        <div className="container"><div className="page-heading"><h1>Domain Consulting</h1><ul className="breadcrumb-items"><li><Link href="/">Home</Link></li><li><i className="fas fa-chevron-right"></i></li><li>Domain Consulting</li></ul></div></div>
       </div>
 
-      {/* Service Details Section */}
-      <section className="Service-details-section section-padding fix">
-        <div className="container">
-          <div className="sertvice-details-wrapper">
-            <div className="service-details-content">
-              <h2>Strategic Domain Consulting Services</h2>
-              <p>
-                Transform your business with expert domain consulting services that provide deep industry expertise and strategic guidance. Our domain consultants help organizations navigate complex business challenges, optimize processes, and leverage technology to achieve sustainable growth and competitive advantage.
-              </p>
-
-              <div className="row g-4 pt-4 pb-5 align-items-center">
-                <div className="col-md-6">
-                  <div className="thumb">
-                    <Image src="/assets/img/service/1.webp" alt="Domain Consulting Services" width={0} height={0} sizes="100vw" style={{ width: "100%", height: "auto" }} />
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="list-wrapper">
-                    <h3>Why Choose Our Domain Consulting?</h3>
-                    <p>
-                      Our domain consultants bring deep industry knowledge and technical expertise to help you solve complex business challenges, optimize operations, and drive digital transformation initiatives that deliver measurable results.
-                    </p>
-                    <ul className="list-items">
-                      <li><i className="fa-solid fa-angles-right"></i> Deep Industry Expertise</li>
-                      <li><i className="fa-solid fa-angles-right"></i> Strategic Business Guidance</li>
-                      <li><i className="fa-solid fa-angles-right"></i> Technology Integration</li>
-                      <li><i className="fa-solid fa-angles-right"></i> Process Optimization</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              {/* Domain Consulting Services */}
-              <div className="row g-4 mb-5">
-                <h3>Our Domain Consulting Services</h3>
-                <div className="col-xl-4 col-lg-6 col-md-6">
-                  <div className="service-details-box-items">
-                    <div className="content">
-                      <h3>Business Process Consulting</h3>
-                      <p>
-                        Comprehensive analysis and optimization of business processes to improve efficiency, reduce costs, and enhance customer satisfaction across all operational areas.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-xl-4 col-lg-6 col-md-6">
-                  <div className="service-details-box-items">
-                    <div className="content">
-                      <h3>Digital Strategy & Transformation</h3>
-                      <p>
-                        Strategic guidance for digital transformation initiatives including technology roadmaps, change management, and digital adoption strategies.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-xl-4 col-lg-6 col-md-6">
-                  <div className="service-details-box-items">
-                    <div className="content">
-                      <h3>Technology Architecture</h3>
-                      <p>
-                        Design and implementation of robust technology architectures that align with business objectives and support scalable growth.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="row g-4 mb-5">
-                <div className="col-xl-4 col-lg-6 col-md-6">
-                  <div className="service-details-box-items">
-                    <div className="content">
-                      <h3>Data Strategy & Analytics</h3>
-                      <p>
-                        Comprehensive data strategy development including data governance, analytics implementation, and business intelligence solutions.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-xl-4 col-lg-6 col-md-6">
-                  <div className="service-details-box-items">
-                    <div className="content">
-                      <h3>Compliance & Risk Management</h3>
-                      <p>
-                        Expert guidance on regulatory compliance, risk assessment, and governance frameworks to ensure business continuity and regulatory adherence.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-xl-4 col-lg-6 col-md-6">
-                  <div className="service-details-box-items">
-                    <div className="content">
-                      <h3>Change Management</h3>
-                      <p>
-                        Strategic change management support including stakeholder engagement, training programs, and adoption strategies for successful transformation.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Domain Expertise Areas */}
-              <section className="section-padding bg-light fix">
-                <div className="container">
-                  <div className="row">
-                    <div className="col-lg-8 mx-auto">
-                      <div className="section-title text-center">
-                        <h2>Domain Expertise Areas</h2>
-                        <p>
-                          Deep expertise across multiple business domains to provide comprehensive consulting solutions tailored to your industry and business needs.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="row g-4 pt-4">
-                    <div className="col-lg-3 col-md-6">
-                      <div className="domain-item text-center">
-                        <div className="icon">
-                          <i className="fas fa-chart-line"></i>
-                        </div>
-                        <h4>Finance & Banking</h4>
-                        <p>
-                          Specialized consulting for financial services including risk management, regulatory compliance, and digital banking transformation.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="col-lg-3 col-md-6">
-                      <div className="domain-item text-center">
-                        <div className="icon">
-                          <i className="fas fa-heartbeat"></i>
-                        </div>
-                        <h4>Healthcare & Life Sciences</h4>
-                        <p>
-                          Healthcare domain expertise including EHR implementation, HIPAA compliance, telemedicine, and healthcare analytics solutions.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="col-lg-3 col-md-6">
-                      <div className="domain-item text-center">
-                        <div className="icon">
-                          <i className="fas fa-industry"></i>
-                        </div>
-                        <h4>Manufacturing & Supply Chain</h4>
-                        <p>
-                          Manufacturing expertise including Industry 4.0, supply chain optimization, IoT integration, and production analytics.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="col-lg-3 col-md-6">
-                      <div className="domain-item text-center">
-                        <div className="icon">
-                          <i className="fas fa-shopping-cart"></i>
-                        </div>
-                        <h4>Retail & E-commerce</h4>
-                        <p>
-                          Retail domain consulting including omnichannel strategies, customer experience optimization, and digital commerce transformation.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-              {/* Consulting Methodology */}
-              <section className="section-padding fix">
-                <div className="container">
-                  <div className="row">
-                    <div className="col-lg-8 mx-auto">
-                      <div className="section-title text-center">
-                        <h2>Our Consulting Methodology</h2>
-                        <p>
-                          A proven approach to domain consulting that ensures successful project delivery and sustainable business outcomes.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="row g-4 pt-4">
-                    <div className="col-lg-3 col-md-6">
-                      <div className="methodology-item text-center">
-                        <div className="icon">
-                          <i className="fas fa-search"></i>
-                        </div>
-                        <h4>Discovery & Assessment</h4>
-                        <p>
-                          Comprehensive analysis of current state, business requirements, and challenges to understand the complete picture.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="col-lg-3 col-md-6">
-                      <div className="methodology-item text-center">
-                        <div className="icon">
-                          <i className="fas fa-drafting-compass"></i>
-                        </div>
-                        <h4>Strategy Development</h4>
-                        <p>
-                          Development of comprehensive strategies and roadmaps aligned with business objectives and industry best practices.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="col-lg-3 col-md-6">
-                      <div className="methodology-item text-center">
-                        <div className="icon">
-                          <i className="fas fa-rocket"></i>
-                        </div>
-                        <h4>Implementation Support</h4>
-                        <p>
-                          Hands-on support during implementation including project management, change management, and quality assurance.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="col-lg-3 col-md-6">
-                      <div className="methodology-item text-center">
-                        <div className="icon">
-                          <i className="fas fa-chart-line"></i>
-                        </div>
-                        <h4>Optimization & Growth</h4>
-                        <p>
-                          Continuous monitoring, optimization, and strategic guidance to ensure sustained success and business growth.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-              {/* Value Proposition */}
-              <section className="section-padding bg-light fix">
-                <div className="container">
-                  <div className="row">
-                    <div className="col-lg-8 mx-auto">
-                      <div className="section-title text-center">
-                        <h2>Domain Consulting Value Proposition</h2>
-                        <p>
-                          Experience the benefits of expert domain consulting that drives business transformation and sustainable competitive advantage.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="row g-4 pt-4">
-                    <div className="col-lg-4 col-md-6">
-                      <div className="value-item text-center">
-                        <div className="icon">
-                          <i className="fas fa-lightbulb"></i>
-                        </div>
-                        <h4>Strategic Insights</h4>
-                        <p>
-                          Deep industry insights and strategic guidance that help you make informed decisions and capitalize on market opportunities.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="col-lg-4 col-md-6">
-                      <div className="value-item text-center">
-                        <div className="icon">
-                          <i className="fas fa-cogs"></i>
-                        </div>
-                        <h4>Process Optimization</h4>
-                        <p>
-                          Streamlined business processes that improve efficiency, reduce costs, and enhance customer satisfaction across all operations.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="col-lg-4 col-md-6">
-                      <div className="value-item text-center">
-                        <div className="icon">
-                          <i className="fas fa-rocket"></i>
-                        </div>
-                        <h4>Accelerated Transformation</h4>
-                        <p>
-                          Faster time-to-value through expert guidance, proven methodologies, and industry best practices for successful transformation.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="col-lg-4 col-md-6">
-                      <div className="value-item text-center">
-                        <div className="icon">
-                          <i className="fas fa-shield-alt"></i>
-                        </div>
-                        <h4>Risk Mitigation</h4>
-                        <p>
-                          Proactive risk identification and mitigation strategies that protect your business and ensure project success.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="col-lg-4 col-md-6">
-                      <div className="value-item text-center">
-                        <div className="icon">
-                          <i className="fas fa-users"></i>
-                        </div>
-                        <h4>Change Management</h4>
-                        <p>
-                          Comprehensive change management support that ensures successful adoption and user engagement throughout the transformation.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="col-lg-4 col-md-6">
-                      <div className="value-item text-center">
-                        <div className="icon">
-                          <i className="fas fa-chart-line"></i>
-                        </div>
-                        <h4>Measurable Results</h4>
-                        <p>
-                          Clear metrics and KPIs that demonstrate the value and impact of consulting initiatives on your business performance.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-              {/* CTA Section */}
-              <div className="row g-4 pt-4">
-                <div className="col-12">
-                  <div className="lcnc-banner">
-                    <h5>Transform Your Business with Domain Consulting</h5>
-                    <p className="ecosystems">
-                      Ready to leverage deep domain expertise for your business transformation? Our domain consultants are here to provide strategic guidance that drives innovation, optimization, and sustainable growth.
-                    </p>
-                    <div className="main-button mt-3">
-                      <Link href="/contact">
-                        <span className="theme-btn">Get Domain Consulting</span>
-                        <span className="arrow-btn">
-                          <i className="icon-arrow-right"></i>
-                        </span>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
+      {/* Hero */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(800px_400px_at_10%_0%,rgba(225,29,46,0.07),transparent_60%),radial-gradient(800px_400px_at_90%_10%,rgba(15,23,42,0.06),transparent_60%)]"></div>
+        <div className="container py-20 md:py-28">
+          <div className="row align-items-center g-4">
+            <div className="col-lg-7">
+              <p className="inline-flex items-center rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs font-semibold tracking-wide text-zinc-700">Professional Services</p>
+              <h1 className="mt-3 text-4xl md:text-5xl font-extrabold leading-tight text-zinc-900">Domain Consulting</h1>
+              <p className="mt-3 text-zinc-600 text-lg">Align technology with business outcomes through expert domain guidance.</p>
+              <div className="mt-5 d-flex gap-3"><Link href="/contact" className="main-button"><span className="theme-btn">Talk to an Expert</span><span className="arrow-btn"><i className="icon-arrow-right"></i></span></Link><a href="#offerings" className="main-button secondary"><span className="theme-btn">Explore Offerings</span><span className="arrow-btn"><i className="icon-arrow-right"></i></span></a></div>
             </div>
+            <div className="col-lg-5"><div className="rounded-3xl overflow-hidden h-[320px] md:h-[380px]"><Image src="/assets/img/service/1.webp" alt="Domain consulting overview" width={0} height={0} sizes="100vw" style={{ width: "100%", height: "100%", objectFit: "cover" }} /></div></div>
           </div>
         </div>
       </section>
+
+      {/* Offerings */}
+      <section id="offerings" className="section-padding fix"><div className="container"><div className="row"><div className="col-lg-10 mx-auto"><div className="section-title text-center"><h2 className="!text-5xl font-bold !mb-3">Consulting Offerings</h2><p>Strategic guidance across process, platforms, and change.</p></div></div></div><div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4"><div className="bento-card rounded-2xl border border-zinc-200 bg-white p-6 md:col-span-2"><h3 className="text-xl font-semibold text-zinc-900">Business Process Consulting</h3><p className="mt-2 text-zinc-600">Analyze and optimize operations to reduce cost and improve outcomes.</p><div className="mt-4 rounded-xl skeleton" style={{ height: "180px" }} aria-hidden="true"></div></div><div className="bento-card rounded-2xl border border-zinc-200 bg-white p-6"><h3 className="text-xl font-semibold text-zinc-900">Digital Strategy</h3><p className="mt-2 text-zinc-600">Roadmaps and KPIs aligned to business objectives.</p></div><div className="bento-card rounded-2xl border border-zinc-200 bg-white p-6"><h3 className="text-xl font-semibold text-zinc-900">Technology Architecture</h3><p className="mt-2 text-zinc-600">Scalable, secure architectures for growth.</p></div><div className="bento-card rounded-2xl border border-zinc-200 bg-white p-6 md:col-span-2"><h3 className="text-xl font-semibold text-zinc-900">Change Management</h3><p className="mt-2 text-zinc-600">Stakeholder engagement, training, and adoption programs.</p><div className="mt-4 rounded-xl skeleton" style={{ height: "160px" }} aria-hidden="true"></div></div></div></div></section>
+
+      {/* Methodology */}
+      <section className="section-padding bg-light fix"><div className="container"><div className="row"><div className="col-lg-8 mx-auto"><div className="section-title text-center"><h2 className="!text-5xl font-bold !mb-3">Consulting Methodology</h2><p>From discovery to sustained value.</p></div></div></div><div className="row g-4 pt-4">{[
+        { icon: "fas fa-search", title: "Discover", text: "Assessment of goals and constraints." },
+        { icon: "fas fa-drafting-compass", title: "Design", text: "Blueprints, KPIs, and roadmap." },
+        { icon: "fas fa-rocket", title: "Deliver", text: "Hands‑on implementation support." },
+        { icon: "fas fa-chart-line", title: "Optimize", text: "Measure and iterate for growth." },
+      ].map((m, i) => (<div key={i} className="col-lg-3 col-md-6"><div className="rise-card bento-card text-center rounded-2xl border border-zinc-200 bg-white p-6 h-100"><div className="icon text-[var(--theme)] text-2xl"><i className={m.icon}></i></div><h4 className="mt-2">{m.title}</h4><p className="text-zinc-600 text-sm">{m.text}</p></div></div>))}</div></div></section>
+
+      {/* FAQ */}
+      <section className="section-padding bg-light fix mb-4"><div className="container"><div className="row align-items-start g-5"><div className="col-lg-5"><span className="inline-flex items-center rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs font-semibold tracking-wide text-zinc-700">FAQ</span><h2 className="mt-3 !text-5xl font-bold !mb-3">Frequently Asked Questions</h2><p className="text-zinc-600">Common questions about domain consulting and outcomes.</p></div><div className="col-lg-7"><div className="faq-accordion"><details open><summary>Which domains do you specialize in?<span><i className="fa-solid fa-plus icon-plus"></i><i className="fa-solid fa-minus icon-minus"></i></span></summary><div className="answer">Finance, healthcare, manufacturing, retail—and more.</div></details><details><summary>How do you measure success?<span><i className="fa-solid fa-plus icon-plus"></i><i className="fa-solid fa-minus icon-minus"></i></span></summary><div className="answer">KPIs aligned to objectives with regular reviews.</div></details><details><summary>Can you work with our internal teams?<span><i className="fa-solid fa-plus icon-plus"></i><i className="fa-solid fa-minus icon-minus"></i></span></summary><div className="answer">Yes—co‑delivery models with enablement and handover.</div></details></div></div></div></div></section>
+
+      {/* CTA */}
+      <section className="section-padding pt-0"><div className="container"><div className="lcnc-banner"><h5>Transform Your Business with Domain Consulting</h5><p className="ecosystems">Engage experts to align technology with business outcomes.</p><div className="main-button mt-3"><Link href="/contact"><span className="theme-btn">Get Domain Consulting</span><span className="arrow-btn"><i className="icon-arrow-right"></i></span></Link></div></div></div></section>
+
+      {/* JSON-LD */}
+      <Script id="ld-service-dc" type="application/ld+json" dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Domain Consulting",
+          "provider": { "@type": "Organization", "name": "Omnia Services" },
+          "serviceType": "Domain Consulting",
+          "description": "Align technology with business outcomes through expert domain guidance.",
+        })
+      }} />
+      <Script id="ld-faq-dc" type="application/ld+json" dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "Which domains do you specialize in?", "acceptedAnswer": { "@type": "Answer", "text": "Finance, healthcare, manufacturing, retail—and more." } },
+            { "@type": "Question", "name": "How do you measure success?", "acceptedAnswer": { "@type": "Answer", "text": "KPIs aligned to objectives with regular reviews." } },
+            { "@type": "Question", "name": "Can you work with our internal teams?", "acceptedAnswer": { "@type": "Answer", "text": "Yes—co‑delivery models with enablement and handover." } }
+          ]
+        })
+      }} />
     </div>
   );
 }
