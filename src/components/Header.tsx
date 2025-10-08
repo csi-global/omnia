@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import OmniaButton from "./ui/omnia-button";
 
 export default function Header() {
   const [isOffcanvasOpen, setIsOffcanvasOpen] = useState(false);
@@ -86,8 +87,8 @@ export default function Header() {
                         </li>
 
                         <li>
-                          <a href="#">Professional Services <i className="fa-solid fa-chevron-down"></i></a>
-                          <ul className="submenu">
+                          <span className="menu-label cursor-pointer font-medium">Professional Services <i className="fa-solid fa-chevron-down"></i></span>
+                          <ul className="submenu submenu-om">
                             <li><Link href="/digital-process-automation" >Digital Process Automation</Link></li>
                             <li><Link href="/cloud-migration">Cloud Migration</Link></li>
                             <li><Link href="/data-analytics">Data Analytics</Link></li>
@@ -96,8 +97,8 @@ export default function Header() {
                           </ul>
                         </li>
                         <li>
-                          <a href="#">Managed Service <i className="fa-solid fa-chevron-down"></i></a>
-                          <ul className="submenu">
+                          <span className="menu-label cursor-pointer font-medium">Managed Service <i className="fa-solid fa-chevron-down"></i></span>
+                          <ul className="submenu submenu-om">
                             <li><Link href="/ormb">ORMB</Link></li>
                             <li><Link href="/vision-plus">Vision Plus</Link></li>
                             <li><Link href="/smart-investigate">Smart Investigate</Link></li>
@@ -112,7 +113,7 @@ export default function Header() {
                 </div>
                 <div className="header-right d-flex justify-content-end align-items-center">
                   <div className="main-button">
-                    <Link href="/contact"> <span className="theme-btn">Contact Us </span><span className="arrow-btn"><i className="icon-arrow-right"></i></span></Link>
+                    <Link href="/contact"> <OmniaButton text="Contact Us" /> </Link>
                   </div>
                   <div className="header__hamburger d-xl-none my-auto">
                     <div className="sidebar__toggle" onClick={() => setIsOffcanvasOpen(true)} aria-label="Open menu" role="button">
@@ -189,7 +190,7 @@ export default function Header() {
                         opacity: isManagedOpen ? 1 : 0,
                       }}
                     >
-                      {["Managed Cloud Desk", "Managed Microsoft 365", "Managed Microsoft Azure", "Surface –As-A-Service"].map((item, index) => (
+                      {["Managed Cloud Desk", "Managed Microsoft 365", "Managed Microsoft Azure", "Surface-As-A-Service"].map((item, index) => (
                         <li className="pl-4 text-nowrap text-sm" key={index}><Link href={`/${item.toLowerCase().replace(/ /g, "-")}`} className="block py-1">{item}</Link></li>
                       ))}
                     </ul>
