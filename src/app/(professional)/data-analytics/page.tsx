@@ -51,7 +51,7 @@ export default function DataAnalyticsPage() {
             <div className="col-lg-7">
               <p className="inline-flex items-center rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs font-semibold tracking-wide text-zinc-700">Professional Services</p>
               <h1 className="mt-3 text-4xl md:text-5xl font-extrabold leading-tight text-zinc-900">Data Analytics</h1>
-              <p className="mt-3 text-zinc-600 text-lg">Modern data platforms, BI, and AI to turn data into decisions.</p>
+              <p className="mt-3 text-zinc-600 text-lg">Omnia builds modern data platforms, BI, and AI that turn data into decisions—fast, governed, and outcome‑driven.</p>
               <div className="mt-5 d-flex gap-3">
                 <Link href="/contact" className="main-button"><span className="theme-btn">Talk to an Expert</span><span className="arrow-btn"><i className="icon-arrow-right"></i></span></Link>
                 <a href="#offerings" className="main-button secondary"><span className="theme-btn">Explore Offerings</span><span className="arrow-btn"><i className="icon-arrow-right"></i></span></a>
@@ -62,6 +62,36 @@ export default function DataAnalyticsPage() {
                 <Image src="/assets/img/data-analytics/data-analytics.webp" alt="Data analytics overview" width={0} height={0} sizes="100vw" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Omnia */}
+      <section className="section-padding fix">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-10 mx-auto">
+              <div className="section-title text-center">
+                <h2 className="!text-5xl font-bold !mb-3">Why Omnia for Data Analytics</h2>
+                <p>Business‑first analytics—grounded in governance, engineered for speed.</p>
+              </div>
+            </div>
+          </div>
+          <div className="row g-4 pt-4">
+            {[
+              { icon: "fas fa-bullseye", title: "Outcome‑Led Delivery", text: "Prioritize high‑value domains to ship insights in weeks, not months." },
+              { icon: "fas fa-database", title: "Governed by Default", text: "Data contracts, lineage, SLAs, and access controls baked‑in." },
+              { icon: "fas fa-cloud", title: "Modern Platform Expertise", text: "Lakehouse, warehouse, and streaming on AWS, Azure, and GCP." },
+              { icon: "fas fa-robot", title: "Responsible AI", text: "ML use cases with monitoring, bias checks, and MLOps foundations." }
+            ].map((card, i) => (
+              <div key={i} className="col-lg-3 col-md-6">
+                <div className="bento-card text-center rounded-2xl border border-zinc-200 bg-white p-6 h-100">
+                  <div className="icon text-2xl text-[var(--theme)]"><i className={card.icon}></i></div>
+                  <h4 className="mt-2">{card.title}</h4>
+                  <p className="text-zinc-600 text-sm">{card.text}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -78,18 +108,19 @@ export default function DataAnalyticsPage() {
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
-            <div className="bento-card rounded-2xl border border-zinc-200 bg-gradient-to-br from-[var(--theme)]/60 to-[var(--theme)]/90 p-6 md:col-span-2">
-              <h3 className="text-xl font-semibold text-zinc-900">Data Strategy & Governance</h3>
-              <p className="mt-2 text-zinc-50">Policies, ownership, and guardrails to ensure trusted data and compliant analytics.</p>
-              <div className="mt-4 rounded-xl overflow-hidden h-[180px] md:h-[220px] relative">
+            <div className="bento-card relative overflow-hidden rounded-2xl border border-zinc-200 p-6 md:col-span-2">
+              <div className="absolute inset-0 -z-20">
                 <Image
                   src="/assets/img/data-analytics/data-strategy.webp"
-                  alt="Data strategy and governance"
+                  alt=""
                   fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 66vw"
+                  sizes="100vw"
                   style={{ objectFit: "cover" }}
                 />
               </div>
+              <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[var(--theme)]/70 to-[var(--foreground)]/50 hover:to-[var(--foreground)]/90 transition-all duration-700"></div>
+              <h3 className="text-xl font-semibold text-white">Data Strategy & Governance</h3>
+              <p className="mt-2 text-zinc-50">Policies, ownership, and guardrails to ensure trusted data and compliant analytics.</p>
             </div>
             <div className="bento-card rounded-2xl border border-zinc-200 bg-white p-6">
               <h3 className="text-xl font-semibold text-zinc-900">Modern Data Platform</h3>
@@ -117,18 +148,19 @@ export default function DataAnalyticsPage() {
                 />
               </div>
             </div>
-            <div className="bento-card rounded-2xl border border-zinc-200 bg-gradient-to-br from-[var(--theme)]/60 to-[var(--theme)]/90 p-6 md:col-span-2">
-              <h3 className="text-xl font-semibold text-zinc-50">AI & Advanced Insights</h3>
-              <p className="mt-2 text-zinc-50">Forecasting, anomaly detection, and ML ops with responsible AI practices.</p>
-              <div className="mt-4 rounded-xl overflow-hidden h-[160px] md:h-[200px] relative">
+            <div className="bento-card relative overflow-hidden rounded-2xl border border-zinc-200 p-6 md:col-span-2">
+              <div className="absolute inset-0 -z-20">
                 <Image
                   src="/assets/img/data-analytics/advanced-insights.webp"
-                  alt="AI and advanced insights"
+                  alt=""
                   fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 66vw"
+                  sizes="100vw"
                   style={{ objectFit: "cover" }}
                 />
               </div>
+              <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[var(--theme)]/70 to-[var(--foreground)]/50 hover:to-[var(--foreground)]/90 transition-all duration-700"></div>
+              <h3 className="text-xl font-semibold text-white">AI & Advanced Insights</h3>
+              <p className="mt-2 text-zinc-50">Forecasting, anomaly detection, and ML ops with responsible AI practices.</p>
             </div>
           </div>
         </div>

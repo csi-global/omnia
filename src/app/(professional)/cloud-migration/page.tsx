@@ -52,7 +52,7 @@ export default function CloudMigrationPage() {
             <div className="col-lg-7">
               <p className="inline-flex items-center rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs font-semibold tracking-wide text-zinc-700">Professional Services</p>
               <h1 className="mt-3 text-4xl md:text-5xl font-extrabold leading-tight text-zinc-900">Cloud Migration</h1>
-              <p className="mt-3 text-zinc-600 text-lg">Zero‑downtime strategies, secure landing zones, and modernization playbooks—delivered with observability and FinOps from day one.</p>
+              <p className="mt-3 text-zinc-600 text-lg">Omnia delivers zero‑downtime strategies, secure landing zones, and modernization playbooks—backed by observability and FinOps from day one.</p>
 
               <div className="mt-5 d-flex gap-3">
                 <Link href="/contact" className="main-button"><span className="theme-btn">Talk to an Expert</span><span className="arrow-btn"><i className="icon-arrow-right"></i></span></Link>
@@ -94,18 +94,19 @@ export default function CloudMigrationPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
-            <div className="bento-card rounded-2xl border border-zinc-200 bg-gradient-to-br from-[var(--theme)]/60 to-[var(--theme)]/90 p-6 md:col-span-2">
-              <h3 className="text-xl font-semibold text-zinc-900">Assessment & Feasibility</h3>
-              <p className="mt-2 text-zinc-50">Determine fit, risks, and ROI. Build a migration business case mapped to your KPIs.</p>
-              <div className="mt-4 rounded-xl overflow-hidden h-[180px] md:h-[300px] relative">
+            <div className="bento-card relative overflow-hidden rounded-2xl border border-zinc-200 p-6 md:col-span-2">
+              <div className="absolute inset-0 -z-20">
                 <Image
                   src="/assets/img/cloud-migration/kpi.webp"
-                  alt="KPIs and feasibility visual"
+                  alt=""
                   fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 66vw"
+                  sizes="100vw"
                   style={{ objectFit: "cover" }}
                 />
               </div>
+              <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[var(--theme)]/90 to-[var(--foreground)]/50 hover:to-[var(--foreground)]/90 transition-all duration-700"></div>
+              <h3 className="text-xl font-semibold text-white">Assessment & Feasibility</h3>
+              <p className="mt-2 text-zinc-50">Determine fit, risks, and ROI. Build a migration business case mapped to your KPIs.</p>
             </div>
             <div className="bento-card rounded-2xl border border-zinc-200 bg-white p-6">
               <h3 className="text-xl font-semibold text-zinc-900">Platform Evaluation</h3>
@@ -133,19 +134,50 @@ export default function CloudMigrationPage() {
                 />
               </div>
             </div>
-            <div className="bento-card rounded-2xl border border-zinc-200 bg-gradient-to-br from-[var(--theme)]/60 to-[var(--theme)]/90 p-6 md:col-span-2">
-              <h3 className="text-xl font-semibold text-zinc-900">Strategy & Roadmap</h3>
-              <p className="mt-2 text-zinc-50">Milestones, guardrails, and architecture patterns tailored to your estate.</p>
-              <div className="mt-4 rounded-xl overflow-hidden h-[200px] md:h-[250px] relative">
+            <div className="bento-card relative overflow-hidden rounded-2xl border border-zinc-200 p-6 md:col-span-2">
+              <div className="absolute inset-0 -z-20">
                 <Image
                   src="/assets/img/cloud-migration/strategy.webp"
-                  alt="Cloud migration strategy"
+                  alt=""
                   fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 66vw"
+                  sizes="100vw"
                   style={{ objectFit: "cover" }}
                 />
               </div>
+              <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[var(--theme)]/90 to-[var(--foreground)]/50 hover:to-[var(--foreground)]/90 transition-all duration-700"></div>
+              <h3 className="text-xl font-semibold text-white">Strategy & Roadmap</h3>
+              <p className="mt-2 text-zinc-50">Milestones, guardrails, and architecture patterns tailored to your estate.</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Omnia */}
+      <section className="section-padding fix">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-10 mx-auto">
+              <div className="section-title text-center">
+                <h2 className="!text-5xl font-bold !mb-3">Why Omnia for Cloud Migration</h2>
+                <p>We don’t just migrate—we de‑risk change and accelerate value.</p>
+              </div>
+            </div>
+          </div>
+          <div className="row g-4 pt-4">
+            {[
+              { icon: "fas fa-flag-checkered", title: "Outcome‑Backed Migrations", text: "Reference playbooks, rehearsal cutovers, and KPIs tied to business outcomes." },
+              { icon: "fas fa-user-shield", title: "Certified Multi‑cloud Engineers", text: "AWS, Azure, and GCP certified teams with regulated‑industry experience." },
+              { icon: "fas fa-shield-alt", title: "Security & Compliance by Design", text: "Guardrails mapped to ISO 27001, SOC 2, and your internal controls." },
+              { icon: "fas fa-bolt", title: "Proven Accelerators", text: "Landing zone templates, cost baselines, and automated validation to go faster." }
+            ].map((card, i) => (
+              <div key={i} className="col-lg-3 col-md-6">
+                <div className="bento-card text-center rounded-2xl border border-zinc-200 bg-white p-6 h-100">
+                  <div className="icon text-2xl text-[var(--theme)]"><i className={card.icon}></i></div>
+                  <h4 className="mt-2">{card.title}</h4>
+                  <p className="text-zinc-600 text-sm">{card.text}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
