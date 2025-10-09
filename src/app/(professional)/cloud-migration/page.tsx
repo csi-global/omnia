@@ -51,8 +51,8 @@ export default function CloudMigrationPage() {
           <div className="row align-items-center g-4">
             <div className="col-lg-7">
               <p className="inline-flex items-center rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs font-semibold tracking-wide text-zinc-700">Professional Services</p>
-              <h1 className="mt-3 text-4xl md:text-5xl font-extrabold leading-tight text-zinc-900">Cloud Migration</h1>
-              <p className="mt-3 text-zinc-600 text-lg">Omnia delivers zero‑downtime strategies, secure landing zones, and modernization playbooks—backed by observability and FinOps from day one.</p>
+              <h1 className="mt-3 !text-3xl sm:!text-4xl md:!text-5xl font-extrabold !leading-tight break-words text-zinc-900">Cloud Migration</h1>
+              <p className="mt-3 text-zinc-600 text-base sm:!text-lg break-words">Omnia delivers zero‑downtime strategies, secure landing zones, and modernization playbooks—backed by observability and FinOps from day one.</p>
 
               <div className="mt-5 d-flex gap-3">
                 <Link href="/contact" className="main-button"><span className="theme-btn">Talk to an Expert</span><span className="arrow-btn"><i className="icon-arrow-right"></i></span></Link>
@@ -87,7 +87,7 @@ export default function CloudMigrationPage() {
           <div className="row">
             <div className="col-lg-10 mx-auto">
               <div className="section-title text-center">
-                <h2 className="!text-5xl font-bold !mb-3">Cloud Assessment & Migration Offerings</h2>
+                <h2 className="!text-3xl sm:!text-4xl md:!text-5xl font-bold !mb-3">Cloud Assessment & Migration Offerings</h2>
                 <p>Start with clarity, migrate with control, and optimize with confidence—end to end.</p>
               </div>
             </div>
@@ -158,7 +158,7 @@ export default function CloudMigrationPage() {
           <div className="row">
             <div className="col-lg-10 mx-auto">
               <div className="section-title text-center">
-                <h2 className="!text-5xl font-bold !mb-3">Why Omnia for Cloud Migration</h2>
+                <h2 className="!text-3xl sm:!text-4xl md:!text-5xl font-bold !mb-3">Why Omnia for Cloud Migration</h2>
                 <p>We don’t just migrate—we de‑risk change and accelerate value.</p>
               </div>
             </div>
@@ -188,7 +188,7 @@ export default function CloudMigrationPage() {
           <div className="row">
             <div className="col-lg-8 mx-auto">
               <div className="section-title text-center">
-                <h2 className="!text-5xl font-bold !mb-3">Our Cloud Migration Process</h2>
+                <h2 className="!text-3xl sm:!text-4xl md:!text-5xl font-bold !mb-3">Our Cloud Migration Process</h2>
                 <p>A proven path from discovery to steady-state excellence.</p>
               </div>
             </div>
@@ -218,7 +218,7 @@ export default function CloudMigrationPage() {
           <div className="row">
             <div className="col-lg-8 mx-auto">
               <div className="section-title text-center">
-                <h2 className="!text-5xl font-bold !mb-3">Cloud Platforms We Support</h2>
+                <h2 className="!text-3xl sm:!text-4xl md:!text-5xl font-bold !mb-3">Cloud Platforms We Support</h2>
                 <p>Expertise across AWS, Azure, and GCP—choose the right platform for your goals.</p>
               </div>
             </div>
@@ -247,13 +247,13 @@ export default function CloudMigrationPage() {
           <div className="row align-items-start g-5">
             <div className="col-lg-5">
               <span className="inline-flex items-center rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs font-semibold tracking-wide text-zinc-700">FAQ</span>
-              <h2 className="mt-3 !text-5xl font-bold !mb-3">Frequently Asked Questions</h2>
+              <h2 className="mt-3 !text-3xl sm:!text-4xl md:!text-5xl font-bold !mb-3">Frequently Asked Questions</h2>
               <p className="text-zinc-600">We compiled a list of answers to address the most pressing questions regarding our services.</p>
             </div>
             <div className="col-lg-7">
               <div className="faq-accordion">
                 <details open>
-                  <summary>
+                  <summary className="break-words">
                     How do you minimize downtime?
                     <span>
                       <i className="fa-solid fa-plus icon-plus"></i>
@@ -263,7 +263,7 @@ export default function CloudMigrationPage() {
                   <div className="answer">We design cutovers with blue/green or canary strategies and rehearsal runs.</div>
                 </details>
                 <details>
-                  <summary>
+                  <summary className="break-words">
                     What about security and compliance?
                     <span>
                       <i className="fa-solid fa-plus icon-plus"></i>
@@ -273,7 +273,7 @@ export default function CloudMigrationPage() {
                   <div className="answer">Controls map to your frameworks (e.g., ISO 27001) with continuous validation.</div>
                 </details>
                 <details>
-                  <summary>
+                  <summary className="break-words">
                     How do you control costs?
                     <span>
                       <i className="fa-solid fa-plus icon-plus"></i>
@@ -283,7 +283,7 @@ export default function CloudMigrationPage() {
                   <div className="answer">Right-sizing, reserved capacity, and showback policies are part of our FinOps.</div>
                 </details>
                 <details>
-                  <summary>
+                  <summary className="break-words">
                     Can you help post-migration?
                     <span>
                       <i className="fa-solid fa-plus icon-plus"></i>

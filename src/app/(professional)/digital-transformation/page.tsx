@@ -61,10 +61,10 @@ export default function DigitalTransformationPage() {
               <p className="inline-flex items-center rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs font-semibold tracking-wide text-zinc-700">
                 Professional Services
               </p>
-              <h1 className="mt-3 text-4xl md:text-5xl font-extrabold leading-tight text-zinc-900">
+              <h1 className="mt-3 !text-3xl sm:!text-4xl md:!text-5xl font-extrabold !leading-tight break-words text-zinc-900">
                 Digital Transformation
               </h1>
-              <p className="mt-3 text-zinc-600 text-lg">
+              <p className="mt-3 text-zinc-600 text-base sm:!text-lg break-words">
                 Omnia blends strategy, experience, and engineering—accelerated by cloud and automation—to land measurable change.
               </p>
               <div className="mt-5 d-flex gap-3">
@@ -104,7 +104,7 @@ export default function DigitalTransformationPage() {
           <div className="row">
             <div className="col-lg-10 mx-auto">
               <div className="section-title text-center">
-                <h2 className="!text-5xl font-bold !mb-3">Why Omnia for Digital Transformation</h2>
+                <h2 className="!text-3xl sm:!text-4xl md:!text-5xl font-bold !mb-3">Why Omnia for Digital Transformation</h2>
                 <p>From boardroom vision to front‑line adoption—without losing momentum.</p>
               </div>
             </div>
@@ -134,7 +134,7 @@ export default function DigitalTransformationPage() {
           <div className="row">
             <div className="col-lg-10 mx-auto">
               <div className="section-title text-center">
-                <h2 className="!text-5xl font-bold !mb-3">Transformation Offerings</h2>
+                <h2 className="!text-3xl sm:!text-4xl md:!text-5xl font-bold !mb-3">Transformation Offerings</h2>
                 <p>From roadmap to rollout—balanced across people, process, and platforms.</p>
               </div>
             </div>
@@ -210,7 +210,7 @@ export default function DigitalTransformationPage() {
           <div className="row">
             <div className="col-lg-8 mx-auto">
               <div className="section-title text-center">
-                <h2 className="!text-5xl font-bold !mb-3">Transformation Framework</h2>
+                <h2 className="!text-3xl sm:!text-4xl md:!text-5xl font-bold !mb-3">Transformation Framework</h2>
                 <p>A pragmatic path to outcomes and adoption.</p>
               </div>
             </div>
@@ -256,7 +256,7 @@ export default function DigitalTransformationPage() {
               <span className="inline-flex items-center rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs font-semibold tracking-wide text-zinc-700">
                 FAQ
               </span>
-              <h2 className="mt-3 !text-5xl font-bold !mb-3">Frequently Asked Questions</h2>
+              <h2 className="mt-3 !text-3xl sm:!text-4xl md:!text-5xl font-bold !mb-3">Frequently Asked Questions</h2>
               <p className="text-zinc-600">
                 Addressing planning, execution, and change management.
               </p>
@@ -264,7 +264,7 @@ export default function DigitalTransformationPage() {
             <div className="col-lg-7">
               <div className="faq-accordion">
                 <details open>
-                  <summary>
+                  <summary className="break-words">
                     How do we start?
                     <span>
                       <i className="fa-solid fa-plus icon-plus"></i>
@@ -276,7 +276,7 @@ export default function DigitalTransformationPage() {
                   </div>
                 </details>
                 <details>
-                  <summary>
+                  <summary className="break-words">
                     How do you ensure adoption?
                     <span>
                       <i className="fa-solid fa-plus icon-plus"></i>
@@ -288,7 +288,7 @@ export default function DigitalTransformationPage() {
                   </div>
                 </details>
                 <details>
-                  <summary>
+                  <summary className="break-words">
                     What’s the typical timeline?
                     <span>
                       <i className="fa-solid fa-plus icon-plus"></i>

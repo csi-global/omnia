@@ -61,10 +61,10 @@ export default function DomainConsultingPage() {
               <p className="inline-flex items-center rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs font-semibold tracking-wide text-zinc-700">
                 Professional Services
               </p>
-              <h2 className="mt-3 text-4xl md:text-5xl font-extrabold leading-tight text-zinc-900">
+              <h2 className="mt-3 !text-3xl sm:!text-4xl md:!text-5xl font-extrabold !leading-tight break-words text-zinc-900">
                 Domain Consulting
               </h2>
-              <p className="mt-3 text-zinc-600 text-lg">
+              <p className="mt-3 text-zinc-600 text-base sm:!text-lg break-words">
                 At Omnia, we translate strategy into operating models, controls, and
                 platforms—tailored to your industry, KPIs, and regulatory context.
               </p>
@@ -105,7 +105,7 @@ export default function DomainConsultingPage() {
           <div className="row">
             <div className="col-lg-10 mx-auto">
               <div className="section-title text-center">
-                <h2 className="!text-5xl font-bold !mb-3">Why Omnia for Domain Consulting</h2>
+                <h2 className="!text-3xl sm:!text-4xl md:!text-5xl font-bold !mb-3">Why Omnia for Domain Consulting</h2>
                 <p>Industry fluency, pragmatic governance, and roadmaps that get executed.</p>
               </div>
             </div>
@@ -153,7 +153,7 @@ export default function DomainConsultingPage() {
           <div className="row">
             <div className="col-lg-10 mx-auto">
               <div className="section-title text-center">
-                <h2 className="!text-5xl font-bold !mb-3">Consulting Offerings</h2>
+                <h2 className="!text-3xl sm:!text-4xl md:!text-5xl font-bold !mb-3">Consulting Offerings</h2>
                 <p>
                   Industry‑specific strategy, operating models, and platforms that move the KPIs
                   that matter.
@@ -235,7 +235,7 @@ export default function DomainConsultingPage() {
           <div className="row">
             <div className="col-lg-8 mx-auto">
               <div className="section-title text-center">
-                <h2 className="!text-5xl font-bold !mb-3">Consulting Methodology</h2>
+                <h2 className="!text-3xl sm:!text-4xl md:!text-5xl font-bold !mb-3">Consulting Methodology</h2>
                 <p>From discovery to sustained value.</p>
               </div>
             </div>
@@ -285,7 +285,7 @@ export default function DomainConsultingPage() {
               <span className="inline-flex items-center rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs font-semibold tracking-wide text-zinc-700">
                 FAQ
               </span>
-              <h2 className="mt-3 !text-5xl font-bold !mb-3">Frequently Asked Questions</h2>
+              <h2 className="mt-3 !text-3xl sm:!text-4xl md:!text-5xl font-bold !mb-3">Frequently Asked Questions</h2>
               <p className="text-zinc-600">
                 How we tailor consulting to your domain and drive measurable results.
               </p>
@@ -293,7 +293,7 @@ export default function DomainConsultingPage() {
             <div className="col-lg-7">
               <div className="faq-accordion">
                 <details open>
-                  <summary>
+                  <summary className="break-words">
                     Which domains do you specialize in?
                     <span>
                       <i className="fa-solid fa-plus icon-plus"></i>
@@ -306,7 +306,7 @@ export default function DomainConsultingPage() {
                   </div>
                 </details>
                 <details>
-                  <summary>
+                  <summary className="break-words">
                     How do you ensure measurable outcomes?
                     <span>
                       <i className="fa-solid fa-plus icon-plus"></i>
@@ -319,7 +319,7 @@ export default function DomainConsultingPage() {
                   </div>
                 </details>
                 <details>
-                  <summary>
+                  <summary className="break-words">
                     How do you work with domain SMEs and executives?
                     <span>
                       <i className="fa-solid fa-plus icon-plus"></i>

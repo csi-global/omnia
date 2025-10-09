@@ -50,8 +50,8 @@ export default function DataAnalyticsPage() {
           <div className="row align-items-center g-4">
             <div className="col-lg-7">
               <p className="inline-flex items-center rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs font-semibold tracking-wide text-zinc-700">Professional Services</p>
-              <h1 className="mt-3 text-4xl md:text-5xl font-extrabold leading-tight text-zinc-900">Data Analytics</h1>
-              <p className="mt-3 text-zinc-600 text-lg">Omnia builds modern data platforms, BI, and AI that turn data into decisions—fast, governed, and outcome‑driven.</p>
+              <h1 className="mt-3 !text-3xl sm:!text-4xl md:!text-5xl font-extrabold !leading-tight break-words text-zinc-900">Data Analytics</h1>
+              <p className="mt-3 text-zinc-600 text-base sm:!text-lg break-words">Omnia builds modern data platforms, BI, and AI that turn data into decisions—fast, governed, and outcome‑driven.</p>
               <div className="mt-5 d-flex gap-3">
                 <Link href="/contact" className="main-button"><span className="theme-btn">Talk to an Expert</span><span className="arrow-btn"><i className="icon-arrow-right"></i></span></Link>
                 <a href="#offerings" className="main-button secondary"><span className="theme-btn">Explore Offerings</span><span className="arrow-btn"><i className="icon-arrow-right"></i></span></a>
@@ -72,7 +72,7 @@ export default function DataAnalyticsPage() {
           <div className="row">
             <div className="col-lg-10 mx-auto">
               <div className="section-title text-center">
-                <h2 className="!text-5xl font-bold !mb-3">Why Omnia for Data Analytics</h2>
+                <h2 className="!text-3xl sm:!text-4xl md:!text-5xl font-bold !mb-3">Why Omnia for Data Analytics</h2>
                 <p>Business‑first analytics—grounded in governance, engineered for speed.</p>
               </div>
             </div>
@@ -102,7 +102,7 @@ export default function DataAnalyticsPage() {
           <div className="row">
             <div className="col-lg-10 mx-auto">
               <div className="section-title text-center">
-                <h2 className="!text-5xl font-bold !mb-3">Analytics & AI Offerings</h2>
+                <h2 className="!text-3xl sm:!text-4xl md:!text-5xl font-bold !mb-3">Analytics & AI Offerings</h2>
                 <p>Build a reliable data foundation and deliver outcomes with governed analytics and AI.</p>
               </div>
             </div>
@@ -172,7 +172,7 @@ export default function DataAnalyticsPage() {
           <div className="row">
             <div className="col-lg-8 mx-auto">
               <div className="section-title text-center">
-                <h2 className="!text-5xl font-bold !mb-3">Analytics Delivery Process</h2>
+                <h2 className="!text-3xl sm:!text-4xl md:!text-5xl font-bold !mb-3">Analytics Delivery Process</h2>
                 <p>From ingestion to insights—with governance every step of the way.</p>
               </div>
             </div>
@@ -202,21 +202,21 @@ export default function DataAnalyticsPage() {
           <div className="row align-items-start g-5">
             <div className="col-lg-5">
               <span className="inline-flex items-center rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs font-semibold tracking-wide text-zinc-700">FAQ</span>
-              <h2 className="mt-3 !text-5xl font-bold !mb-3">Frequently Asked Questions</h2>
+              <h2 className="mt-3 !text-3xl sm:!text-4xl md:!text-5xl font-bold !mb-3">Frequently Asked Questions</h2>
               <p className="text-zinc-600">Answers to common questions about analytics platforms, governance, and delivery.</p>
             </div>
             <div className="col-lg-7">
               <div className="faq-accordion">
                 <details open>
-                  <summary>How fast can we see insights?<span><i className="fa-solid fa-plus icon-plus"></i><i className="fa-solid fa-minus icon-minus"></i></span></summary>
+                  <summary className="break-words">How fast can we see insights?<span><i className="fa-solid fa-plus icon-plus"></i><i className="fa-solid fa-minus icon-minus"></i></span></summary>
                   <div className="answer">We prioritize high‑value domains and deliver first dashboards in weeks.</div>
                 </details>
                 <details>
-                  <summary>How do you ensure data quality?<span><i className="fa-solid fa-plus icon-plus"></i><i className="fa-solid fa-minus icon-minus"></i></span></summary>
+                  <summary className="break-words">How do you ensure data quality?<span><i className="fa-solid fa-plus icon-plus"></i><i className="fa-solid fa-minus icon-minus"></i></span></summary>
                   <div className="answer">Contract tests, freshness alerts, SLAs, and lineage for trust.</div>
                 </details>
                 <details>
-                  <summary>What clouds do you support?<span><i className="fa-solid fa-plus icon-plus"></i><i className="fa-solid fa-minus icon-minus"></i></span></summary>
+                  <summary className="break-words">What clouds do you support?<span><i className="fa-solid fa-plus icon-plus"></i><i className="fa-solid fa-minus icon-minus"></i></span></summary>
                   <div className="answer">AWS, Azure, and GCP with native services and vendor platforms.</div>
                 </details>
               </div>
