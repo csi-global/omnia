@@ -24,7 +24,17 @@ export const metadata: Metadata = {
   }
 };
 
-export default function ContactPage() {
+type SearchParams = {
+  success?: string;
+  error?: string;
+};
+
+export default async function ContactPage({
+  searchParams
+}: { searchParams?: Promise<SearchParams> }) {
+  const sp = await searchParams;
+  const success = sp?.success;
+  const error = sp?.error;
   return (
     <div>
       <div
@@ -129,6 +139,20 @@ export default function ContactPage() {
                   <div className="section-title mb-0">
                     <h2>Get In Touch</h2>
                   </div>
+                  {success && (
+                    <div className="mt-3 mb-3" role="status" aria-live="polite">
+                      <div className="p-3 rounded" style={{ background: '#e7f7ee', color: '#0f5132', border: '1px solid #badbcc' }}>
+                        Thank you! Your message has been sent.
+                      </div>
+                    </div>
+                  )}
+                  {error && (
+                    <div className="mt-3 mb-3" role="status" aria-live="polite">
+                      <div className="p-3 rounded" style={{ background: '#fde6e6', color: '#842029', border: '1px solid #f5c2c7' }}>
+                        Oops! We couldn&apos;t send your message. Please try again.
+                      </div>
+                    </div>
+                  )}
                   <form action="/api/contact" method="POST" className="contact-form-items">
                     <div className="row g-4">
                       <div className="col-lg-6">
@@ -159,6 +183,11 @@ export default function ContactPage() {
                             <ServiceSelect />
                           </div>
                         </div>
+                      </div>
+                      {/* Honeypot field */}
+                      <div style={{ position: 'absolute', left: '-9999px' }} aria-hidden>
+                        <label htmlFor="company">Company</label>
+                        <input type="text" name="company" id="company" tabIndex={-1} autoComplete="off" />
                       </div>
                       <div className="col-lg-12">
                         <div className="form-clt">
