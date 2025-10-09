@@ -1,5 +1,6 @@
 import ServiceSelect from "@/components/ServiceSelect";
 import type { Metadata } from 'next';
+import { headers } from 'next/headers';
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -24,9 +25,13 @@ export const metadata: Metadata = {
   }
 };
 
+// This page must be dynamic so it can render different content per request
+export const dynamic = 'force-dynamic';
+
 type SearchParams = {
   success?: string;
   error?: string;
+  cc?: string; // optional override e.g. ?cc=in for testing
 };
 
 export default async function ContactPage({
@@ -35,6 +40,43 @@ export default async function ContactPage({
   const sp = await searchParams;
   const success = sp?.success;
   const error = sp?.error;
+  const countryOverride = sp?.cc || undefined;
+
+  // Determine visitor country (best-effort). Supports multiple providers and a manual override.
+  const headersList = await headers();
+  const countryHeader =
+    headersList.get('x-vercel-ip-country') ||
+    headersList.get('x-vercel-ip-country-code') ||
+    headersList.get('cf-ipcountry') ||
+    headersList.get('x-geo-country') ||
+    undefined;
+
+  const isIndia = (() => {
+    const normalizedOverride = countryOverride?.toLowerCase();
+    if (normalizedOverride === 'in' || normalizedOverride === 'india') return true;
+    return countryHeader?.toUpperCase() === 'IN';
+  })();
+
+  const UK_CONTENT = {
+    address: '2 Wellington Place, Leeds, West Yorkshire, LS1 4AP, United Kingdom',
+    phoneDisplay: '+44-1133 662035',
+    phoneHref: 'tel:+441133662035',
+    email: 'info@omniaservices.co.uk',
+    mapSrc:
+      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2356.6521402945023!2d-1.561486923383253!3d53.795678572423064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48795ea3c379aaab%3A0x1cc60b78e62d14d4!2sRegus%20House%2C%202%20Wellington%20Pl%2C%20Leeds%20LS1%204AP%2C%20UK!5e0!3m2!1sen!2sin!4v1749285652748!5m2!1sen!2sin'
+  } as const;
+
+  const IN_CONTENT = {
+    address:
+      'Omnia IT Services Pvt Ltd, 6th floor, GMR Aero Tower 2, International Airport, Shamshabad, Aerocity, Hyderabad, Telangana 500108, India',
+    phoneDisplay: '+91 4069753002',
+    phoneHref: 'tel:+914069753002',
+    email: 'info@omniaservices.in',
+    mapSrc:
+      'https://www.google.com/maps?q=GMR%20Aero%20Tower%202%2C%20Aerocity%2C%20Hyderabad%20500%20108&output=embed'
+  } as const;
+
+  const content = isIndia ? IN_CONTENT : UK_CONTENT;
   return (
     <div>
       <div
@@ -75,7 +117,7 @@ export default async function ContactPage({
                           </div>
                           <div className="content">
                             <h6>
-                              2 Wellington Place, Leeds, West Yorkshire, LS1 4AP, United Kingdom
+                              {content.address}
                             </h6>
                           </div>
                         </div>
@@ -87,7 +129,7 @@ export default async function ContactPage({
                           </div>
                           <div className="content">
                             <h6>
-                              <a href="tel:+44-1133 662035">+44-1133 662035</a>
+                              <a href={content.phoneHref}>{content.phoneDisplay}</a>
                             </h6>
                           </div>
                         </div>
@@ -99,9 +141,7 @@ export default async function ContactPage({
                           </div>
                           <div className="content">
                             <h6>
-                              <a href="mailto:info@omniaservices.co.uk">
-                                info@omniaservices.co.uk
-                              </a>
+                              <a href={`mailto:${content.email}`}>{content.email}</a>
                             </h6>
                           </div>
                         </div>
@@ -110,7 +150,7 @@ export default async function ContactPage({
                     <div className="col-md-6">
                       <div className="google-map">
                         <iframe
-                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2356.6521402945023!2d-1.561486923383253!3d53.795678572423064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48795ea3c379aaab%3A0x1cc60b78e62d14d4!2sRegus%20House%2C%202%20Wellington%20Pl%2C%20Leeds%20LS1%204AP%2C%20UK!5e0!3m2!1sen!2sin!4v1749285652748!5m2!1sen!2sin"
+                          src={content.mapSrc}
                           width="600"
                           height="450"
                           style={{ border: 0 }}
