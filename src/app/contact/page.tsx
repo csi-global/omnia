@@ -32,6 +32,7 @@ type SearchParams = {
   success?: string;
   error?: string;
   cc?: string; // optional override e.g. ?cc=in for testing
+  site?: string; // optional site override e.g. ?site=in|uk when on localhost
 };
 
 export default async function ContactPage({
@@ -41,6 +42,7 @@ export default async function ContactPage({
   const success = sp?.success;
   const error = sp?.error;
   const countryOverride = sp?.cc || undefined;
+  const siteOverride = sp?.site || undefined;
 
   // Determine visitor country (best-effort). Supports multiple providers and a manual override.
   const headersList = await headers();
@@ -50,11 +52,31 @@ export default async function ContactPage({
     headersList.get('cf-ipcountry') ||
     headersList.get('x-geo-country') ||
     undefined;
+  const hostHeader = headersList.get('host') || '';
+  const isLocalhost = hostHeader.includes('localhost') || hostHeader.startsWith('127.');
 
-  const isIndia = (() => {
+  // Determine which site's content we should render (domain wins)
+  let siteIsIndia: boolean;
+  if (siteOverride?.toLowerCase() === 'in' || siteOverride?.toLowerCase() === 'india') {
+    siteIsIndia = true;
+  } else if (siteOverride?.toLowerCase() === 'uk') {
+    siteIsIndia = false;
+  } else if (hostHeader.includes('omniaservices.in')) {
+    siteIsIndia = true;
+  } else if (hostHeader.includes('omniaservices.co.uk')) {
+    siteIsIndia = false;
+  } else {
+    // Localhost or unknown host → default to UK, can be overridden with ?site=in
+    siteIsIndia = false;
+  }
+
+  const isIndiaVisitor = (() => {
     const normalizedOverride = countryOverride?.toLowerCase();
     if (normalizedOverride === 'in' || normalizedOverride === 'india') return true;
-    return countryHeader?.toUpperCase() === 'IN';
+    if (countryHeader?.toUpperCase() === 'IN') return true;
+    // Local development: default to India when geo headers are absent
+    if (!countryHeader && isLocalhost) return true;
+    return false;
   })();
 
   const UK_CONTENT = {
@@ -76,9 +98,29 @@ export default async function ContactPage({
       'https://www.google.com/maps?q=GMR%20Aero%20Tower%202%2C%20Aerocity%2C%20Hyderabad%20500%20108&output=embed'
   } as const;
 
-  const content = isIndia ? IN_CONTENT : UK_CONTENT;
+  const content = siteIsIndia ? IN_CONTENT : UK_CONTENT;
+
+  // If the visitor's country suggests the other site, show a suggestion banner
+  const showIndiaSuggestion = !siteIsIndia && isIndiaVisitor;
+  const showUKSuggestion = siteIsIndia && !isIndiaVisitor && !!countryHeader; // only when we know they're not IN
   return (
     <div>
+      {showIndiaSuggestion && (
+        <div className="container" style={{ paddingTop: '16px' }}>
+          <div className="p-3 rounded" style={{ background: '#fff3cd', color: '#664d03', border: '1px solid #ffecb5' }}>
+            Looking for our India contact page?&nbsp;
+            <a href="https://omniaservices.in/contact" className="text-decoration-underline">Go to omniaservices.in/contact</a>
+          </div>
+        </div>
+      )}
+      {showUKSuggestion && (
+        <div className="container" style={{ paddingTop: '16px' }}>
+          <div className="p-3 rounded" style={{ background: '#fff3cd', color: '#664d03', border: '1px solid #ffecb5' }}>
+            Looking for our UK contact page?&nbsp;
+            <a href="https://omniaservices.co.uk/contact" className="text-decoration-underline">Go to omniaservices.co.uk/contact</a>
+          </div>
+        </div>
+      )}
       <div
         className="breadcrumb-wrapper bg-cover"
         style={{ backgroundImage: "url('/assets/img/breadcrumb.webp')" }}
