@@ -1,4 +1,5 @@
 "use client";
+import RegionSelect from "@/components/region-select";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -60,7 +61,8 @@ export default function Header() {
                   <a href="mailto:info@omniaservices.co.uk" className="link">info@omniaservices.co.uk</a>
                 </li>
                 <li>
-                  <i className="fal fa-link"></i> <a href="https://omniaservices.co.uk/"> UK</a>  &nbsp; | &nbsp;  <a href="https://omniaservices.in"> INDIA</a>
+                  <i className="fal fa-link"></i>{" "}
+                  <RegionSelect variant="topbar" className="align-middle ml-1" />
                 </li>
               </ul>
             </div>
