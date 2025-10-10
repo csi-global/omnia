@@ -10,7 +10,7 @@ import { Manrope, Poppins } from "next/font/google";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "./globals.css";
-import Preloader from "@/components/preloader";
+// import Preloader from "@/components/preloader";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -46,7 +46,7 @@ export default function RootLayout({
       <body
         className={`${poppins.className} ${manrope.className} subpixel-antialiased`}
       >
-        <Preloader />
+        {/* <Preloader /> */}
         <BackToTopButton />
         <Header />
         {children}
