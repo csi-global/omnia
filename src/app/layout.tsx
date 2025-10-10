@@ -1,7 +1,6 @@
 import BackToTopButton from "@/components/back-to-top";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
-import Preloader from "@/components/preloader";
 import "@/css/all.min.css";
 import "@/css/bootstrap.min.css";
 import "@/css/icomon.css";
@@ -11,6 +10,7 @@ import { Manrope, Poppins } from "next/font/google";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "./globals.css";
+import Preloader from "@/components/preloader";
 
 const poppins = Poppins({
   subsets: ["latin"],
