@@ -1,3 +1,4 @@
+import OmniaButton from '@/components/ui/omnia-button';
 import OmniaCarousel from '@/components/ui/omnia-carousel';
 import OmniaSection from '@/components/ui/omnia-section';
 import ServiceCard from '@/components/ui/service-card';
@@ -91,7 +92,7 @@ export default function ORMBPage() {
                     },
                   ].map((item) => (
                     <div key={item.title}>
-                      <div className="bg-[var(--theme)] rounded-2xl p-2 flex items-center gap-2">
+                      <div className="bg-gradient-to-br from-[var(--theme)] to-[var(--theme)]/50 rounded-2xl p-2 flex items-center gap-2">
                         <div className="bg-white rounded-full size-20 flex items-center justify-center">
                           <i className={item.icon}></i>
                         </div>
@@ -108,7 +109,7 @@ export default function ORMBPage() {
 
       {/* ORMB Services */}
       <OmniaSection>
-        <h3 className="text-center !text-5xl mb-3">Our ORMB Services</h3>
+        <h3 className="text-center !text-3xl sm:!text-5xl mb-3">Our ORMB Services</h3>
         {(() => {
           const cards = [
             {
@@ -164,7 +165,7 @@ export default function ORMBPage() {
           <div className="row">
             <div className="col-lg-10 mx-auto">
               <div className="section-title text-center text-black">
-                <h2 className="!text-5xl !text-[var(--theme)]">ORMB Key Features & Capabilities</h2>
+                <h2 className="!text-3xl sm:!text-5xl !text-[var(--theme)]">ORMB Key Features & Capabilities</h2>
                 <p>
                   Leverage the full power of Oracle Revenue Management and Billing with our
                   comprehensive implementation and optimization services.
@@ -291,10 +292,7 @@ export default function ORMBPage() {
             </p>
             <div className="main-button mt-3">
               <Link href="/contact">
-                <span className="theme-btn">Get ORMB Solutions</span>
-                <span className="arrow-btn">
-                  <i className="icon-arrow-right"></i>
-                </span>
+                <OmniaButton text="Get ORMB Solutions" />
               </Link>
             </div>
           </div>

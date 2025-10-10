@@ -1,28 +1,34 @@
+import OmniaButton from '@/components/ui/omnia-button';
+import OmniaCarousel from '@/components/ui/omnia-carousel';
 import OmniaSection from '@/components/ui/omnia-section';
+import ServiceCard from '@/components/ui/service-card';
 import type { Metadata } from 'next';
-import Image from "next/image";
-import Link from "next/link";
+import Link from 'next/link';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
-  title: "Vision Plus | Omnia Services",
-  description: "Vision Plus enterprise solutions for comprehensive business management. Expert implementation, customization, and support services to optimize your Vision Plus investment.",
-  robots: "index,follow",
+  title: 'Vision Plus | Omnia Services',
+  description:
+    'Vision Plus enterprise solutions for comprehensive business management. Expert implementation, customization, and support services to optimize your Vision Plus investment.',
+  robots: 'index,follow',
   alternates: {
-    canonical: "https://omniaservices.co.uk/vision-plus"
+    canonical: 'https://omniaservices.co.uk/vision-plus',
   },
   openGraph: {
-    title: "Vision Plus | Omnia Services",
-    description: "Vision Plus enterprise solutions for comprehensive business management. Expert implementation, customization, and support services to optimize your Vision Plus investment.",
-    type: "website",
-    url: "https://omniaservices.co.uk/vision-plus",
-    images: ["https://omniaservices.co.uk/assets/img/service/2.webp"]
+    title: 'Vision Plus | Omnia Services',
+    description:
+      'Vision Plus enterprise solutions for comprehensive business management. Expert implementation, customization, and support services to optimize your Vision Plus investment.',
+    type: 'website',
+    url: 'https://omniaservices.co.uk/vision-plus',
+    images: ['https://omniaservices.co.uk/assets/img/service/2.webp'],
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Vision Plus | Omnia Services",
-    description: "Vision Plus enterprise solutions for comprehensive business management. Expert implementation, customization, and support services to optimize your Vision Plus investment.",
-    images: ["https://omniaservices.co.uk/assets/img/service/2.webp"]
-  }
+    card: 'summary_large_image',
+    title: 'Vision Plus | Omnia Services',
+    description:
+      'Vision Plus enterprise solutions for comprehensive business management. Expert implementation, customization, and support services to optimize your Vision Plus investment.',
+    images: ['https://omniaservices.co.uk/assets/img/service/2.webp'],
+  },
 };
 
 export default function VisionPlusPage() {
@@ -36,8 +42,12 @@ export default function VisionPlusPage() {
           <div className="page-heading">
             <h1>Vision Plus</h1>
             <ul className="breadcrumb-items">
-              <li><Link href="/">Home</Link></li>
-              <li><i className="fas fa-chevron-right"></i></li>
+              <li>
+                <Link href="/">Home</Link>
+              </li>
+              <li>
+                <i className="fas fa-chevron-right"></i>
+              </li>
               <li>Vision Plus</li>
             </ul>
           </div>
@@ -48,29 +58,38 @@ export default function VisionPlusPage() {
       <OmniaSection>
         <div className="sertvice-details-wrapper">
           <div className="service-details-content">
-            <h2>Vision Plus Enterprise Solutions</h2>
-            <p>
-              Unlock the full potential of your Vision Plus system with our comprehensive implementation, customization, and support services. Our expert team helps organizations optimize their Vision Plus investment for maximum efficiency and business value.
+            <h2 className="!text-3xl sm:!text-6xl !text-center">Vision Plus Enterprise Solutions</h2>
+            <p className="max-w-3xl mx-auto">
+              Omnia helps issuers and acquirers get more from VisionPLUS — from implementation and
+              product setup to modernization and day‑2 operations. We configure authorizations,
+              clearing & settlement, disputes, loyalty and reporting, and integrate VisionPLUS with
+              your digital channels and back‑office systems for measurable outcomes.
             </p>
 
-            <div className="row g-4 pt-4 pb-5 align-items-center">
-              <div className="col-md-6">
-                <div className="thumb">
-                  <Image src="/assets/img/service/2.webp" alt="Vision Plus Solutions" width={0} height={0} sizes="100vw" style={{ width: "100%", height: "auto" }} />
-                </div>
-              </div>
-              <div className="col-md-6">
-                <div className="list-wrapper">
-                  <h3>Why Choose Our Vision Plus Services?</h3>
-                  <p>
-                    With extensive experience in Vision Plus implementations and customizations, we deliver solutions that align with your business processes and drive operational excellence across your organization.
-                  </p>
-                  <ul className="list-items">
-                    <li><i className="fa-solid fa-angles-right"></i> Expert Implementation Services</li>
-                    <li><i className="fa-solid fa-angles-right"></i> Custom Development & Integration</li>
-                    <li><i className="fa-solid fa-angles-right"></i> Process Optimization</li>
-                    <li><i className="fa-solid fa-angles-right"></i> Ongoing Support & Training</li>
-                  </ul>
+            <div className="pt-4 pb-5">
+              <h3 className="mb-3 text-center !text-3xl ">Why Choose Our Vision Plus Services?</h3>
+              <div className="flex flex-col gap-4">
+                <p className="max-w-3xl mx-auto">
+                  With extensive experience in Vision Plus implementations and customizations, we
+                  deliver solutions that align with your business processes and drive operational
+                  excellence across your organization.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 max-w-3xl mx-auto">
+                  {[
+                    { icon: 'fa-solid fa-id-card', title: 'Issuer & Acquirer Expertise' },
+                    { icon: 'fa-solid fa-diagram-project', title: 'Modernization & APIs' },
+                    { icon: 'fas fa-shield-alt', title: 'Regulatory & PCI Compliance' },
+                    { icon: 'fa-solid fa-headset', title: '24×7 Run & Optimize' },
+                  ].map((item) => (
+                    <div key={item.title}>
+                      <div className="bg-gradient-to-br from-[var(--theme)] to-[var(--theme)]/50 rounded-2xl p-2 flex items-center gap-2">
+                        <div className="bg-white rounded-full size-20 flex items-center justify-center">
+                          <i className={item.icon}></i>
+                        </div>
+                        <h5 className="text-white">{item.title}</h5>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -80,223 +99,171 @@ export default function VisionPlusPage() {
 
       {/* Vision Plus Services */}
       <OmniaSection>
-        <div className="row g-4 mb-5">
-          <h3>Our Vision Plus Services</h3>
-          <div className="col-xl-4 col-lg-6 col-md-6">
-            <div className="service-details-box-items">
-              <div className="content">
-                <h3>System Implementation</h3>
-                <p>
-                  Complete Vision Plus implementation including system configuration, data migration, user setup, and comprehensive testing to ensure successful deployment.
+        <h3 className="!text-2xl sm:!text-4xl md:!text-6xl">Our Vision Plus Services</h3>
+        {(() => {
+          const cards = [
+            {
+              icon: 'fas fa-cogs',
+              title: 'Implementation & Upgrades',
+              description:
+                'Greenfield installs and version upgrades with parameterization, data conversion, certification support and controlled cutover.',
+            },
+            {
+              icon: 'fas fa-code',
+              title: 'Product Setup & Issuance',
+              description:
+                'Design product hierarchies, fees, interest rules, EMV profiles and tokenized cards; launch and scale new card propositions faster.',
+            },
+            {
+              icon: 'fas fa-plug',
+              title: 'Authorization & Risk Controls',
+              description:
+                'Optimize real‑time authorization strategies, routing and risk rules; improve approval rates while reducing fraud exposure.',
+            },
+            {
+              icon: 'fas fa-chart-line',
+              title: 'Clearing & Settlement',
+              description:
+                'Tune posting, interchange and reconciliation; streamline GL mapping and settlement cycles for accurate, timely financials.',
+            },
+            {
+              icon: 'fas fa-scale-balanced',
+              title: 'Disputes & Chargebacks',
+              description:
+                'Automate case lifecycle, reason codes and representments to meet Visa/Mastercard timelines and reduce write‑offs.',
+            },
+            {
+              icon: 'fas fa-headset',
+              title: 'Managed Support',
+              description:
+                '24×7 platform monitoring, performance optimization and incident response with SLAs aligned to your business hours and markets.',
+            },
+          ];
+          return (
+            <OmniaCarousel
+              items={cards.map((c, i) => (
+                <ServiceCard key={i} title={c.title} description={c.description} icon={c.icon} />
+              ))}
+            />
+          );
+        })()}
+      </OmniaSection>
+
+      {/* Vision Plus Core Areas */}
+      <OmniaSection className="bg-gradient-to-br from-[var(--theme2)]/30 via-[var(--theme)]/30 to-[var(--theme2)]/50 rounded-2xl m-2">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-10 mx-auto">
+              <div className="section-title text-center text-black">
+                <h2 className="text-3xl sm:!text-5xl !text-[var(--theme)]">VisionPLUS Core Areas We Deliver</h2>
+                <p className="max-w-3xl mx-auto">
+                  Omnia configures and optimizes the VisionPLUS stack across the functions that
+                  matter most to issuers and acquirers.
                 </p>
               </div>
             </div>
           </div>
-          <div className="col-xl-4 col-lg-6 col-md-6">
-            <div className="service-details-box-items">
-              <div className="content">
-                <h3>Custom Development</h3>
-                <p>
-                  Tailored Vision Plus solutions with custom modules, reports, and workflows designed to meet your specific business requirements and processes.
-                </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {[
+              { icon: 'fas fa-id-card', title: 'Issuing & Account Management', description: 'End‑to‑end lifecycle for accounts, cards, fees, interest, limits and hierarchies.' },
+              { icon: 'fas fa-bolt', title: 'Authorization & Switching', description: 'Real‑time auth rules, routing, velocity controls and ISO 8583 connectivity.' },
+              { icon: 'fas fa-file-invoice-dollar', title: 'Clearing & Settlement', description: 'Interchange processing, postings, GL mapping, reconciliation and settlement.' },
+              { icon: 'fas fa-scale-balanced', title: 'Disputes & Chargebacks', description: 'Case management, reason codes, representments and compliance timelines.' },
+            ].map((item) => (
+              <div className="bg-white/70 p-4 rounded-2xl shadow-sm" key={item.title}>
+                <div className="feature-item">
+                  <div className="flex gap-2 items-center">
+                    <i className={`${item.icon} text-[var(--theme)]`}></i>
+                    <h4>{item.title}</h4>
+                  </div>
+                  <p className="text-sm">{item.description}</p>
+                </div>
               </div>
-            </div>
-          </div>
-          <div className="col-xl-4 col-lg-6 col-md-6">
-            <div className="service-details-box-items">
-              <div className="content">
-                <h3>Integration Services</h3>
-                <p>
-                  Seamless integration with existing systems including ERP, CRM, and third-party applications for unified business operations.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </OmniaSection>
 
-      <OmniaSection>
-        <div className="row g-4 mb-5">
-          <div className="col-xl-4 col-lg-6 col-md-6">
-            <div className="service-details-box-items">
-              <div className="content">
-                <h3>Process Optimization</h3>
-                <p>
-                  Analyze and optimize your business processes to maximize Vision Plus capabilities and improve operational efficiency across departments.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-4 col-lg-6 col-md-6">
-            <div className="service-details-box-items">
-              <div className="content">
-                <h3>Training & Adoption</h3>
-                <p>
-                  Comprehensive user training programs and change management support to ensure successful adoption and maximum utilization of Vision Plus features.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-4 col-lg-6 col-md-6">
-            <div className="service-details-box-items">
-              <div className="content">
-                <h3>Managed Support</h3>
-                <p>
-                  24/7 support and maintenance services including system monitoring, performance optimization, and issue resolution for uninterrupted operations.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </OmniaSection>
-
-      {/* Vision Plus Modules */}
-      <OmniaSection className="bg-light">
-        <div className="row">
-          <div className="col-lg-8 mx-auto">
-            <div className="section-title text-center">
-              <h2>Vision Plus Core Modules</h2>
-              <p>
-                Comprehensive Vision Plus solutions covering all aspects of enterprise business management and operations.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="row g-4 pt-4">
-          <div className="col-lg-3 col-md-6">
-            <div className="module-item text-center">
-              <div className="icon">
-                <i className="fas fa-users"></i>
-              </div>
-              <h4>Human Resources</h4>
-              <p>
-                Complete HR management including employee records, payroll, benefits, and performance management.
-              </p>
-            </div>
-          </div>
-
-          <div className="col-lg-3 col-md-6">
-            <div className="module-item text-center">
-              <div className="icon">
-                <i className="fas fa-chart-line"></i>
-              </div>
-              <h4>Financial Management</h4>
-              <p>
-                Comprehensive financial management including accounting, budgeting, and financial reporting capabilities.
-              </p>
-            </div>
-          </div>
-
-          <div className="col-lg-3 col-md-6">
-            <div className="module-item text-center">
-              <div className="icon">
-                <i className="fas fa-boxes"></i>
-              </div>
-              <h4>Inventory Management</h4>
-              <p>
-                Advanced inventory control with real-time tracking, automated reordering, and warehouse management.
-              </p>
-            </div>
-          </div>
-
-          <div className="col-lg-3 col-md-6">
-            <div className="module-item text-center">
-              <div className="icon">
-                <i className="fas fa-handshake"></i>
-              </div>
-              <h4>Customer Relations</h4>
-              <p>
-                Integrated CRM functionality for managing customer relationships, sales processes, and customer service.
-              </p>
-            </div>
-          </div>
-        </div>
-      </OmniaSection>
-
-      {/* Implementation Process */}
-      <OmniaSection>
+      {/* Implementation Process (styled cards) */}
+      <OmniaSection className="bg-light rounded-2xl fix">
         <div className="row">
           <div className="col-lg-8 mx-auto">
             <div className="section-title text-center">
               <h2>Our Implementation Process</h2>
               <p>
-                A proven methodology that ensures successful Vision Plus deployment with minimal disruption to your business operations.
+                A proven VisionPLUS delivery playbook that minimizes risk and accelerates time to
+                value.
               </p>
             </div>
           </div>
         </div>
 
         <div className="row g-4 pt-4">
-          <div className="col-lg-3 col-md-6">
-            <div className="process-item text-center">
-              <div className="icon">
-                <i className="fas fa-search"></i>
+          {[
+            { icon: 'fas fa-magnifying-glass-chart', title: 'Fit‑Gap & Roadmap', description: 'Assess current stack, target outcomes and compliance; define phased roadmap.' },
+            { icon: 'fas fa-sliders', title: 'Configuration & Data Migration', description: 'Parameterization, data conversion and integration with channels and back office.' },
+            { icon: 'fas fa-gauge-high', title: 'Performance & Certification', description: 'Load testing, scheme certification and operational readiness validation.' },
+            { icon: 'fas fa-flag-checkered', title: 'Cutover & Hypercare', description: 'Controlled go‑live, monitoring and issue burn‑down until KPIs stabilize.' },
+          ].map((p) => (
+            <div className="col-lg-3 col-md-6" key={p.title}>
+              <div className="industry-item text-center p-4 rounded-2xl shadow-sm border border-[var(--theme)]/20 bg-white">
+                <span className="block h-1 w-10 bg-[var(--theme)] rounded-full mx-auto mb-3"></span>
+                <div className="flex items-center justify-center mb-2">
+                  <div className="size-10 rounded-full bg-[var(--theme)]/10 text-[var(--theme)] flex items-center justify-center">
+                    <i className={p.icon}></i>
+                  </div>
+                </div>
+                <h4 className="m-0 text-[var(--theme)]">{p.title}</h4>
+                <p className="mt-2">{p.description}</p>
               </div>
-              <h4>Discovery & Analysis</h4>
-              <p>
-                Comprehensive analysis of your current systems, processes, and requirements to design the optimal Vision Plus solution.
-              </p>
             </div>
-          </div>
+          ))}
+        </div>
+      </OmniaSection>
 
-          <div className="col-lg-3 col-md-6">
-            <div className="process-item text-center">
-              <div className="icon">
-                <i className="fas fa-drafting-compass"></i>
+      {/* CTA Section */}
+      <OmniaSection>
+        <div className="container">
+          <div className="row g-4 pt-4">
+            <div className="col-12">
+              <div className="lcnc-banner">
+                <h5>Transform Your Business with Vision Plus</h5>
+                <p className="ecosystems">
+                  Ready to optimize your Vision Plus investment? Our experts will help you implement
+                  a solution that streamlines operations, improves efficiency, and drives business
+                  growth.
+                </p>
+                <div className="main-button mt-3">
+                  <Link href="/contact">
+                    <OmniaButton text="Get Vision Plus Solutions" />
+                  </Link>
+                </div>
               </div>
-              <h4>Design & Configuration</h4>
-              <p>
-                System design and configuration tailored to your business needs with custom workflows and integrations.
-              </p>
-            </div>
-          </div>
-
-          <div className="col-lg-3 col-md-6">
-            <div className="process-item text-center">
-              <div className="icon">
-                <i className="fas fa-cogs"></i>
-              </div>
-              <h4>Implementation</h4>
-              <p>
-                Phased implementation with data migration, system testing, and user training for smooth deployment.
-              </p>
-            </div>
-          </div>
-
-          <div className="col-lg-3 col-md-6">
-            <div className="process-item text-center">
-              <div className="icon">
-                <i className="fas fa-check-circle"></i>
-              </div>
-              <h4>Support & Optimization</h4>
-              <p>
-                Ongoing support, monitoring, and optimization to ensure continued success and maximum ROI.
-              </p>
             </div>
           </div>
         </div>
       </OmniaSection>
 
-      {/* CTA Section */}
-      <div className="row g-4 pt-4">
-        <div className="col-12">
-          <div className="lcnc-banner">
-            <h5>Transform Your Business with Vision Plus</h5>
-            <p className="ecosystems">
-              Ready to optimize your Vision Plus investment? Our experts will help you implement a solution that streamlines operations, improves efficiency, and drives business growth.
-            </p>
-            <div className="main-button mt-3">
-              <Link href="/contact">
-                <span className="theme-btn">Get Vision Plus Solutions</span>
-                <span className="arrow-btn">
-                  <i className="icon-arrow-right"></i>
-                </span>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* SEO: JSON-LD for Vision Plus */}
+      <Script id="ld-visionplus" type="application/ld+json" strategy="afterInteractive">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: 'Vision Plus Services',
+          serviceType: 'Vision Plus implementation and support',
+          provider: {
+            '@type': 'Organization',
+            name: 'Omnia Services',
+            url: 'https://omniaservices.co.uk',
+          },
+          areaServed: 'GB',
+          url: 'https://omniaservices.co.uk/vision-plus',
+          description:
+            'Vision Plus enterprise solutions for comprehensive business management. Expert implementation, customization, and support services to optimize your Vision Plus investment.',
+        })}
+      </Script>
+
     </div>
   );
 }

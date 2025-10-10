@@ -1,7 +1,10 @@
+import OmniaButton from '@/components/ui/omnia-button';
+import OmniaCarousel from '@/components/ui/omnia-carousel';
 import OmniaSection from '@/components/ui/omnia-section';
+import ServiceCard from '@/components/ui/service-card';
 import type { Metadata } from 'next';
-import Image from "next/image";
 import Link from "next/link";
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: "MSD365 | Omnia Services",
@@ -43,34 +46,43 @@ export default function MSD365Page() {
           </div>
         </div>
       </div>
-
       {/* Service Details Section */}
       <OmniaSection>
         <div className="sertvice-details-wrapper">
           <div className="service-details-content">
-            <h2>MSD365 Enterprise Solutions</h2>
-            <p>
-              Unlock the full potential of your MSD365 system with our comprehensive implementation, customization, and support services. Our expert team helps organizations optimize their MSD365 investment for maximum efficiency, productivity, and business value.
+            <h2 className="!text-3xl sm:!text-6xl !text-center">Microsoft Dynamics 365 Services</h2>
+            <p className="max-w-3xl mx-auto">
+              Omnia implements, optimizes and runs Microsoft Dynamics 365 across Sales, Customer
+              Service, Field Service, Finance and Supply Chain. We unify data on Dataverse, integrate
+              with Microsoft 365, Azure and third‑party systems, and enable Power Platform/Copilot so
+              teams move faster with less manual work.
             </p>
 
-            <div className="row g-4 pt-4 pb-5 align-items-center">
-              <div className="col-md-6">
-                <div className="thumb">
-                  <Image src="/assets/img/service/4.webp" alt="MSD365 Solutions" width={0} height={0} sizes="100vw" style={{ width: "100%", height: "auto" }} />
-                </div>
-              </div>
-              <div className="col-md-6">
-                <div className="list-wrapper">
-                  <h3>Why Choose Our MSD365 Services?</h3>
-                  <p>
-                    With extensive experience in MSD365 implementations and customizations, we deliver solutions that align with your business processes and drive operational excellence across your organization.
-                  </p>
-                  <ul className="list-items">
-                    <li><i className="fa-solid fa-angles-right"></i> Complete Implementation Services</li>
-                    <li><i className="fa-solid fa-angles-right"></i> Custom Development & Integration</li>
-                    <li><i className="fa-solid fa-angles-right"></i> Process Optimization</li>
-                    <li><i className="fa-solid fa-angles-right"></i> Comprehensive Support & Training</li>
-                  </ul>
+            <div className="pt-4 pb-5">
+              <h3 className="mb-3 text-center !text-3xl">Why Choose Our MSD365 Services?</h3>
+              <div className="flex flex-col gap-4">
+                <p className="max-w-3xl mx-auto">
+                  Certified Microsoft Dynamics 365 specialists, proven multi-geo rollouts and a pragmatic approach to
+                  change — backed by Power Platform and Copilot to automate routine work.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 max-w-3xl mx-auto">
+                  {[
+                    { icon: 'fas fa-id-badge', title: 'Certified D365 Specialists' },
+                    { icon: 'fas fa-exchange-alt', title: 'Implementation & Migration' },
+                    { icon: 'fas fa-robot', title: 'Power Platform + Copilot' },
+                    { icon: 'fas fa-headset', title: 'Managed Support & Governance' },
+                    { icon: 'fas fa-plug', title: 'Integration with Microsoft 365 & Azure' },
+                    { icon: 'fas fa-chart-line', title: 'Business Intelligence & Analytics' },
+                  ].map((item) => (
+                    <div key={item.title}>
+                      <div className="bg-gradient-to-br from-[var(--theme)] to-[var(--theme)]/50 rounded-2xl p-2 flex items-center gap-2">
+                        <div className="bg-white rounded-full size-20 flex items-center justify-center">
+                          <i className={item.icon}></i>
+                        </div>
+                        <h5 className="text-white">{item.title}</h5>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -80,247 +92,163 @@ export default function MSD365Page() {
 
       {/* MSD365 Services */}
       <OmniaSection>
-        <div className="row g-4 mb-5">
-          <h3>Our MSD365 Services</h3>
-          <div className="col-xl-4 col-lg-6 col-md-6">
-            <div className="service-details-box-items">
-              <div className="content">
-                <h3>System Implementation</h3>
+        <h3 className="!text-3xl sm:!text-5xl">Our MSD365 Services</h3>
+        {(() => {
+          const cards = [
+            {
+              icon: 'fas fa-cogs',
+              title: 'Implementation & Migration',
+              description:
+                'Greenfield deployments and legacy migrations with process design, data conversion and structured cutover.',
+            },
+            {
+              icon: 'fas fa-users',
+              title: 'Sales & Customer Service',
+              description:
+                'Design lead‑to‑cash and case management with guided selling, SLA/entitlements and omnichannel service.',
+            },
+            {
+              icon: 'fas fa-plug',
+              title: 'Finance & Supply Chain',
+              description:
+                'Chart of accounts, tax, inventory, warehousing and production — aligned to your controls and reporting.',
+            },
+            {
+              icon: 'fas fa-robot',
+              title: 'Power Platform & Copilot',
+              description:
+                'Low‑code apps, approvals and RPA with Power Automate; enable AI assistance with Microsoft Copilot.',
+            },
+            {
+              icon: 'fas fa-database',
+              title: 'Integration & Data',
+              description:
+                'Dataverse, Azure integration and third‑party connectors; master data and data quality governance.',
+            },
+            {
+              icon: 'fas fa-headset',
+              title: 'Managed Support & DevOps',
+              description:
+                '24×7 monitoring, release management and SLA‑backed incident response to keep Dynamics running smoothly.',
+            },
+          ];
+          return (
+            <OmniaCarousel
+              items={cards.map((c, i) => (
+                <ServiceCard key={i} title={c.title} description={c.description} icon={c.icon} />
+              ))}
+            />
+          );
+        })()}
+      </OmniaSection>
+
+      {/* MSD365 Core Modules */}
+      <OmniaSection className="bg-gradient-to-br from-[var(--theme2)]/30 via-[var(--theme)]/30 to-[var(--theme2)]/50 rounded-2xl m-2">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-10 mx-auto">
+              <div className="section-title text-center text-black">
+                <h2 className="!text-3xl sm:!text-5xl !text-[var(--theme)]">MSD365 Core Modules</h2>
                 <p>
-                  Complete MSD365 implementation including system configuration, data migration, user setup, and comprehensive testing to ensure successful deployment.
+                  We help you deploy and optimize the Dynamics apps that drive your business.
                 </p>
               </div>
             </div>
           </div>
-          <div className="col-xl-4 col-lg-6 col-md-6">
-            <div className="service-details-box-items">
-              <div className="content">
-                <h3>Custom Development</h3>
-                <p>
-                  Tailored MSD365 solutions with custom modules, workflows, and integrations designed to meet your specific business requirements and processes.
-                </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {[
+              { icon: 'fas fa-handshake', title: 'Sales', description: 'Pipeline, forecasting, pricing and guided selling on a unified Dataverse model.' },
+              { icon: 'fas fa-headset', title: 'Customer Service', description: 'Cases, SLAs, entitlements and omnichannel service with knowledge and self‑service.' },
+              { icon: 'fas fa-file-invoice-dollar', title: 'Finance', description: 'GL, AP/AR, budgeting, tax and regulatory reporting with embedded controls.' },
+              { icon: 'fas fa-truck-loading', title: 'Supply Chain', description: 'Inventory, warehousing, production and procurement with real‑time visibility.' },
+            ].map((item) => (
+              <div className="bg-white/70 p-4 rounded-2xl shadow-sm" key={item.title}>
+                <div className="feature-item">
+                  <div className="flex gap-2 items-center">
+                    <i className={`${item.icon} text-[var(--theme)]`}></i>
+                    <h4>{item.title}</h4>
+                  </div>
+                  <p className="text-sm">{item.description}</p>
+                </div>
               </div>
-            </div>
-          </div>
-          <div className="col-xl-4 col-lg-6 col-md-6">
-            <div className="service-details-box-items">
-              <div className="content">
-                <h3>Integration Services</h3>
-                <p>
-                  Seamless integration with existing systems including ERP, CRM, and third-party applications for unified business operations.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </OmniaSection>
 
-      <OmniaSection>
-        <div className="row g-4 mb-5">
-          <div className="col-xl-4 col-lg-6 col-md-6">
-            <div className="service-details-box-items">
-              <div className="content">
-                <h3>Data Migration & Management</h3>
-                <p>
-                  Secure and efficient data migration from legacy systems with comprehensive data validation and integrity checks.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-4 col-lg-6 col-md-6">
-            <div className="service-details-box-items">
-              <div className="content">
-                <h3>User Training & Adoption</h3>
-                <p>
-                  Comprehensive user training programs and change management support to ensure successful adoption and maximum utilization of MSD365 features.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-4 col-lg-6 col-md-6">
-            <div className="service-details-box-items">
-              <div className="content">
-                <h3>Ongoing Support</h3>
-                <p>
-                  24/7 support and maintenance services including system monitoring, performance optimization, and issue resolution for uninterrupted operations.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </OmniaSection>
-
-      {/* MSD365 Modules */}
-      <OmniaSection className="bg-light">
-        <div className="row">
-          <div className="col-lg-8 mx-auto">
-            <div className="section-title text-center">
-              <h2>MSD365 Core Modules</h2>
-              <p>
-                Comprehensive MSD365 solutions covering all aspects of enterprise business management and operations.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="row g-4 pt-4">
-          <div className="col-lg-3 col-md-6">
-            <div className="module-item text-center">
-              <div className="icon">
-                <i className="fas fa-users-cog"></i>
-              </div>
-              <h4>Human Capital Management</h4>
-              <p>
-                Complete HR management including employee lifecycle, performance management, and workforce analytics.
-              </p>
-            </div>
-          </div>
-
-          <div className="col-lg-3 col-md-6">
-            <div className="module-item text-center">
-              <div className="icon">
-                <i className="fas fa-chart-pie"></i>
-              </div>
-              <h4>Financial Management</h4>
-              <p>
-                Comprehensive financial management including accounting, budgeting, forecasting, and financial reporting.
-              </p>
-            </div>
-          </div>
-
-          <div className="col-lg-3 col-md-6">
-            <div className="module-item text-center">
-              <div className="icon">
-                <i className="fas fa-shipping-fast"></i>
-              </div>
-              <h4>Supply Chain Management</h4>
-              <p>
-                End-to-end supply chain management including procurement, inventory, and logistics optimization.
-              </p>
-            </div>
-          </div>
-
-          <div className="col-lg-3 col-md-6">
-            <div className="module-item text-center">
-              <div className="icon">
-                <i className="fas fa-handshake"></i>
-              </div>
-              <h4>Customer Relationship Management</h4>
-              <p>
-                Integrated CRM functionality for managing customer relationships, sales processes, and customer service.
-              </p>
-            </div>
-          </div>
-        </div>
-      </OmniaSection>
-
-      {/* Implementation Benefits */}
-      <OmniaSection>
+      {/* Implementation Benefits (styled cards) */}
+      <OmniaSection className="bg-light rounded-2xl fix">
         <div className="row">
           <div className="col-lg-8 mx-auto">
             <div className="section-title text-center">
               <h2>MSD365 Implementation Benefits</h2>
               <p>
-                Transform your business operations with MSD365 and experience significant improvements in efficiency, visibility, and decision-making.
+                Real outcomes from well‑run Dynamics programs — not just feature rollouts.
               </p>
             </div>
           </div>
         </div>
 
         <div className="row g-4 pt-4">
-          <div className="col-lg-4 col-md-6">
-            <div className="benefit-item text-center">
-              <div className="icon">
-                <i className="fas fa-chart-line"></i>
+          {[
+            { icon: 'fas fa-bolt', title: 'Faster Time‑to‑Value', description: 'Template accelerators and proven rollout patterns shorten delivery cycles.' },
+            { icon: 'fas fa-users', title: 'User Adoption', description: 'Role‑based experiences, training and change kits drive sustainable usage.' },
+            { icon: 'fas fa-database', title: 'Single Data Model', description: 'Dataverse brings customer and operations data together for end‑to‑end insight.' },
+            { icon: 'fas fa-cogs', title: 'Process Automation', description: 'Automate approvals and repetitive tasks with Power Automate and RPA.' },
+            { icon: 'fas fa-brain', title: 'Insights & AI', description: 'Copilot and embedded analytics surface suggestions and next best actions.' },
+            { icon: 'fas fa-shield-alt', title: 'Security & Compliance', description: 'Enterprise‑grade access control, auditability and regional data residency.' },
+          ].map((b) => (
+            <div className="col-lg-4 col-md-6" key={b.title}>
+              <div className="industry-item text-center p-4 rounded-2xl shadow-sm border border-[var(--theme)]/20 bg-white">
+                <span className="block h-1 w-10 bg-[var(--theme)] rounded-full mx-auto mb-3"></span>
+                <div className="flex items-center justify-center mb-2">
+                  <div className="size-10 rounded-full bg-[var(--theme)]/10 text-[var(--theme)] flex items-center justify-center">
+                    <i className={b.icon}></i>
+                  </div>
+                </div>
+                <h4 className="m-0 text-[var(--theme)]">{b.title}</h4>
+                <p className="mt-2">{b.description}</p>
               </div>
-              <h4>Improved Efficiency</h4>
-              <p>
-                Streamlined processes and automated workflows that reduce manual effort and improve operational efficiency across all departments.
-              </p>
             </div>
-          </div>
+          ))}
+        </div>
+      </OmniaSection>
 
-          <div className="col-lg-4 col-md-6">
-            <div className="benefit-item text-center">
-              <div className="icon">
-                <i className="fas fa-eye"></i>
+      {/* CTA Section */}
+      <OmniaSection>
+        <div className="container">
+          <div className="row g-4 pt-4">
+            <div className="col-12 mx-auto">
+              <div className="lcnc-banner">
+                <h5>Transform Your Business with MSD365</h5>
+                <p className="ecosystems">
+                  Ready to optimize your business operations with MSD365? Our experts will help you implement a solution that streamlines processes, improves efficiency, and drives sustainable growth.
+                </p>
+                <div className="main-button mt-3">
+                  <Link href="/contact">
+                    <OmniaButton text="Get MSD365 Solutions" />
+                  </Link>
+                </div>
               </div>
-              <h4>Enhanced Visibility</h4>
-              <p>
-                Real-time dashboards and reporting capabilities that provide comprehensive visibility into business operations and performance.
-              </p>
-            </div>
-          </div>
-
-          <div className="col-lg-4 col-md-6">
-            <div className="benefit-item text-center">
-              <div className="icon">
-                <i className="fas fa-cogs"></i>
-              </div>
-              <h4>Better Decision Making</h4>
-              <p>
-                Advanced analytics and business intelligence tools that provide actionable insights for informed decision-making.
-              </p>
-            </div>
-          </div>
-
-          <div className="col-lg-4 col-md-6">
-            <div className="benefit-item text-center">
-              <div className="icon">
-                <i className="fas fa-shield-alt"></i>
-              </div>
-              <h4>Enhanced Security</h4>
-              <p>
-                Robust security features and compliance capabilities that protect your data and ensure regulatory compliance.
-              </p>
-            </div>
-          </div>
-
-          <div className="col-lg-4 col-md-6">
-            <div className="benefit-item text-center">
-              <div className="icon">
-                <i className="fas fa-expand-arrows-alt"></i>
-              </div>
-              <h4>Scalability</h4>
-              <p>
-                Flexible and scalable platform that grows with your business and adapts to changing requirements and market conditions.
-              </p>
-            </div>
-          </div>
-
-          <div className="col-lg-4 col-md-6">
-            <div className="benefit-item text-center">
-              <div className="icon">
-                <i className="fas fa-dollar-sign"></i>
-              </div>
-              <h4>Cost Optimization</h4>
-              <p>
-                Reduced operational costs through process automation, improved resource utilization, and elimination of redundant systems.
-              </p>
             </div>
           </div>
         </div>
       </OmniaSection>
 
-      {/* CTA Section */}
-      <div className="row g-4 pt-4">
-        <div className="col-12">
-          <div className="lcnc-banner">
-            <h5>Transform Your Business with MSD365</h5>
-            <p className="ecosystems">
-              Ready to optimize your business operations with MSD365? Our experts will help you implement a solution that streamlines processes, improves efficiency, and drives sustainable growth.
-            </p>
-            <div className="main-button mt-3">
-              <Link href="/contact">
-                <span className="theme-btn">Get MSD365 Solutions</span>
-                <span className="arrow-btn">
-                  <i className="icon-arrow-right"></i>
-                </span>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
+            {/* SEO: JSON-LD for MSD365 */}
+            <Script id="ld-msd365" type="application/ld+json" strategy="afterInteractive">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: 'Microsoft Dynamics 365 Services',
+          serviceType: 'Dynamics 365 implementation and managed services',
+          provider: { '@type': 'Organization', name: 'Omnia Services', url: 'https://omniaservices.co.uk' },
+          areaServed: 'GB',
+          url: 'https://omniaservices.co.uk/msd365',
+          description: 'Implementation, migration, integration and managed support for Microsoft Dynamics 365 across Sales, Customer Service, Finance and Supply Chain with Power Platform and Copilot enablement.'
+        })}
+      </Script>
     </div>
   );
 }

@@ -190,8 +190,15 @@ export default function Header() {
                         opacity: isManagedOpen ? 1 : 0,
                       }}
                     >
-                      {["Managed Cloud Desk", "Managed Microsoft 365", "Managed Microsoft Azure", "Surface-As-A-Service"].map((item, index) => (
-                        <li className="pl-4 text-nowrap text-sm" key={index}><Link href={`/${item.toLowerCase().replace(/ /g, "-")}`} className="block py-1">{item}</Link></li>
+                      {[
+                        { label: "ORMB", href: "/ormb" },
+                        { label: "Vision Plus", href: "/vision-plus" },
+                        { label: "Smart Investigate", href: "/smart-investigate" },
+                        { label: "MSD365", href: "/msd365" },
+                      ].map((item, index) => (
+                        <li className="pl-4 text-nowrap text-sm" key={index}>
+                          <Link href={item.href} className="block py-1">{item.label}</Link>
+                        </li>
                       ))}
                     </ul>
                   </li>
