@@ -194,8 +194,14 @@ export default function Home() {
                       <h1 dangerouslySetInnerHTML={{ __html: slide.title.replace("\n", "<br/>") }} />
                       <p>{slide.description}</p>
                       <div className="main-button">
-                        <Link href={slide.ctaHref}>
-                          <span className="theme-btn"> Read More </span>
+                        <Link
+                          href={slide.ctaHref}
+                          aria-label={`Read more about ${slide.title}`}
+                        >
+                          <span className="theme-btn">
+                            Read More
+                            <span className="sr-only"> about {slide.title}</span>
+                          </span>
                           <span className="arrow-btn"><i className="icon-arrow-right"></i></span>
                         </Link>
                       </div>
@@ -250,7 +256,7 @@ export default function Home() {
 
                 {/* CTAs (use existing main-button style) */}
                 <div className="pt-2 flex flex-wrap gap-3">
-                  <Link href="/#core-values" >
+                  <Link href="/#core-values" aria-label="Read more about Omnia core values">
                     <OmniaButton text="Read More" />
                   </Link>
                   <Link href="/contact" className="main-button">
@@ -311,8 +317,12 @@ export default function Home() {
                       <Link href={service.href}>{service.title}</Link>
                     </h3>
                     <p>{service.description}</p>
-                    <Link href={service.href} className="link-btn">
-                      Read More <span><i className="icon-arrow-right"></i></span>
+                    <Link
+                      href={service.href}
+                      className="link-btn"
+                      aria-label={`Read more about ${service.title}`}
+                    >
+                      Read More <span className="sr-only">about {service.title}</span> <span><i className="icon-arrow-right"></i></span>
                     </Link>
                   </div>
                 </div>
