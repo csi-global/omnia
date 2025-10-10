@@ -13,6 +13,7 @@ export default function Header() {
   const managedListRef = useRef<HTMLUListElement | null>(null);
   const [professionalMaxHeight, setProfessionalMaxHeight] = useState<number>(0);
   const [managedMaxHeight, setManagedMaxHeight] = useState<number>(0);
+  const [contactEmail, setContactEmail] = useState<string>("info@omniaservices.co.uk");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,6 +50,20 @@ export default function Header() {
     }
   }, [isManagedOpen]);
 
+  // Determine email address based on current domain
+  useEffect(() => {
+    try {
+      const host = window.location.hostname;
+      if (host.includes('.in')) {
+        setContactEmail('info@omniaservices.in');
+      } else {
+        setContactEmail('info@omniaservices.co.uk');
+      }
+    } catch {
+      setContactEmail('info@omniaservices.co.uk');
+    }
+  }, []);
+
   return (
     <>
       <header className="header-section">
@@ -58,7 +73,7 @@ export default function Header() {
               <ul>
                 <li>
                   <i className="far fa-envelope"></i>
-                  <a href="mailto:info@omniaservices.co.uk" className="link">info@omniaservices.co.uk</a>
+                  <a href={`mailto:${contactEmail}`} className="link">{contactEmail}</a>
                 </li>
                 <li>
                   <i className="fal fa-link"></i>{" "}
