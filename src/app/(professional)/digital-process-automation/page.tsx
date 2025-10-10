@@ -50,26 +50,35 @@ export default function DigitalProcessAutomationPage() {
         <div className="container">
           <div className="sertvice-details-wrapper">
             <div className="service-details-content">
-              <p>
-                Accelerate delivery with Low Code / No Code platforms while maintaining enterprise-grade
-                governance and security. We help you modernize processes, digitize workflows, and connect
-                systems across using Pega, ServiceNow, and Microsoft Power Platform + Dynamics 365.
-              </p>
+              <div className="relative overflow-hidden pb-24">
+                <div className="row align-items-center g-4">
+                  <div className="col-lg-7">
+                    <p className="inline-flex items-center rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs font-semibold tracking-wide text-zinc-700">Professional Services</p>
+                    <h1 className="mt-3 !text-3xl sm:!text-4xl md:!text-5xl font-extrabold !leading-tight break-words text-zinc-900">Digital Process Automation</h1>
+                    <p className="mt-3 text-zinc-600 text-base sm:!text-lg break-words">Accelerate delivery with Low Code / No Code platforms while maintaining enterprise-grade governance and security. We help you modernize processes, digitize workflows, and connect systems using Pega, ServiceNow, and Microsoft Power Platform + Dynamics 365.</p>
 
-              <div className="row g-4 pt-4 pb-5 align-items-center">
-                <div className="col-md-6">
-                  <div className="thumb">
-                    <Image src="/assets/img/service/3.webp" alt="Digital process automation illustration" width={0} height={0} sizes="100vw" style={{ width: "100%", height: "auto" }} />
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="list-wrapper">
-                    <ul className="list-items">
-                      <li><i className="fa-solid fa-angles-right"></i> Digital Process Automation (DPA) and workflow orchestration</li>
-                      <li><i className="fa-solid fa-angles-right"></i> Citizen development with guardrails, governance, and Center of Excellence</li>
-                      <li><i className="fa-solid fa-angles-right"></i> AI decisioning, RPA, process mining, and end-to-end integration</li>
-                      <li><i className="fa-solid fa-angles-right"></i> Cloud-native, secure, scalable, and compliant deployments</li>
+                    <div className="mt-5 d-flex gap-3">
+                      <Link href="/contact" className="main-button"><span className="theme-btn">Talk to an Expert</span><span className="arrow-btn"><i className="icon-arrow-right"></i></span></Link>
+                      <a href="#offerings" className="main-button secondary"><span className="theme-btn">Explore Offerings</span><span className="arrow-btn"><i className="icon-arrow-right"></i></span></a>
+                    </div>
+
+                    <ul className="mt-5 d-flex flex-wrap gap-2 text-sm text-zinc-700">
+                      <li className="px-3 py-1 rounded-full bg-white border">Low‑code</li>
+                      <li className="px-3 py-1 rounded-full bg-white border">Governance</li>
+                      <li className="px-3 py-1 rounded-full bg-white border">AI & RPA</li>
                     </ul>
+                  </div>
+                  <div className="col-lg-5">
+                    <div className="rounded-3xl overflow-hidden h-[320px] md:h-[380px] relative">
+                      <Image
+                        src="/assets/img/service/3.webp"
+                        alt="Digital process automation overview"
+                        fill
+                        sizes="(max-width: 992px) 100vw, 40vw"
+                        style={{ objectFit: "cover" }}
+                        priority
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
