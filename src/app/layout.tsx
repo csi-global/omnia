@@ -27,7 +27,7 @@ const manrope = Manrope({
   fallback: ["system-ui", "arial"],
 });
 
-export const metadata: Metadata = {
+const baseMetadata: Metadata = {
   title: "Omnia",
   description: "Omnia - Cloud consulting, digital transformation, and managed services",
   icons: {
@@ -44,7 +44,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const base = new URL(`${proto}://${host}`);
 
   return {
-    ...metadata,
+    ...baseMetadata,
     metadataBase: base,
     alternates: { canonical: "/" },
   };
