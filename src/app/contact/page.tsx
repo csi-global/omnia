@@ -105,22 +105,6 @@ export default async function ContactPage({
   const showUKSuggestion = siteIsIndia && !isIndiaVisitor && !!countryHeader; // only when we know they're not IN
   return (
     <div>
-      {showIndiaSuggestion && (
-        <div className="container" style={{ paddingTop: '16px' }}>
-          <div className="p-3 rounded" style={{ background: '#fff3cd', color: '#664d03', border: '1px solid #ffecb5' }}>
-            Looking for our India contact page?&nbsp;
-            <a href="https://omniaservices.in/contact" className="text-decoration-underline">Go to omniaservices.in/contact</a>
-          </div>
-        </div>
-      )}
-      {showUKSuggestion && (
-        <div className="container" style={{ paddingTop: '16px' }}>
-          <div className="p-3 rounded" style={{ background: '#fff3cd', color: '#664d03', border: '1px solid #ffecb5' }}>
-            Looking for our UK contact page?&nbsp;
-            <a href="https://omniaservices.co.uk/contact" className="text-decoration-underline">Go to omniaservices.co.uk/contact</a>
-          </div>
-        </div>
-      )}
       <div
         className="breadcrumb-wrapper bg-cover"
         style={{ backgroundImage: "url('/assets/img/breadcrumb.webp')" }}
@@ -343,6 +327,23 @@ export default async function ContactPage({
           </div>
         </div>
       </section>
+      {/* Geo suggestion banners moved to bottom to avoid header overlap */}
+      {showIndiaSuggestion && (
+        <div className="container" style={{ paddingTop: '16px', paddingBottom: '16px' }}>
+          <div className="p-3 rounded" style={{ background: '#fff3cd', color: '#664d03', border: '1px solid #ffecb5' }}>
+            Looking for our India contact page?&nbsp;
+            <a href="https://omniaservices.in/contact" className="text-decoration-underline">Go to omniaservices.in/contact</a>
+          </div>
+        </div>
+      )}
+      {showUKSuggestion && (
+        <div className="container" style={{ paddingTop: '16px', paddingBottom: '16px' }}>
+          <div className="p-3 rounded" style={{ background: '#fff3cd', color: '#664d03', border: '1px solid #ffecb5' }}>
+            Looking for our UK contact page?&nbsp;
+            <a href="https://omniaservices.co.uk/contact" className="text-decoration-underline">Go to omniaservices.co.uk/contact</a>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
