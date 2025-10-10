@@ -8,6 +8,7 @@ import "@/css/icomon.css";
 import "@/css/main.css";
 import type { Metadata } from "next";
 import { Manrope, Poppins } from "next/font/google";
+import { headers } from "next/headers";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "./globals.css";
@@ -35,6 +36,19 @@ export const metadata: Metadata = {
     apple: "/assets/img/favicon.png",
   },
 };
+
+export async function generateMetadata(): Promise<Metadata> {
+  const hdrs = await headers();
+  const host = hdrs.get("x-forwarded-host") ?? hdrs.get("host") ?? "omniaservices.co.uk";
+  const proto = hdrs.get("x-forwarded-proto") ?? "https";
+  const base = new URL(`${proto}://${host}`);
+
+  return {
+    ...metadata,
+    metadataBase: base,
+    alternates: { canonical: "/" },
+  };
+}
 
 export default function RootLayout({
   children,
