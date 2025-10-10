@@ -4,7 +4,7 @@ import OmniaButton from "@/components/ui/omnia-button";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 type Slide = {
@@ -155,9 +155,12 @@ export default function Home() {
           <div className="array-next" ref={nextRef}><i className="icon-arrow-right"></i></div>
         </div>
         <Swiper
-          modules={[Autoplay, Pagination, Navigation]}
+          modules={[Autoplay, Pagination, Navigation, EffectFade]}
           slidesPerView={1}
           loop
+          effect="fade"
+          speed={700}
+          fadeEffect={{ crossFade: true }}
           autoplay={{ delay: 5000, disableOnInteraction: false }}
           pagination={{ clickable: true }}
           navigation={{

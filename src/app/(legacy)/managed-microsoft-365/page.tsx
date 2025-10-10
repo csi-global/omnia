@@ -44,7 +44,7 @@ export default function ManagedMicrosoft365Page() {
       </div>
 
       {/* Service Details Section */}
-      <section className="Service-details-section section-padding fix">
+      <section className="section-padding fix">
         <div className="container">
           <div className="sertvice-details-wrapper">
             <div className="service-details-content">

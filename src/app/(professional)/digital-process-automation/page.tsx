@@ -1,4 +1,4 @@
-import HeroSummaryTabs from "@/components/HeroSummaryTabs";
+import HeroSummaryTabs from "@/components/hero-summary-tabs";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import type { Metadata } from 'next';
 import Image from "next/image";
@@ -46,7 +46,7 @@ export default function DigitalProcessAutomationPage() {
         </div>
       </div>
 
-      <section className="Service-details-section section-padding fix">
+      <section className="section-padding fix">
         <div className="container">
           <div className="sertvice-details-wrapper">
             <div className="service-details-content">

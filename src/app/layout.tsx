@@ -1,14 +1,15 @@
-import BackToTopButton from "@/components/BackToTopButton";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
-import Preloader from "@/components/Preloader";
+import BackToTopButton from "@/components/back-to-top";
+import Footer from "@/components/footer";
+import Header from "@/components/header";
+import Preloader from "@/components/preloader";
 import "@/css/all.min.css";
 import "@/css/bootstrap.min.css";
 import "@/css/icomon.css";
 import "@/css/main.css";
 import type { Metadata } from "next";
-import { Poppins, Manrope } from "next/font/google";
+import { Manrope, Poppins } from "next/font/google";
 import "swiper/css";
+import "swiper/css/effect-fade";
 import "./globals.css";
 
 const poppins = Poppins({

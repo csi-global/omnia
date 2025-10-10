@@ -258,7 +258,8 @@
   visibility: hidden;
   pointer-events: none;
   transform: translateY(8px);
-  transition: opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+  transition:
+    opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1),
     transform 1s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .mean__menu-wrapper .main-menu nav ul li:hover > .submenu-om {
@@ -296,7 +297,10 @@
   color: #0f172a;
   font-weight: 600;
   line-height: 1.3;
-  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 .submenu-om li:hover::before {
   background: var(--theme);
@@ -349,7 +353,9 @@
   width: auto;
   opacity: 0.8;
   filter: grayscale(100%);
-  transition: opacity 0.2s ease, filter 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    filter 0.2s ease;
 }
 .lcnc-brand-logos img:hover {
   opacity: 1;
@@ -473,7 +479,8 @@
 /* Micro-animations + skeletons for content cards */
 .bento-card {
   cursor: pointer;
-  transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+  transition:
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 220ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -483,7 +490,10 @@
   border: 1px solid var(--border);
   border-radius: 14px;
   overflow: hidden;
-  transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
 }
 .faq-accordion details + details {
   margin-top: 12px;
@@ -508,8 +518,11 @@
   overflow: hidden;
   opacity: 0;
   transform: translateY(-4px);
-  transition: max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease,
-    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), padding 0.3s ease;
+  transition:
+    max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.3s ease,
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    padding 0.3s ease;
 }
 .faq-accordion details[open] {
   background: #f6f8fb;
@@ -553,5 +566,151 @@
   }
   to {
     background-position: -200% 0;
+  }
+}
+
+/* Hero slider: set stable, consistent height */
+.hero-section.hero-1 {
+  height: clamp(560px, 80vh, 900px);
+  position: relative;
+}
+@media (max-width: 991px) {
+  .hero-section.hero-1 {
+    height: 70vh;
+  }
+}
+
+/* Ensure Swiper and slides fill the section height */
+.hero-1 .hero-slider,
+.hero-1 .swiper,
+.hero-1 .swiper-wrapper,
+.hero-1 .swiper-slide {
+  height: 100%;
+}
+
+/* Restore original hero content spacing for layout */
+.hero-1 .hero-content {
+  min-height: auto;
+  padding: 180px 0;
+  display: block;
+}
+@media (max-width: 767px) {
+  .hero-1 .hero-content {
+    padding: 130px 0;
+  }
+}
+
+/* Re-enable subtle background zoom on active slide */
+.hero-1 .swiper-slide-active .hero-image {
+  transform: scale(1.12);
+}
+.hero-1 .hero-image {
+  transition: transform 8s ease-out;
+}
+
+/* Hero content: slide in from left on active slide */
+.hero-1 .swiper-slide .hero-content {
+  opacity: 0;
+  transform: translateX(-26px);
+  transition:
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 600ms ease;
+  will-change: transform, opacity;
+}
+.hero-1 .swiper-slide-active .hero-content {
+  opacity: 1;
+  transform: none;
+  transition-delay: 120ms;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-1 .swiper-slide .hero-content {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+/* OmniaCarousel: minimal navigation styles */
+.omnia-carousel .omc-nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.omnia-carousel .omc-nav-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  color: #0f172a;
+  box-shadow: 0 8px 16px rgba(15, 23, 42, 0.06);
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+.omnia-carousel .omc-nav-btn.prev {
+  background: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
+}
+.omnia-carousel .omc-nav-btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Reusable service cards */
+.om-card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: 0px 8px 32px rgba(15, 23, 42, 0.06);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 240px;
+}
+.om-card .om-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  background: oklch(0.97 0 0);
+  color: var(--theme);
+}
+.om-card h3 {
+  margin: 0 0 8px 0;
+}
+.om-card p {
+  margin: 0;
+  color: #475569;
+}
+
+/* Make carousel slides uniform */
+.omnia-carousel .swiper-wrapper {
+  align-items: stretch;
+}
+.omnia-carousel .swiper-slide {
+  display: flex;
+  height: auto !important; /* override Swiper default height:100% */
+  box-sizing: border-box;
+}
+.omnia-carousel .swiper-slide > * {
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 1200px) {
+  .om-card {
+    min-height: 260px;
   }
 }

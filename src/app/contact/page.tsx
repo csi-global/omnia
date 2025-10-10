@@ -1,4 +1,4 @@
-import ServiceSelect from "@/components/ServiceSelect";
+import ServiceSelect from "@/components/service-select";
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import Link from "next/link";
