@@ -1,7 +1,7 @@
 import BackToTopButton from "@/components/back-to-top";
-import Footer from "@/components/footer";
-import Header from "@/components/header";
-import Preloader from "@/components/preloader";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import Preloader from "@/components/Preloader";
 import "@/css/all.min.css";
 import "@/css/bootstrap.min.css";
 import "@/css/icomon.css";
