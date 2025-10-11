@@ -3,7 +3,6 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Preloader from "@/components/Preloader";
 import "@/css/all.min.css";
-import "@/css/bootstrap.min.css";
 import "@/css/icomon.css";
 import "@/css/main.css";
 import type { Metadata } from "next";
