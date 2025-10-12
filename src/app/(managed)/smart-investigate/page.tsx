@@ -2,6 +2,12 @@ import OmniaButton from '@/components/ui/omnia-button';
 import OmniaCarousel from '@/components/ui/omnia-carousel';
 import OmniaSection from '@/components/ui/omnia-section';
 import ServiceCard from '@/components/ui/service-card';
+import {
+  SMART_INVESTIGATE_CAPABILITIES,
+  SMART_INVESTIGATE_SERVICE_CARDS,
+  SMART_INVESTIGATE_USE_CASES,
+  SMART_INVESTIGATE_WHY_CHOOSE_CARDS
+} from '@/lib/constants';
 import type { Metadata } from 'next';
 import Link from "next/link";
 import Script from 'next/script';
@@ -63,7 +69,7 @@ export default function SmartInvestigatePage() {
 
       {/* Service Details Section */}
       <OmniaSection>
-        <div className="sertvice-details-wrapper">
+        <div className="service-details-wrapper">
           <div className="service-details-content">
             <h2 className="!text-3xl sm:!text-6xl !text-center">Smart Investigate Solutions</h2>
             <p className="max-w-3xl mx-auto">
@@ -73,23 +79,18 @@ export default function SmartInvestigatePage() {
             </p>
 
             <div className="pt-4 pb-5">
-              <h3 className="mb-3 text-center !text-3xl">Why Choose Smart Investigate?</h3>
+              <h3 className="mb-3 text-center !text-3xl md:!text-5xl">Why Choose Smart Investigate?</h3>
               <div className="flex flex-col gap-4">
                 <p className="max-w-3xl mx-auto">
                   Transform complex investigation processes with AI-powered analytics that reduce
                   manual effort, improve accuracy, and deliver faster results.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 max-w-3xl mx-auto">
-                  {[
-                    { icon: 'fa-solid fa-brain', title: 'AI-Powered Analysis' },
-                    { icon: 'fa-solid fa-robot', title: 'Automated Workflows' },
-                    { icon: 'fa-solid fa-chart-line', title: 'Real-Time Insights' },
-                    { icon: 'fa-solid fa-shapes', title: 'Pattern Recognition' },
-                  ].map((item) => (
+                  {SMART_INVESTIGATE_WHY_CHOOSE_CARDS.map((item) => (
                     <div key={item.title}>
-                      <div className="bg-gradient-to-br from-[var(--theme)] to-[var(--theme)]/50 rounded-2xl p-2 flex items-center gap-2">
-                        <div className="bg-white rounded-full size-20 flex items-center justify-center">
-                          <i className={item.icon}></i>
+                      <div className="bg-gradient-to-tl from-[var(--foreground)] from-5% via-[var(--theme)] via-100% rounded-2xl p-2 flex items-center gap-2">
+                        <div className="bg-white rounded-full w-20 h-20 flex items-center justify-center flex-shrink-0">
+                          <i className={`${item.icon} text-[var(--theme)] text-xl`}></i>
                         </div>
                         <h5 className="text-white">{item.title}</h5>
                       </div>
@@ -105,53 +106,11 @@ export default function SmartInvestigatePage() {
       {/* Smart Investigate Services */}
       <OmniaSection>
         <h3 className="!text-3xl sm:!text-5xl">Our Smart Investigate Services</h3>
-        {(() => {
-          const cards = [
-            {
-              icon: 'fas fa-brain',
-              title: 'Intelligent Data Analysis',
-              description:
-                'Advanced analytics engine that processes large volumes of data to identify anomalies, patterns, and correlations automatically.',
-            },
-            {
-              icon: 'fas fa-robot',
-              title: 'Automated Investigation Workflows',
-              description:
-                'Streamlined investigation processes with automated case creation, evidence collection, and progress tracking for improved efficiency.',
-            },
-            {
-              icon: 'fas fa-lightbulb',
-              title: 'AI-Powered Insights',
-              description:
-                'Machine learning algorithms that provide intelligent recommendations, risk assessments, and predictive analytics for better decision-making.',
-            },
-            {
-              icon: 'fas fa-bell',
-              title: 'Real-Time Monitoring',
-              description:
-                'Continuous monitoring and alerting system that identifies suspicious activities and triggers automated investigation processes.',
-            },
-            {
-              icon: 'fas fa-file-shield',
-              title: 'Compliance & Reporting',
-              description:
-                'Automated compliance reporting with audit trails, documentation, and regulatory compliance features for various industries.',
-            },
-            {
-              icon: 'fas fa-plug',
-              title: 'Integration & Customization',
-              description:
-                'Seamless integration with existing systems and customizable workflows to meet specific investigation requirements and processes.',
-            },
-          ];
-          return (
-            <OmniaCarousel
-              items={cards.map((c, i) => (
-                <ServiceCard key={i} title={c.title} description={c.description} icon={c.icon} />
-              ))}
-            />
-          );
-        })()}
+        <OmniaCarousel
+          items={SMART_INVESTIGATE_SERVICE_CARDS.map((c, i) => (
+            <ServiceCard key={i} title={c.title} description={c.description} icon={c.icon} />
+          ))}
+        />
       </OmniaSection>
 
       {/* Key Features (styled like ORMB features) */}
@@ -169,12 +128,7 @@ export default function SmartInvestigatePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {[
-              { icon: 'fas fa-brain', title: 'Machine Learning', description: 'Advanced ML algorithms that learn from historical data to improve investigation accuracy and efficiency over time.' },
-              { icon: 'fas fa-search-plus', title: 'Pattern Recognition', description: 'Sophisticated pattern recognition capabilities that identify complex relationships and anomalies in large datasets.' },
-              { icon: 'fas fa-chart-network', title: 'Network Analysis', description: 'Comprehensive network analysis tools that map relationships and connections between entities and events.' },
-              { icon: 'fas fa-file-alt', title: 'Automated Reporting', description: 'Intelligent report generation with customizable templates and automated distribution to stakeholders.' },
-            ].map((item) => (
+            {SMART_INVESTIGATE_CAPABILITIES.map((item) => (
               <div className="bg-white/70 p-4 rounded-2xl shadow-sm" key={item.title}>
                 <div className="feature-item">
                   <div className="flex gap-2 items-center">
@@ -203,14 +157,7 @@ export default function SmartInvestigatePage() {
         </div>
 
         <div className="row g-4 pt-4">
-          {[
-            { icon: 'fas fa-shield-alt', title: 'Financial Services', description: 'Fraud detection, AML investigations, and compliance monitoring with automated suspicious activity reporting.' },
-            { icon: 'fas fa-balance-scale', title: 'Legal & Compliance', description: 'Document analysis, case management, and regulatory compliance investigations with automated evidence collection.' },
-            { icon: 'fas fa-user-shield', title: 'Cybersecurity', description: 'Incident response, threat hunting, and security investigations with real-time threat intelligence integration.' },
-            { icon: 'fas fa-industry', title: 'Insurance', description: 'Claims investigation, fraud detection, and risk assessment with automated claim validation and processing.' },
-            { icon: 'fas fa-building', title: 'Corporate Investigations', description: 'Internal investigations, HR compliance, and corporate governance with confidential case management.' },
-            { icon: 'fas fa-gavel', title: 'Law Enforcement', description: 'Criminal investigations, evidence analysis, and case management with secure data handling and reporting.' },
-          ].map((u) => (
+          {SMART_INVESTIGATE_USE_CASES.map((u) => (
             <div className="col-lg-4 col-md-6" key={u.title}>
               <div className="industry-item text-center p-4 rounded-2xl shadow-sm border border-[var(--theme)]/20 bg-white">
                 <span className="block h-1 w-10 bg-[var(--theme)] rounded-full mx-auto mb-3"></span>

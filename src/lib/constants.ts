@@ -384,19 +384,31 @@ export const MSD365_SERVICE_CARDS: readonly ServiceCard[] = [
     icon: 'fas fa-users',
     title: 'Sales & Customer Service',
     description:
-      'Unified CRM with pipeline, forecasting, cases, SLAs and omnichannel service on a single Dataverse model.',
+      'Design lead‑to‑cash and case management with guided selling, SLA/entitlements and omnichannel service.',
   },
   {
-    icon: 'fas fa-file-invoice-dollar',
-    title: 'Finance & Operations',
+    icon: 'fas fa-plug',
+    title: 'Finance & Supply Chain',
     description:
-      'GL, AP/AR, budgeting, supply chain and procurement with embedded controls and real‑time visibility.',
+      'Chart of accounts, tax, inventory, warehousing and production — aligned to your controls and reporting.',
   },
   {
-    icon: 'fas fa-mobile-alt',
-    title: 'Power Platform Integration',
+    icon: 'fas fa-robot',
+    title: 'Power Platform & Copilot',
     description:
-      'Low‑code apps, automation and AI with Copilot to extend Dynamics 365 and accelerate business outcomes.',
+      'Low‑code apps, approvals and RPA with Power Automate; enable AI assistance with Microsoft Copilot.',
+  },
+  {
+    icon: 'fas fa-database',
+    title: 'Integration & Data',
+    description:
+      'Dataverse, Azure integration and third‑party connectors; master data and data quality governance.',
+  },
+  {
+    icon: 'fas fa-headset',
+    title: 'Managed Support & DevOps',
+    description:
+      '24×7 monitoring, release management and SLA‑backed incident response to keep Dynamics running smoothly.',
   },
 ];
 

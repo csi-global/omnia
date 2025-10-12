@@ -2,31 +2,37 @@ import OmniaButton from '@/components/ui/omnia-button';
 import OmniaCarousel from '@/components/ui/omnia-carousel';
 import OmniaSection from '@/components/ui/omnia-section';
 import ServiceCard from '@/components/ui/service-card';
+import {
+  VISION_PLUS_CAPABILITIES,
+  VISION_PLUS_IMPLEMENTATION_STEPS,
+  VISION_PLUS_SERVICE_CARDS,
+  VISION_PLUS_WHY_CHOOSE_CARDS
+} from '@/lib/constants';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Script from 'next/script';
 
 export const metadata: Metadata = {
-  title: 'Vision Plus | Omnia Services',
+  title: 'VisionPLUS | Account Processing Platform | Omnia Services',
   description:
-    'Vision Plus enterprise solutions for comprehensive business management. Expert implementation, customization, and support services to optimize your Vision Plus investment.',
+    'Expert Fiserv VisionPLUS implementation and support services. Comprehensive account processing solutions for payment cards, loans, and commercial products with real-time authorization and digital customer experience.',
   robots: 'index,follow',
   alternates: {
     canonical: 'https://omniaservices.co.uk/vision-plus',
   },
   openGraph: {
-    title: 'Vision Plus | Omnia Services',
+    title: 'VisionPLUS | Account Processing Platform | Omnia Services',
     description:
-      'Vision Plus enterprise solutions for comprehensive business management. Expert implementation, customization, and support services to optimize your Vision Plus investment.',
+      'Expert Fiserv VisionPLUS implementation and support services. Comprehensive account processing solutions for payment cards, loans, and commercial products with real-time authorization and digital customer experience.',
     type: 'website',
     url: 'https://omniaservices.co.uk/vision-plus',
     images: ['https://omniaservices.co.uk/assets/img/service/2.webp'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Vision Plus | Omnia Services',
+    title: 'VisionPLUS | Account Processing Platform | Omnia Services',
     description:
-      'Vision Plus enterprise solutions for comprehensive business management. Expert implementation, customization, and support services to optimize your Vision Plus investment.',
+      'Expert Fiserv VisionPLUS implementation and support services. Comprehensive account processing solutions for payment cards, loans, and commercial products with real-time authorization and digital customer experience.',
     images: ['https://omniaservices.co.uk/assets/img/service/2.webp'],
   },
 };
@@ -40,7 +46,7 @@ export default function VisionPlusPage() {
       >
         <div className="container">
           <div className="page-heading">
-            <h1>Vision Plus</h1>
+            <h1 className="!text-5xl sm:!text-7xl !font-bold !leading-tight">VisionPLUS</h1>
             <ul className="breadcrumb-items">
               <li>
                 <Link href="/">Home</Link>
@@ -48,7 +54,7 @@ export default function VisionPlusPage() {
               <li>
                 <i className="fas fa-chevron-right"></i>
               </li>
-              <li>Vision Plus</li>
+              <li>VisionPLUS</li>
             </ul>
           </div>
         </div>
@@ -58,33 +64,26 @@ export default function VisionPlusPage() {
       <OmniaSection>
         <div className="sertvice-details-wrapper">
           <div className="service-details-content">
-            <h2 className="!text-3xl sm:!text-6xl !text-center">Vision Plus Enterprise Solutions</h2>
-            <p className="max-w-3xl mx-auto">
-              Omnia helps issuers and acquirers get more from VisionPLUS — from implementation and
-              product setup to modernization and day‑2 operations. We configure authorizations,
-              clearing & settlement, disputes, loyalty and reporting, and integrate VisionPLUS with
-              your digital channels and back‑office systems for measurable outcomes.
+            <h2 className="!text-3xl sm:!text-6xl !text-center">VisionPLUS</h2>
+            <p className="max-w-4xl mx-auto text-center">
+              Omnia delivers fast, cost-effective VisionPLUS implementation, migration, and optimization for modern digital banking. Streamline account processing and launch new products with expert support.
             </p>
 
             <div className="pt-4 pb-5">
-              <h3 className="mb-3 text-center !text-3xl ">Why Choose Our Vision Plus Services?</h3>
+              <h3 className="mb-3 text-center !text-3xl md:!text-5xl">Why Choose Omnia for VisionPLUS?</h3>
               <div className="flex flex-col gap-4">
-                <p className="max-w-3xl mx-auto">
-                  With extensive experience in Vision Plus implementations and customizations, we
-                  deliver solutions that align with your business processes and drive operational
-                  excellence across your organization.
+                <p className="max-w-4xl mx-auto text-center">
+                  With extensive experience in VisionPLUS implementations, migrations, and optimizations, Omnia
+                  delivers solutions that align with your business processes and drive operational excellence.
+                  We understand the platform&apos;s capabilities from mainframe to modern Linux-based deployments and
+                  leverage its full potential for your financial institution.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 max-w-3xl mx-auto">
-                  {[
-                    { icon: 'fa-solid fa-id-card', title: 'Issuer & Acquirer Expertise' },
-                    { icon: 'fa-solid fa-diagram-project', title: 'Modernization & APIs' },
-                    { icon: 'fas fa-shield-alt', title: 'Regulatory & PCI Compliance' },
-                    { icon: 'fa-solid fa-headset', title: '24×7 Run & Optimize' },
-                  ].map((item) => (
+                  {VISION_PLUS_WHY_CHOOSE_CARDS.map((item) => (
                     <div key={item.title}>
-                      <div className="bg-gradient-to-br from-[var(--theme)] to-[var(--theme)]/50 rounded-2xl p-2 flex items-center gap-2">
-                        <div className="bg-white rounded-full size-20 flex items-center justify-center">
-                          <i className={item.icon}></i>
+                      <div className="bg-gradient-to-tl from-[var(--foreground)] from-5% via-[var(--theme)] via-100% rounded-2xl p-2 flex items-center gap-2">
+                        <div className="bg-white rounded-full w-20 h-20 flex items-center justify-center flex-shrink-0">
+                          <i className={`${item.icon} text-[var(--theme)] text-xl`}></i>
                         </div>
                         <h5 className="text-white">{item.title}</h5>
                       </div>
@@ -97,80 +96,33 @@ export default function VisionPlusPage() {
         </div>
       </OmniaSection>
 
-      {/* Vision Plus Services */}
+      {/* VisionPLUS Services */}
       <OmniaSection>
-        <h3 className="!text-2xl sm:!text-4xl md:!text-6xl">Our Vision Plus Services</h3>
-        {(() => {
-          const cards = [
-            {
-              icon: 'fas fa-cogs',
-              title: 'Implementation & Upgrades',
-              description:
-                'Greenfield installs and version upgrades with parameterization, data conversion, certification support and controlled cutover.',
-            },
-            {
-              icon: 'fas fa-code',
-              title: 'Product Setup & Issuance',
-              description:
-                'Design product hierarchies, fees, interest rules, EMV profiles and tokenized cards; launch and scale new card propositions faster.',
-            },
-            {
-              icon: 'fas fa-plug',
-              title: 'Authorization & Risk Controls',
-              description:
-                'Optimize real‑time authorization strategies, routing and risk rules; improve approval rates while reducing fraud exposure.',
-            },
-            {
-              icon: 'fas fa-chart-line',
-              title: 'Clearing & Settlement',
-              description:
-                'Tune posting, interchange and reconciliation; streamline GL mapping and settlement cycles for accurate, timely financials.',
-            },
-            {
-              icon: 'fas fa-scale-balanced',
-              title: 'Disputes & Chargebacks',
-              description:
-                'Automate case lifecycle, reason codes and representments to meet Visa/Mastercard timelines and reduce write‑offs.',
-            },
-            {
-              icon: 'fas fa-headset',
-              title: 'Managed Support',
-              description:
-                '24×7 platform monitoring, performance optimization and incident response with SLAs aligned to your business hours and markets.',
-            },
-          ];
-          return (
-            <OmniaCarousel
-              items={cards.map((c, i) => (
-                <ServiceCard key={i} title={c.title} description={c.description} icon={c.icon} />
-              ))}
-            />
-          );
-        })()}
+        <h3 className="!text-2xl sm:!text-4xl md:!text-6xl">Our VisionPLUS Services</h3>
+        <OmniaCarousel
+          items={VISION_PLUS_SERVICE_CARDS.map((c, i) => (
+            <ServiceCard key={i} title={c.title} description={c.description} icon={c.icon} />
+          ))}
+        />
       </OmniaSection>
 
-      {/* Vision Plus Core Areas */}
+      {/* VisionPLUS Key Capabilities */}
       <OmniaSection className="bg-gradient-to-br from-[var(--theme2)]/30 via-[var(--theme)]/30 to-[var(--theme2)]/50 rounded-2xl m-2">
         <div className="container">
           <div className="row">
             <div className="col-lg-10 mx-auto">
               <div className="section-title text-center text-black">
-                <h2 className="text-3xl sm:!text-5xl !text-[var(--theme)]">VisionPLUS Core Areas We Deliver</h2>
+                <h2 className="text-3xl sm:!text-5xl !text-[var(--theme)]">VisionPLUS Platform Capabilities</h2>
                 <p className="max-w-3xl mx-auto">
-                  Omnia configures and optimizes the VisionPLUS stack across the functions that
-                  matter most to issuers and acquirers.
+                  Comprehensive account processing platform managing payment cards, loans, prepaid products,
+                  and commercial cards with modern features for digital banking.
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {[
-              { icon: 'fas fa-id-card', title: 'Issuing & Account Management', description: 'End‑to‑end lifecycle for accounts, cards, fees, interest, limits and hierarchies.' },
-              { icon: 'fas fa-bolt', title: 'Authorization & Switching', description: 'Real‑time auth rules, routing, velocity controls and ISO 8583 connectivity.' },
-              { icon: 'fas fa-file-invoice-dollar', title: 'Clearing & Settlement', description: 'Interchange processing, postings, GL mapping, reconciliation and settlement.' },
-              { icon: 'fas fa-scale-balanced', title: 'Disputes & Chargebacks', description: 'Case management, reason codes, representments and compliance timelines.' },
-            ].map((item) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {VISION_PLUS_CAPABILITIES.map((item) => (
               <div className="bg-white/70 p-4 rounded-2xl shadow-sm" key={item.title}>
                 <div className="feature-item">
                   <div className="flex gap-2 items-center">
@@ -185,27 +137,22 @@ export default function VisionPlusPage() {
         </div>
       </OmniaSection>
 
-      {/* Implementation Process (styled cards) */}
+      {/* Implementation Process */}
       <OmniaSection className="bg-light rounded-2xl fix">
         <div className="row">
           <div className="col-lg-8 mx-auto">
             <div className="section-title text-center">
-              <h2>Our Implementation Process</h2>
+              <h2>Our VisionPLUS Implementation Approach</h2>
               <p>
-                A proven VisionPLUS delivery playbook that minimizes risk and accelerates time to
-                value.
+                Proven methodology for VisionPLUS implementation, migration, and optimization that
+                minimizes risk and accelerates time to value for your financial institution.
               </p>
             </div>
           </div>
         </div>
 
         <div className="row g-4 pt-4">
-          {[
-            { icon: 'fas fa-magnifying-glass-chart', title: 'Fit‑Gap & Roadmap', description: 'Assess current stack, target outcomes and compliance; define phased roadmap.' },
-            { icon: 'fas fa-sliders', title: 'Configuration & Data Migration', description: 'Parameterization, data conversion and integration with channels and back office.' },
-            { icon: 'fas fa-gauge-high', title: 'Performance & Certification', description: 'Load testing, scheme certification and operational readiness validation.' },
-            { icon: 'fas fa-flag-checkered', title: 'Cutover & Hypercare', description: 'Controlled go‑live, monitoring and issue burn‑down until KPIs stabilize.' },
-          ].map((p) => (
+          {VISION_PLUS_IMPLEMENTATION_STEPS.map((p) => (
             <div className="col-lg-3 col-md-6" key={p.title}>
               <div className="industry-item text-center p-4 rounded-2xl shadow-sm border border-[var(--theme)]/20 bg-white">
                 <span className="block h-1 w-10 bg-[var(--theme)] rounded-full mx-auto mb-3"></span>
@@ -228,15 +175,16 @@ export default function VisionPlusPage() {
           <div className="row g-4 pt-4">
             <div className="col-12">
               <div className="lcnc-banner">
-                <h5>Transform Your Business with Vision Plus</h5>
+                <h5>Maximize Your VisionPLUS Investment</h5>
                 <p className="ecosystems">
-                  Ready to optimize your Vision Plus investment? Our experts will help you implement
-                  a solution that streamlines operations, improves efficiency, and drives business
-                  growth.
+                  Ready to implement, upgrade, or optimize your VisionPLUS platform? Our experienced team
+                  specializes in Fiserv VisionPLUS implementations, migrations to modern platforms, API
+                  integrations, and managed support services that help financial institutions launch products
+                  faster, reduce costs, and deliver exceptional digital banking experiences.
                 </p>
                 <div className="main-button mt-3">
                   <Link href="/contact">
-                    <OmniaButton text="Get Vision Plus Solutions" />
+                    <OmniaButton text="Get VisionPLUS Expertise" />
                   </Link>
                 </div>
               </div>
@@ -245,13 +193,13 @@ export default function VisionPlusPage() {
         </div>
       </OmniaSection>
 
-      {/* SEO: JSON-LD for Vision Plus */}
+      {/* SEO: JSON-LD for VisionPLUS */}
       <Script id="ld-visionplus" type="application/ld+json" strategy="afterInteractive">
         {JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'Service',
-          name: 'Vision Plus Services',
-          serviceType: 'Vision Plus implementation and support',
+          name: 'VisionPLUS',
+          serviceType: 'VisionPLUS account processing platform implementation and support',
           provider: {
             '@type': 'Organization',
             name: 'Omnia Services',
@@ -260,7 +208,14 @@ export default function VisionPlusPage() {
           areaServed: 'GB',
           url: 'https://omniaservices.co.uk/vision-plus',
           description:
-            'Vision Plus enterprise solutions for comprehensive business management. Expert implementation, customization, and support services to optimize your Vision Plus investment.',
+            'Expert Fiserv VisionPLUS implementation and support services. Comprehensive account processing solutions for payment cards, loans, and commercial products with real-time authorization, mobile payments, and digital customer experience. Services include platform implementation, modernization, API integration, and 24/7 managed support.',
+          offers: {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'VisionPLUS Implementation & Support',
+            },
+          },
         })}
       </Script>
 

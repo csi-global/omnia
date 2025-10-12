@@ -1,5 +1,6 @@
 "use client";
 import RegionSelect from "@/components/region-select";
+import { MANAGED_SERVICES_NAV, PROFESSIONAL_SERVICES_NAV } from '@/lib/constants';
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -192,7 +193,7 @@ export default function Header() {
                         opacity: isProfessionalOpen ? 1 : 0,
                       }}
                     >
-                      {["Digital Process Automation", "Cloud Migration", "Data Analytics", "Digital Transformation", "Domain Consulting"].map((item, index) => (
+                      {PROFESSIONAL_SERVICES_NAV.map((item, index) => (
                         <li className="pl-4 text-nowrap text-sm" key={index}><Link href={`/${item.toLowerCase().replace(/ /g, "-")}`} className="block py-1">{item}</Link></li>
                       ))}
                     </ul>
@@ -207,12 +208,7 @@ export default function Header() {
                         opacity: isManagedOpen ? 1 : 0,
                       }}
                     >
-                      {[
-                        { label: "ORMB", href: "/ormb" },
-                        { label: "Vision Plus", href: "/vision-plus" },
-                        { label: "Smart Investigate", href: "/smart-investigate" },
-                        { label: "MSD365", href: "/msd365" },
-                      ].map((item, index) => (
+                      {MANAGED_SERVICES_NAV.map((item, index) => (
                         <li className="pl-4 text-nowrap text-sm" key={index}>
                           <Link href={item.href} className="block py-1">{item.label}</Link>
                         </li>

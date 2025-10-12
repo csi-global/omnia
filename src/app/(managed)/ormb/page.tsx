@@ -2,6 +2,7 @@ import OmniaButton from '@/components/ui/omnia-button';
 import OmniaCarousel from '@/components/ui/omnia-carousel';
 import OmniaSection from '@/components/ui/omnia-section';
 import ServiceCard from '@/components/ui/service-card';
+import { ORMB_FEATURES, ORMB_SERVICE_CARDS } from '@/lib/constants';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
@@ -39,7 +40,7 @@ export default function ORMBPage() {
       >
         <div className="container">
           <div className="page-heading">
-            <h1 className="!text-5xl sm:!text-7xl">Oracle Revenue Management and Billing (ORMB)</h1>
+            <h1 className="!text-5xl sm:!text-7xl !font-bold !leading-tight">ORMB <br />Oracle Revenue Management and Billing</h1>
             <ul className="breadcrumb-items">
               <li>
                 <Link href="/">Home</Link>
@@ -55,22 +56,25 @@ export default function ORMBPage() {
 
       {/* Service Details Section */}
       <OmniaSection>
-        <div className="service-details-wrapper">
+        <div className="sertvice-details-wrapper">
           <div className="service-details-content">
-            <p>
-              Transform your billing operations with Oracle Revenue Management and Billing (ORMB).
-              Our expert team delivers comprehensive ORMB implementation, customization, and
-              support services to streamline your revenue management processes and enhance billing
-              accuracy.
+            <h2 className="!text-3xl sm:!text-6xl !text-center">Oracle Revenue Management and Billing</h2>
+            <p className="max-w-3xl mx-auto">
+              Omnia delivers comprehensive ORMB solutions for organizations
+              seeking to modernize their billing and revenue operations. Our expert team specializes in ORMB
+              implementation, customization, integration, and optimization services that help you streamline complex
+              billing processes, reduce revenue leakage, and enhance customer satisfaction through automated,
+              accurate billing solutions.
             </p>
 
             <div className="pt-4 pb-5">
-              <h3 className="mb-3 text-center !text-5xl">Why Choose Our ORMB Services?</h3>
+              <h3 className="mb-3 text-center !text-3xl md:!text-5xl">Why Choose Omnia for ORMB?</h3>
               <div className="flex flex-col gap-4">
-                <p className="text-center mx-auto">
-                  With deep expertise in Oracle Revenue Management and Billing, we help
-                  organizations optimize their billing processes, reduce revenue leakage, and
-                  improve customer satisfaction through automated, accurate billing solutions.
+                <p className="max-w-3xl mx-auto">
+                  With extensive experience in Oracle Revenue Management and Billing implementations and optimizations,
+                  Omnia delivers solutions that align with your business processes and drive operational excellence.
+                  We understand the platform&apos;s capabilities across utility, telecommunications, and financial services
+                  industries, and leverage its full potential to transform your billing operations.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 max-w-3xl mx-auto">
                   {[
@@ -92,9 +96,9 @@ export default function ORMBPage() {
                     },
                   ].map((item) => (
                     <div key={item.title}>
-                      <div className="bg-gradient-to-br from-[var(--theme)] to-[var(--theme)]/50 rounded-2xl p-2 flex items-center gap-2">
-                        <div className="bg-white rounded-full size-20 flex items-center justify-center">
-                          <i className={item.icon}></i>
+                      <div className="bg-gradient-to-tl from-[var(--foreground)] from-5% via-[var(--theme)] via-100% rounded-2xl p-2 flex items-center gap-2">
+                        <div className="bg-white rounded-full w-20 h-20 flex items-center justify-center flex-shrink-0">
+                          <i className={`${item.icon} text-[var(--theme)] text-xl`}></i>
                         </div>
                         <h5 className="text-white">{item.title}</h5>
                       </div>
@@ -110,53 +114,11 @@ export default function ORMBPage() {
       {/* ORMB Services */}
       <OmniaSection>
         <h3 className="text-center !text-3xl sm:!text-5xl mb-3">Our ORMB Services</h3>
-        {(() => {
-          const cards = [
-            {
-              icon: 'fas fa-cogs',
-              title: 'ORMB Implementation',
-              description:
-                'Complete ORMB implementation services including system design, configuration, data migration, and user training to ensure successful deployment.',
-            },
-            {
-              icon: 'fas fa-chart-line',
-              title: 'Billing Process Optimization',
-              description:
-                'Streamline billing operations with automated workflows, rule-based pricing, and advanced billing cycle management for improved efficiency.',
-            },
-            {
-              icon: 'fas fa-balance-scale',
-              title: 'Revenue Recognition',
-              description:
-                'Implement automated revenue recognition processes compliant with accounting standards including ASC 606 and IFRS 15 for accurate financial reporting.',
-            },
-            {
-              icon: 'fas fa-code',
-              title: 'Custom Development',
-              description:
-                'Tailored ORMB solutions with custom pricing models, billing rules, and integration capabilities to meet specific business requirements.',
-            },
-            {
-              icon: 'fas fa-plug',
-              title: 'System Integration',
-              description:
-                'Seamless integration with existing systems including CRM, ERP, and payment gateways for unified business operations.',
-            },
-            {
-              icon: 'fas fa-headset',
-              title: 'Managed Support',
-              description:
-                'Comprehensive support and maintenance services including system monitoring, performance optimization, and issue resolution.',
-            },
-          ];
-          return (
-            <OmniaCarousel
-              items={cards.map((c, i) => (
-                <ServiceCard key={i} title={c.title} description={c.description} icon={c.icon} />
-              ))}
-            />
-          );
-        })()}
+        <OmniaCarousel
+          items={ORMB_SERVICE_CARDS.map((c, i) => (
+            <ServiceCard key={i} title={c.title} description={c.description} icon={c.icon} />
+          ))}
+        />
       </OmniaSection>
 
       {/* ORMB Features */}
@@ -175,32 +137,7 @@ export default function ORMBPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {[
-              {
-                icon: 'fas fa-calculator',
-                title: 'Flexible Pricing',
-                description:
-                  'Support for complex pricing models including usage-based, subscription, tiered, and promotional pricing structures.',
-              },
-              {
-                icon: 'fas fa-chart-line',
-                title: 'Revenue Recognition',
-                description:
-                  'Automated revenue recognition with compliance to accounting standards and flexible allocation rules.',
-              },
-              {
-                icon: 'fas fa-file-invoice',
-                title: 'Invoice Generation',
-                description:
-                  'Automated invoice generation with customizable templates and multi-format output capabilities.',
-              },
-              {
-                icon: 'fas fa-exchange-alt',
-                title: 'Payment Processing',
-                description:
-                  'Integrated payment processing with support for multiple payment methods and automated collection workflows.',
-              },
-            ].map((item) => (
+            {ORMB_FEATURES.map((item) => (
               <div className="bg-white/70 p-4 rounded-2xl shadow-sm" key={item.title}>
                 <div className="feature-item">
                   <div className="flex gap-2 items-center">
