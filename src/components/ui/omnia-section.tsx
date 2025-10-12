@@ -1,11 +1,25 @@
 import { cn } from "@/lib/utils";
+import type { FC, PropsWithChildren } from "react";
 
-export default function OmniaSection({ children, className }: { children: React.ReactNode, className?: string }) {
+export interface OmniaSectionProps {
+  className?: string;
+  as?: 'section' | 'div' | 'article';
+  id?: string;
+}
+
+const OmniaSection: FC<PropsWithChildren<OmniaSectionProps>> = ({
+  children,
+  className,
+  as: Component = 'section',
+  id
+}) => {
   return (
-    <section className={cn("section-padding fix", className)}>
+    <Component className={cn("section-padding fix", className)} id={id}>
       <div className="container">
         {children}
       </div>
-    </section>
+    </Component>
   );
-}
+};
+
+export default OmniaSection;

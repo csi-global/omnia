@@ -148,7 +148,7 @@ export default function ServiceSelect({
         onClick={() => setIsOpen((o) => !o)}
         onKeyDown={onButtonKeyDown}
       >
-        <span>{selectedOption.label}</span>
+        <span>{selectedOption?.label ?? 'Select Service'}</span>
         <span aria-hidden>▾</span>
       </button>
 

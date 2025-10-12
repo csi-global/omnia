@@ -153,7 +153,7 @@ export default function RegionSelect({ className, defaultValue, variant = 'defau
         onClick={() => setIsOpen((o) => !o)}
         onKeyDown={onButtonKeyDown}
       >
-        <span>{selectedOption.label}</span>
+        <span>{selectedOption?.label ?? 'Select'}</span>
         <span aria-hidden className={cn(isTopbar ? 'text-white/90' : 'text-[#0f0f0f]/70')}>▾</span>
       </button>
 

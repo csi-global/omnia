@@ -1,3 +1,4 @@
+import { NOT_FOUND_LINKS } from "@/lib/constants";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -36,12 +37,12 @@ export default function NotFound() {
                     "conic-gradient(from 180deg at 50% 50%, rgba(225,29,46,0.25), rgba(168,85,247,0.25), rgba(14,165,233,0.25), rgba(225,29,46,0.25))",
                 }}
               />
-              <h1 className="text-[84px] md:text-[140px] leading-none font-extrabold tracking-tight bg-gradient-to-r from-[var(--theme)] via-fuchsia-500 to-sky-500 bg-clip-text text-transparent select-none">
+              <h1 className="!text-[84px] md:!text-[140px] leading-none font-extrabold tracking-tight bg-gradient-to-r from-[var(--theme)] via-fuchsia-500 to-sky-500 bg-clip-text text-transparent select-none">
                 404
               </h1>
             </div>
 
-            <h2 className="mt-4 text-2xl md:text-3xl font-semibold">Lost in the cloud</h2>
+            <h2 className="mt-4 !text-2xl md:!text-3xl font-semibold">Lost in the cloud</h2>
             <p className="mt-3 text-base md:text-lg text-[color:var(--muted-foreground)]">
               The page you&apos;re looking for drifted into the stratosphere. Let&apos;s guide you back to something amazing.
             </p>
@@ -64,13 +65,7 @@ export default function NotFound() {
             <div className="mt-10">
               <div className="text-xs uppercase tracking-wider text-[color:var(--muted-foreground)] mb-3">Popular destinations</div>
               <div className="flex flex-wrap justify-center gap-2">
-                {[
-                  ["/cloud-migration", "Cloud Migration"],
-                  ["/msd365", "MSD365"],
-                  ["/vision-plus", "Vision Plus"],
-                  ["/smart-investigate", "Smart Investigate"],
-                  ["/career", "Careers"],
-                ].map(([href, label]) => (
+                {NOT_FOUND_LINKS.map(([href, label]) => (
                   <Link
                     key={href}
                     href={href}

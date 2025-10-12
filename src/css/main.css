@@ -192,57 +192,6 @@ h6 {
   text-transform: capitalize;
   transition: all 0.4s ease-in-out;
 }
-
-h1 {
-  font-size: 67px;
-  font-weight: 700;
-  line-height: 114%;
-}
-
-h2 {
-  font-size: 60px;
-  line-height: 114%;
-  font-weight: 600;
-}
-@media (max-width: 767px) {
-  h2 {
-    font-size: 52px;
-  }
-}
-@media (max-width: 575px) {
-  h2 {
-    font-size: 40px;
-  }
-}
-
-h3 {
-  font-size: 22px;
-  font-weight: 600;
-  line-height: 164%;
-}
-@media (max-width: 575px) {
-  h3 {
-    font-size: 20px;
-  }
-}
-
-h4 {
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 130%;
-}
-
-h5 {
-  font-size: 18px;
-  font-weight: 500;
-}
-
-h6 {
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 145%;
-}
-
 a {
   text-decoration: none;
   outline: none !important;
