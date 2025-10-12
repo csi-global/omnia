@@ -1,5 +1,5 @@
 "use client";
-import RegionSelect from "@/components/region-select";
+// import RegionSelect from "@/components/region-select";
 import { MANAGED_SERVICES_NAV, PROFESSIONAL_SERVICES_NAV } from '@/lib/constants';
 import Image from "next/image";
 import Link from "next/link";
@@ -14,7 +14,7 @@ export default function Header() {
   const managedListRef = useRef<HTMLUListElement | null>(null);
   const [professionalMaxHeight, setProfessionalMaxHeight] = useState<number>(0);
   const [managedMaxHeight, setManagedMaxHeight] = useState<number>(0);
-  const [contactEmail, setContactEmail] = useState<string>("info@omniaservices.co.uk");
+  // const [contactEmail, setContactEmail] = useState<string>("info@omniaservices.co.uk");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,24 +51,24 @@ export default function Header() {
     }
   }, [isManagedOpen]);
 
-  // Determine email address based on current domain
-  useEffect(() => {
-    try {
-      const host = window.location.hostname;
-      if (host.includes('.in')) {
-        setContactEmail('info@omniaservices.in');
-      } else {
-        setContactEmail('info@omniaservices.co.uk');
-      }
-    } catch {
-      setContactEmail('info@omniaservices.co.uk');
-    }
-  }, []);
+  // // Determine email address based on current domain
+  // useEffect(() => {
+  //   try {
+  //     const host = window.location.hostname;
+  //     if (host.includes('.in')) {
+  //       setContactEmail('info@omniaservices.in');
+  //     } else {
+  //       setContactEmail('info@omniaservices.co.uk');
+  //     }
+  //   } catch {
+  //     setContactEmail('info@omniaservices.co.uk');
+  //   }
+  // }, []);
 
   return (
     <>
       <header className="header-section">
-        <div className="header-top">
+        {/* <div className="header-top">
           <div className="container">
             <div className="header-top-wrapper">
               <ul>
@@ -83,7 +83,7 @@ export default function Header() {
               </ul>
             </div>
           </div>
-        </div>
+        </div> */}
         <div id="header-sticky" className="header-1">
           <div className="container">
             <div className="mega-menu-wrapper">
