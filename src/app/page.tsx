@@ -1,11 +1,11 @@
 "use client";
 
 import OmniaButton from "@/components/ui/omnia-button";
-import { MANAGED_SERVICES, PROFESSIONAL_SERVICES } from "@/lib/constants";
+import { MANAGED_SERVICES, MARQUEE_SLIDES, PROFESSIONAL_SERVICES } from "@/lib/constants";
 import Image from "next/image";
 import Link from "next/link";
 import type { FC } from "react";
-import { useRef } from "react";
+import { Fragment, useRef } from "react";
 import type { Swiper as SwiperType } from "swiper";
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -527,34 +527,30 @@ const Home: FC = () => {
             autoplay={{ delay: 0, disableOnInteraction: false }}
             className="marque-slider"
           >
-            <SwiperSlide className="brand-slide-element">
-              <div className="marqee-icon">
-                {/* simple placeholder icon to match layout; original SVG kept minimal */}
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="white" /></svg>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="brand-slide-element">
-              <h2 className="marqee-text !text-3xl md:!text-6xl font-extrabold leading-tight text-zinc-900">Mobile Tech Mastery</h2>
-            </SwiperSlide>
-            <SwiperSlide className="brand-slide-element">
-              <div className="marqee-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" stroke="white" /></svg>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="brand-slide-element">
-              <h2 className="marqee-text !text-3xl md:!text-6xl font-extrabold leading-tight text-zinc-900">Software Solutions Pro</h2>
-            </SwiperSlide>
-            <SwiperSlide className="brand-slide-element">
-              <div className="marqee-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none"><polygon points="20,4 36,36 4,36" stroke="white" fill="none" /></svg>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="brand-slide-element">
-              <h2 className="marqee-text !text-3xl md:!text-6xl font-extrabold leading-tight text-zinc-900">Tech Savvy solution</h2>
-            </SwiperSlide>
+            {MARQUEE_SLIDES.map((slide, index) => (
+              <Fragment key={slide.title}>
+                <SwiperSlide key={`${slide.title}-text`} className="brand-slide-element">
+                  <h2 className="marqee-text !text-3xl md:!text-6xl font-extrabold leading-tight text-zinc-900 select-none">{slide.title}</h2>
+                </SwiperSlide>
+                <SwiperSlide key={`${slide.title}-icon`} className="brand-slide-element">
+                  <div className="marqee-icon">
+                    {index % 3 === 0 && (
+                      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="white" /></svg>
+                    )}
+                    {index % 3 === 1 && (
+                      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" stroke="white" /></svg>
+                    )}
+                    {index % 3 === 2 && (
+                      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none"><polygon points="20,4 36,36 4,36" stroke="white" fill="none" /></svg>
+                    )}
+                  </div>
+                </SwiperSlide>
+              </Fragment>
+            ))}
           </Swiper>
         </div>
       </section>
+
       {/* Core Values (clean minimal Tailwind) */}
       <section id="core-values" className="relative py-24">
         <div className="container">

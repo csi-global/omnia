@@ -57,7 +57,43 @@ export interface AboutValue {
   readonly description: string;
 }
 
+export interface MarqueeSlide {
+  readonly title: string;
+  readonly icon: string;
+}
+
 export type NotFoundLink = readonly [href: string, label: string];
+
+// ============================================================================
+// Home Page Constants
+// ============================================================================
+
+export const MARQUEE_SLIDES: readonly MarqueeSlide[] = [
+  {
+    title: 'Infosys',
+    icon: 'fas fa-info',
+  },
+  {
+    title: 'Capgemini',
+    icon: 'fas fa-gem',
+  },
+  {
+    title: 'Coforge',
+    icon: 'fas fa-cog',
+  },
+  {
+    title: 'LTIM',
+    icon: 'fas fa-cog',
+  },
+  {
+    title: 'Wipro',
+    icon: 'fas fa-wrench',
+  },
+  {
+    title: 'TechMahindra',
+    icon: 'fas fa-wrench',
+  },
+];
 
 // ============================================================================
 // VisionPLUS Constants
