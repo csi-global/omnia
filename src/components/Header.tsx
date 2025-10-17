@@ -105,8 +105,8 @@ export default function Header() {
                         </li>
 
                         <li>
-                          <span className="menu-label cursor-pointer font-medium">Professional Services <i className="fa-solid fa-chevron-down"></i></span>
-                          <ul className="submenu submenu-om !mt-4">
+                          <span className="menu-label cursor-pointer font-medium">Professional Services <i className="fa-solid fa-chevron-down ml-1"></i></span>
+                          <ul className="submenu submenu-om">
                             <li><Link href="/digital-process-automation" >Digital Process Automation</Link></li>
                             <li><Link href="/cloud-migration">Cloud Migration</Link></li>
                             <li><Link href="/data-analytics">Data Analytics</Link></li>
@@ -115,8 +115,8 @@ export default function Header() {
                           </ul>
                         </li>
                         <li>
-                          <span className="menu-label cursor-pointer font-medium">Managed Services <i className="fa-solid fa-chevron-down"></i></span>
-                          <ul className="submenu submenu-om !mt-4">
+                          <span className="menu-label cursor-pointer font-medium">Managed Services <i className="fa-solid fa-chevron-down ml-1"></i></span>
+                          <ul className="submenu submenu-om">
                             <li><Link href="/ormb">ORMB</Link></li>
                             <li><Link href="/vision-plus">Vision Plus</Link></li>
                             <li><Link href="/smart-investigate">Smart Investigate</Link></li>
