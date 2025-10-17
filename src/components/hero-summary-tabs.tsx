@@ -23,12 +23,39 @@ export default function HeroSummaryTabs({ tabs, className, reverse }: HeroSummar
   const listRef = useRef<HTMLDivElement>(null);
   const first = tabs[0]?.value ?? "tab-1";
 
+  function renderWordCloud(summary: string) {
+    const seed = summary
+      .split(/[|,;•·]/)
+      .map((s) => s.trim())
+      .filter(Boolean);
+    const words = seed.length > 1
+      ? seed
+      : summary
+        .replace(/[.]/g, "")
+        .split(/\s+/)
+        .filter((w) => w.length > 3 && !/^(with|and|the|for|into|into|them|that|this|plus)$/i.test(w));
+
+    const unique: string[] = Array.from(new Set(words));
+
+    return (
+      <div className="word-cloud">
+        {unique.map((w, i) => {
+          const sizeClass = w.length >= 12 ? "wc-xl" : w.length >= 8 ? "wc-lg" : w.length >= 5 ? "wc-md" : "wc-sm";
+          const emphasis = i % 5 === 0 ? "wc-strong" : i % 3 === 0 ? "wc-medium" : "";
+          return (
+            <span key={`${w}-${i}`} className={`wc-item ${sizeClass} ${emphasis}`}>{w}</span>
+          );
+        })}
+      </div>
+    );
+  }
+
   const slides = tabs.map((t) => (
     <div key={t.value}>
       <div className="tabs-content-inner">
         <div className={`row align-items-center justify-content-around ${reverse ? "flex-row-reverse" : ""}`}>
           <div className="col-lg-4">
-            <h4 className="mb-2" style={{ fontWeight: 800, lineHeight: 1.2 }}>{t.summary}</h4>
+            {renderWordCloud(t.summary)}
           </div>
           <div className="col-lg-4">
             <div className="relative w-100 h-[220px] sm:h-[240px] md:h-[280px] lg:h-[300px] xl:h-[320px] rounded-3 overflow-hidden">
@@ -64,7 +91,7 @@ export default function HeroSummaryTabs({ tabs, className, reverse }: HeroSummar
                 <div className="tabs-content-inner">
                   <div className={`row align-items-center justify-content-around ${reverse ? "flex-row-reverse" : ""}`}>
                     <div className="col-lg-4">
-                      <h4 className="mb-2" style={{ fontWeight: 800, lineHeight: 1.2 }}>{t.summary}</h4>
+                      {renderWordCloud(t.summary)}
                     </div>
                     <div className="col-lg-4">
                       <div className="relative w-100 h-[220px] sm:h-[240px] md:h-[280px] lg:h-[300px] xl:h-[320px] rounded-3 overflow-hidden">

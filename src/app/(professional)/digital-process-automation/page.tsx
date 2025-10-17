@@ -122,18 +122,9 @@ export default function DigitalProcessAutomationPage() {
                   <div className="row g-4">
                     <div className="col-12">
                       <div className="lcnc-cards">
-                        <div className="lcnc-card">
-                          <div className="media"><Image src="/assets/img/service/4.webp" alt="Pega case management" width={0} height={0} sizes="100vw" style={{ width: "100%", height: "auto" }} /></div>
-                          <div className="body"><h4>Case Management</h4><p>End-to-end lifecycle with SLAs, escalations, and reusable case types.</p></div>
-                        </div>
-                        <div className="lcnc-card">
-                          <div className="media"><Image src="/assets/img/service/5.webp" alt="Pega AI decisioning" width={0} height={0} sizes="100vw" style={{ width: "100%", height: "auto" }} /></div>
-                          <div className="body"><h4>AI Decisioning</h4><p>Next-best-action, business rules, and predictive analytics at scale.</p></div>
-                        </div>
-                        <div className="lcnc-card">
-                          <div className="media"><Image src="/assets/img/service/3.webp" alt="Pega RPA and orchestration" width={0} height={0} sizes="100vw" style={{ width: "100%", height: "auto" }} /></div>
-                          <div className="body"><h4>RPA & Orchestration</h4><p>Blend human work with bots and integrations for faster throughput.</p></div>
-                        </div>
+                        <div className="lcnc-card !space-y-2"><h4 className="!text-2xl font-bold">Case Management</h4><p>End-to-end lifecycle with SLAs, escalations, and reusable case types.</p></div>
+                        <div className="lcnc-card !space-y-2"><h4 className="!text-2xl font-bold">AI Decisioning</h4><p>Next-best-action, business rules, and predictive analytics at scale.</p></div>
+                        <div className="lcnc-card !space-y-2"><h4 className="!text-2xl font-bold">RPA & Orchestration</h4><p>Blend human work with bots and integrations for faster throughput.</p></div>
                       </div>
                     </div>
                   </div>
@@ -168,9 +159,9 @@ export default function DigitalProcessAutomationPage() {
                   <div className="row g-4">
                     <div className="col-12">
                       <div className="lcnc-cards">
-                        <div className="lcnc-card"><div className="media"><Image src="/assets/img/service/22.webp" alt="ServiceNow workflows" width={0} height={0} sizes="100vw" style={{ width: "100%", height: "auto" }} /></div><div className="body"><h4>Workflow Apps</h4><p>Digitize tasks, records, and SLAs with Flow Designer and UI Builder.</p></div></div>
-                        <div className="lcnc-card"><div className="media"><Image src="/assets/img/service/2.webp" alt="IntegrationHub spokes" width={0} height={0} sizes="100vw" style={{ width: "100%", height: "auto" }} /></div><div className="body"><h4>IntegrationHub</h4><p>Connect to enterprise systems using spokes, REST/SOAP, and MID Server.</p></div></div>
-                        <div className="lcnc-card"><div className="media"><Image src="/assets/img/service/01.webp" alt="Automation Engine RPA" width={0} height={0} sizes="100vw" style={{ width: "100%", height: "auto" }} /></div><div className="body"><h4>Automation Engine</h4><p>RPA and orchestration to remove repetitive work across teams.</p></div></div>
+                        <div className="lcnc-card"><div className="body"><h4>Workflow Apps</h4><p>Digitize tasks, records, and SLAs with Flow Designer and UI Builder.</p></div></div>
+                        <div className="lcnc-card"><div className="body"><h4>IntegrationHub</h4><p>Connect to enterprise systems using spokes, REST/SOAP, and MID Server.</p></div></div>
+                        <div className="lcnc-card"><div className="body"><h4>Automation Engine</h4><p>RPA and orchestration to remove repetitive work across teams.</p></div></div>
                       </div>
                     </div>
                   </div>
@@ -204,9 +195,9 @@ export default function DigitalProcessAutomationPage() {
                   <div className="row g-4">
                     <div className="col-12">
                       <div className="lcnc-cards">
-                        <div className="lcnc-card"><div className="media"><Image src="/assets/img/service/6.webp" alt="Power Apps" width={0} height={0} sizes="100vw" style={{ width: "100%", height: "auto" }} /></div><div className="body"><h4>Power Apps</h4><p>Canvas and model-driven apps on Dataverse for enterprise UX.</p></div></div>
-                        <div className="lcnc-card"><div className="media"><Image src="/assets/img/service/4.webp" alt="Power Automate" width={0} height={0} sizes="100vw" style={{ width: "100%", height: "auto" }} /></div><div className="body"><h4>Power Automate</h4><p>Automate processes with flows, approvals, RPA, and connectors.</p></div></div>
-                        <div className="lcnc-card"><div className="media"><Image src="/assets/img/service/01.webp" alt="Dynamics 365" width={0} height={0} sizes="100vw" style={{ width: "100%", height: "auto" }} /></div><div className="body"><h4>Dynamics 365</h4><p>Sales, service, field, finance, and supply chain on Dataverse.</p></div></div>
+                        <div className="lcnc-card"><div className="body"><h4>Power Apps</h4><p>Canvas and model-driven apps on Dataverse for enterprise UX.</p></div></div>
+                        <div className="lcnc-card"><div className="body"><h4>Power Automate</h4><p>Automate processes with flows, approvals, RPA, and connectors.</p></div></div>
+                        <div className="lcnc-card"><div className="body"><h4>Dynamics 365</h4><p>Sales, service, field, finance, and supply chain on Dataverse.</p></div></div>
                       </div>
                     </div>
                   </div>
