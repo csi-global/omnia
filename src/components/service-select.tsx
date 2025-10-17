@@ -10,17 +10,15 @@ type ServiceOption = {
 
 const SERVICE_OPTIONS: ServiceOption[] = [
   { value: '', label: 'Select Service' },
-  { value: 'cloud-assessment', label: 'Cloud Assessment' },
-  { value: 'cyber-security', label: 'Cyber Security' },
   { value: 'digital-process-automation', label: 'Digital Process Automation' },
-  { value: 'sharepoint-development', label: 'SharePoint Development' },
-  { value: 'digital-transformation', label: 'Digital Transformation' },
-  { value: 'it-consulting', label: 'IT Consulting' },
   { value: 'cloud-migration', label: 'Cloud Migration' },
-  { value: 'managed-cloud-desk', label: 'Managed Cloud Desk' },
-  { value: 'managed-microsoft-365', label: 'Managed Microsoft 365' },
-  { value: 'managed-microsoft-azure', label: 'Managed Microsoft Azure' },
-  { value: 'surface-as-a-service', label: 'Surface as a Service' },
+  { value: 'data-analytics', label: 'Data Analytics' },
+  { value: 'digital-transformation', label: 'Digital Transformation' },
+  { value: 'domain-consulting', label: 'Domain Consulting' },
+  { value: 'ormb', label: 'ORMB' },
+  { value: 'vision-plus', label: 'Vision Plus' },
+  { value: 'smart-investigate', label: 'Smart Investigate' },
+  { value: 'msd365', label: 'MSD365' },
   { value: 'other', label: 'Other' }
 ]
 
