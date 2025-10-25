@@ -136,9 +136,9 @@ export default function MSD365Page() {
         <div className="row">
           <div className="col-lg-8 mx-auto">
             <div className="section-title text-center">
-              <h2>MSD365 Implementation Benefits</h2>
+              <h2>MSD365 Key Business Outcomes</h2>
               <p>
-                Real outcomes from well‑run Dynamics programs — not just feature rollouts.
+                Real outcomes from well‑run Dynamics programs — not just feature rollouts. Our MSD365 services help you achieve key business outcomes through the implementation of the Dynamics 365 apps.
               </p>
             </div>
           </div>

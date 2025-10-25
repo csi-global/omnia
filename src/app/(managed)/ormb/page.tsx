@@ -2,7 +2,7 @@ import OmniaButton from '@/components/ui/omnia-button';
 import OmniaCarousel from '@/components/ui/omnia-carousel';
 import OmniaSection from '@/components/ui/omnia-section';
 import ServiceCard from '@/components/ui/service-card';
-import { ORMB_FEATURES, ORMB_SERVICE_CARDS } from '@/lib/constants';
+import { ORMB_FEATURES, ORMB_INDUSTRIES, ORMB_SERVICE_CARDS } from '@/lib/constants';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
@@ -167,53 +167,21 @@ export default function ORMBPage() {
         </div>
 
         <div className="row g-4 pt-4">
-          <div className="col-lg-4 col-md-6">
-            <div className="industry-item text-center p-4 rounded-2xl shadow-sm border border-[var(--theme)]/20 bg-white">
-              <span className="block h-1 w-10 bg-[var(--theme)] rounded-full mx-auto mb-3"></span>
-              <div className="flex items-center justify-center mb-2">
-                <div className="size-10 rounded-full bg-[var(--theme)]/10 text-[var(--theme)] flex items-center justify-center">
-                  <i className="fas fa-wifi"></i>
+          {
+            ORMB_INDUSTRIES.map((item) => (
+              <div className="col-lg-4 col-md-6" key={item.title}>
+                <div className="industry-item text-center p-4 rounded-2xl shadow-sm border border-[var(--theme)]/20 bg-white">
+                  <span className="block h-1 w-10 bg-[var(--theme)] rounded-full mx-auto mb-3"></span>
+                  <div className="flex items-center justify-center mb-2">
+                    <div className="size-10 rounded-full bg-[var(--theme)]/10 text-[var(--theme)] flex items-center justify-center">
+                      <i className={item.icon}></i>
+                    </div>
+                  </div>
+                  <h4 className="m-0 text-[var(--theme)]">{item.title}</h4>
+                  <p className="mt-2">{item.description}</p>
                 </div>
               </div>
-              <h4 className="m-0 text-[var(--theme)]">Telecommunications</h4>
-              <p className="mt-2">
-                Complex billing for voice, data, and value-added services with usage-based pricing
-                and real-time rating capabilities.
-              </p>
-            </div>
-          </div>
-
-          <div className="col-lg-4 col-md-6">
-            <div className="industry-item text-center p-4 rounded-2xl shadow-sm border border-[var(--theme)]/20 bg-white">
-              <span className="block h-1 w-10 bg-[var(--theme)] rounded-full mx-auto mb-3"></span>
-              <div className="flex items-center justify-center mb-2">
-                <div className="size-10 rounded-full bg-[var(--theme)]/10 text-[var(--theme)] flex items-center justify-center">
-                  <i className="fas fa-bolt"></i>
-                </div>
-              </div>
-              <h4 className="m-0 text-[var(--theme)]">Utilities</h4>
-              <p className="mt-2">
-                Meter-based billing for electricity, gas, and water services with tiered pricing
-                and demand-based charges.
-              </p>
-            </div>
-          </div>
-
-          <div className="col-lg-4 col-md-6">
-            <div className="industry-item text-center p-4 rounded-2xl shadow-sm border border-[var(--theme)]/20 bg-white">
-              <span className="block h-1 w-10 bg-[var(--theme)] rounded-full mx-auto mb-3"></span>
-              <div className="flex items-center justify-center mb-2">
-                <div className="size-10 rounded-full bg-[var(--theme)]/10 text-[var(--theme)] flex items-center justify-center">
-                  <i className="fas fa-cloud"></i>
-                </div>
-              </div>
-              <h4 className="m-0 text-[var(--theme)]">Cloud Services</h4>
-              <p className="mt-2">
-                Subscription and consumption-based billing for SaaS, PaaS, and IaaS offerings with
-                automated provisioning.
-              </p>
-            </div>
-          </div>
+            ))}
         </div>
       </OmniaSection>
 

@@ -755,3 +755,22 @@ export const NOT_FOUND_LINKS: readonly NotFoundLink[] = [
   ['/smart-investigate', 'Smart Investigate'],
   ['/career', 'Careers'],
 ];
+
+
+export const ORMB_INDUSTRIES: readonly ServiceCard[] = [
+  {
+    icon: 'fas fa-university',
+    title: 'Banking',
+    description: 'Billing, revenue management and fees calculation for retail, corporate, or digital banking products and services.',
+  },
+  {
+    icon: 'fas fa-bolt',
+    title: 'Utilities',
+    description: 'Meter-based billing for electricity, gas, and water services with tiered pricing and demand-based charges.',
+  },
+  {
+    icon: 'fas fa-wifi',
+    title: 'Telecommunications',
+    description: 'Complex billing for voice, data, and value-added telecom services with usage-based pricing and real-time rating capabilities.',
+  },
+];
