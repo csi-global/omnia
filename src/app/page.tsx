@@ -240,7 +240,7 @@ const Home: FC = () => {
                     description: "Strengthen your IT backbone and fuel business innovation.",
                   }].map((item) => (
                     <div className="flex gap-3 sm:gap-4" key={item.title}>
-                      <div className="shrink-0 rounded-lg sm:rounded-xl bg-[var(--theme)] p-2 sm:p-3">
+                      <div className="shrink-0 rounded-lg sm:rounded-xl bg-[var(--theme)] size-16 flex items-center justify-center">
                         <Image src={item.icon} alt={item.title} width={28} height={28} className="sm:w-9 sm:h-9" />
                       </div>
                       <div>

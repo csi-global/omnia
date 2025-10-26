@@ -117,7 +117,14 @@ export default function DigitalProcessAutomationPage() {
                       <h4>Design once. Orchestrate everywhere.</h4>
                       <p>Scale Digital Process Automation with guardrails, case management, and AI decisioning.</p>
                     </div>
-                    <Image src="/assets/img/service/1.webp" alt="Pega platform" width={0} height={0} sizes="100vw" style={{ width: "100%", height: "auto" }} />
+                    <Image
+                      src="/assets/img/dpa-tabs/pega-tab.png"
+                      alt="Pega platform"
+                      width={800}
+                      height={400}
+                      sizes="100vw"
+                      className="w-full h-auto object-contain"
+                    />
                   </div>
                   <div className="row g-4">
                     <div className="col-12">
@@ -154,7 +161,14 @@ export default function DigitalProcessAutomationPage() {
                   <p className="mb-4">Rapidly digitize workflows with App Engine, Flow Designer, and IntegrationHub—on a secure, compliant SaaS platform.</p>
                   <div className="tab-hero">
                     <div className="copy"><h4>From tickets to outcomes.</h4><p>Build modern experiences on the Now Platform with secure, governed low-code.</p></div>
-                    <Image src="/assets/img/service/2.webp" alt="ServiceNow App Engine" width={0} height={0} sizes="100vw" style={{ width: "100%", height: "auto" }} />
+                    <Image
+                      src="/assets/img/dpa-tabs/servicenow-tab.png"
+                      alt="ServiceNow App Engine"
+                      width={800}
+                      height={400}
+                      sizes="100vw"
+                      className="w-full h-auto object-contain"
+                    />
                   </div>
                   <div className="row g-4">
                     <div className="col-12">
@@ -190,7 +204,14 @@ export default function DigitalProcessAutomationPage() {
                   <p className="mb-4">Empower fusion teams with low-code tools on Azure. Build apps, automate processes, analyze data, and digitize customer/employee experiences.</p>
                   <div className="tab-hero">
                     <div className="copy"><h4>Ship faster with Power + Azure.</h4><p>Canvas and model-driven apps on Dataverse with 1,000+ connectors and Copilot.</p></div>
-                    <Image src="/assets/img/service/6.webp" alt="Microsoft Power Platform" width={0} height={0} sizes="100vw" style={{ width: "100%", height: "auto" }} />
+                    <Image
+                      src="/assets/img/dpa-tabs/microsoft-tab.png"
+                      alt="Microsoft Power Platform"
+                      width={800}
+                      height={400}
+                      sizes="100vw"
+                      className="w-full h-auto object-contain"
+                    />
                   </div>
                   <div className="row g-4">
                     <div className="col-12">
