@@ -310,7 +310,7 @@ const Home: FC = () => {
                 <div className="h-full flex flex-col">
                   <div className="flex items-center justify-between mb-4">
                     <div className="w-14 h-14 md:w-18 md:h-18 rounded-xl bg-gradient-to-br from-[var(--theme)] to-[var(--theme-red)] flex items-center justify-center">
-                      <i className="icon-01 text-white text-xl md:text-2xl scale-150"></i>
+                      <i className="fa-solid fa-gears text-white text-xl md:text-2xl scale-150"></i>
                     </div>
                     <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <i className="icon-arrow-right text-[var(--theme)] text-lg"></i>
@@ -337,21 +337,25 @@ const Home: FC = () => {
                   title: "Cloud Migration",
                   href: "/cloud-migration",
                   description: "Migrate your on-premises applications to the cloud with ease.",
+                  icon: "fas fa-cloud",
                 },
                 {
                   title: "Data Analytics",
                   href: "/data-analytics",
                   description: "Analyze your data to gain insights and make informed decisions.",
+                  icon: "fas fa-chart-line",
                 },
                 {
                   title: "Digital Transformation",
                   href: "/digital-transformation",
                   description: "Transform your business to be more efficient and effective.",
+                  icon: "fas fa-digital-tachograph",
                 },
                 {
                   title: "Domain Consulting",
                   href: "/domain-consulting",
                   description: "Consult with our experts to improve your business.",
+                  icon: "fas fa-briefcase",
                 },
               ].map((item) => (
                 <div className="md:col-span-1" key={item.title}>
@@ -362,7 +366,7 @@ const Home: FC = () => {
                     <div className="h-full flex flex-col">
                       <div className="flex items-center justify-between mb-4">
                         <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[var(--theme)] to-[var(--theme-red)] flex items-center justify-center">
-                          <i className="icon-05 text-white text-xl scale-150"></i>
+                          <i className={`${item.icon} text-white text-xl scale-150`}></i>
                         </div>
                         <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                           <i className="icon-arrow-right text-[var(--theme)] text-sm"></i>
@@ -440,41 +444,12 @@ const Home: FC = () => {
 
       {/* Marquee Section (footer-like background with animated circles) */}
       <section className="marqee-section relative section-bg overflow-hidden">
-        {/* Background shapes (same as footer) */}
-        <div className="pointer-events-none absolute inset-0 -z-10 select-none">
-          <Image
-            src="/assets/img/footer-color.webp"
-            alt="background shape"
-            width={900}
-            height={600}
-            className="absolute top-0 left-0 opacity-90"
-            priority
-          />
-          <Image
-            src="/assets/img/footer-color-2.webp"
-            alt="background shape"
-            width={900}
-            height={600}
-            className="absolute bottom-0 right-0 opacity-90"
-            priority
-          />
-
-          {/* Animated circles */}
-          <span className="absolute left-[6%] top-[20%] size-20 rounded-full bg-[var(--theme)]/10 blur-2xl float-bob-y" />
-          <span className="absolute right-[8%] top-[15%] size-24 rounded-full bg-[var(--header)]/10 blur-2xl float-bob-x" />
-          <span className="absolute left-1/2 bottom-[10%] -translate-x-1/2 size-28 rounded-full bg-[var(--theme)]/10 blur-3xl animate-pulse" />
-        </div>
 
         <div className="marqee-wrapper !bg-transparent relative">
           <Swiper
             modules={[Autoplay]}
             slidesPerView={2}
-            spaceBetween={32}
-            breakpoints={{
-              640: { slidesPerView: 2 },
-              768: { slidesPerView: 3 },
-              1024: { slidesPerView: 4 },
-            }}
+            spaceBetween={20}
             loop
             speed={5000}
             autoplay={{ delay: 0, disableOnInteraction: false }}
@@ -483,11 +458,12 @@ const Home: FC = () => {
             {MARQUEE_SLIDES.map((slide) => (
               <Fragment key={slide.title}>
                 <SwiperSlide key={`${slide.title}-text`} className="brand-slide-element">
-                  <h2 className="marqee-text !text-3xl md:!text-6xl font-extrabold leading-tight !text-zinc-900 select-none text-nowrap">{slide.title}</h2>
-                </SwiperSlide>
-                <SwiperSlide key={`${slide.title}-icon`} className="brand-slide-element">
-                  <div className="marqee-icon !bg-transparent flex items-center justify-center">
-                    <Image src="/assets/img/favicon.png" alt="favicon" width={40} height={40} className="select-none" />
+                  <div className="flex items-center gap-6
+                whitespace-nowrap">
+                    <div className="marqee-icon !bg-transparent flex items-center justify-center">
+                      <Image src="/assets/img/favicon.png" alt="favicon" width={40} height={40} className="select-none" />
+                    </div>
+                    <h2 className="marqee-text !text-3xl md:!text-6xl font-extrabold leading-tight !text-zinc-900 select-none">{slide.title}</h2>
                   </div>
                 </SwiperSlide>
               </Fragment>

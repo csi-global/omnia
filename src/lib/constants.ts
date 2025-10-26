@@ -326,7 +326,7 @@ export const SMART_INVESTIGATE_SERVICE_CARDS: readonly ServiceCard[] = [
       'Interactive network mapping and relationship analysis to uncover hidden connections and visualize complex data relationships.',
   },
   {
-    icon: 'fas fa-shield-halved',
+    icon: 'fas fa-shield-alt',
     title: 'Compliance & Risk Management',
     description:
       'Built-in compliance frameworks and risk assessment tools to ensure investigations meet regulatory requirements and standards.',
