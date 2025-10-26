@@ -460,10 +460,10 @@ const Home: FC = () => {
                 <SwiperSlide key={`${slide.title}-text`} className="brand-slide-element">
                   <div className="flex items-center gap-6
                 whitespace-nowrap">
-                    <div className="marqee-icon !bg-transparent flex items-center justify-center">
-                      <Image src="/assets/img/favicon.png" alt="favicon" width={40} height={40} className="select-none" />
+                    <div className="marqee-icon !bg-transparent flex items-center justify-center !w-6 !h-6 sm:!w-7 sm:!h-7 md:!w-10 md:!h-10">
+                      <Image src="/assets/img/favicon.png" alt="favicon" width={40} height={40} className="select-none w-6 h-6 sm:w-7 sm:h-7 md:w-10 md:h-10" />
                     </div>
-                    <h2 className="marqee-text !text-3xl md:!text-6xl font-extrabold leading-tight !text-zinc-900 select-none">{slide.title}</h2>
+                    <h2 className="marqee-text !text-xl sm:!text-2xl md:!text-4xl lg:!text-5xl xl:!text-6xl font-extrabold leading-tight !text-zinc-900 select-none">{slide.title}</h2>
                   </div>
                 </SwiperSlide>
               </Fragment>
