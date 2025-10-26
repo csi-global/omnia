@@ -354,7 +354,7 @@ export default function LeafletWorldMap() {
               >
                 <div className="d-flex align-items-start gap-3">
                   <div className="location-icon">
-                    <div className={`rounded-circle p-2 ${selectedLocation?.id === location.id ? 'bg-primary' : 'bg-light'}`}>
+                    <div className={`rounded-circle size-8 flex items-center justify-center ${selectedLocation?.id === location.id ? 'bg-primary' : 'bg-light'}`}>
                       <i className={`fas fa-map-marker-alt ${selectedLocation?.id === location.id ? 'text-white' : 'text-primary'}`}></i>
                     </div>
                   </div>

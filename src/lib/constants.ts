@@ -114,7 +114,7 @@ export const VISION_PLUS_SERVICE_CARDS: readonly ServiceCard[] = [
       'End-to-end VisionPLUS implementation including system setup, configuration, data migration, testing, and go-live support for payment cards, loans, and commercial products.',
   },
   {
-    icon: 'fas fa-arrow-up-right-dots',
+    icon: 'fas fa-arrow-up-right-from-square',
     title: 'Version Upgrades & Migration',
     description:
       'Seamless upgrades from legacy mainframe to modern platforms like FirstVision on Linux; migrate to cloud-based deployments with minimal disruption.',

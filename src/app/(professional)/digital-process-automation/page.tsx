@@ -110,7 +110,7 @@ export default function DigitalProcessAutomationPage() {
 
                 {/* Pega */}
                 <TabsContent value="pega">
-                  <h3>Pega Intelligent Automation and DPA</h3>
+                  <h3 className="!normal-case">Pega Intelligent Automation and DPA</h3>
                   <p className="mb-4">Build enterprise-grade applications with case management, low-code design, and AI-powered decisioning.</p>
                   <div className="tab-hero">
                     <div className="copy">
@@ -132,18 +132,18 @@ export default function DigitalProcessAutomationPage() {
                   <HeroSummaryTabs
                     className="pt-2 mt-4"
                     tabs={[
-                      { value: "products-functions", label: "Products & Functions", summary: "Pega Platform, Customer Service, Sales Automation, Marketing, Studios.", imageSrc: "/product.svg" },
-                      { value: "dev-methodology", label: "Development Methodology", summary: "Pega Express delivery with iterative sprints and reusable templates.", imageSrc: "/development.svg" },
-                      { value: "hosting-integrations", label: "Hosting & Integrations", summary: "Pega Cloud or self-managed; REST/SOAP, events, and enterprise connectors.", imageSrc: "/hosting.svg" },
+                      { value: "products-functions", label: "Products & Functions", keywords: ["Pega Platform", "Customer Service", "Sales Automation", "Marketing", "Studios", "Case Types", "Decisioning", "Rules", "Bots", "Channels"], imageSrc: "/product.svg" },
+                      { value: "dev-methodology", label: "Development Methodology", keywords: ["Pega Express", "Sprints", "Guardrails", "Reuse", "Templates", "CI/CD", "Testing", "Versioning", "DevOps", "Pipelines"], imageSrc: "/development.svg" },
+                      { value: "hosting-integrations", label: "Hosting & Integrations", keywords: ["Pega Cloud", "Self-Managed", "REST", "SOAP", "Events", "Connectors", "Queues", "Kafka", "Webhooks", "SFTP"], imageSrc: "/hosting.svg" },
                     ]}
                     reverse={true}
                   />
                   <HeroSummaryTabs
                     className="pt-2 mt-4"
                     tabs={[
-                      { value: "governance", label: "Governance, Security, & Compliance", summary: "Guardrails, centralized rules, change control; SSO/OAuth & RBAC; audit trails, monitoring, automated testing.", imageSrc: "/compliance.svg" },
-                      { value: "business-outcomes", label: "Business Outcomes", summary: "Faster time-to-value, reduced manual work via RPA + workflow, improved CX with next-best-action.", imageSrc: "/outcomes.svg" },
-                      { value: "use-cases-industries", label: "Use Cases & Industries", summary: "Customer service, sales ops, onboarding; claims, underwriting, KYC/AML; field service, order-to-cash, collections.", imageSrc: "/usecases.svg" },
+                      { value: "governance", label: "Governance, Security, & Compliance", keywords: ["Guardrails", "Change Control", "RBAC", "SSO", "OAuth", "Audit", "Monitoring", "Policies", "Encryption", "Testing"], imageSrc: "/compliance.svg" },
+                      { value: "business-outcomes", label: "Business Outcomes", keywords: ["Time-to-Value", "Throughput", "RPA", "Workflow", "Cost", "Quality", "Compliance", "CX", "Scalability", "Insights"], imageSrc: "/outcomes.svg" },
+                      { value: "use-cases-industries", label: "Use Cases & Industries", keywords: ["Customer Service", "Onboarding", "Claims", "Underwriting", "KYC", "AML", "Field Service", "Order-to-Cash", "Collections", "Operations"], imageSrc: "/usecases.svg" },
                     ]}
                   />
                 </TabsContent>
@@ -169,17 +169,17 @@ export default function DigitalProcessAutomationPage() {
                   <HeroSummaryTabs
                     className="pt-2"
                     tabs={[
-                      { value: "products-functions", label: "Products & Functions", summary: "App Engine, ITSM/ITOM/ITAM, HRSD, CSM, GRC; IntegrationHub and Automation Engine (RPA).", imageSrc: "/product.svg" },
-                      { value: "dev-methodology", label: "Development Methodology", summary: "Scoped apps, CICD, Dev/Test/Prod promotion; citizen developer guardrails and governance.", imageSrc: "/development.svg" },
-                      { value: "hosting-integrations", label: "Hosting & Integrations", summary: "Native SaaS regions; IntegrationHub spokes, REST/SOAP, MID Server for on‑prem integrations.", imageSrc: "/hosting.svg" },
+                      { value: "products-functions", label: "Products & Functions", keywords: ["App Engine", "ITSM", "ITOM", "ITAM", "HRSD", "CSM", "GRC", "IntegrationHub", "RPA", "Automation"], imageSrc: "/product.svg" },
+                      { value: "dev-methodology", label: "Development Methodology", keywords: ["Scoped Apps", "CI/CD", "Promotion", "Pipelines", "Testing", "Governance", "Guardrails", "Update Sets", "Versions", "Dev/Test/Prod"], imageSrc: "/development.svg" },
+                      { value: "hosting-integrations", label: "Hosting & Integrations", keywords: ["SaaS Regions", "Spokes", "REST", "SOAP", "MID Server", "On-Prem", "Events", "Webhooks", "OAuth", "Policies"], imageSrc: "/hosting.svg" },
                     ]}
                   />
                   <HeroSummaryTabs
                     className="pt-2"
                     tabs={[
-                      { value: "governance", label: "Governance, Security, & Compliance", summary: "Instance governance, update sets, pipelines; SSO, encryption, data policies; platform security certifications.", imageSrc: "/compliance.svg" },
-                      { value: "business-outcomes", label: "Business Outcomes", summary: "Rapid workflow digitization and scale; lower development cost via App Engine + guardrails; better service experiences.", imageSrc: "/outcomes.svg" },
-                      { value: "use-cases-industries", label: "Use Cases & Industries", summary: "ITSM/ITOM, HR services, employee workflows; customer service, field service, operations; GRC, risk, and audit.", imageSrc: "/usecases.svg" },
+                      { value: "governance", label: "Governance, Security, & Compliance", keywords: ["Governance", "Update Sets", "Pipelines", "SSO", "Encryption", "Policies", "Compliance", "Audits", "Monitoring", "Controls"], imageSrc: "/compliance.svg" },
+                      { value: "business-outcomes", label: "Business Outcomes", keywords: ["Digitization", "Scale", "Cost", "Speed", "Experience", "Automation", "Throughput", "Quality", "Insights", "ROI"], imageSrc: "/outcomes.svg" },
+                      { value: "use-cases-industries", label: "Use Cases & Industries", keywords: ["ITSM", "HR Services", "Employee", "Customer", "Field Service", "Operations", "GRC", "Risk", "Audit", "Service Desk"], imageSrc: "/usecases.svg" },
                     ]}
                   />
                 </TabsContent>
@@ -205,17 +205,17 @@ export default function DigitalProcessAutomationPage() {
                   <HeroSummaryTabs
                     className="pt-2 mt-4"
                     tabs={[
-                      { value: "products-functions", label: "Products & Functions", summary: "Power Platform (Apps, Automate, BI, Pages, Copilot); Dynamics 365 on Dataverse; Azure services, API Management, Logic Apps.", imageSrc: "/product.svg" },
-                      { value: "dev-methodology", label: "Development Methodology", summary: "ALM with solutions, pipelines, environments; Center of Excellence for governance, DLP, monitoring.", imageSrc: "/development.svg" },
-                      { value: "hosting-integrations", label: "Hosting & Integrations", summary: "Microsoft cloud (Azure, M365, GCC); 1,000+ connectors, custom connectors, REST/OData, webhooks.", imageSrc: "/hosting.svg" },
+                      { value: "products-functions", label: "Products & Functions", keywords: ["Power Apps", "Power Automate", "Power BI", "Power Pages", "Copilot", "Dynamics 365", "Dataverse", "Azure", "API Mgmt", "Logic Apps"], imageSrc: "/product.svg" },
+                      { value: "dev-methodology", label: "Development Methodology", keywords: ["Solutions", "Pipelines", "Environments", "ALM", "Governance", "DLP", "Monitoring", "COE", "Testing", "DevOps"], imageSrc: "/development.svg" },
+                      { value: "hosting-integrations", label: "Hosting & Integrations", keywords: ["Azure", "M365", "GCC", "Connectors", "Custom", "REST", "OData", "Webhooks", "APIM", "Service Bus"], imageSrc: "/hosting.svg" },
                     ]}
                   />
                   <HeroSummaryTabs
                     className="pt-2 mt-4"
                     tabs={[
-                      { value: "governance", label: "Governance, Security, & Compliance", summary: "DLP policies, environment strategy, managed identities; Entra ID SSO and RBAC; monitoring, audit, solution-aware pipelines.", imageSrc: "/compliance.svg" },
-                      { value: "business-outcomes", label: "Business Outcomes", summary: "Fusion development (IT + business), faster app delivery with Dataverse + connectors, unified data and AI-driven insights.", imageSrc: "/outcomes.svg" },
-                      { value: "use-cases-industries", label: "Use Cases & Industries", summary: "Frontline apps, approvals, inspections; sales, service, marketing; finance, supply chain, projects.", imageSrc: "/usecases.svg" },
+                      { value: "governance", label: "Governance, Security, & Compliance", keywords: ["DLP", "Environments", "Identities", "Entra ID", "SSO", "RBAC", "Monitoring", "Audit", "Pipelines", "Policies"], imageSrc: "/compliance.svg" },
+                      { value: "business-outcomes", label: "Business Outcomes", keywords: ["Fusion", "Delivery", "Dataverse", "Connectors", "Insights", "AI", "Automation", "Time", "Cost", "Scale"], imageSrc: "/outcomes.svg" },
+                      { value: "use-cases-industries", label: "Use Cases & Industries", keywords: ["Frontline", "Approvals", "Inspections", "Sales", "Service", "Marketing", "Finance", "Supply Chain", "Projects", "Operations"], imageSrc: "/usecases.svg" },
                     ]}
                   />
                 </TabsContent>

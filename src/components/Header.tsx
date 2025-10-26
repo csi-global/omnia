@@ -91,9 +91,17 @@ export default function Header() {
                 <div className="logo">
                   <Link href="/" className="header-logo">
                     <Image src="/assets/img/logo/white-logo.webp" alt="logo-img" width={0} height={0} sizes="100vw" style={{ width: "auto", height: "40px" }} />
+                    <div className="flex gap-1 text-white text-xs font-bold flex-nowrap shrink-0">
+                      <span className="py-1 pl-2">Part of</span>
+                      <Image src="/assets/img/logo/csi-logo.png" alt="logo-img" width={0} height={0} sizes="100vw" style={{ width: "auto", height: "20px" }}/>
+                    </div>
                   </Link>
                   <Link href="/" className="header-logo-2">
                     <Image src="/assets/img/logo/black-logo.webp" alt="logo-img" width={0} height={0} sizes="100vw" style={{ width: "auto", height: "40px" }} />
+                    <div className="flex gap-1 text-xs font-bold flex-nowrap shrink-0">
+                      <span className="py-1 pl-2">Part of</span>
+                      <Image src="/assets/img/logo/csi-logo.png" alt="logo-img" width={0} height={0} sizes="100vw" style={{ width: "auto", height: "20px" }}/>
+                    </div>
                   </Link>
                 </div>
                 <div className="mean__menu-wrapper d-none d-xl-block">

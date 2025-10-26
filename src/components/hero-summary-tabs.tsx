@@ -2,13 +2,16 @@
 
 import OmniaCarousel from "@/components/ui/omnia-carousel";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import dynamic from "next/dynamic";
 import Image from "next/image";
-import { useRef } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+
+const WordCloudNoSSR = dynamic(() => import("react-d3-cloud"), { ssr: false });
 
 type SummaryTab = {
   value: string;
   label: string;
-  summary: string;
+  keywords: string[];
   imageSrc?: string;
   imageAlt?: string;
 };
@@ -23,29 +26,86 @@ export default function HeroSummaryTabs({ tabs, className, reverse }: HeroSummar
   const listRef = useRef<HTMLDivElement>(null);
   const first = tabs[0]?.value ?? "tab-1";
 
-  function renderWordCloud(summary: string) {
-    const seed = summary
-      .split(/[|,;•·]/)
-      .map((s) => s.trim())
-      .filter(Boolean);
-    const words = seed.length > 1
-      ? seed
-      : summary
-        .replace(/[.]/g, "")
-        .split(/\s+/)
-        .filter((w) => w.length > 3 && !/^(with|and|the|for|into|into|them|that|this|plus)$/i.test(w));
+  function InlineWordCloud({ keywords }: { keywords: string[] }) {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const [size, setSize] = useState<{ width: number; height: number }>({ width: 360, height: 220 });
 
-    const unique: string[] = Array.from(new Set(words));
+    const tokens = useMemo(() => {
+      if (!Array.isArray(keywords)) return [] as string[];
+      return Array.from(new Set(keywords.filter(Boolean).map((k) => k.trim()))).slice(0, 10);
+    }, [keywords]);
+
+    const words = useMemo(() => {
+      // Give each keyword an initial uniform weight; slight variation by length for visual interest
+      return tokens.map((text) => ({ text, value: Math.max(1, Math.min(10, Math.round(text.length / 2))) }));
+    }, [tokens]);
+
+    const [minOccurrences, maxOccurrences] = useMemo(() => {
+      if (words.length === 0) return [0, 0];
+      const values = words.map((w) => w.value);
+      return [Math.min(...values), Math.max(...values)];
+    }, [words]);
+
+    const calcFontSize = useCallback((value: number) => {
+      if (maxOccurrences === minOccurrences) return 20;
+      const MIN_FONT = 14;
+      const MAX_FONT = 36;
+      const norm = (value - minOccurrences) / (maxOccurrences - minOccurrences);
+      return Math.round(MIN_FONT + norm * (MAX_FONT - MIN_FONT));
+    }, [maxOccurrences, minOccurrences]);
+
+    const calcFontWeight = useCallback((value: number) => {
+      if (maxOccurrences === minOccurrences) return 500;
+      const MIN_W = 400;
+      const MAX_W = 700;
+      const norm = (value - minOccurrences) / (maxOccurrences - minOccurrences);
+      return Math.round(MIN_W + norm * (MAX_W - MIN_W));
+    }, [maxOccurrences, minOccurrences]);
+
+    const palette = useMemo(() => [
+      'var(--theme)',
+      'var(--header)',
+      'var(--foreground)',
+      'var(--primary)',
+      'var(--secondary-foreground)',
+      'var(--accent-foreground)',
+      'var(--chart-1)',
+      'var(--chart-2)',
+      'var(--chart-3)',
+      'var(--chart-4)',
+      'var(--chart-5)'
+    ], []);
+
+    useEffect(() => {
+      if (!containerRef.current) return;
+      const el = containerRef.current;
+      const ro = new ResizeObserver((entries) => {
+        for (const entry of entries) {
+          const w = Math.floor(entry.contentRect.width);
+          const h = Math.max(180, Math.min(320, Math.floor(w * 0.6)));
+          setSize({ width: w || 360, height: h });
+        }
+      });
+      ro.observe(el);
+      return () => ro.disconnect();
+    }, []);
 
     return (
-      <div className="word-cloud">
-        {unique.map((w, i) => {
-          const sizeClass = w.length >= 12 ? "wc-xl" : w.length >= 8 ? "wc-lg" : w.length >= 5 ? "wc-md" : "wc-sm";
-          const emphasis = i % 5 === 0 ? "wc-strong" : i % 3 === 0 ? "wc-medium" : "";
-          return (
-            <span key={`${w}-${i}`} className={`wc-item ${sizeClass} ${emphasis}`}>{w}</span>
-          );
-        })}
+      <div ref={containerRef} className="w-100" style={{ minHeight: 180 }}>
+        {words.length > 0 ? (
+          <WordCloudNoSSR
+            width={size.width}
+            height={size.height}
+            font="Poppins"
+            rotate={0}
+            padding={2}
+            random={() => 0.5}
+            data={words}
+            fontSize={(w: { value: number }) => calcFontSize(w.value)}
+            fontWeight={(w: { value: number }) => calcFontWeight(w.value)}
+            fill={(_: unknown, i: number) => palette[i % palette.length]}
+          />
+        ) : null}
       </div>
     );
   }
@@ -55,7 +115,7 @@ export default function HeroSummaryTabs({ tabs, className, reverse }: HeroSummar
       <div className="tabs-content-inner">
         <div className={`row align-items-center justify-content-around ${reverse ? "flex-row-reverse" : ""}`}>
           <div className="col-lg-4">
-            {renderWordCloud(t.summary)}
+            <InlineWordCloud keywords={t.keywords} />
           </div>
           <div className="col-lg-4">
             <div className="relative w-100 h-[220px] sm:h-[240px] md:h-[280px] lg:h-[300px] xl:h-[320px] rounded-3 overflow-hidden">
@@ -91,7 +151,7 @@ export default function HeroSummaryTabs({ tabs, className, reverse }: HeroSummar
                 <div className="tabs-content-inner">
                   <div className={`row align-items-center justify-content-around ${reverse ? "flex-row-reverse" : ""}`}>
                     <div className="col-lg-4">
-                      {renderWordCloud(t.summary)}
+                      <InlineWordCloud keywords={t.keywords} />
                     </div>
                     <div className="col-lg-4">
                       <div className="relative w-100 h-[220px] sm:h-[240px] md:h-[280px] lg:h-[300px] xl:h-[320px] rounded-3 overflow-hidden">
