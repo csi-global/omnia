@@ -94,16 +94,10 @@ const Home: FC = () => {
   const swiperRef = useRef<SwiperType | null>(null);
 
   // Extract services for type safety
-  const [
-    digitalProcessAutomation,
-    cloudMigration,
-    dataAnalytics,
-    digitalTransformation,
-    domainConsulting
-  ] = PROFESSIONAL_SERVICES;
+  const [digitalProcessAutomation] = PROFESSIONAL_SERVICES;
 
   return (
-    <div>
+    <div className="overflow-x-hidden">
       {/* Hero Slider - Pure Tailwind */}
       <section className="relative h-screen w-full overflow-hidden">
         {/* Navigation Buttons */}
@@ -222,7 +216,7 @@ const Home: FC = () => {
                   About Omnia
                 </span>
                 <h2 className="!text-2xl sm:!text-3xl md:!text-4xl lg:!text-5xl xl:!text-6xl font-extrabold leading-tight text-zinc-900">
-                  Welcome to <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--theme)] to-[var(--header)]">Omnia</span>
+                  Welcome to <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--theme)] to-[var(--theme-red)]">Omnia</span>
                 </h2>
                 <p className="text-zinc-600 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
                   A cloud consulting company which focuses on IT automation and bringing about digital transformation for businesses. With over a decade&apos;s expertise, we leverage technology and innovation to build trust and foster long‑lasting relationships with our customers.
@@ -315,8 +309,8 @@ const Home: FC = () => {
               >
                 <div className="h-full flex flex-col">
                   <div className="flex items-center justify-between mb-4">
-                    <div className="w-14 h-14 md:w-18 md:h-18 rounded-xl bg-gradient-to-br from-[var(--theme)] to-[var(--header)] flex items-center justify-center">
-                      <i className="icon-01 text-white text-xl md:text-2xl"></i>
+                    <div className="w-14 h-14 md:w-18 md:h-18 rounded-xl bg-gradient-to-br from-[var(--theme)] to-[var(--theme-red)] flex items-center justify-center">
+                      <i className="icon-01 text-white text-xl md:text-2xl scale-150"></i>
                     </div>
                     <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <i className="icon-arrow-right text-[var(--theme)] text-lg"></i>
@@ -337,125 +331,59 @@ const Home: FC = () => {
               </Link>
             </div>
 
-            {/* Cloud Migration - Medium card */}
-            <div className="md:col-span-1">
-              <Link
-                href={cloudMigration!.href}
-                className="group block h-full bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-zinc-200 hover:border-[var(--theme)]/20"
-              >
-                <div className="h-full flex flex-col">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[var(--theme)] to-[var(--header)] flex items-center justify-center">
-                      <i className="icon-05 text-white text-xl"></i>
+            {
+              [
+                {
+                  title: "Cloud Migration",
+                  href: "/cloud-migration",
+                  description: "Migrate your on-premises applications to the cloud with ease.",
+                },
+                {
+                  title: "Data Analytics",
+                  href: "/data-analytics",
+                  description: "Analyze your data to gain insights and make informed decisions.",
+                },
+                {
+                  title: "Digital Transformation",
+                  href: "/digital-transformation",
+                  description: "Transform your business to be more efficient and effective.",
+                },
+                {
+                  title: "Domain Consulting",
+                  href: "/domain-consulting",
+                  description: "Consult with our experts to improve your business.",
+                },
+              ].map((item) => (
+                <div className="md:col-span-1" key={item.title}>
+                  <Link
+                    href={item.href}
+                    className="group block h-full bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-zinc-200 hover:border-[var(--theme)]/20"
+                  >
+                    <div className="h-full flex flex-col">
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[var(--theme)] to-[var(--theme-red)] flex items-center justify-center">
+                          <i className="icon-05 text-white text-xl scale-150"></i>
+                        </div>
+                        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <i className="icon-arrow-right text-[var(--theme)] text-sm"></i>
+                        </div>
+                      </div>
+                      <h3 className="text-lg font-bold text-zinc-900 mb-3 group-hover:text-[var(--theme)] transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="text-zinc-600 text-sm leading-relaxed flex-grow">
+                        {item.description}
+                      </p>
+                      <div className="mt-4 pt-3 border-t border-zinc-100">
+                        <span className="text-[var(--theme)] font-semibold text-xs group-hover:translate-x-1 transition-transform duration-200 inline-flex items-center gap-1">
+                          Learn More <i className="icon-arrow-right text-xs"></i>
+                        </span>
+                      </div>
                     </div>
-                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <i className="icon-arrow-right text-[var(--theme)] text-sm"></i>
-                    </div>
-                  </div>
-                  <h3 className="text-lg font-bold text-zinc-900 mb-3 group-hover:text-[var(--theme)] transition-colors">
-                    {cloudMigration!.title}
-                  </h3>
-                  <p className="text-zinc-600 text-sm leading-relaxed flex-grow">
-                    {cloudMigration!.description}
-                  </p>
-                  <div className="mt-4 pt-3 border-t border-zinc-100">
-                    <span className="text-[var(--theme)] font-semibold text-xs group-hover:translate-x-1 transition-transform duration-200 inline-flex items-center gap-1">
-                      Explore <i className="icon-arrow-right text-xs"></i>
-                    </span>
-                  </div>
+                  </Link>
                 </div>
-              </Link>
-            </div>
-
-            {/* Data Analytics - Medium card */}
-            <div className="md:col-span-1">
-              <Link
-                href={dataAnalytics!.href}
-                className="group block h-full bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-zinc-200 hover:border-[var(--theme)]/20"
-              >
-                <div className="h-full flex flex-col">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[var(--theme)] to-[var(--header)] flex items-center justify-center">
-                      <i className="icon-01 text-white text-xl"></i>
-                    </div>
-                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <i className="icon-arrow-right text-[var(--theme)] text-sm"></i>
-                    </div>
-                  </div>
-                  <h3 className="text-lg font-bold text-zinc-900 mb-3 group-hover:text-[var(--theme)] transition-colors">
-                    {dataAnalytics!.title}
-                  </h3>
-                  <p className="text-zinc-600 text-sm leading-relaxed flex-grow">
-                    {dataAnalytics!.description}
-                  </p>
-                  <div className="mt-4 pt-3 border-t border-zinc-100">
-                    <span className="text-[var(--theme)] font-semibold text-xs group-hover:translate-x-1 transition-transform duration-200 inline-flex items-center gap-1">
-                      Discover <i className="icon-arrow-right text-xs"></i>
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            </div>
-
-            {/* Digital Transformation - Wide card */}
-            <div className="md:col-span-2 lg:col-span-1">
-              <Link
-                href={digitalTransformation!.href}
-                className="group block h-full bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-zinc-200 hover:border-[var(--theme)]/20"
-              >
-                <div className="h-full flex flex-col">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[var(--theme)] to-[var(--header)] flex items-center justify-center">
-                      <i className="icon-04 text-white text-xl"></i>
-                    </div>
-                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <i className="icon-arrow-right text-[var(--theme)] text-sm"></i>
-                    </div>
-                  </div>
-                  <h3 className="text-lg font-bold text-zinc-900 mb-3 group-hover:text-[var(--theme)] transition-colors">
-                    {digitalTransformation!.title}
-                  </h3>
-                  <p className="text-zinc-600 text-sm leading-relaxed flex-grow">
-                    {digitalTransformation!.description}
-                  </p>
-                  <div className="mt-4 pt-3 border-t border-zinc-100">
-                    <span className="text-[var(--theme)] font-semibold text-xs group-hover:translate-x-1 transition-transform duration-200 inline-flex items-center gap-1">
-                      Transform <i className="icon-arrow-right text-xs"></i>
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            </div>
-
-            {/* Domain Consulting - Medium card */}
-            <div className="md:col-span-1">
-              <Link
-                href={domainConsulting!.href}
-                className="group block h-full bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-zinc-200 hover:border-[var(--theme)]/20"
-              >
-                <div className="h-full flex flex-col">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[var(--theme)] to-[var(--header)] flex items-center justify-center">
-                      <i className="icon-03 text-white text-xl"></i>
-                    </div>
-                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <i className="icon-arrow-right text-[var(--theme)] text-sm"></i>
-                    </div>
-                  </div>
-                  <h3 className="text-lg font-bold text-zinc-900 mb-3 group-hover:text-[var(--theme)] transition-colors">
-                    {domainConsulting!.title}
-                  </h3>
-                  <p className="text-zinc-600 text-sm leading-relaxed flex-grow">
-                    {domainConsulting!.description}
-                  </p>
-                  <div className="mt-4 pt-3 border-t border-zinc-100">
-                    <span className="text-[var(--theme)] font-semibold text-xs group-hover:translate-x-1 transition-transform duration-200 inline-flex items-center gap-1">
-                      Consult <i className="icon-arrow-right text-xs"></i>
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            </div>
+              ))
+            }
           </div>
         </div>
       </section>
@@ -485,8 +413,8 @@ const Home: FC = () => {
               >
                 <div className="h-full flex flex-col">
                   <div className="flex items-center justify-between mb-4">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[var(--theme)] to-[var(--header)] flex items-center justify-center">
-                      <i className={`${getManagedServiceIcon(item.title)} text-white text-xl`}></i>
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[var(--theme)] to-[var(--theme-red)] flex items-center justify-center">
+                      <i className={`${getManagedServiceIcon(item.title)} text-white text-xl scale-150`}></i>
                     </div>
                     <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <i className="icon-arrow-right text-[var(--theme)] text-sm"></i>
@@ -510,9 +438,34 @@ const Home: FC = () => {
         </div>
       </section>
 
-      {/* Marquee Section (merged) */}
-      <section className="marqee-section">
-        <div className="marqee-wrapper">
+      {/* Marquee Section (footer-like background with animated circles) */}
+      <section className="marqee-section relative section-bg overflow-hidden">
+        {/* Background shapes (same as footer) */}
+        <div className="pointer-events-none absolute inset-0 -z-10 select-none">
+          <Image
+            src="/assets/img/footer-color.webp"
+            alt="background shape"
+            width={900}
+            height={600}
+            className="absolute top-0 left-0 opacity-90"
+            priority
+          />
+          <Image
+            src="/assets/img/footer-color-2.webp"
+            alt="background shape"
+            width={900}
+            height={600}
+            className="absolute bottom-0 right-0 opacity-90"
+            priority
+          />
+
+          {/* Animated circles */}
+          <span className="absolute left-[6%] top-[20%] size-20 rounded-full bg-[var(--theme)]/10 blur-2xl float-bob-y" />
+          <span className="absolute right-[8%] top-[15%] size-24 rounded-full bg-[var(--header)]/10 blur-2xl float-bob-x" />
+          <span className="absolute left-1/2 bottom-[10%] -translate-x-1/2 size-28 rounded-full bg-[var(--theme)]/10 blur-3xl animate-pulse" />
+        </div>
+
+        <div className="marqee-wrapper !bg-transparent relative">
           <Swiper
             modules={[Autoplay]}
             slidesPerView={2}
@@ -527,22 +480,14 @@ const Home: FC = () => {
             autoplay={{ delay: 0, disableOnInteraction: false }}
             className="marque-slider"
           >
-            {MARQUEE_SLIDES.map((slide, index) => (
+            {MARQUEE_SLIDES.map((slide) => (
               <Fragment key={slide.title}>
                 <SwiperSlide key={`${slide.title}-text`} className="brand-slide-element">
-                  <h2 className="marqee-text !text-3xl md:!text-6xl font-extrabold leading-tight text-zinc-900 select-none">{slide.title}</h2>
+                  <h2 className="marqee-text !text-3xl md:!text-6xl font-extrabold leading-tight !text-zinc-900 select-none text-nowrap">{slide.title}</h2>
                 </SwiperSlide>
                 <SwiperSlide key={`${slide.title}-icon`} className="brand-slide-element">
-                  <div className="marqee-icon">
-                    {index % 3 === 0 && (
-                      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="white" /></svg>
-                    )}
-                    {index % 3 === 1 && (
-                      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" stroke="white" /></svg>
-                    )}
-                    {index % 3 === 2 && (
-                      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none"><polygon points="20,4 36,36 4,36" stroke="white" fill="none" /></svg>
-                    )}
+                  <div className="marqee-icon !bg-transparent flex items-center justify-center">
+                    <Image src="/assets/img/favicon.png" alt="favicon" width={40} height={40} className="select-none" />
                   </div>
                 </SwiperSlide>
               </Fragment>
@@ -567,10 +512,10 @@ const Home: FC = () => {
             </p>
           </div>
 
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 arc-row">
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Innovation */}
-            <div className="group rounded-2xl border border-zinc-200 bg-white overflow-hidden shadow-sm transition hover:shadow-md hover:-translate-y-0.5 arc-card arc-left arc-delay-0">
-              <div className="h-1.5 w-full bg-gradient-to-r from-[var(--theme)] to-[var(--header)]"></div>
+            <div className="group rounded-2xl border border-zinc-200 bg-white overflow-hidden shadow-sm transition hover:shadow-md hover:-translate-y-0.5">
+              <div className="h-1.5 w-full bg-gradient-to-r from-[var(--theme)] to-[var(--theme-red)]"></div>
               <div className="p-6 md:p-8">
                 <div className="flex items-start gap-4">
                   <div className="shrink-0 size-12 rounded-full bg-[var(--theme)]/10 text-[var(--theme)] flex items-center justify-center">
@@ -585,8 +530,8 @@ const Home: FC = () => {
             </div>
 
             {/* Trust & Reliability */}
-            <div className="group rounded-2xl border border-zinc-200 bg-white overflow-hidden shadow-sm transition hover:shadow-md hover:-translate-y-0.5 arc-card arc-center arc-delay-1">
-              <div className="h-1.5 w-full bg-gradient-to-r from-[var(--theme)] to-[var(--header)]"></div>
+            <div className="group rounded-2xl border border-zinc-200 bg-white overflow-hidden shadow-sm transition hover:shadow-md hover:-translate-y-0.5">
+              <div className="h-1.5 w-full bg-gradient-to-r from-[var(--theme)] to-[var(--theme-red)]"></div>
               <div className="p-6 md:p-8">
                 <div className="flex items-start gap-4">
                   <div className="shrink-0 size-12 rounded-full bg-[var(--theme)]/10 text-[var(--theme)] flex items-center justify-center">
@@ -601,8 +546,8 @@ const Home: FC = () => {
             </div>
 
             {/* Excellence */}
-            <div className="group rounded-2xl border border-zinc-200 bg-white overflow-hidden shadow-sm transition hover:shadow-md hover:-translate-y-0.5 arc-card arc-right arc-delay-2">
-              <div className="h-1.5 w-full bg-gradient-to-r from-[var(--theme)] to-[var(--header)]"></div>
+            <div className="group rounded-2xl border border-zinc-200 bg-white overflow-hidden shadow-sm transition hover:shadow-md hover:-translate-y-0.5">
+              <div className="h-1.5 w-full bg-gradient-to-r from-[var(--theme)] to-[var(--theme-red)]"></div>
               <div className="p-6 md:p-8">
                 <div className="flex items-start gap-4">
                   <div className="shrink-0 size-12 rounded-full bg-[var(--theme)]/10 text-[var(--theme)] flex items-center justify-center">
@@ -710,7 +655,7 @@ const Home: FC = () => {
       </section>
 
       {/* Call to Action */}
-      <section id="contact-cta" className="cta-section section-padding bg-[var(--header)]">
+      <section id="contact-cta" className="cta-section section-padding bg-[var(--header)] overflow-x-hidden">
         <div className="container">
           <div className="row align-items-center gap-8">
             <div className="col-lg-8">

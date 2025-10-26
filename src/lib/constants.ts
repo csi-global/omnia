@@ -90,7 +90,7 @@ export const MARQUEE_SLIDES: readonly MarqueeSlide[] = [
     icon: 'fas fa-wrench',
   },
   {
-    title: 'TechMahindra',
+    title: 'Tech Mahindra',
     icon: 'fas fa-wrench',
   },
 ];

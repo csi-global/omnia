@@ -50,6 +50,7 @@
   --foreground: oklch(0.145 0 0);
   /* Brand theme color (used for active tabs etc.) */
   --theme: #e11d2e;
+  --theme-red:#42040a;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);

@@ -69,13 +69,13 @@ export default function DigitalProcessAutomationPage() {
                     </ul>
                   </div>
                   <div className="col-lg-5">
-                    <div className="rounded-3xl overflow-hidden h-[320px] md:h-[380px] relative">
+                    <div className="overflow-hidden h-[320px] md:h-[380px] relative">
                       <Image
-                        src="/assets/img/service/3.webp"
+                        src="/assets/img/dpa-tabs/dpa.png"
                         alt="Digital process automation overview"
                         fill
                         sizes="(max-width: 992px) 100vw, 40vw"
-                        style={{ objectFit: "cover" }}
+                        className="w-full h-auto object-contain rounded-3xl"
                         priority
                       />
                     </div>

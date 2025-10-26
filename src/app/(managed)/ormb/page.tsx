@@ -40,7 +40,8 @@ export default function ORMBPage() {
       >
         <div className="container">
           <div className="page-heading">
-            <h1 className="!text-5xl sm:!text-7xl !font-bold !leading-tight">ORMB <br />Oracle Revenue Management and Billing</h1>
+            <h1 className="!text-5xl sm:!text-7xl !font-bold !leading-tight">ORMB</h1>
+            <h1 className="!text-5xl sm:!text-6xl !font-bold !leading-tight">Oracle Revenue Management and Billing</h1>
             <ul className="breadcrumb-items">
               <li>
                 <Link href="/">Home</Link>

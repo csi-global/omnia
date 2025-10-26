@@ -46,7 +46,7 @@ export default function CareerPage() {
       </div>
 
       {/* Hero Section - BIG-style */}
-      <section className="section-padding fix relative overflow-visible bg-gradient-to-br from-[var(--theme)]/30 via-[var(--theme)]/50 to-[var(--theme)]/10 rounded-xl sm:rounded-2xl m-2">
+      <section className="section-padding fix relative overflow-visible bg-gradient-to-br from-[#e8e9eb] to-[#fbc] rounded-xl sm:rounded-2xl m-2">
         <div className="container px-4 sm:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 sm:gap-10">
             {/* Left copy */}
@@ -208,7 +208,7 @@ export default function CareerPage() {
                   ]
                 }
               ].map((item, index) => (
-                <div key={index} className="rounded-2xl p-6 shadow-sm bg-gradient-to-tr from-[var(--theme)] via-[var(--theme)]/70 to-[var(--theme)]/50">
+                <div key={index} className="rounded-2xl p-6 shadow-sm bg-gradient-to-br from-[#e8e9eb] to-[#fbc]">
                   <span className="inline-block text-xs uppercase tracking-wide mb-2 px-2 py-1 rounded-full bg-white border-2 border-[var(--theme)] text-[var(--theme)] font-semibold">{item.title}</span>
                   <h3 className="text-xl font-semibold mb-2">{item.description}</h3>
                   <div className="mt-3 flex flex-wrap gap-2 text-xs">
