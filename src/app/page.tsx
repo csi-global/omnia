@@ -1,7 +1,7 @@
 "use client";
 
 import OmniaButton from "@/components/ui/omnia-button";
-import { MANAGED_SERVICES, MARQUEE_SLIDES, PROFESSIONAL_SERVICES } from "@/lib/constants";
+import { MANAGED_SERVICES, MARQUEE_PARTNERS_SLIDES, PROFESSIONAL_SERVICES } from "@/lib/constants";
 import Image from "next/image";
 import Link from "next/link";
 import type { FC } from "react";
@@ -322,6 +322,14 @@ const Home: FC = () => {
                   <p className="text-zinc-600 text-sm md:text-base leading-relaxed flex-grow">
                     {digitalProcessAutomation!.description}
                   </p>
+                  <Image
+                    src="/assets/img/dpa-tabs/dpa.webp"
+                    alt="Digital process automation"
+                    width={1000}
+                    height={1000}
+                    className="w-full h-auto object-cover object-centre m-2 rounded-xl"
+                    priority
+                  />
                   <div className="mt-6 pt-4 border-t border-zinc-100">
                     <span className="text-[var(--theme)] font-semibold text-sm group-hover:translate-x-1 transition-transform duration-200 inline-flex items-center gap-2">
                       Learn More <i className="icon-arrow-right text-xs"></i>
@@ -443,27 +451,39 @@ const Home: FC = () => {
       </section>
 
       {/* Marquee Section (footer-like background with animated circles) */}
-      <section className="marqee-section relative section-bg overflow-hidden">
+      <section className="marqee-section relative section-bg overflow-hidden py-16 md:py-20 lg:py-24">
+        <div className="container px-4 sm:px-6">
+          <div className="text-center mb-12 md:mb-16">
+            <span className="inline-flex items-center rounded-full bg-[var(--theme)] px-3 py-1 text-xs font-semibold tracking-wide text-white">
+              Partners
+            </span>
+            <h2 className="mt-4 !text-3xl md:!text-5xl lg:!text-6xl font-extrabold leading-tight text-zinc-900">
+              Trusted by industry leaders
+            </h2>
+            <p className="mt-4 text-zinc-600 text-lg max-w-3xl mx-auto">
+              We collaborate with world-class technology partners to deliver exceptional solutions.
+            </p>
+          </div>
+        </div>
 
-        <div className="marqee-wrapper !bg-transparent relative">
+        <div className="marqee-wrapper !bg-transparent !py-8 relative w-full overflow-visible">
           <Swiper
             modules={[Autoplay]}
             slidesPerView={2}
-            spaceBetween={20}
+            spaceBetween={40}
             loop
             speed={5000}
             autoplay={{ delay: 0, disableOnInteraction: false }}
-            className="marque-slider"
+            className="marque-slider !mx-0"
           >
-            {MARQUEE_SLIDES.map((slide) => (
+            {MARQUEE_PARTNERS_SLIDES.map((slide) => (
               <Fragment key={slide.title}>
-                <SwiperSlide key={`${slide.title}-text`} className="brand-slide-element">
-                  <div className="flex items-center gap-6
-                whitespace-nowrap">
-                    <div className="marqee-icon !bg-transparent flex items-center justify-center !w-6 !h-6 sm:!w-7 sm:!h-7 md:!w-10 md:!h-10">
-                      <Image src="/assets/img/favicon.png" alt="favicon" width={40} height={40} className="select-none w-6 h-6 sm:w-7 sm:h-7 md:w-10 md:h-10" />
+                <SwiperSlide key={`${slide.title}-text`} className="brand-slide-element !flex !items-center !justify-center">
+                  <div className="flex items-center gap-4 sm:gap-6 md:gap-8 whitespace-nowrap">
+                    <div className="marqee-icon !bg-transparent flex items-center justify-center flex-shrink-0">
+                      <Image src="/assets/img/favicon.png" alt="Omnia logo" width={48} height={48} quality={100} className="select-none w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" />
                     </div>
-                    <h2 className="marqee-text !text-xl sm:!text-2xl md:!text-4xl lg:!text-5xl xl:!text-6xl font-extrabold leading-tight !text-zinc-900 select-none">{slide.title}</h2>
+                    <h2 className="marqee-text !text-xl sm:!text-2xl md:!text-3xl lg:!text-4xl xl:!text-5xl font-extrabold leading-tight !text-zinc-900 select-none">{slide.title}</h2>
                   </div>
                 </SwiperSlide>
               </Fragment>

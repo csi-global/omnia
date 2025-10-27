@@ -71,11 +71,11 @@ export default function DigitalProcessAutomationPage() {
                   <div className="col-lg-5">
                     <div className="overflow-hidden h-[320px] md:h-[380px] relative">
                       <Image
-                        src="/assets/img/dpa-tabs/dpa.png"
+                        src="/assets/img/dpa-tabs/dpa.webp"
                         alt="Digital process automation overview"
                         fill
                         sizes="(max-width: 992px) 100vw, 40vw"
-                        className="w-full h-auto object-contain rounded-3xl"
+                        className="w-full h-auto object-cover rounded-3xl"
                         priority
                       />
                     </div>

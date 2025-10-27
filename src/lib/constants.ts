@@ -68,7 +68,7 @@ export type NotFoundLink = readonly [href: string, label: string];
 // Home Page Constants
 // ============================================================================
 
-export const MARQUEE_SLIDES: readonly MarqueeSlide[] = [
+export const MARQUEE_PARTNERS_SLIDES: readonly MarqueeSlide[] = [
   {
     title: 'Infosys',
     icon: 'fas fa-info',
@@ -78,16 +78,16 @@ export const MARQUEE_SLIDES: readonly MarqueeSlide[] = [
     icon: 'fas fa-gem',
   },
   {
-    title: 'Coforge',
-    icon: 'fas fa-cog',
-  },
-  {
     title: 'LTIM',
     icon: 'fas fa-cog',
   },
   {
     title: 'Wipro',
     icon: 'fas fa-wrench',
+  },
+  {
+    title: 'Coforge',
+    icon: 'fas fa-cog',
   },
   {
     title: 'Tech Mahindra',
@@ -756,21 +756,23 @@ export const NOT_FOUND_LINKS: readonly NotFoundLink[] = [
   ['/career', 'Careers'],
 ];
 
-
 export const ORMB_INDUSTRIES: readonly ServiceCard[] = [
   {
     icon: 'fas fa-university',
     title: 'Banking',
-    description: 'Billing, revenue management and fees calculation for retail, corporate, or digital banking products and services.',
+    description:
+      'Billing, revenue management and fees calculation for retail, corporate, or digital banking products and services.',
   },
   {
     icon: 'fas fa-bolt',
     title: 'Utilities',
-    description: 'Meter-based billing for electricity, gas, and water services with tiered pricing and demand-based charges.',
+    description:
+      'Meter-based billing for electricity, gas, and water services with tiered pricing and demand-based charges.',
   },
   {
     icon: 'fas fa-wifi',
     title: 'Telecommunications',
-    description: 'Complex billing for voice, data, and value-added telecom services with usage-based pricing and real-time rating capabilities.',
+    description:
+      'Complex billing for voice, data, and value-added telecom services with usage-based pricing and real-time rating capabilities.',
   },
 ];
