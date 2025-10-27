@@ -192,10 +192,9 @@ const Home: FC = () => {
                     {/* CTA Button */}
                     <Link
                       href={slide.ctaHref}
-
-                      aria-label={`Read more about ${slide.title}`}
+                      aria-label={`Explore ${slide.title}`}
                     >
-                      <OmniaButton text="Read More" />
+                      <OmniaButton text={`Explore ${slide.title}`} />
                     </Link>
                   </div>
                 </div>
@@ -247,8 +246,8 @@ const Home: FC = () => {
 
                 {/* CTAs (use existing main-button style) */}
                 <div className="pt-2 flex flex-wrap gap-2 sm:gap-3">
-                  <Link href="/#core-values" aria-label="Read more about Omnia core values">
-                    <OmniaButton text="Read More" />
+                  <Link href="/#core-values" aria-label="Explore Omnia core values">
+                    <OmniaButton text="Explore Omnia core values" />
                   </Link>
                 </div>
               </div>
@@ -332,7 +331,7 @@ const Home: FC = () => {
                   />
                   <div className="mt-6 pt-4 border-t border-zinc-100">
                     <span className="text-[var(--theme)] font-semibold text-sm group-hover:translate-x-1 transition-transform duration-200 inline-flex items-center gap-2">
-                      Learn More <i className="icon-arrow-right text-xs"></i>
+                      Learn more about Digital Process Automation <i className="icon-arrow-right text-xs"></i>
                     </span>
                   </div>
                 </div>
@@ -388,7 +387,7 @@ const Home: FC = () => {
                       </p>
                       <div className="mt-4 pt-3 border-t border-zinc-100">
                         <span className="text-[var(--theme)] font-semibold text-xs group-hover:translate-x-1 transition-transform duration-200 inline-flex items-center gap-1">
-                          Learn More <i className="icon-arrow-right text-xs"></i>
+                          Learn more about {item.title} <i className="icon-arrow-right text-xs"></i>
                         </span>
                       </div>
                     </div>
@@ -440,7 +439,7 @@ const Home: FC = () => {
                   </p>
                   <div className="mt-4 pt-3 border-t border-zinc-100">
                     <span className="text-[var(--theme)] font-semibold text-xs group-hover:translate-x-1 transition-transform duration-200 inline-flex items-center gap-1">
-                      Learn More <i className="icon-arrow-right text-xs"></i>
+                      Learn more about {item.title} <i className="icon-arrow-right text-xs"></i>
                     </span>
                   </div>
                 </div>
