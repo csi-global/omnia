@@ -5,7 +5,7 @@ import { MANAGED_SERVICES, MARQUEE_PARTNERS_SLIDES, PROFESSIONAL_SERVICES } from
 import Image from "next/image";
 import Link from "next/link";
 import type { FC } from "react";
-import { Fragment, useRef } from "react";
+import { useRef } from "react";
 import type { Swiper as SwiperType } from "swiper";
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -92,6 +92,10 @@ const Home: FC = () => {
   const prevRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
   const swiperRef = useRef<SwiperType | null>(null);
+  const marqueeItems = MARQUEE_PARTNERS_SLIDES.flatMap((slide) => [
+    { type: "title" as const, key: `title-${slide.title}`, value: slide.title },
+    { type: "logo" as const, key: `logo-${slide.title}` },
+  ]);
 
   // Extract services for type safety
   const [digitalProcessAutomation] = PROFESSIONAL_SERVICES;
@@ -465,29 +469,110 @@ const Home: FC = () => {
           </div>
         </div>
 
-        <div className="marqee-wrapper !bg-transparent !py-8 relative w-full overflow-visible">
-          <Swiper
-            modules={[Autoplay]}
-            slidesPerView={2}
-            spaceBetween={40}
-            loop
-            speed={5000}
-            autoplay={{ delay: 0, disableOnInteraction: false }}
-            className="marque-slider !mx-0"
-          >
-            {MARQUEE_PARTNERS_SLIDES.map((slide) => (
-              <Fragment key={slide.title}>
-                <SwiperSlide key={`${slide.title}-text`} className="brand-slide-element !flex !items-center !justify-center">
-                  <div className="flex items-center gap-4 sm:gap-6 md:gap-8 whitespace-nowrap">
-                    <div className="marqee-icon !bg-transparent flex items-center justify-center flex-shrink-0">
-                      <Image src="/assets/img/favicon.png" alt="Omnia logo" width={48} height={48} quality={100} className="select-none w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" />
+        <div className="!bg-transparent !py-8 relative w-11/12 mx-auto overflow-hidden">
+          <div className="marquee-track" role="presentation">
+            {[0, 1].map((loopIndex) => (
+              <div
+                className="marquee-sequence"
+                key={`marquee-sequence-${loopIndex}`}
+                aria-hidden={loopIndex === 1}
+              >
+                {marqueeItems.map((item) =>
+                  item.type === "title" ? (
+                    <h2 className="!text-3xl md:!text-5xl font-extrabold !leading-tight break-words text-zinc-900" key={`${item.key}-${loopIndex}`}>
+                      {item.value}
+                    </h2>
+                  ) : (
+                    <div className="marqee-icon" key={`${item.key}-${loopIndex}`}>
+                      <Image
+                        src="/assets/img/favicon.png"
+                        alt="Omnia logo"
+                        width={48}
+                        height={48}
+                        quality={100}
+                        className="marquee-logo"
+                      />
                     </div>
-                    <h2 className="marqee-text !text-xl sm:!text-2xl md:!text-3xl lg:!text-4xl xl:!text-5xl font-extrabold leading-tight !text-zinc-900 select-none">{slide.title}</h2>
-                  </div>
-                </SwiperSlide>
-              </Fragment>
+                  ),
+                )}
+              </div>
             ))}
-          </Swiper>
+          </div>
+
+          <style jsx>{`
+            .marquee-track {
+              display: flex;
+              width: max-content;
+              animation: marquee-scroll 35s linear infinite;
+              will-change: transform;
+            }
+
+            .marquee-track:hover {
+              animation-play-state: paused;
+            }
+
+            .marquee-sequence {
+              display: inline-flex;
+              align-items: center;
+              gap: 2.75rem;
+              padding-right: 2.75rem;
+              white-space: nowrap;
+            }
+
+            @media (min-width: 768px) {
+              .marquee-sequence {
+                gap: 4.5rem;
+                padding-right: 4.5rem;
+              }
+            }
+
+            .marqee-text {
+              margin: 0;
+              display: inline-flex;
+              align-items: center;
+              font-size: clamp(1.875rem, 2.4vw + 1rem, 3.125rem);
+              font-weight: 800;
+              line-height: 1.1;
+              color: #18181b;
+              user-select: none;
+              flex-shrink: 0;
+            }
+
+            @media (min-width: 1024px) {
+              .marquee-sequence {
+                gap: 6rem;
+                padding-right: 6rem;
+              }
+
+              .marqee-text {
+                font-size: clamp(2.75rem, 1.8vw + 1.5rem, 3.5rem);
+              }
+            }
+
+            .marqee-icon {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background: transparent;
+              flex-shrink: 0;
+            }
+
+            .marquee-logo {
+              width: clamp(2rem, 3vw + 1rem, 4rem);
+              height: clamp(2rem, 3vw + 1rem, 4rem);
+              object-fit: contain;
+              user-select: none;
+            }
+
+            @keyframes marquee-scroll {
+              0% {
+                transform: translate3d(0, 0, 0);
+              }
+              100% {
+                transform: translate3d(-50%, 0, 0);
+              }
+            }
+          `}</style>
         </div>
       </section>
 
@@ -507,60 +592,45 @@ const Home: FC = () => {
             </p>
           </div>
 
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Innovation */}
-            <div className="group rounded-2xl border border-zinc-200 bg-white overflow-hidden shadow-sm transition hover:shadow-md hover:-translate-y-0.5">
-              <div className="h-1.5 w-full bg-gradient-to-r from-[var(--theme)] to-[var(--theme-red)]"></div>
-              <div className="p-6 md:p-8">
-                <div className="flex items-start gap-4">
-                  <div className="shrink-0 size-12 rounded-full bg-[var(--theme)]/10 text-[var(--theme)] flex items-center justify-center">
-                    <i className="fas fa-lightbulb"></i>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-zinc-900">Innovation</h3>
-                    <p className="mt-2 text-zinc-600 leading-relaxed">Thoughtful adoption of technology to unlock measurable impact and sustainable growth.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Trust & Reliability */}
-            <div className="group rounded-2xl border border-zinc-200 bg-white overflow-hidden shadow-sm transition hover:shadow-md hover:-translate-y-0.5">
-              <div className="h-1.5 w-full bg-gradient-to-r from-[var(--theme)] to-[var(--theme-red)]"></div>
-              <div className="p-6 md:p-8">
-                <div className="flex items-start gap-4">
-                  <div className="shrink-0 size-12 rounded-full bg-[var(--theme)]/10 text-[var(--theme)] flex items-center justify-center">
-                    <i className="fas fa-handshake"></i>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-zinc-900">Trust & Reliability</h3>
-                    <p className="mt-2 text-zinc-600 leading-relaxed">Transparent communication and dependable delivery—so you always know where we stand.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Excellence */}
-            <div className="group rounded-2xl border border-zinc-200 bg-white overflow-hidden shadow-sm transition hover:shadow-md hover:-translate-y-0.5">
-              <div className="h-1.5 w-full bg-gradient-to-r from-[var(--theme)] to-[var(--theme-red)]"></div>
-              <div className="p-6 md:p-8">
-                <div className="flex items-start gap-4">
-                  <div className="shrink-0 size-12 rounded-full bg-[var(--theme)]/10 text-[var(--theme)] flex items-center justify-center">
-                    <i className="fas fa-gem"></i>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-zinc-900">Excellence</h3>
-                    <p className="mt-2 text-zinc-600 leading-relaxed">Careful craftsmanship, best practices, and continuous improvement in everything we do.</p>
+          <div className="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Innovation",
+                description: "Thoughtful adoption of technology to unlock measurable impact and sustainable growth.",
+                icon: "fas fa-lightbulb",
+              },
+              {
+                title: "Trust & Reliability",
+                description: "Transparent communication and dependable delivery—so you always know where we stand.",
+                icon: "fas fa-handshake",
+              },
+              {
+                title: "Excellence",
+                description: "Careful craftsmanship, best practices, and continuous improvement in everything we do.",
+                icon: "fas fa-gem",
+              },
+            ].map((item, index) => (
+              <div key={index} className="group rounded-2xl border border-zinc-200 bg-white overflow-hidden shadow-sm transition hover:shadow-md hover:-translate-y-0.5">
+                <div className="h-1.5 w-full bg-gradient-to-r from-[var(--theme)] to-[var(--theme-red)]"></div>
+                <div className="p-6 lg:p-8">
+                  <div className="flex items-start gap-4">
+                    <div className="shrink-0 size-12 rounded-full bg-[var(--theme)]/10 text-[var(--theme)] flex items-center justify-center">
+                      <i className={item.icon}></i>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-zinc-900">{item.title}</h3>
+                      <p className="mt-2 text-zinc-600 leading-relaxed">{item.description}</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Why Omnia (featured layout variant) */}
-      <section id="why-choose-us" className="relative section-padding">
+      <section id="why-choose-us" className="relative section-padding" >
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(800px_400px_at_10%_0%,rgba(225,29,46,0.05),transparent_60%),radial-gradient(800px_400px_at_90%_10%,rgba(17,24,39,0.05),transparent_60%)]"></div>
         <div className="container">
           <div className="mx-auto max-w-3xl text-center">
@@ -647,10 +717,10 @@ const Home: FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Call to Action */}
-      <section id="contact-cta" className="cta-section section-padding bg-[var(--header)] overflow-x-hidden">
+      <section id="contact-cta" className="cta-section section-padding bg-[var(--header)] overflow-x-hidden" >
         <div className="container">
           <div className="row align-items-center gap-8">
             <div className="col-lg-8">
@@ -669,8 +739,8 @@ const Home: FC = () => {
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </section >
+    </div >
   );
 };
 
