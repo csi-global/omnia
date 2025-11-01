@@ -92,6 +92,10 @@ const Home: FC = () => {
   const prevRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
   const swiperRef = useRef<SwiperType | null>(null);
+  const marqueeItems = MARQUEE_PARTNERS_SLIDES.flatMap((slide) => [
+    { type: "title" as const, key: `title-${slide.title}`, value: slide.title },
+    { type: "logo" as const, key: `logo-${slide.title}` },
+  ]);
 
   // Extract services for type safety
   const [digitalProcessAutomation] = PROFESSIONAL_SERVICES;
@@ -465,29 +469,110 @@ const Home: FC = () => {
           </div>
         </div>
 
-        <div className="!bg-transparent !py-8 relative w-11/12 mx-auto overflow-visible">
-          <Swiper
-            modules={[Autoplay]}
-            slidesPerView={"auto"}
-            spaceBetween={4}
-            centeredSlides
-            loop
-            speed={5000}
-            autoplay={{ delay: 0, disableOnInteraction: false }}
-            className="marque-slider"
-          >
-            {MARQUEE_PARTNERS_SLIDES.map((slide) => (
-              <SwiperSlide
-                key={`${slide.title}-title`}
-                className="!flex !items-center !justify-around md:!w-1/2"
+        <div className="!bg-transparent !py-8 relative w-11/12 mx-auto overflow-hidden">
+          <div className="marquee-track" role="presentation">
+            {[0, 1].map((loopIndex) => (
+              <div
+                className="marquee-sequence"
+                key={`marquee-sequence-${loopIndex}`}
+                aria-hidden={loopIndex === 1}
               >
-                <h2 className="marqee-text !text-3xl lg:!text-4xl xl:!text-5xl font-extrabold leading-tight !text-zinc-900 select-none whitespace-nowrap">{slide.title}</h2>
-                <div className="marqee-icon !bg-transparent flex items-center justify-center flex-shrink-0">
-                  <Image src="/assets/img/favicon.png" alt="" width={48} height={48} quality={100} className="select-none size-8 sm:size-10 md:size-12 lg:size-14 xl:size-16 object-contain" />
-                </div>
-              </SwiperSlide>
+                {marqueeItems.map((item) =>
+                  item.type === "title" ? (
+                    <h2 className="!text-3xl md:!text-5xl font-extrabold !leading-tight break-words text-zinc-900" key={`${item.key}-${loopIndex}`}>
+                      {item.value}
+                    </h2>
+                  ) : (
+                    <div className="marqee-icon" key={`${item.key}-${loopIndex}`}>
+                      <Image
+                        src="/assets/img/favicon.png"
+                        alt="Omnia logo"
+                        width={48}
+                        height={48}
+                        quality={100}
+                        className="marquee-logo"
+                      />
+                    </div>
+                  ),
+                )}
+              </div>
             ))}
-          </Swiper>
+          </div>
+
+          <style jsx>{`
+            .marquee-track {
+              display: flex;
+              width: max-content;
+              animation: marquee-scroll 35s linear infinite;
+              will-change: transform;
+            }
+
+            .marquee-track:hover {
+              animation-play-state: paused;
+            }
+
+            .marquee-sequence {
+              display: inline-flex;
+              align-items: center;
+              gap: 2.75rem;
+              padding-right: 2.75rem;
+              white-space: nowrap;
+            }
+
+            @media (min-width: 768px) {
+              .marquee-sequence {
+                gap: 4.5rem;
+                padding-right: 4.5rem;
+              }
+            }
+
+            .marqee-text {
+              margin: 0;
+              display: inline-flex;
+              align-items: center;
+              font-size: clamp(1.875rem, 2.4vw + 1rem, 3.125rem);
+              font-weight: 800;
+              line-height: 1.1;
+              color: #18181b;
+              user-select: none;
+              flex-shrink: 0;
+            }
+
+            @media (min-width: 1024px) {
+              .marquee-sequence {
+                gap: 6rem;
+                padding-right: 6rem;
+              }
+
+              .marqee-text {
+                font-size: clamp(2.75rem, 1.8vw + 1.5rem, 3.5rem);
+              }
+            }
+
+            .marqee-icon {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background: transparent;
+              flex-shrink: 0;
+            }
+
+            .marquee-logo {
+              width: clamp(2rem, 3vw + 1rem, 4rem);
+              height: clamp(2rem, 3vw + 1rem, 4rem);
+              object-fit: contain;
+              user-select: none;
+            }
+
+            @keyframes marquee-scroll {
+              0% {
+                transform: translate3d(0, 0, 0);
+              }
+              100% {
+                transform: translate3d(-50%, 0, 0);
+              }
+            }
+          `}</style>
         </div>
       </section>
 
