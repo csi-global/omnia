@@ -33,7 +33,7 @@ export default function DataAnalyticsPage() {
       >
         <div className="container">
           <div className="page-heading">
-            <h1>Data Analytics</h1>
+            <h1 className="!text-5xl lg:!text-7xl font-extrabold !leading-tight break-words text-zinc-900">Data Analytics</h1>
             <ul className="breadcrumb-items">
               <li><Link href="/">Home</Link></li>
               <li><i className="fas fa-chevron-right"></i></li>

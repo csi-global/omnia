@@ -38,7 +38,7 @@ export default function DigitalTransformationPage() {
       >
         <div className="container">
           <div className="page-heading">
-            <h1>Digital Transformation</h1>
+            <h1 className="!text-5xl lg:!text-7xl font-extrabold !leading-tight break-words text-zinc-900">Digital Transformation</h1>
             <ul className="breadcrumb-items">
               <li>
                 <Link href="/">Home</Link>
