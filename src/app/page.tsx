@@ -524,8 +524,8 @@ const Home: FC = () => {
                 description: "Careful craftsmanship, best practices, and continuous improvement in everything we do.",
                 icon: "fas fa-gem",
               },
-            ].map((item) => (
-              <div className="group rounded-2xl border border-zinc-200 bg-white overflow-hidden shadow-sm transition hover:shadow-md hover:-translate-y-0.5">
+            ].map((item, index) => (
+              <div key={index} className="group rounded-2xl border border-zinc-200 bg-white overflow-hidden shadow-sm transition hover:shadow-md hover:-translate-y-0.5">
                 <div className="h-1.5 w-full bg-gradient-to-r from-[var(--theme)] to-[var(--theme-red)]"></div>
                 <div className="p-6 lg:p-8">
                   <div className="flex items-start gap-4">
