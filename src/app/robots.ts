@@ -7,10 +7,22 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
   const base = 'https://www.omniaservices.co.uk';
 
   return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-    },
+    rules: [
+      {
+        userAgent: '*',
+        allow: '/',
+        disallow: [
+          '/cloud-assessment',
+          '/cyber-security',
+          '/it-consulting',
+          '/managed-cloud-desk',
+          '/managed-microsoft-365',
+          '/managed-microsoft-azure',
+          '/sharepoint-development',
+          '/surface-as-a-service',
+        ],
+      },
+    ],
     sitemap: `${base}/sitemap.xml`,
     host: base,
   };
