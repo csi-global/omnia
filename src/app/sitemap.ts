@@ -2,6 +2,8 @@ import type { MetadataRoute } from 'next';
 
 export const dynamic = 'force-dynamic';
 
+// Force Vercel deployment with latest changes
+
 /**
  * Add your public routes here. Group segments like (legacy) are not part of the URL.
  */
