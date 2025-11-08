@@ -7,20 +7,20 @@ export const metadata: Metadata = {
   description: "Complete managed Microsoft 365 services including setup, migration, security, and ongoing support. Expert M365 administration to maximize productivity and collaboration.",
   robots: "index,follow",
   alternates: {
-    canonical: "https://omniaservices.co.uk/managed-microsoft-365"
+    canonical: "https://www.omniaservices.co.uk/managed-microsoft-365"
   },
   openGraph: {
     title: "Managed Microsoft 365 | Omnia Services",
     description: "Complete managed Microsoft 365 services including setup, migration, security, and ongoing support. Expert M365 administration to maximize productivity and collaboration.",
     type: "website",
-    url: "https://omniaservices.co.uk/managed-microsoft-365",
-    images: ["https://omniaservices.co.uk/assets/img/service/5.webp"]
+    url: "https://www.omniaservices.co.uk/managed-microsoft-365",
+    images: ["https://www.omniaservices.co.uk/assets/img/service/5.webp"]
   },
   twitter: {
     card: "summary_large_image",
     title: "Managed Microsoft 365 | Omnia Services",
     description: "Complete managed Microsoft 365 services including setup, migration, security, and ongoing support. Expert M365 administration to maximize productivity and collaboration.",
-    images: ["https://omniaservices.co.uk/assets/img/service/5.webp"]
+    images: ["https://www.omniaservices.co.uk/assets/img/service/5.webp"]
   }
 };
 

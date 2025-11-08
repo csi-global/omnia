@@ -7,20 +7,20 @@ export const metadata: Metadata = {
   description: "Professional managed cloud desk services providing 24/7 support, monitoring, and management of your cloud infrastructure. Expert cloud operations to ensure optimal performance and reliability.",
   robots: "index,follow",
   alternates: {
-    canonical: "https://omniaservices.co.uk/managed-cloud-desk"
+    canonical: "https://www.omniaservices.co.uk/managed-cloud-desk"
   },
   openGraph: {
     title: "Managed Cloud Desk | Omnia Services",
     description: "Professional managed cloud desk services providing 24/7 support, monitoring, and management of your cloud infrastructure. Expert cloud operations to ensure optimal performance and reliability.",
     type: "website",
-    url: "https://omniaservices.co.uk/managed-cloud-desk",
-    images: ["https://omniaservices.co.uk/assets/img/service/1.webp"]
+    url: "https://www.omniaservices.co.uk/managed-cloud-desk",
+    images: ["https://www.omniaservices.co.uk/assets/img/service/1.webp"]
   },
   twitter: {
     card: "summary_large_image",
     title: "Managed Cloud Desk | Omnia Services",
     description: "Professional managed cloud desk services providing 24/7 support, monitoring, and management of your cloud infrastructure. Expert cloud operations to ensure optimal performance and reliability.",
-    images: ["https://omniaservices.co.uk/assets/img/service/1.webp"]
+    images: ["https://www.omniaservices.co.uk/assets/img/service/1.webp"]
   }
 };
 

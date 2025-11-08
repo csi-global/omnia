@@ -8,20 +8,20 @@ export const metadata: Metadata = {
   description: "Professional cloud migration services for seamless transition to AWS, Azure, and Google Cloud. Expert assessment, planning, and execution of cloud transformation strategies for your business.",
   robots: "index,follow",
   alternates: {
-    canonical: "https://omniaservices.co.uk/cloud-migration"
+    canonical: "https://www.omniaservices.co.uk/cloud-migration"
   },
   openGraph: {
     title: "Cloud Migration | Omnia Services",
     description: "Professional cloud migration services for seamless transition to AWS, Azure, and Google Cloud. Expert assessment, planning, and execution of cloud transformation strategies for your business.",
     type: "website",
-    url: "https://omniaservices.co.uk/cloud-migration",
-    images: ["https://omniaservices.co.uk/assets/img/service/6.webp"]
+    url: "https://www.omniaservices.co.uk/cloud-migration",
+    images: ["https://www.omniaservices.co.uk/assets/img/service/6.webp"]
   },
   twitter: {
     card: "summary_large_image",
     title: "Cloud Migration | Omnia Services",
     description: "Professional cloud migration services for seamless transition to AWS, Azure, and Google Cloud. Expert assessment, planning, and execution of cloud transformation strategies for your business.",
-    images: ["https://omniaservices.co.uk/assets/img/service/6.webp"]
+    images: ["https://www.omniaservices.co.uk/assets/img/service/6.webp"]
   }
 };
 

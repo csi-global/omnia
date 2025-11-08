@@ -3,31 +3,49 @@ import type { NextConfig } from 'next';
 const nextConfig: NextConfig = {
   async redirects() {
     return [
-      // Canonicalize www to apex for both primary domains
+      // Redirect non-www to www for the main domain (canonicalize to www)
       {
         source: '/:path*',
-        has: [{ type: 'host', value: 'www.omniaservices.co.uk' }],
-        destination: 'https://omniaservices.co.uk/:path*',
+        has: [{ type: 'host', value: 'omniaservices.co.uk' }],
+        destination: 'https://www.omniaservices.co.uk/:path*',
+        permanent: true,
+      },
+      // Redirect any subdomains to www (in case they still resolve through Vercel)
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'vercel.omniaservices.co.uk' }],
+        destination: 'https://www.omniaservices.co.uk/:path*',
+        permanent: true,
+      },
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.vercel.omniaservices.co.uk' }],
+        destination: 'https://www.omniaservices.co.uk/:path*',
+        permanent: true,
+      },
+      // Redirect .in domains to .co.uk
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'omniaservices.in' }],
+        destination: 'https://www.omniaservices.co.uk/:path*',
         permanent: true,
       },
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'www.omniaservices.in' }],
-        destination: 'https://omniaservices.in/:path*',
+        destination: 'https://www.omniaservices.co.uk/:path*',
         permanent: true,
       },
-
-      // Canonicalize www on the vercel subdomain (if requested directly)
       {
         source: '/:path*',
-        has: [{ type: 'host', value: 'www.vercel.omniaservices.co.uk' }],
-        destination: 'https://vercel.omniaservices.co.uk/:path*',
+        has: [{ type: 'host', value: 'vercel.omniaservices.in' }],
+        destination: 'https://www.omniaservices.co.uk/:path*',
         permanent: true,
       },
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'www.vercel.omniaservices.in' }],
-        destination: 'https://vercel.omniaservices.in/:path*',
+        destination: 'https://www.omniaservices.co.uk/:path*',
         permanent: true,
       },
     ];

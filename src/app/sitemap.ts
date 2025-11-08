@@ -1,5 +1,4 @@
 import type { MetadataRoute } from 'next';
-import { headers } from 'next/headers';
 
 export const dynamic = 'force-dynamic';
 
@@ -10,15 +9,6 @@ const publicPaths: string[] = [
   '/',
   '/contact',
   '/career',
-  // Legacy services
-  '/cloud-assessment',
-  '/cyber-security',
-  '/it-consulting',
-  '/managed-cloud-desk',
-  '/managed-microsoft-365',
-  '/managed-microsoft-azure',
-  '/sharepoint-development',
-  '/surface-as-a-service',
   // Managed products
   '/msd365',
   '/ormb',
@@ -33,10 +23,8 @@ const publicPaths: string[] = [
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const hdrs = await headers();
-  const host = hdrs.get('x-forwarded-host') ?? hdrs.get('host') ?? 'omniaservices.co.uk';
-  const proto = hdrs.get('x-forwarded-proto') ?? 'https';
-  const baseUrl = `${proto}://${host}`;
+  // Always use the canonical domain
+  const baseUrl = 'https://www.omniaservices.co.uk';
   const lastModified = new Date();
   return publicPaths.map((path) => ({
     url: `${baseUrl}${path}`,

@@ -8,7 +8,6 @@ import "@/css/icomon.css";
 import "@/css/main.css";
 import type { Metadata } from "next";
 import { Manrope, Poppins } from "next/font/google";
-import { headers } from "next/headers";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "./globals.css";
@@ -38,10 +37,8 @@ const baseMetadata: Metadata = {
 };
 
 export async function generateMetadata(): Promise<Metadata> {
-  const hdrs = await headers();
-  const host = hdrs.get("x-forwarded-host") ?? hdrs.get("host") ?? "omniaservices.co.uk";
-  const proto = hdrs.get("x-forwarded-proto") ?? "https";
-  const base = new URL(`${proto}://${host}`);
+  // Always use the canonical domain
+  const base = new URL("https://www.omniaservices.co.uk");
 
   return {
     ...baseMetadata,

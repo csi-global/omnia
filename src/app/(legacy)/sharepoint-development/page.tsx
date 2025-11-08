@@ -7,20 +7,20 @@ export const metadata: Metadata = {
   description: "Professional SharePoint development services for custom solutions, workflows, and integrations. Expert SharePoint Online and on-premises development to enhance collaboration and productivity.",
   robots: "index,follow",
   alternates: {
-    canonical: "https://omniaservices.co.uk/sharepoint-development"
+    canonical: "https://www.omniaservices.co.uk/sharepoint-development"
   },
   openGraph: {
     title: "SharePoint Development | Omnia Services",
     description: "Professional SharePoint development services for custom solutions, workflows, and integrations. Expert SharePoint Online and on-premises development to enhance collaboration and productivity.",
     type: "website",
-    url: "https://omniaservices.co.uk/sharepoint-development",
-    images: ["https://omniaservices.co.uk/assets/img/service/4.webp"]
+    url: "https://www.omniaservices.co.uk/sharepoint-development",
+    images: ["https://www.omniaservices.co.uk/assets/img/service/4.webp"]
   },
   twitter: {
     card: "summary_large_image",
     title: "SharePoint Development | Omnia Services",
     description: "Professional SharePoint development services for custom solutions, workflows, and integrations. Expert SharePoint Online and on-premises development to enhance collaboration and productivity.",
-    images: ["https://omniaservices.co.uk/assets/img/service/4.webp"]
+    images: ["https://www.omniaservices.co.uk/assets/img/service/4.webp"]
   }
 };
 

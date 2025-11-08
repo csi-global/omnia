@@ -7,20 +7,20 @@ export const metadata: Metadata = {
   description: "Surface as a Service (SaaS) solutions providing Microsoft Surface devices with comprehensive management, security, and support. Flexible device-as-a-service offerings for modern workplaces.",
   robots: "index,follow",
   alternates: {
-    canonical: "https://omniaservices.co.uk/surface-as-a-service"
+    canonical: "https://www.omniaservices.co.uk/surface-as-a-service"
   },
   openGraph: {
     title: "Surface as a Service | Omnia Services",
     description: "Surface as a Service (SaaS) solutions providing Microsoft Surface devices with comprehensive management, security, and support. Flexible device-as-a-service offerings for modern workplaces.",
     type: "website",
-    url: "https://omniaservices.co.uk/surface-as-a-service",
-    images: ["https://omniaservices.co.uk/assets/img/service/5.webp"]
+    url: "https://www.omniaservices.co.uk/surface-as-a-service",
+    images: ["https://www.omniaservices.co.uk/assets/img/service/5.webp"]
   },
   twitter: {
     card: "summary_large_image",
     title: "Surface as a Service | Omnia Services",
     description: "Surface as a Service (SaaS) solutions providing Microsoft Surface devices with comprehensive management, security, and support. Flexible device-as-a-service offerings for modern workplaces.",
-    images: ["https://omniaservices.co.uk/assets/img/service/5.webp"]
+    images: ["https://www.omniaservices.co.uk/assets/img/service/5.webp"]
   }
 };
 

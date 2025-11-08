@@ -12,22 +12,22 @@ export const metadata: Metadata = {
     'Expert Oracle Revenue Management and Billing (ORMB) services including implementation, customization, integration, and support. Streamline billing operations with proven ORMB solutions.',
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://omniaservices.co.uk/ormb',
+    canonical: 'https://www.omniaservices.co.uk/ormb',
   },
   openGraph: {
     title: 'Oracle Revenue Management and Billing (ORMB) | Omnia Services',
     description:
       'Expert Oracle Revenue Management and Billing (ORMB) services including implementation, customization, integration, and support. Streamline billing operations with proven ORMB solutions.',
     type: 'website',
-    url: 'https://omniaservices.co.uk/ormb',
-    images: ['https://omniaservices.co.uk/assets/img/service/1.webp'],
+    url: 'https://www.omniaservices.co.uk/ormb',
+    images: ['https://www.omniaservices.co.uk/assets/img/service/1.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Oracle Revenue Management and Billing (ORMB) | Omnia Services',
     description:
       'Expert Oracle Revenue Management and Billing (ORMB) services including implementation, customization, integration, and support. Streamline billing operations with proven ORMB solutions.',
-    images: ['https://omniaservices.co.uk/assets/img/service/1.webp'],
+    images: ['https://www.omniaservices.co.uk/assets/img/service/1.webp'],
   },
 };
 

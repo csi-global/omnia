@@ -7,20 +7,20 @@ export const metadata: Metadata = {
   description: "Comprehensive managed Azure services including monitoring, security, optimization, and 24/7 support. Expert Azure cloud management to maximize performance and minimize costs.",
   robots: "index,follow",
   alternates: {
-    canonical: "https://omniaservices.co.uk/managed-microsoft-azure"
+    canonical: "https://www.omniaservices.co.uk/managed-microsoft-azure"
   },
   openGraph: {
     title: "Managed Microsoft Azure | Omnia Services",
     description: "Comprehensive managed Azure services including monitoring, security, optimization, and 24/7 support. Expert Azure cloud management to maximize performance and minimize costs.",
     type: "website",
-    url: "https://omniaservices.co.uk/managed-microsoft-azure",
-    images: ["https://omniaservices.co.uk/assets/img/service/6.webp"]
+    url: "https://www.omniaservices.co.uk/managed-microsoft-azure",
+    images: ["https://www.omniaservices.co.uk/assets/img/service/6.webp"]
   },
   twitter: {
     card: "summary_large_image",
     title: "Managed Microsoft Azure | Omnia Services",
     description: "Comprehensive managed Azure services including monitoring, security, optimization, and 24/7 support. Expert Azure cloud management to maximize performance and minimize costs.",
-    images: ["https://omniaservices.co.uk/assets/img/service/6.webp"]
+    images: ["https://www.omniaservices.co.uk/assets/img/service/6.webp"]
   }
 };
 

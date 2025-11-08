@@ -8,20 +8,20 @@ export const metadata: Metadata = {
   description: "Join Omnia Services and be part of a dynamic team driving digital transformation. Explore exciting career opportunities in cloud consulting, IT automation, and technology innovation.",
   robots: "index,follow",
   alternates: {
-    canonical: "https://omniaservices.co.uk/career"
+    canonical: "https://www.omniaservices.co.uk/career"
   },
   openGraph: {
     title: "Careers | Omnia Services",
     description: "Join Omnia Services and be part of a dynamic team driving digital transformation. Explore exciting career opportunities in cloud consulting, IT automation, and technology innovation.",
     type: "website",
-    url: "https://omniaservices.co.uk/career",
-    images: ["https://omniaservices.co.uk/assets/img/about/about-11.webp"]
+    url: "https://www.omniaservices.co.uk/career",
+    images: ["https://www.omniaservices.co.uk/assets/img/about/about-11.webp"]
   },
   twitter: {
     card: "summary_large_image",
     title: "Careers | Omnia Services",
     description: "Join Omnia Services and be part of a dynamic team driving digital transformation. Explore exciting career opportunities in cloud consulting, IT automation, and technology innovation.",
-    images: ["https://omniaservices.co.uk/assets/img/about/about-11.webp"]
+    images: ["https://www.omniaservices.co.uk/assets/img/about/about-11.webp"]
   }
 };
 
