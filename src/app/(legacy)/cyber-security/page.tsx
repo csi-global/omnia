@@ -7,20 +7,20 @@ export const metadata: Metadata = {
   description: "Protect your business with comprehensive cyber security solutions. Omnia Services uses latest technologies to safeguard systems, networks, and data from cyber threats, ransomware, and data breaches.",
   robots: "index,follow",
   alternates: {
-    canonical: "https://omniaservices.co.uk/cyber-security"
+    canonical: "https://www.omniaservices.co.uk/cyber-security"
   },
   openGraph: {
     title: "Cyber Security and Data Protection | Omnia Services",
     description: "Protect your business with comprehensive cyber security solutions. Omnia Services uses latest technologies to safeguard systems, networks, and data from cyber threats, ransomware, and data breaches.",
     type: "website",
-    url: "https://omniaservices.co.uk/cyber-security",
-    images: ["https://omniaservices.co.uk/assets/img/service/2.webp"]
+    url: "https://www.omniaservices.co.uk/cyber-security",
+    images: ["https://www.omniaservices.co.uk/assets/img/service/2.webp"]
   },
   twitter: {
     card: "summary_large_image",
     title: "Cyber Security and Data Protection | Omnia Services",
     description: "Protect your business with comprehensive cyber security solutions. Omnia Services uses latest technologies to safeguard systems, networks, and data from cyber threats, ransomware, and data breaches.",
-    images: ["https://omniaservices.co.uk/assets/img/service/2.webp"]
+    images: ["https://www.omniaservices.co.uk/assets/img/service/2.webp"]
   }
 };
 

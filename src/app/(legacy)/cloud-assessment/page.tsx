@@ -7,20 +7,20 @@ export const metadata: Metadata = {
   description: "Comprehensive cloud assessment services to evaluate your current infrastructure and identify optimization opportunities. Expert analysis for AWS, Azure, and Google Cloud platforms.",
   robots: "index,follow",
   alternates: {
-    canonical: "https://omniaservices.co.uk/cloud-assessment"
+    canonical: "https://www.omniaservices.co.uk/cloud-assessment"
   },
   openGraph: {
     title: "Cloud Assessment | Omnia Services",
     description: "Comprehensive cloud assessment services to evaluate your current infrastructure and identify optimization opportunities. Expert analysis for AWS, Azure, and Google Cloud platforms.",
     type: "website",
-    url: "https://omniaservices.co.uk/cloud-assessment",
-    images: ["https://omniaservices.co.uk/assets/img/service/6.webp"]
+    url: "https://www.omniaservices.co.uk/cloud-assessment",
+    images: ["https://www.omniaservices.co.uk/assets/img/service/6.webp"]
   },
   twitter: {
     card: "summary_large_image",
     title: "Cloud Assessment | Omnia Services",
     description: "Comprehensive cloud assessment services to evaluate your current infrastructure and identify optimization opportunities. Expert analysis for AWS, Azure, and Google Cloud platforms.",
-    images: ["https://omniaservices.co.uk/assets/img/service/6.webp"]
+    images: ["https://www.omniaservices.co.uk/assets/img/service/6.webp"]
   }
 };
 

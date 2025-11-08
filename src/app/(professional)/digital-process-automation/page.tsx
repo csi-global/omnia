@@ -9,20 +9,20 @@ export const metadata: Metadata = {
   description: "Design, build, and automate at enterprise scale with Pega, ServiceNow, and Microsoft Power Platform + Dynamics 365. Governance, security, and integrations included.",
   robots: "index,follow",
   alternates: {
-    canonical: "https://omniaservices.co.uk/digital-process-automation"
+    canonical: "https://www.omniaservices.co.uk/digital-process-automation"
   },
   openGraph: {
     title: "Digital Process Automation | Omnia",
     description: "Design, build, and automate at enterprise scale with Pega, ServiceNow, and Microsoft Power Platform + Dynamics 365. Governance, security, and integrations included.",
     type: "website",
-    url: "https://omniaservices.co.uk/digital-process-automation",
-    images: ["https://omniaservices.co.uk/assets/img/service/3.webp"]
+    url: "https://www.omniaservices.co.uk/digital-process-automation",
+    images: ["https://www.omniaservices.co.uk/assets/img/service/3.webp"]
   },
   twitter: {
     card: "summary_large_image",
     title: "Digital Process Automation | Omnia",
     description: "Design, build, and automate at enterprise scale with Pega, ServiceNow, and Microsoft Power Platform + Dynamics 365. Governance, security, and integrations included.",
-    images: ["https://omniaservices.co.uk/assets/img/service/3.webp"]
+    images: ["https://www.omniaservices.co.uk/assets/img/service/3.webp"]
   }
 };
 

@@ -18,22 +18,22 @@ export const metadata: Metadata = {
     'Expert Fiserv VisionPLUS implementation and support services. Comprehensive account processing solutions for payment cards, loans, and commercial products with real-time authorization and digital customer experience.',
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://omniaservices.co.uk/vision-plus',
+    canonical: 'https://www.omniaservices.co.uk/vision-plus',
   },
   openGraph: {
     title: 'VisionPLUS | Account Processing Platform | Omnia Services',
     description:
       'Expert Fiserv VisionPLUS implementation and support services. Comprehensive account processing solutions for payment cards, loans, and commercial products with real-time authorization and digital customer experience.',
     type: 'website',
-    url: 'https://omniaservices.co.uk/vision-plus',
-    images: ['https://omniaservices.co.uk/assets/img/service/2.webp'],
+    url: 'https://www.omniaservices.co.uk/vision-plus',
+    images: ['https://www.omniaservices.co.uk/assets/img/service/2.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'VisionPLUS | Account Processing Platform | Omnia Services',
     description:
       'Expert Fiserv VisionPLUS implementation and support services. Comprehensive account processing solutions for payment cards, loans, and commercial products with real-time authorization and digital customer experience.',
-    images: ['https://omniaservices.co.uk/assets/img/service/2.webp'],
+    images: ['https://www.omniaservices.co.uk/assets/img/service/2.webp'],
   },
 };
 
@@ -203,10 +203,10 @@ export default function VisionPlusPage() {
           provider: {
             '@type': 'Organization',
             name: 'Omnia Services',
-            url: 'https://omniaservices.co.uk',
+            url: 'https://www.omniaservices.co.uk',
           },
           areaServed: 'GB',
-          url: 'https://omniaservices.co.uk/vision-plus',
+          url: 'https://www.omniaservices.co.uk/vision-plus',
           description:
             'Expert Fiserv VisionPLUS implementation and support services. Comprehensive account processing solutions for payment cards, loans, and commercial products with real-time authorization, mobile payments, and digital customer experience. Services include platform implementation, modernization, API integration, and 24/7 managed support.',
           offers: {

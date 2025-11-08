@@ -12,20 +12,20 @@ export const metadata: Metadata = {
   description: "MSD365 enterprise solutions for comprehensive business management. Expert implementation, customization, and support services to optimize your MSD365 investment and streamline operations.",
   robots: "index,follow",
   alternates: {
-    canonical: "https://omniaservices.co.uk/msd365"
+    canonical: "https://www.omniaservices.co.uk/msd365"
   },
   openGraph: {
     title: "MSD365 | Omnia Services",
     description: "MSD365 enterprise solutions for comprehensive business management. Expert implementation, customization, and support services to optimize your MSD365 investment and streamline operations.",
     type: "website",
-    url: "https://omniaservices.co.uk/msd365",
-    images: ["https://omniaservices.co.uk/assets/img/service/4.webp"]
+    url: "https://www.omniaservices.co.uk/msd365",
+    images: ["https://www.omniaservices.co.uk/assets/img/service/4.webp"]
   },
   twitter: {
     card: "summary_large_image",
     title: "MSD365 | Omnia Services",
     description: "MSD365 enterprise solutions for comprehensive business management. Expert implementation, customization, and support services to optimize your MSD365 investment and streamline operations.",
-    images: ["https://omniaservices.co.uk/assets/img/service/4.webp"]
+    images: ["https://www.omniaservices.co.uk/assets/img/service/4.webp"]
   }
 };
 
@@ -190,9 +190,9 @@ export default function MSD365Page() {
           '@type': 'Service',
           name: 'Microsoft Dynamics 365 Services',
           serviceType: 'Dynamics 365 implementation and managed services',
-          provider: { '@type': 'Organization', name: 'Omnia Services', url: 'https://omniaservices.co.uk' },
+          provider: { '@type': 'Organization', name: 'Omnia Services', url: 'https://www.omniaservices.co.uk' },
           areaServed: 'GB',
-          url: 'https://omniaservices.co.uk/msd365',
+          url: 'https://www.omniaservices.co.uk/msd365',
           description: 'Implementation, migration, integration and managed support for Microsoft Dynamics 365 across Sales, Customer Service, Finance and Supply Chain with Power Platform and Copilot enablement.'
         })}
       </Script>

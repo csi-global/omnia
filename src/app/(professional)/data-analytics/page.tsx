@@ -7,19 +7,19 @@ export const metadata: Metadata = {
   title: "Data Analytics | Omnia Services",
   description: "Modern data analytics services: data strategy, warehousing, BI, and AI/ML to turn data into decisions.",
   robots: "index,follow",
-  alternates: { canonical: "https://omniaservices.co.uk/data-analytics" },
+  alternates: { canonical: "https://www.omniaservices.co.uk/data-analytics" },
   openGraph: {
     title: "Data Analytics | Omnia Services",
     description: "Modern data analytics services: data strategy, warehousing, BI, and AI/ML to turn data into decisions.",
     type: "website",
-    url: "https://omniaservices.co.uk/data-analytics",
-    images: ["https://omniaservices.co.uk/assets/img/service/6.webp"],
+    url: "https://www.omniaservices.co.uk/data-analytics",
+    images: ["https://www.omniaservices.co.uk/assets/img/service/6.webp"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Data Analytics | Omnia Services",
     description: "Modern data analytics services: data strategy, warehousing, BI, and AI/ML to turn data into decisions.",
-    images: ["https://omniaservices.co.uk/assets/img/service/6.webp"],
+    images: ["https://www.omniaservices.co.uk/assets/img/service/6.webp"],
   },
 };
 

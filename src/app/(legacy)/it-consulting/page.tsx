@@ -7,20 +7,20 @@ export const metadata: Metadata = {
   description: "Expert IT consulting services for digital transformation, cloud strategy, and technology optimization. Strategic guidance to align IT with business objectives and drive innovation.",
   robots: "index,follow",
   alternates: {
-    canonical: "https://omniaservices.co.uk/it-consulting"
+    canonical: "https://www.omniaservices.co.uk/it-consulting"
   },
   openGraph: {
     title: "IT Consulting | Omnia Services",
     description: "Expert IT consulting services for digital transformation, cloud strategy, and technology optimization. Strategic guidance to align IT with business objectives and drive innovation.",
     type: "website",
-    url: "https://omniaservices.co.uk/it-consulting",
-    images: ["https://omniaservices.co.uk/assets/img/service/1.webp"]
+    url: "https://www.omniaservices.co.uk/it-consulting",
+    images: ["https://www.omniaservices.co.uk/assets/img/service/1.webp"]
   },
   twitter: {
     card: "summary_large_image",
     title: "IT Consulting | Omnia Services",
     description: "Expert IT consulting services for digital transformation, cloud strategy, and technology optimization. Strategic guidance to align IT with business objectives and drive innovation.",
-    images: ["https://omniaservices.co.uk/assets/img/service/1.webp"]
+    images: ["https://www.omniaservices.co.uk/assets/img/service/1.webp"]
   }
 };
 

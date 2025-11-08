@@ -17,20 +17,20 @@ export const metadata: Metadata = {
   description: "Smart Investigate solutions for automated investigation and analysis. Advanced analytics, AI-powered insights, and intelligent reporting to streamline investigation processes and improve decision-making.",
   robots: "index,follow",
   alternates: {
-    canonical: "https://omniaservices.co.uk/smart-investigate"
+    canonical: "https://www.omniaservices.co.uk/smart-investigate"
   },
   openGraph: {
     title: "Smart Investigate | Omnia Services",
     description: "Smart Investigate solutions for automated investigation and analysis. Advanced analytics, AI-powered insights, and intelligent reporting to streamline investigation processes and improve decision-making.",
     type: "website",
-    url: "https://omniaservices.co.uk/smart-investigate",
-    images: ["https://omniaservices.co.uk/assets/img/service/3.webp"]
+    url: "https://www.omniaservices.co.uk/smart-investigate",
+    images: ["https://www.omniaservices.co.uk/assets/img/service/3.webp"]
   },
   twitter: {
     card: "summary_large_image",
     title: "Smart Investigate | Omnia Services",
     description: "Smart Investigate solutions for automated investigation and analysis. Advanced analytics, AI-powered insights, and intelligent reporting to streamline investigation processes and improve decision-making.",
-    images: ["https://omniaservices.co.uk/assets/img/service/3.webp"]
+    images: ["https://www.omniaservices.co.uk/assets/img/service/3.webp"]
   }
 };
 
@@ -60,9 +60,9 @@ export default function SmartInvestigatePage() {
           "@type": "Service",
           "name": "Smart Investigate Services",
           "serviceType": "AI-powered investigation and analytics",
-          "provider": { "@type": "Organization", "name": "Omnia Services", "url": "https://omniaservices.co.uk" },
+          "provider": { "@type": "Organization", "name": "Omnia Services", "url": "https://www.omniaservices.co.uk" },
           "areaServed": "GB",
-          "url": "https://omniaservices.co.uk/smart-investigate",
+          "url": "https://www.omniaservices.co.uk/smart-investigate",
           "description": "Smart Investigate solutions for automated investigation and analysis. Advanced analytics, AI-powered insights, and intelligent reporting to streamline investigation processes and improve decision-making."
         })}
       </Script>

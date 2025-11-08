@@ -9,22 +9,22 @@ export const metadata: Metadata = {
     'Comprehensive digital transformation services to modernize your business processes, enhance customer experience, and drive innovation. Expert guidance for successful digital transformation initiatives.',
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://omniaservices.co.uk/digital-transformation',
+    canonical: 'https://www.omniaservices.co.uk/digital-transformation',
   },
   openGraph: {
     title: 'Digital Transformation | Omnia Services',
     description:
       'Comprehensive digital transformation services to modernize your business processes, enhance customer experience, and drive innovation. Expert guidance for successful digital transformation initiatives.',
     type: 'website',
-    url: 'https://omniaservices.co.uk/digital-transformation',
-    images: ['https://omniaservices.co.uk/assets/img/service/1.webp'],
+    url: 'https://www.omniaservices.co.uk/digital-transformation',
+    images: ['https://www.omniaservices.co.uk/assets/img/service/1.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Digital Transformation | Omnia Services',
     description:
       'Comprehensive digital transformation services to modernize your business processes, enhance customer experience, and drive innovation. Expert guidance for successful digital transformation initiatives.',
-    images: ['https://omniaservices.co.uk/assets/img/service/1.webp'],
+    images: ['https://www.omniaservices.co.uk/assets/img/service/1.webp'],
   },
 };
 

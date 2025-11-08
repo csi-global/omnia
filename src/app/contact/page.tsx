@@ -9,20 +9,20 @@ export const metadata: Metadata = {
   description: "Get in touch with Omnia Services for cloud consulting, IT automation, and digital transformation solutions. Located in Leeds, UK. Call +44-1133 662035 or email info@omniaservices.co.uk",
   robots: "index,follow",
   alternates: {
-    canonical: "https://omniaservices.co.uk/contact"
+    canonical: "https://www.omniaservices.co.uk/contact"
   },
   openGraph: {
     title: "Contact Us | Omnia Services",
     description: "Get in touch with Omnia Services for cloud consulting, IT automation, and digital transformation solutions. Located in Leeds, UK. Call +44-1133 662035 or email info@omniaservices.co.uk",
     type: "website",
-    url: "https://omniaservices.co.uk/contact",
-    images: ["https://omniaservices.co.uk/assets/img/contact/contact-2.webp"]
+    url: "https://www.omniaservices.co.uk/contact",
+    images: ["https://www.omniaservices.co.uk/assets/img/contact/contact-2.webp"]
   },
   twitter: {
     card: "summary_large_image",
     title: "Contact Us | Omnia Services",
     description: "Get in touch with Omnia Services for cloud consulting, IT automation, and digital transformation solutions. Located in Leeds, UK. Call +44-1133 662035 or email info@omniaservices.co.uk",
-    images: ["https://omniaservices.co.uk/assets/img/contact/contact-2.webp"]
+    images: ["https://www.omniaservices.co.uk/assets/img/contact/contact-2.webp"]
   }
 };
 
