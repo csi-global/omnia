@@ -6,14 +6,14 @@ import Link from "next/link";
 import OmniaButton from "@/components/ui/omnia-button";
 
 export const metadata: Metadata = {
-  title: "Digital Process Automation | Omnia",
+  title: "Digital Process Automation | Omnia Services",
   description: "Design, build, and automate at enterprise scale with Pega, ServiceNow, and Microsoft Power Platform + Dynamics 365. Governance, security, and integrations included.",
   robots: "index,follow",
   alternates: {
     canonical: "https://www.omniaservices.co.uk/digital-process-automation"
   },
   openGraph: {
-    title: "Digital Process Automation | Omnia",
+    title: "Digital Process Automation | Omnia Services",
     description: "Design, build, and automate at enterprise scale with Pega, ServiceNow, and Microsoft Power Platform + Dynamics 365. Governance, security, and integrations included.",
     type: "website",
     url: "https://www.omniaservices.co.uk/digital-process-automation",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Digital Process Automation | Omnia",
+    title: "Digital Process Automation | Omnia Services",
     description: "Design, build, and automate at enterprise scale with Pega, ServiceNow, and Microsoft Power Platform + Dynamics 365. Governance, security, and integrations included.",
     images: ["https://www.omniaservices.co.uk/assets/img/service/3.webp"]
   }

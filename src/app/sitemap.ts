@@ -1,39 +1,29 @@
 import type { MetadataRoute } from 'next';
 
-export const dynamic = 'force-dynamic';
+const baseUrl = 'https://www.omniaservices.co.uk';
 
-// Force Vercel deployment with latest changes
-
-/**
- * Add your public routes here. Group segments like (legacy) are not part of the URL.
- */
-const publicPaths: string[] = [
-  '/',
-  '/contact',
-  '/career',
-  // Managed products
-  '/msd365',
-  '/ormb',
-  '/smart-investigate',
-  '/vision-plus',
-  // AI Engineering
-  '/ai-engineering',
-  // Professional services
-  '/cloud-migration',
-  '/data-analytics',
-  '/digital-process-automation',
-  '/digital-transformation',
-  '/domain-consulting',
+const routes: Array<{ path: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'] }> = [
+  { path: '/',                            priority: 1.0, changeFrequency: 'weekly'  },
+  { path: '/ai-engineering',             priority: 0.9, changeFrequency: 'weekly'  },
+  { path: '/digital-transformation',     priority: 0.85, changeFrequency: 'monthly' },
+  { path: '/digital-process-automation', priority: 0.85, changeFrequency: 'monthly' },
+  { path: '/cloud-migration',            priority: 0.85, changeFrequency: 'monthly' },
+  { path: '/data-analytics',             priority: 0.85, changeFrequency: 'monthly' },
+  { path: '/domain-consulting',          priority: 0.8, changeFrequency: 'monthly' },
+  { path: '/ormb',                       priority: 0.8, changeFrequency: 'monthly' },
+  { path: '/vision-plus',               priority: 0.8, changeFrequency: 'monthly' },
+  { path: '/smart-investigate',          priority: 0.8, changeFrequency: 'monthly' },
+  { path: '/msd365',                     priority: 0.8, changeFrequency: 'monthly' },
+  { path: '/contact',                    priority: 0.7, changeFrequency: 'monthly' },
+  { path: '/career',                     priority: 0.6, changeFrequency: 'monthly' },
 ];
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  // Always use the canonical domain
-  const baseUrl = 'https://www.omniaservices.co.uk';
+export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
-  return publicPaths.map((path) => ({
+  return routes.map(({ path, priority, changeFrequency }) => ({
     url: `${baseUrl}${path}`,
     lastModified,
-    changeFrequency: 'monthly',
-    priority: path === '/' ? 1 : 0.7,
+    changeFrequency,
+    priority,
   }));
 }

@@ -1,7 +1,14 @@
 import { NOT_FOUND_LINKS } from "@/lib/constants";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import OmniaButton from "@/components/ui/omnia-button";
+
+export const metadata: Metadata = {
+  title: "Page Not Found | Omnia Services",
+  description: "The page you are looking for does not exist. Return to Omnia Services homepage to explore our cloud consulting, AI engineering, and digital transformation services.",
+  robots: "noindex,follow",
+};
 
 export default function NotFound() {
   return (

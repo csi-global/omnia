@@ -26,26 +26,28 @@ const manrope = Manrope({
   fallback: ["system-ui", "arial"],
 });
 
-const baseMetadata: Metadata = {
-  title: "Omnia",
-  description: "Omnia - Cloud consulting, digital transformation, and managed services",
+export const metadata: Metadata = {
+  metadataBase: new URL("https://www.omniaservices.co.uk"),
+  title: {
+    default: "Omnia Services | Cloud Consulting, AI Engineering & Digital Transformation UK",
+    template: "%s",
+  },
+  description: "Omnia Services delivers cloud migration, AI engineering, digital transformation, and managed services for UK enterprises.",
+  robots: "index,follow",
   icons: {
     icon: "/assets/img/favicon.png",
     shortcut: "/assets/img/favicon.png",
     apple: "/assets/img/favicon.png",
   },
+  openGraph: {
+    type: "website",
+    siteName: "Omnia Services",
+    locale: "en_GB",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
-
-export async function generateMetadata(): Promise<Metadata> {
-  // Always use the canonical domain
-  const base = new URL("https://www.omniaservices.co.uk");
-
-  return {
-    ...baseMetadata,
-    metadataBase: base,
-    alternates: { canonical: "/" },
-  };
-}
 
 export default function RootLayout({
   children,

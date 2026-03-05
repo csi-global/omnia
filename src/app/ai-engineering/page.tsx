@@ -4,6 +4,7 @@ import Script from "next/script";
 import { Bot, BrainCircuit, Code2, Cpu, DatabaseZap, ServerCog } from "lucide-react";
 import OmniaButton from "@/components/ui/omnia-button";
 import AIEngineeringFaq from "@/components/ai-engineering-faq";
+import SDLCPipeline from "@/components/sdlc-pipeline";
 
 export const metadata: Metadata = {
   title: "AI Engineering | Omnia Services",
@@ -144,7 +145,7 @@ export default function AIEngineerPage() {
                   { icon: "fas fa-code", label: "SDLC Stages Automated", value: "8/8" },
                   { icon: "fas fa-bolt", label: "Delivery Acceleration", value: "3x" },
                 ].map((stat) => (
-                  <div key={stat.label} className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm text-center">
+                  <div key={stat.label} className="rounded-2xl bg-white p-5 shadow-sm text-center">
                     <div className="text-[var(--theme)] text-2xl mb-2"><i className={stat.icon}></i></div>
                     <div className="text-2xl font-extrabold text-zinc-900">{stat.value}</div>
                     <div className="text-xs text-zinc-500 mt-1">{stat.label}</div>
@@ -204,7 +205,7 @@ export default function AIEngineerPage() {
                 text: "Engineering roles are evolving—not disappearing. Prompt engineering, AI evaluation, and agent orchestration are becoming core competencies alongside traditional software skills.",
               },
             ].map((card, i) => (
-              <div key={i} className="bento-card rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm hover:shadow-md transition hover:-translate-y-0.5">
+              <div key={i} className="bento-card rounded-2xl bg-white p-6 shadow-sm hover:shadow-md transition hover:-translate-y-0.5">
                 <div className="size-12 rounded-full bg-[var(--theme)]/10 text-[var(--theme)] flex items-center justify-center mb-4">
                   <i className={card.icon}></i>
                 </div>
@@ -287,85 +288,26 @@ export default function AIEngineerPage() {
         </div>
       </section>
 
-      {/* AI in the SDLC */}
-      <section className="section-padding bg-light fix">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-10 mx-auto">
-              <div className="section-title text-center">
-                <span className="inline-flex items-center rounded-full bg-[var(--theme)] px-3 py-1 text-xs font-semibold tracking-wide text-white">AI in the SDLC</span>
-                <h2 className="mt-4 !text-3xl sm:!text-4xl md:!text-5xl font-bold !mb-3">AI at Every Stage of Software Delivery</h2>
-                <p className="text-zinc-600 max-w-3xl mx-auto">
-                  Omnia maps AI capabilities to every phase of your delivery pipeline—eliminating bottlenecks, reducing defects, and compressing time-to-market.
-                </p>
+      {/* AI in the SDLC — sticky scroll section */}
+      <section>
+        {/* Heading sits above the sticky scroll area */}
+        <div className="section-padding pb-0 bg-white">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-10 mx-auto">
+                <div className="section-title text-center">
+                  <span className="inline-flex items-center rounded-full bg-[var(--theme)] px-3 py-1 text-xs font-semibold tracking-wide text-white">AI in the SDLC</span>
+                  <h2 className="mt-4 !text-3xl sm:!text-4xl md:!text-5xl font-bold !mb-3">AI at Every Stage of Software Delivery</h2>
+                  <p className="text-zinc-600 max-w-2xl mx-auto">
+                    From requirements to release—AI embedded at every phase, compressing time-to-market and eliminating bottlenecks.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-
-          <div className="row g-4 pt-8">
-            {[
-              {
-                icon: "fas fa-clipboard-list",
-                phase: "01",
-                title: "Requirements & Planning",
-                text: "AI agents parse stakeholder documents, extract user stories, identify gaps, and generate acceptance criteria—turning weeks of workshops into hours.",
-              },
-              {
-                icon: "fas fa-drafting-compass",
-                phase: "02",
-                title: "Architecture & Design",
-                text: "LLMs evaluate architecture options, generate ADRs, flag anti-patterns, and suggest cloud-native design patterns aligned to your constraints.",
-              },
-              {
-                icon: "fas fa-code",
-                phase: "03",
-                title: "Development & Code Generation",
-                text: "AI pair programmers (GitHub Copilot, Cursor, Claude) generate boilerplate, suggest refactors, and explain legacy code—boosting developer throughput by up to 40%.",
-              },
-              {
-                icon: "fas fa-vial",
-                phase: "04",
-                title: "Testing & QA Automation",
-                text: "Generative AI creates unit, integration, and regression test suites from source code and specifications. AI-powered test oracles detect flaky tests and coverage gaps automatically.",
-              },
-              {
-                icon: "fas fa-rocket",
-                phase: "05",
-                title: "CI/CD & Deployment",
-                text: "Agentic pipelines analyse test results, select deployment strategies, and execute canary or blue-green releases—with AI-driven rollback decisions based on live telemetry.",
-              },
-              {
-                icon: "fas fa-chart-line",
-                phase: "06",
-                title: "Monitoring & Observability",
-                text: "AI correlates logs, metrics, and traces to surface root causes before users are impacted. Natural language queries replace complex dashboards for on-call engineers.",
-              },
-              {
-                icon: "fas fa-bug",
-                phase: "07",
-                title: "Incident Response",
-                text: "Autonomous agents triage alerts, run runbook playbooks, and escalate with context-rich summaries—cutting mean time to resolution by 60% or more.",
-              },
-              {
-                icon: "fas fa-sync-alt",
-                phase: "08",
-                title: "Feedback & Continuous Improvement",
-                text: "AI analyses user behaviour, support tickets, and telemetry to generate product insights and prioritise the backlog—closing the loop from production back to planning.",
-              },
-            ].map((step, idx) => (
-              <div key={idx} className="col-lg-3 col-md-6">
-                <div className="rise-card bento-card rounded-2xl border border-zinc-200 bg-white p-6 h-100 relative overflow-hidden">
-                  <div className="absolute top-4 right-4 text-4xl font-extrabold text-zinc-100 select-none">{step.phase}</div>
-                  <div className="size-12 rounded-full bg-[var(--theme)]/10 text-[var(--theme)] flex items-center justify-center mb-3">
-                    <i className={step.icon}></i>
-                  </div>
-                  <h4 className="font-semibold text-zinc-900 mb-2">{step.title}</h4>
-                  <p className="text-zinc-600 text-sm leading-relaxed">{step.text}</p>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
+        {/* Sticky scroll pipeline — full width, no container */}
+        <SDLCPipeline />
       </section>
 
       {/* Why Omnia */}
@@ -389,7 +331,7 @@ export default function AIEngineerPage() {
               { icon: "fas fa-headset", title: "Ongoing LLMOps Support", text: "We provide managed support for deployed AI systems—monitoring quality, controlling costs, and managing model upgrades." },
             ].map((card, i) => (
               <div key={i} className="col-lg-4 col-md-6">
-                <div className="bento-card text-center rounded-2xl border border-zinc-200 bg-white p-6 h-100">
+                <div className="bento-card text-center rounded-2xl bg-white p-6 h-100 shadow-sm">
                   <div className="icon text-2xl text-[var(--theme)] mb-2"><i className={card.icon}></i></div>
                   <h4 className="mt-2 mb-2">{card.title}</h4>
                   <p className="text-zinc-600 text-sm">{card.text}</p>
@@ -421,7 +363,7 @@ export default function AIEngineerPage() {
               { icon: "fas fa-chart-line", title: "Operate & Optimise", text: "Continuously monitor model quality, cost, and usage—and evolve the system as capabilities and requirements grow." },
             ].map((step, idx) => (
               <div key={idx} className="col-lg-4 col-md-6">
-                <div className="rise-card bento-card text-center rounded-2xl border border-zinc-200 bg-white p-6 h-100">
+                <div className="rise-card bento-card text-center rounded-2xl bg-white p-6 h-100 shadow-sm">
                   <div className="icon text-[var(--theme)] text-2xl"><i className={step.icon}></i></div>
                   <h4 className="mt-2">{step.title}</h4>
                   <p className="text-zinc-600 text-sm">{step.text}</p>
@@ -453,7 +395,7 @@ export default function AIEngineerPage() {
               { icon: "fas fa-chart-bar", title: "Evaluation & Observability", text: "LangSmith, Arize, Weights & Biases, Helicone, and custom evaluation harnesses for quality and cost tracking." },
             ].map((p, i) => (
               <div key={i} className="col-lg-4 col-md-6">
-                <div className="bento-card rounded-2xl border border-zinc-200 bg-white p-6 h-100">
+                <div className="bento-card rounded-2xl bg-white p-6 h-100 shadow-sm">
                   <div className="icon text-2xl text-[var(--theme)] mb-2"><i className={p.icon}></i></div>
                   <h4 className="mt-2 mb-1">{p.title}</h4>
                   <p className="text-zinc-600 text-sm">{p.text}</p>
