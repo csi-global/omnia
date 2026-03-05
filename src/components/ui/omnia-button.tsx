@@ -25,9 +25,6 @@ const OmniaButton: FC<OmniaButtonProps> = ({
       >
         {text}
       </button>
-      <span className="arrow-btn">
-        <i className="icon-arrow-right" aria-hidden="true"></i>
-      </span>
     </div>
   );
 };

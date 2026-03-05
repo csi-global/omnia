@@ -1,4 +1,5 @@
 // Service and Feature Data Constants
+import type { CoreValue, HeroSlide, IconLabelItem, ServiceGridCard } from './types';
 
 // ============================================================================
 // Type Definitions
@@ -774,5 +775,154 @@ export const ORMB_INDUSTRIES: readonly ServiceCard[] = [
     title: 'Telecommunications',
     description:
       'Complex billing for voice, data, and value-added telecom services with usage-based pricing and real-time rating capabilities.',
+  },
+];
+
+// ============================================================================
+// Landing Page — Hero Carousel Slides
+// AI Engineering is first so it appears on initial load.
+// ============================================================================
+
+export const HERO_SLIDES: readonly HeroSlide[] = [
+  {
+    backgroundImage: '/assets/img/hero/hero-slider-6.webp',
+    eyebrow: 'OMNIA',
+    title: 'AI Engineering',
+    description:
+      'From Generative AI and Agentic systems to MCP Servers and LLMOps—embed intelligence into every layer of your software delivery lifecycle.',
+    ctaHref: '/ai-engineering',
+  },
+  {
+    backgroundImage: '/assets/img/hero/hero-slider-4.webp',
+    eyebrow: 'OMNIA',
+    title: 'Digital Process Automation',
+    description:
+      'Build apps 10x faster. Automate, orchestrate, and integrate services with Pega, ServiceNow, and Microsoft Power Platform—governed, secured, enterprise-grade.',
+    ctaHref: '/digital-process-automation',
+  },
+  {
+    backgroundImage: '/assets/img/hero/hero-slider-5.webp',
+    eyebrow: 'OMNIA',
+    title: 'Cloud Migration',
+    description:
+      'Plan, migrate, and modernize workloads to the cloud with zero-downtime strategies, landing zones, and robust governance.',
+    ctaHref: '/cloud-migration',
+  },
+  {
+    backgroundImage: '/assets/img/hero/hero-slider-1.webp',
+    eyebrow: 'OMNIA',
+    title: 'Data Analytics',
+    description:
+      'Turn data into decisions. Build scalable data platforms, BI dashboards, and ML pipelines for measurable outcomes.',
+    ctaHref: '/data-analytics',
+  },
+  {
+    backgroundImage: '/assets/img/hero/hero-slider-3.webp',
+    eyebrow: 'OMNIA',
+    title: 'Digital \nTransformation',
+    description:
+      'Reimagine products and processes end-to-end—strategy, experience, and engineering—accelerated by cloud and automation.',
+    ctaHref: '/digital-transformation',
+  },
+  {
+    backgroundImage: '/assets/img/hero/hero-slider-3.webp',
+    eyebrow: 'OMNIA',
+    title: 'Domain Consulting',
+    description:
+      'Leverage deep industry expertise to align technology with domain-specific regulations, KPIs, and operating models.',
+    ctaHref: '/domain-consulting',
+  },
+];
+
+// ============================================================================
+// Landing Page — Professional Services Bento Grid (secondary cards)
+// ============================================================================
+
+export const HOME_PROFESSIONAL_SERVICES_GRID: readonly ServiceGridCard[] = [
+  {
+    title: 'Cloud Migration',
+    href: '/cloud-migration',
+    description: 'Migrate your on-premises applications to the cloud with ease.',
+    icon: 'fas fa-cloud',
+  },
+  {
+    title: 'Data Analytics',
+    href: '/data-analytics',
+    description: 'Analyze your data to gain insights and make informed decisions.',
+    icon: 'fas fa-chart-line',
+  },
+  {
+    title: 'Digital Transformation',
+    href: '/digital-transformation',
+    description: 'Transform your business to be more efficient and effective.',
+    icon: 'fas fa-digital-tachograph',
+  },
+  {
+    title: 'Domain Consulting',
+    href: '/domain-consulting',
+    description: 'Consult with our experts to improve your business.',
+    icon: 'fas fa-briefcase',
+  },
+];
+
+// ============================================================================
+// Landing Page — AI Engineering Section
+// ============================================================================
+
+export const AI_ENGINEERING_FEATURES: readonly IconLabelItem[] = [
+  { icon: 'fas fa-wand-magic-sparkles', label: 'Generative AI' },
+  { icon: 'fas fa-robot', label: 'Agentic AI' },
+  { icon: 'fas fa-server', label: 'MCP Servers' },
+  { icon: 'fas fa-sliders', label: 'LLMOps' },
+  { icon: 'fas fa-code-branch', label: 'AI-Driven SDLC' },
+  { icon: 'fas fa-shield-alt', label: 'Responsible AI' },
+];
+
+export const AI_ENGINEERING_CAPABILITY_CARDS: readonly ServiceCard[] = [
+  {
+    icon: 'fas fa-wand-magic-sparkles',
+    title: 'Generative AI',
+    description:
+      'LLMs, RAG pipelines, and fine-tuned models integrated into your products and processes with enterprise-grade guardrails.',
+  },
+  {
+    icon: 'fas fa-robot',
+    title: 'Agentic AI',
+    description:
+      'Autonomous multi-agent systems that plan, act, and self-correct—delivering end-to-end automation across complex workflows.',
+  },
+  {
+    icon: 'fas fa-server',
+    title: 'MCP Servers',
+    description:
+      'Secure Model Context Protocol servers that connect AI models to your enterprise data and tools without exposing raw systems.',
+  },
+  {
+    icon: 'fas fa-code',
+    title: 'AI-Powered SDLC',
+    description:
+      'AI at every stage of delivery—from requirements and design to testing, deployment, monitoring, and incident response.',
+  },
+];
+
+// ============================================================================
+// Landing Page — Core Values
+// ============================================================================
+
+export const HOME_CORE_VALUES: readonly CoreValue[] = [
+  {
+    title: 'Innovation',
+    description: 'Thoughtful adoption of technology to unlock measurable impact and sustainable growth.',
+    icon: 'fas fa-lightbulb',
+  },
+  {
+    title: 'Trust & Reliability',
+    description: 'Transparent communication and dependable delivery—so you always know where we stand.',
+    icon: 'fas fa-handshake',
+  },
+  {
+    title: 'Excellence',
+    description: 'Careful craftsmanship, best practices, and continuous improvement in everything we do.',
+    icon: 'fas fa-gem',
   },
 ];

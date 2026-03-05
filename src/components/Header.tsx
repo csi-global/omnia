@@ -123,6 +123,7 @@ export default function Header() {
                             <li><Link href="/msd365">MSD365</Link></li>
                           </ul>
                         </li>
+                        <li><Link href="/ai-engineering">AI Engineering</Link></li>
                         <li><Link href="/career">Career</Link></li>
                         <li className="display-mobile-only"><Link href="/contact">Contact Us</Link></li>
                       </ul>
@@ -215,6 +216,7 @@ export default function Header() {
                       ))}
                     </ul>
                   </li>
+                  <li><Link href="/ai-engineering" className="block py-1.5">AI Engineering</Link></li>
                   <li><Link href="/career" className="block py-1.5">Career</Link></li>
                   <li><Link href="/contact" className="block py-1.5">Contact Us</Link></li>
                 </ul>

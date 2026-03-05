@@ -1,7 +1,17 @@
 "use client";
 
 import OmniaButton from "@/components/ui/omnia-button";
-import { MANAGED_SERVICES, MARQUEE_PARTNERS_SLIDES, PROFESSIONAL_SERVICES } from "@/lib/constants";
+import {
+  AI_ENGINEERING_CAPABILITY_CARDS,
+  AI_ENGINEERING_FEATURES,
+  HERO_SLIDES,
+  HOME_CORE_VALUES,
+  HOME_PROFESSIONAL_SERVICES_GRID,
+  MANAGED_SERVICES,
+  MARQUEE_PARTNERS_SLIDES,
+  PROFESSIONAL_SERVICES,
+} from "@/lib/constants";
+import type { ExtendedSwiperParams } from "@/lib/types";
 import Image from "next/image";
 import Link from "next/link";
 import type { FC } from "react";
@@ -9,68 +19,6 @@ import { useRef } from "react";
 import type { Swiper as SwiperType } from "swiper";
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-
-interface HeroSlide {
-  backgroundImage: string;
-  eyebrow: string;
-  title: string;
-  description: string;
-  ctaHref: string;
-}
-
-interface SwiperNavigationParams {
-  prevEl?: HTMLButtonElement | HTMLElement | null;
-  nextEl?: HTMLButtonElement | HTMLElement | null;
-}
-
-interface ExtendedSwiperParams {
-  navigation?: boolean | SwiperNavigationParams;
-  [key: string]: unknown;
-}
-
-const slides: readonly HeroSlide[] = [
-  {
-    backgroundImage: "/assets/img/hero/hero-slider-4.webp",
-    eyebrow: "OMNIA",
-    title: "Digital Process Automation",
-    description:
-      "Build apps 10x faster. Automate, orchestrate, and integrate services with Pega, ServiceNow, and Microsoft Power Platform—governed, secured, enterprise-grade.",
-    ctaHref: "/digital-process-automation",
-  },
-  {
-    backgroundImage: "/assets/img/hero/hero-slider-5.webp",
-    eyebrow: "OMNIA",
-    title: "Cloud Migration",
-    description:
-      "Plan, migrate, and modernize workloads to the cloud with zero-downtime strategies, landing zones, and robust governance.",
-    ctaHref: "/cloud-migration",
-  },
-  {
-    backgroundImage: "/assets/img/hero/hero-slider-1.webp",
-    eyebrow: "OMNIA",
-    title: "Data Analytics",
-    description:
-      "Turn data into decisions. Build scalable data platforms, BI dashboards, and ML pipelines for measurable outcomes.",
-    ctaHref: "/data-analytics",
-  },
-  {
-    backgroundImage: "/assets/img/hero/hero-slider-2.webp",
-    eyebrow: "OMNIA",
-    title: "Digital \nTransformation",
-    description:
-      "Reimagine products and processes end-to-end—strategy, experience, and engineering—accelerated by cloud and automation.",
-    ctaHref: "/digital-transformation",
-  },
-  {
-    backgroundImage: "/assets/img/hero/hero-slider-3.webp",
-    eyebrow: "OMNIA",
-    title: "Domain Consulting",
-    description:
-      "Leverage deep industry expertise to align technology with domain-specific regulations, KPIs, and operating models.",
-    ctaHref: "/domain-consulting",
-  },
-];
-
 
 // Helper function to get icon class for managed services
 const getManagedServiceIcon = (title: string): string => {
@@ -154,7 +102,7 @@ const Home: FC = () => {
           }}
           className="w-full h-full"
         >
-          {slides.map((slide, index) => (
+          {HERO_SLIDES.map((slide, index) => (
             <SwiperSlide key={`hero-slide-${slide.title}-${index}`} className="relative w-full h-full">
               {/* Background Image */}
               <div className="absolute inset-0 w-full h-full">
@@ -194,10 +142,7 @@ const Home: FC = () => {
                     </p>
 
                     {/* CTA Button */}
-                    <Link
-                      href={slide.ctaHref}
-                      aria-label={`Explore ${slide.title}`}
-                    >
+                    <Link href={slide.ctaHref} aria-label={`Explore ${slide.title}`}>
                       <OmniaButton text={`Explore ${slide.title}`} />
                     </Link>
                   </div>
@@ -208,7 +153,7 @@ const Home: FC = () => {
         </Swiper>
       </section>
 
-      {/* About Section (redesigned with Tailwind) */}
+      {/* About Section */}
       <section id="about" className="relative py-12 sm:py-16 md:py-20 lg:py-24">
         <div className="container px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-center">
@@ -248,7 +193,6 @@ const Home: FC = () => {
                   ))}
                 </div>
 
-                {/* CTAs (use existing main-button style) */}
                 <div className="pt-2 flex flex-wrap gap-2 sm:gap-3">
                   <Link href="/#core-values" aria-label="Explore Omnia core values">
                     <OmniaButton text="Explore Omnia core values" />
@@ -342,63 +286,36 @@ const Home: FC = () => {
               </Link>
             </div>
 
-            {
-              [
-                {
-                  title: "Cloud Migration",
-                  href: "/cloud-migration",
-                  description: "Migrate your on-premises applications to the cloud with ease.",
-                  icon: "fas fa-cloud",
-                },
-                {
-                  title: "Data Analytics",
-                  href: "/data-analytics",
-                  description: "Analyze your data to gain insights and make informed decisions.",
-                  icon: "fas fa-chart-line",
-                },
-                {
-                  title: "Digital Transformation",
-                  href: "/digital-transformation",
-                  description: "Transform your business to be more efficient and effective.",
-                  icon: "fas fa-digital-tachograph",
-                },
-                {
-                  title: "Domain Consulting",
-                  href: "/domain-consulting",
-                  description: "Consult with our experts to improve your business.",
-                  icon: "fas fa-briefcase",
-                },
-              ].map((item) => (
-                <div className="md:col-span-1" key={item.title}>
-                  <Link
-                    href={item.href}
-                    className="group block h-full bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-zinc-200 hover:border-[var(--theme)]/20"
-                  >
-                    <div className="h-full flex flex-col">
-                      <div className="flex items-center justify-between mb-4">
-                        <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[var(--theme)] to-[var(--theme-red)] flex items-center justify-center">
-                          <i className={`${item.icon} text-white text-xl scale-150`}></i>
-                        </div>
-                        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <i className="icon-arrow-right text-[var(--theme)] text-sm"></i>
-                        </div>
+            {HOME_PROFESSIONAL_SERVICES_GRID.map((item) => (
+              <div className="md:col-span-1" key={item.title}>
+                <Link
+                  href={item.href}
+                  className="group block h-full bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-zinc-200 hover:border-[var(--theme)]/20"
+                >
+                  <div className="h-full flex flex-col">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[var(--theme)] to-[var(--theme-red)] flex items-center justify-center">
+                        <i className={`${item.icon} text-white text-xl scale-150`}></i>
                       </div>
-                      <h3 className="text-lg font-bold text-zinc-900 mb-3 group-hover:text-[var(--theme)] transition-colors">
-                        {item.title}
-                      </h3>
-                      <p className="text-zinc-600 text-sm leading-relaxed flex-grow">
-                        {item.description}
-                      </p>
-                      <div className="mt-4 pt-3 border-t border-zinc-100">
-                        <span className="text-[var(--theme)] font-semibold text-xs group-hover:translate-x-1 transition-transform duration-200 inline-flex items-center gap-1">
-                          Learn more about {item.title} <i className="icon-arrow-right text-xs"></i>
-                        </span>
+                      <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i className="icon-arrow-right text-[var(--theme)] text-sm"></i>
                       </div>
                     </div>
-                  </Link>
-                </div>
-              ))
-            }
+                    <h3 className="text-lg font-bold text-zinc-900 mb-3 group-hover:text-[var(--theme)] transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-zinc-600 text-sm leading-relaxed flex-grow">
+                      {item.description}
+                    </p>
+                    <div className="mt-4 pt-3 border-t border-zinc-100">
+                      <span className="text-[var(--theme)] font-semibold text-xs group-hover:translate-x-1 transition-transform duration-200 inline-flex items-center gap-1">
+                        Learn more about {item.title} <i className="icon-arrow-right text-xs"></i>
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -453,7 +370,66 @@ const Home: FC = () => {
         </div>
       </section>
 
-      {/* Marquee Section (footer-like background with animated circles) */}
+      {/* AI Engineering Section */}
+      <section className="relative py-16 md:py-20 lg:py-24 bg-gradient-to-br from-zinc-900 to-zinc-800 overflow-hidden">
+        {/* Decorative background glow */}
+        <div className="absolute inset-0 -z-0 pointer-events-none">
+          <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-[var(--theme)]/20 blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full bg-[var(--theme-red)]/10 blur-3xl"></div>
+        </div>
+
+        <div className="relative z-10 container px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            {/* Left: Text content */}
+            <div>
+              <span className="inline-flex items-center rounded-full bg-[var(--theme)] px-3 py-1 text-xs font-semibold tracking-wide text-white mb-4">
+                AI Engineering
+              </span>
+              <h2 className="!text-3xl md:!text-5xl lg:!text-6xl font-extrabold leading-tight text-white mb-4">
+                Intelligence Engineered for Enterprise
+              </h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed mb-6">
+                AI is reshaping how software is built, tested, deployed, and operated. Omnia&apos;s AI Engineering practice embeds Generative AI, Agentic systems, MCP Servers, and LLMOps into your SDLC—compressing delivery cycles, reducing toil, and unlocking capabilities that weren&apos;t possible before.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                {AI_ENGINEERING_FEATURES.map((item) => (
+                  <div key={item.label} className="flex items-center gap-3 text-zinc-200 text-sm">
+                    <div className="size-8 rounded-lg bg-[var(--theme)]/20 border border-[var(--theme)]/30 flex items-center justify-center shrink-0">
+                      <i className={`${item.icon} text-[var(--theme)] text-xs`}></i>
+                    </div>
+                    {item.label}
+                  </div>
+                ))}
+              </div>
+              <Link
+                href="/ai-engineering"
+                className="inline-flex items-center gap-2 bg-[var(--theme)] hover:bg-[var(--theme-red)] text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-200"
+                aria-label="Explore AI Engineering"
+              >
+                Explore AI Engineering <i className="icon-arrow-right text-xs"></i>
+              </Link>
+            </div>
+
+            {/* Right: Capability cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {AI_ENGINEERING_CAPABILITY_CARDS.map((item) => (
+                <div
+                  key={item.title}
+                  className="group rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-5 hover:bg-white/10 hover:border-[var(--theme)]/50 transition-all duration-300"
+                >
+                  <div className="size-10 rounded-lg bg-[var(--theme)]/20 border border-[var(--theme)]/30 flex items-center justify-center mb-3">
+                    <i className={`${item.icon} text-[var(--theme)] text-sm`}></i>
+                  </div>
+                  <h4 className="text-white font-semibold text-sm mb-1">{item.title}</h4>
+                  <p className="text-zinc-400 text-xs leading-relaxed">{item.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Marquee Section */}
       <section className="marqee-section relative section-bg overflow-hidden py-16 md:py-20 lg:py-24">
         <div className="container px-4 sm:px-6">
           <div className="text-center mb-12 md:mb-16">
@@ -576,7 +552,7 @@ const Home: FC = () => {
         </div>
       </section>
 
-      {/* Core Values (clean minimal Tailwind) */}
+      {/* Core Values */}
       <section id="core-values" className="relative py-24">
         <div className="container">
           <div className="mx-auto max-w-3xl text-center">
@@ -593,23 +569,7 @@ const Home: FC = () => {
           </div>
 
           <div className="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Innovation",
-                description: "Thoughtful adoption of technology to unlock measurable impact and sustainable growth.",
-                icon: "fas fa-lightbulb",
-              },
-              {
-                title: "Trust & Reliability",
-                description: "Transparent communication and dependable delivery—so you always know where we stand.",
-                icon: "fas fa-handshake",
-              },
-              {
-                title: "Excellence",
-                description: "Careful craftsmanship, best practices, and continuous improvement in everything we do.",
-                icon: "fas fa-gem",
-              },
-            ].map((item, index) => (
+            {HOME_CORE_VALUES.map((item, index) => (
               <div key={index} className="group rounded-2xl border border-zinc-200 bg-white overflow-hidden shadow-sm transition hover:shadow-md hover:-translate-y-0.5">
                 <div className="h-1.5 w-full bg-gradient-to-r from-[var(--theme)] to-[var(--theme-red)]"></div>
                 <div className="p-6 lg:p-8">
@@ -627,10 +587,10 @@ const Home: FC = () => {
             ))}
           </div>
         </div>
-      </section >
+      </section>
 
-      {/* Why Omnia (featured layout variant) */}
-      <section id="why-choose-us" className="relative section-padding" >
+      {/* Why Omnia */}
+      <section id="why-choose-us" className="relative section-padding">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(800px_400px_at_10%_0%,rgba(225,29,46,0.05),transparent_60%),radial-gradient(800px_400px_at_90%_10%,rgba(17,24,39,0.05),transparent_60%)]"></div>
         <div className="container">
           <div className="mx-auto max-w-3xl text-center">
@@ -694,11 +654,11 @@ const Home: FC = () => {
               <div className="rise-card rise-delay-3 group rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm hover:shadow-md transition hover:-translate-y-0.5">
                 <div className="flex items-start gap-4">
                   <div className="shrink-0 size-12 rounded-full bg-[var(--theme)]/10 text-[var(--theme)] flex items-center justify-center">
-                    <i className="fas fa-rocket"></i>
+                    <i className="fas fa-robot"></i>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-zinc-900">Digital Transformation</h4>
-                    <p className="mt-1 text-sm text-zinc-600">Automation and platform engineering to accelerate delivery.</p>
+                    <h4 className="font-semibold text-zinc-900">AI & Automation</h4>
+                    <p className="mt-1 text-sm text-zinc-600">Agentic AI, LLMOps, and process automation to accelerate delivery.</p>
                   </div>
                 </div>
               </div>
@@ -717,17 +677,17 @@ const Home: FC = () => {
             </div>
           </div>
         </div>
-      </section >
+      </section>
 
       {/* Call to Action */}
-      <section id="contact-cta" className="cta-section section-padding bg-[var(--header)] overflow-x-hidden" >
+      <section id="contact-cta" className="cta-section section-padding bg-[var(--header)] overflow-x-hidden">
         <div className="container">
           <div className="row align-items-center gap-8">
             <div className="col-lg-8">
               <div className="section-title text-white">
                 <h2 className="!text-[var(--theme)] !text-3xl md:!text-5xl font-extrabold leading-tight">Ready to accelerate your digital transformation?</h2>
                 <p className="mt-3">
-                  Speak with Omnia&apos;s experts about cloud migration, automation, cyber security, and
+                  Speak with Omnia&apos;s experts about cloud migration, automation, AI engineering, and
                   ongoing managed services tailored to your business.
                 </p>
               </div>
@@ -739,8 +699,8 @@ const Home: FC = () => {
             </div>
           </div>
         </div>
-      </section >
-    </div >
+      </section>
+    </div>
   );
 };
 

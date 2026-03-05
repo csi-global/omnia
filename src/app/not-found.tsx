@@ -1,6 +1,7 @@
 import { NOT_FOUND_LINKS } from "@/lib/constants";
 import Image from "next/image";
 import Link from "next/link";
+import OmniaButton from "@/components/ui/omnia-button";
 
 export default function NotFound() {
   return (
@@ -48,9 +49,8 @@ export default function NotFound() {
             </p>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <Link href="/" className="main-button">
-                <span className="theme-btn">Take me home</span>
-                <span className="arrow-btn"><i className="icon-arrow-right" /></span>
+              <Link href="/" aria-label="Take me home">
+                <OmniaButton text="Take me home" />
               </Link>
               <Link href="/digital-transformation" className="main-button secondary">
                 <span className="theme-btn">Explore services</span>

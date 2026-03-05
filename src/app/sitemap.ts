@@ -16,6 +16,8 @@ const publicPaths: string[] = [
   '/ormb',
   '/smart-investigate',
   '/vision-plus',
+  // AI Engineering
+  '/ai-engineering',
   // Professional services
   '/cloud-migration',
   '/data-analytics',

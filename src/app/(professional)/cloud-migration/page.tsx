@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
+import OmniaButton from "@/components/ui/omnia-button";
 
 export const metadata: Metadata = {
   title: "Cloud Migration | Omnia Services",
@@ -55,8 +56,8 @@ export default function CloudMigrationPage() {
               <p className="mt-3 text-zinc-600 text-base sm:!text-lg break-words">Omnia delivers zero‑downtime strategies, secure landing zones, and modernization playbooks—backed by observability and FinOps from day one.</p>
 
               <div className="mt-5 d-flex gap-3">
-                <Link href="/contact" className="main-button"><span className="theme-btn">Talk to an Expert</span><span className="arrow-btn"><i className="icon-arrow-right"></i></span></Link>
-                <a href="#offerings" className="main-button secondary"><span className="theme-btn">Explore Offerings</span><span className="arrow-btn"><i className="icon-arrow-right"></i></span></a>
+                <Link href="/contact" aria-label="Talk to an Expert"><OmniaButton text="Talk to an Expert" /></Link>
+                <a href="#offerings"><OmniaButton text="Explore Offerings" /></a>
               </div>
 
               <ul className="mt-5 d-flex flex-wrap gap-2 text-sm text-zinc-700">
@@ -304,8 +305,10 @@ export default function CloudMigrationPage() {
           <div className="lcnc-banner">
             <h5>Ready to Migrate to the Cloud?</h5>
             <p className="ecosystems">Get started with an assessment and roadmap tailored to your goals.</p>
-            <div className="main-button mt-3">
-              <Link href="/contact"><span className="theme-btn">Start Your Journey</span><span className="arrow-btn"><i className="icon-arrow-right"></i></span></Link>
+            <div className="mt-3">
+              <Link href="/contact" aria-label="Start Your Journey">
+                <OmniaButton text="Start Your Journey" />
+              </Link>
             </div>
           </div>
         </div>

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
+import OmniaButton from "@/components/ui/omnia-button";
 
 export const metadata: Metadata = {
   title: "Data Analytics | Omnia Services",
@@ -53,8 +54,8 @@ export default function DataAnalyticsPage() {
               <h1 className="mt-3 !text-3xl sm:!text-4xl md:!text-5xl font-extrabold !leading-tight break-words text-zinc-900">Data Analytics</h1>
               <p className="mt-3 text-zinc-600 text-base sm:!text-lg break-words">Omnia builds modern data platforms, BI, and AI that turn data into decisions—fast, governed, and outcome‑driven.</p>
               <div className="mt-5 d-flex gap-3">
-                <Link href="/contact" className="main-button"><span className="theme-btn">Talk to an Expert</span><span className="arrow-btn"><i className="icon-arrow-right"></i></span></Link>
-                <a href="#offerings" className="main-button secondary"><span className="theme-btn">Explore Offerings</span><span className="arrow-btn"><i className="icon-arrow-right"></i></span></a>
+                <Link href="/contact" aria-label="Talk to an Expert"><OmniaButton text="Talk to an Expert" /></Link>
+                <a href="#offerings"><OmniaButton text="Explore Offerings" /></a>
               </div>
             </div>
             <div className="col-lg-5">
@@ -231,7 +232,7 @@ export default function DataAnalyticsPage() {
           <div className="lcnc-banner">
             <h5>Ready to Unlock Your Data</h5>
             <p className="ecosystems">Start with a rapid assessment and pragmatic roadmap.</p>
-            <div className="main-button mt-3"><Link href="/contact"><span className="theme-btn">Talk to Us</span><span className="arrow-btn"><i className="icon-arrow-right"></i></span></Link></div>
+            <div className="mt-3"><Link href="/contact" aria-label="Talk to Us"><OmniaButton text="Talk to Us" /></Link></div>
           </div>
         </div>
       </section>

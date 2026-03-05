@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import Script from 'next/script';
+import OmniaButton from '@/components/ui/omnia-button';
 
 export const metadata: Metadata = {
   title: 'Digital Transformation | Omnia Services',
@@ -68,18 +69,10 @@ export default function DigitalTransformationPage() {
                 Omnia blends strategy, experience, and engineering—accelerated by cloud and automation—to land measurable change.
               </p>
               <div className="mt-5 d-flex gap-3">
-                <Link href="/contact" className="main-button">
-                  <span className="theme-btn">Talk to an Expert</span>
-                  <span className="arrow-btn">
-                    <i className="icon-arrow-right"></i>
-                  </span>
+                <Link href="/contact" aria-label="Talk to an Expert">
+                  <OmniaButton text="Talk to an Expert" />
                 </Link>
-                <a href="#offerings" className="main-button secondary">
-                  <span className="theme-btn">Explore Offerings</span>
-                  <span className="arrow-btn">
-                    <i className="icon-arrow-right"></i>
-                  </span>
-                </a>
+                <a href="#offerings"><OmniaButton text="Explore Offerings" /></a>
               </div>
             </div>
             <div className="col-lg-5">
@@ -313,12 +306,9 @@ export default function DigitalTransformationPage() {
             <p className="ecosystems">
               Our experts guide you with a pragmatic roadmap and quick wins.
             </p>
-            <div className="main-button mt-3">
-              <Link href="/contact">
-                <span className="theme-btn">Begin Transformation</span>
-                <span className="arrow-btn">
-                  <i className="icon-arrow-right"></i>
-                </span>
+            <div className="mt-3">
+              <Link href="/contact" aria-label="Begin Transformation">
+                <OmniaButton text="Begin Transformation" />
               </Link>
             </div>
           </div>

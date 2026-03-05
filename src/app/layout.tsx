@@ -55,7 +55,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.className} ${manrope.className} subpixel-antialiased`}
+        className={`${poppins.className} ${manrope.className} subpixel-antialiased scroll-smooth`}
       >
         <Preloader />
         <BackToTopButton />

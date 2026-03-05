@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import Script from 'next/script';
+import OmniaButton from '@/components/ui/omnia-button';
 
 export const metadata: Metadata = {
   title: 'Domain Consulting | Omnia Services',
@@ -69,18 +70,10 @@ export default function DomainConsultingPage() {
                 platforms—tailored to your industry, KPIs, and regulatory context.
               </p>
               <div className="mt-5 d-flex gap-3">
-                <Link href="/contact" className="main-button">
-                  <span className="theme-btn">Talk to an Expert</span>
-                  <span className="arrow-btn">
-                    <i className="icon-arrow-right"></i>
-                  </span>
+                <Link href="/contact" aria-label="Talk to an Expert">
+                  <OmniaButton text="Talk to an Expert" />
                 </Link>
-                <a href="#offerings" className="main-button secondary">
-                  <span className="theme-btn">Explore Offerings</span>
-                  <span className="arrow-btn">
-                    <i className="icon-arrow-right"></i>
-                  </span>
-                </a>
+                <a href="#offerings"><OmniaButton text="Explore Offerings" /></a>
               </div>
             </div>
             <div className="col-lg-5">
@@ -343,12 +336,9 @@ export default function DomainConsultingPage() {
           <div className="lcnc-banner">
             <h5>Transform Your Business with Domain Consulting</h5>
             <p className="ecosystems">Engage experts to align technology with business outcomes.</p>
-            <div className="main-button mt-3">
-              <Link href="/contact">
-                <span className="theme-btn">Get Domain Consulting</span>
-                <span className="arrow-btn">
-                  <i className="icon-arrow-right"></i>
-                </span>
+            <div className="mt-3">
+              <Link href="/contact" aria-label="Get Domain Consulting">
+                <OmniaButton text="Get Domain Consulting" />
               </Link>
             </div>
           </div>

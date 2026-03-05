@@ -3,6 +3,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import type { Metadata } from 'next';
 import Image from "next/image";
 import Link from "next/link";
+import OmniaButton from "@/components/ui/omnia-button";
 
 export const metadata: Metadata = {
   title: "Digital Process Automation | Omnia",
@@ -58,8 +59,8 @@ export default function DigitalProcessAutomationPage() {
                     <p className="mt-3 text-zinc-600 text-base sm:!text-lg break-words">Accelerate delivery with Low Code / No Code platforms while maintaining enterprise-grade governance and security. We help you modernize processes, digitize workflows, and connect systems using Pega, ServiceNow, and Microsoft Power Platform + Dynamics 365.</p>
 
                     <div className="mt-5 d-flex gap-3">
-                      <Link href="/contact" className="main-button"><span className="theme-btn">Talk to an Expert</span><span className="arrow-btn"><i className="icon-arrow-right"></i></span></Link>
-                      <a href="#offerings" className="main-button secondary"><span className="theme-btn">Explore Offerings</span><span className="arrow-btn"><i className="icon-arrow-right"></i></span></a>
+                      <Link href="/contact" aria-label="Talk to an Expert"><OmniaButton text="Talk to an Expert" /></Link>
+                      <a href="#offerings"><OmniaButton text="Explore Offerings" /></a>
                     </div>
 
                     <ul className="mt-5 d-flex flex-wrap gap-2 text-sm text-zinc-700">
