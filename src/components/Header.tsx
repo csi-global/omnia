@@ -90,8 +90,8 @@ export default function Header() {
           <div className="container">
             <div className="mega-menu-wrapper">
               <div className="header-main">
-                <div className="logo d-flex flex-column align-items-start justify-content-center">
-                  <div className="d-flex align-items-center">
+                <div className="logo d-flex flex-row flex-wrap align-items-center gap-2 gap-md-3">
+                  <div className="d-flex flex-shrink-0 align-items-center">
                     <Link href="/" className="header-logo">
                       <Image src="/assets/img/logo/white-logo.webp" alt="Omnia Services" width={0} height={0} sizes="100vw" style={{ width: "auto", height: "40px" }} />
                     </Link>
@@ -99,7 +99,12 @@ export default function Header() {
                       <Image src="/assets/img/logo/black-logo.webp" alt="Omnia Services" width={0} height={0} sizes="100vw" style={{ width: "auto", height: "40px" }} />
                     </Link>
                   </div>
-                  <div className="header-csi-subrow d-flex align-items-center gap-2 mt-1 flex-wrap" aria-label="Part of CSI Global">
+                  <div
+                    className={`header-csi-subrow d-flex min-w-0 align-items-center gap-2 border-s border-solid ps-3 flex-wrap ${
+                      isHeaderSticky ? "border-slate-300/80" : "border-white/25"
+                    }`}
+                    aria-label="Part of CSI Global"
+                  >
                     <span
                       className={`shrink-0 text-sm font-semibold uppercase leading-none tracking-[0.08em] transition-colors duration-200 ease-in-out ${
                         isHeaderSticky ? "text-slate-900" : "text-white"
@@ -115,7 +120,7 @@ export default function Header() {
                       height={158}
                       className="select-none"
                       unoptimized
-                      style={{ width: "auto", height: "clamp(22px, 3vw, 30px)" }}
+                      style={{ width: "auto", height: "clamp(22px, 3vw, 30px)", maxWidth: "min(52vw, 12rem)" }}
                     />
                   </div>
                 </div>
@@ -172,12 +177,15 @@ export default function Header() {
           <div className="offcanvas__wrapper">
             <div className="offcanvas__content">
               <div className="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
-                <div className="offcanvas__logo d-flex flex-column align-items-start gap-1">
-                  <Link href="/">
+                <div className="offcanvas__logo d-flex flex-row flex-wrap align-items-center gap-3">
+                  <Link href="/" className="flex-shrink-0">
                     <Image src="/assets/img/logo/black-logo.webp" alt="Omnia Services" width={0} height={0} sizes="100vw" style={{ width: "auto", height: "32px" }} />
                   </Link>
-                  <div className="d-flex align-items-center gap-2" aria-label="Part of CSI Global">
-                    <span className="offcanvas-part-of-label">Part of</span>
+                  <div
+                    className="d-flex min-w-0 align-items-center gap-2 border-start border-secondary border-opacity-25 ps-3"
+                    aria-label="Part of CSI Global"
+                  >
+                    <span className="offcanvas-part-of-label flex-shrink-0">Part of</span>
                     <Image
                       src="/assets/img/csi-logo-dark.svg"
                       alt=""
@@ -185,7 +193,7 @@ export default function Header() {
                       height={142}
                       className="select-none"
                       unoptimized
-                      style={{ width: "auto", height: "26px" }}
+                      style={{ width: "auto", height: "26px", maxWidth: "min(46vw, 11rem)" }}
                     />
                   </div>
                 </div>
