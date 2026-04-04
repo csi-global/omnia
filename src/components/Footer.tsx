@@ -21,16 +21,15 @@ export default function Footer() {
             <Link href="/" className="footer-logo" aria-label="Omnia Services homepage">
               <Image src={blackLogo} alt="Omnia Services logo" className="select-none" />
             </Link>
-            <div className="d-flex align-items-center gap-2 flex-wrap" aria-label="Part of CSI Global">
-              <span className="footer-part-of-label">Part of</span>
+            <div className="flex items-center justify-center gap-2 flex-wrap" aria-label="Part of CSI Global">
+              <span className="footer-part-of-label pl-2">Part of</span>
               <Image
-                src="/assets/img/csi-logo-dark.svg"
+                src="/assets/img/logo/csi-logo.png"
                 alt=""
-                width={200}
-                height={158}
+                width={120}
+                height={40}
                 className="select-none"
-                unoptimized
-                style={{ width: "auto", height: "clamp(26px, 3vw, 34px)" }}
+                style={{ width: "auto", height: "20px" }}
               />
             </div>
           </div>

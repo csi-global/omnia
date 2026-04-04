@@ -1,5 +1,4 @@
 import BackToTopButton from "@/components/back-to-top";
-import FloatingCallButton from "@/components/FloatingCallButton";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Preloader from "@/components/Preloader";
@@ -62,7 +61,6 @@ export default function RootLayout({
       >
         <Preloader />
         <BackToTopButton />
-        <FloatingCallButton />
         <Header />
         {children}
         <Footer />

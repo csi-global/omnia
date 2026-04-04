@@ -13,16 +13,13 @@ export default function Header() {
   const managedListRef = useRef<HTMLUListElement | null>(null);
   const [professionalMaxHeight, setProfessionalMaxHeight] = useState<number>(0);
   const [managedMaxHeight, setManagedMaxHeight] = useState<number>(0);
-  const [isHeaderSticky, setIsHeaderSticky] = useState(false);
   // const [contactEmail, setContactEmail] = useState<string>("info@omniaservices.co.uk");
 
   useEffect(() => {
     const handleScroll = () => {
       const stickyEl = document.getElementById("header-sticky");
       if (!stickyEl) return;
-      const sticky = window.scrollY > 50;
-      setIsHeaderSticky(sticky);
-      if (sticky) {
+      if (window.scrollY > 50) {
         stickyEl.classList.add("sticky");
       } else {
         stickyEl.classList.remove("sticky");
@@ -86,43 +83,41 @@ export default function Header() {
             </div>
           </div>
         </div> */}
-        <div id="header-sticky" className="header-1 group">
+        <div id="header-sticky" className="header-1">
           <div className="container">
             <div className="mega-menu-wrapper">
               <div className="header-main">
-                <div className="logo d-flex flex-row flex-wrap align-items-center gap-2 gap-md-3">
-                  <div className="d-flex flex-shrink-0 align-items-center">
-                    <Link href="/" className="header-logo">
-                      <Image src="/assets/img/logo/white-logo.webp" alt="Omnia Services" width={0} height={0} sizes="100vw" style={{ width: "auto", height: "40px" }} />
-                    </Link>
-                    <Link href="/" className="header-logo-2">
-                      <Image src="/assets/img/logo/black-logo.webp" alt="Omnia Services" width={0} height={0} sizes="100vw" style={{ width: "auto", height: "40px" }} />
-                    </Link>
-                  </div>
-                  <div
-                    className={`header-csi-subrow d-flex min-w-0 align-items-center gap-2 border-s border-solid ps-3 flex-wrap ${
-                      isHeaderSticky ? "border-slate-300/80" : "border-white/25"
-                    }`}
-                    aria-label="Part of CSI Global"
-                  >
-                    <span
-                      className={`shrink-0 text-sm font-semibold uppercase leading-none tracking-[0.08em] transition-colors duration-200 ease-in-out ${
-                        isHeaderSticky ? "text-slate-900" : "text-white"
-                      }`}
-                    >
-                      Part of
-                    </span>
-                    <Image
-                      key={isHeaderSticky ? "csi-dark" : "csi-light"}
-                      src={isHeaderSticky ? "/assets/img/csi-logo-dark.svg" : "/assets/img/csi-logo.svg"}
-                      alt=""
-                      width={200}
-                      height={158}
-                      className="select-none"
-                      unoptimized
-                      style={{ width: "auto", height: "clamp(22px, 3vw, 30px)", maxWidth: "min(52vw, 12rem)" }}
-                    />
-                  </div>
+                <div className="logo">
+                  <Link href="/" className="header-logo flex flex-col items-start">
+                    <Image src="/assets/img/logo/white-logo.webp" alt="Omnia Services" width={0} height={0} sizes="100vw" style={{ width: "auto", height: "40px" }} />
+                    <div className="flex gap-1 text-xs font-bold flex-nowrap text-white shrink-0">
+                      <span className="py-1 pl-2">Part of</span>
+                      <Image
+                        src="/assets/img/logo/csi-logo.png"
+                        alt=""
+                        width={120}
+                        height={40}
+                        className="select-none"
+                        style={{ width: "auto", height: "20px" }}
+                      />
+                    </div>
+                  </Link>
+                  <Link href="/" className="header-logo-2 flex flex-col items-start">
+                    <Image src="/assets/img/logo/black-logo.webp" alt="Omnia Services" width={0} height={0} sizes="100vw" style={{ width: "auto", height: "40px" }} />
+                    <div className="flex gap-1 text-xs font-bold flex-nowrap shrink-0 text-slate-900">
+                      <span className="py-1 pl-2">Part of</span>
+                      <Image
+                        src="/assets/img/logo/csi-logo.png"
+                        alt=""
+                        width={120}
+                        height={40}
+                        className="select-none"
+                        style={{ width: "auto", height: "20px" }}
+                        quality={100}
+                        priority
+                      />
+                    </div>
+                  </Link>
                 </div>
                 <div className="mean__menu-wrapper d-none d-xl-block">
                   <div className="main-menu">
@@ -177,25 +172,10 @@ export default function Header() {
           <div className="offcanvas__wrapper">
             <div className="offcanvas__content">
               <div className="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
-                <div className="offcanvas__logo d-flex flex-row flex-wrap align-items-center gap-3">
-                  <Link href="/" className="flex-shrink-0">
+                <div className="offcanvas__logo">
+                  <Link href="/">
                     <Image src="/assets/img/logo/black-logo.webp" alt="Omnia Services" width={0} height={0} sizes="100vw" style={{ width: "auto", height: "32px" }} />
                   </Link>
-                  <div
-                    className="d-flex min-w-0 align-items-center gap-2 border-start border-secondary border-opacity-25 ps-3"
-                    aria-label="Part of CSI Global"
-                  >
-                    <span className="offcanvas-part-of-label flex-shrink-0">Part of</span>
-                    <Image
-                      src="/assets/img/csi-logo-dark.svg"
-                      alt=""
-                      width={180}
-                      height={142}
-                      className="select-none"
-                      unoptimized
-                      style={{ width: "auto", height: "26px", maxWidth: "min(46vw, 11rem)" }}
-                    />
-                  </div>
                 </div>
                 <div className="offcanvas__close">
                   <button onClick={() => setIsOffcanvasOpen(false)} aria-label="Close menu">
