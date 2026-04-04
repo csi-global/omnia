@@ -17,9 +17,23 @@ export default function Footer() {
       </div>
       <div className="container">
         <div className="footer-logo-area">
-          <Link href="/" className="footer-logo" aria-label="Omnia Services homepage">
-            <Image src={blackLogo} alt="Omnia Services logo" className="select-none" />
-          </Link>
+          <div className="d-flex flex-column align-items-start gap-2">
+            <Link href="/" className="footer-logo" aria-label="Omnia Services homepage">
+              <Image src={blackLogo} alt="Omnia Services logo" className="select-none" />
+            </Link>
+            <div className="d-flex align-items-center gap-2 flex-wrap" aria-label="Part of CSI Global">
+              <span className="footer-part-of-label">Part of</span>
+              <Image
+                src="/assets/img/csi-logo-dark.svg"
+                alt=""
+                width={200}
+                height={158}
+                className="select-none"
+                unoptimized
+                style={{ width: "auto", height: "clamp(26px, 3vw, 34px)" }}
+              />
+            </div>
+          </div>
           <div className="social-icon d-flex align-items-center">
             <a href="https://www.facebook.com/omniaservices" aria-label="Omnia Services on Facebook" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-facebook-f"></i>

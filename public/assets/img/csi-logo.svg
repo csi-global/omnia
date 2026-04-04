@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 891 704" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(1,0,0,1,-1471.923267,-1122.792799)">
+        <g transform="matrix(1,0,0,1,37.801144,1)">
+            <path d="M1654,1248C1651.842,1251.427 1654.391,1247.295 1654,1248C1651.69,1252.171 1679.703,1219.169 1785.211,1188.586C1886.577,1159.203 1949.17,1152.047 2048.115,1172.738C2070.733,1177.468 2169.547,1192.753 2232.625,1298.062C2239.309,1309.221 2277.346,1372.725 2238.125,1460.562C2208.023,1527.979 2198.891,1527.486 2163.713,1562.452C2199.277,1537.034 2215.598,1526.032 2232.175,1511.461C2244.484,1500.641 2257.831,1490.198 2274.562,1462.312C2289.95,1436.666 2296.794,1413.337 2298.812,1409.121C2301.683,1403.124 2356.966,1250.943 2169.25,1154.929C2123.392,1131.473 2005.795,1114.952 1947,1125C1929.047,1128.068 1835.505,1144.73 1783.32,1168.027C1766.278,1175.635 1737.211,1190.126 1711.661,1207.108C1681.606,1227.084 1655.036,1246.355 1654,1248Z" style="fill:rgb(255,0,0);stroke:black;stroke-width:0.42px;"/>
+        </g>
+        <g transform="matrix(3.895612,0,0,4.69667,-4226.452071,-5996.212295)">
+            <g transform="matrix(56.777815,0,0,56.777815,1692.093238,1664.417105)">
+            </g>
+            <text x="1460.837px" y="1664.417px" style="font-family:'Avenir-Black', 'Avenir', sans-serif;font-weight:800;font-size:56.778px;fill:rgb(255,0,0);">GLOBAL</text>
+        </g>
+        <g transform="matrix(9.121939,0,0,8.370697,-12867.417756,-8524.222654)">
+            <g transform="matrix(50,0,0,50,1648.012028,1207.045245)">
+            </g>
+            <text x="1570.262px" y="1207.045px" style="font-family:'Avenir-Black', 'Avenir', sans-serif;font-weight:800;font-size:50px;fill:rgb(241,241,239);">CSI</text>
+        </g>
+    </g>
+</svg>
